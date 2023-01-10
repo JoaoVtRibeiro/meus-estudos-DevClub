@@ -1,0 +1,5 @@
+Montar uma estrutura inicial = html:5
+
+Ajustar o código = shift + alt + f
+
+CTRL + SHIFT + P, reiniciar/reload = reiniciar o vscode
