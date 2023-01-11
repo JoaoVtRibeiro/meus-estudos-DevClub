@@ -1,8 +1,41 @@
 <!--
-    atributos iniciais
+    Videos
 
-    source tag
+    <video> + src : funciona de forma parecida com a tag <img>, source mostra a origem do arquivo
 
-    tamanho
+    controls : mostra ao usuario algumas opções de configurações no video
+
+    controlList="nodownload" : desabilita a opção de download
+
+    autoplay : faz com que o video seja iniciado ao abrir a página (Não funciona em todos os navegadores)
+
+    muted: o video fica inicialmente mutado (Isso pode fazer o autoplay ser habilitato em navegadores que normalmente não seriam)
+
+    poster: parece com as thumbnails do youtube, faz de uma imagem o poster antes do video ser iniciado
 -->
+
+<video src="./Gato-video.mp4"
+controls
+controlList="nodownload"
+muted
+poster="./gato-imagem.jpg">
+</video>
+
+<!--
+    Alguns Navegadores ou aparelhos podem não conseguir rodar alguns formatos de video
+    Então é possivel usar a tag <source> para ter mais de uma possibilidade de formato
+
+    O navegador irá testar todas as possibilidades até encontrar a que funcione.
+
+    Além disso, também é possivel mudar o tamanho do video com os atributos width e height
+-->
+
+<br>
+<br>
+
+<video controls width="200px">
+    <source src="./Gato-video.mkv">
+    <source src="./Gato-video.mov">
+    <source src="./Gato-video.mp4">
+</video>
 
