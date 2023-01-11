@@ -1,0 +1,45 @@
+<!--
+    Inputs
+
+    São campos onde o usuario pode fornecer informações
+
+    ======
+
+    Atributos
+
+    autocomplete : como o proprio nome diz, auto completa alguma informação já dada anteriormente no navegador
+    conforme o tipo, esses tipos podem ser = name, street-address, email, etc.
+
+    disabled : Desabilita o usuario de usar o input
+
+    readonly : Permite apenas leitura (apesar de parecer, ele não desabilita igual o disabled)
+
+    value : Dar um valor pré-estabelecido
+
+    placeholder : texto de fundo, que é geralmente usado para descrever qual deve ser a informação do campo
+
+    autofocus : Ao iniciar a página, o input com esse atributo começa selecionado (sem precisar clicar no input para digitar)
+    Obs: caso houver mais de um, a página irá focar no primeiro que encontrar
+
+    =======
+
+    <label> parecido com a tag <figure>, sua função é dizer ao SEO que o titulo, 
+    legenda, etc, está relacionado ao input (Semantica)
+
+    Há duas maneiras de utilizar esta tag:
+
+-->
+
+<!-- Primeira forma (input dentro da label)-->
+
+<label>Email:
+    <input autocomplete="email" placeholder="Digite seu email" autofocus>
+</label>
+
+<br><br>
+
+<!-- Segunda forma (Por ID)-->
+
+<label for="nome">Nome:</label> <!-- O Atributo "for" irá procurar pela ID respectiva-->
+
+<input id="nome" autocomplete="name" placeholder="Digite seu nome">
