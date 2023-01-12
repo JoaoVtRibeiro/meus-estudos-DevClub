@@ -1,0 +1,65 @@
+<!--
+    CSS 
+    
+    Cascading Style Sheet / Folha de Estilo em Cascata
+
+    Um tipo de arquivo utilizado para estilizar, por exemplo, uma página html
+    
+    Obs: A "cascata" do nome significa que os estilos são aplicados de cima pra baixo
+
+    =======
+
+    Há duas maneiras de aplicar o css em um arquivo html:
+
+    - Através da tag <style> no próprio arquivo
+
+    - Através de tag e atributos : <link href="./styles.css" rel="stylesheet">  
+      (rel de "relashionship", indica a qual o tipo de relação entre os dois arquivos)
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando o CSS</title>
+</head>
+
+<body>
+    <h1>Iniciando o CSS</h1>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque nostrum a hic voluptatibus minima, ipsum numquam
+        dolorem laudantium dolorum repudiandae facere illum corrupti, qui, fuga id ab repellat debitis. Accusantium?</p>
+
+    <button>Clique Aqui</button>
+</body>
+
+<style>
+/* 
+    Estrutura
+
+    tag,id,class{
+        propriedade: valor; <- Lembrar do ponto e virgula no final!
+    }
+ */
+    h1{
+        color: white; /* cor da fonte */
+        background-color: blue; /* cor de fundo  */
+    }
+
+    p{
+        font-size: 20px; /* tamanho da fonte */
+        color: red;
+    }
+
+    button{
+        background-color: purple;
+        border-color: orange; /* cor da borda */
+    }
+
+</style>
+
+</html>
