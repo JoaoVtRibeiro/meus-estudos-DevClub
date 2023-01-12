@@ -1,0 +1,10 @@
+Reiniciar o vscode : CTRL + SHIFT + P -> reiniciar/reload
+
+Montar uma estrutura inicial : html:5
+
+Cria um texto aleatório : lorem
+
+Ajustar o código : shift + alt + f
+
+Fazer um comentário : shift + alt + a
+
