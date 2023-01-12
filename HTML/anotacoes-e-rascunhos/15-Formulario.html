@@ -1,0 +1,35 @@
+<!--
+    Formulário
+
+    Formulários recebem dados/informações enviadas por vários inputs de uma só vez
+
+    action : define para qual url será enviado os dados (se vazio será para a mesma página)
+
+    method: especifica o metodo de envio dos dados do formulario
+
+        - get: envia através da url (pode ser visto e modificado pelo usuario), 
+        geralmente utilizado para buscas/consultas (não altera nada no servidor se usado para esse propósito)
+
+        - post: envia os dados de forma anônima (não pode ser visto ou modificado),
+        geralmente utilizado para cadastros e upload de arquivos (altera o estado/dados do servidor)
+
+    enctype : especifica o tipo de codificação que será usado para enviar os dados do formulario
+        - multipart/form-data é necessário para enviar arquivos (fotos, videos, pdf, etc.)
+-->
+
+<form action="" method="post" enctype="multipart/form-data">
+    <label> Nome:
+        <input type="text" name="username" autocomplete="username">
+    </label>
+
+    <label> Email:
+        <input type="email" name="email" autocomplete="email">
+    </label>
+
+    <label> Arquivo:
+        <input type="file" name="arquivo" accept="image/*">
+    </label>
+
+    <button type="submit">Enviar</button> <!-- Submit envia os dados dos inputs -->
+    <button type="reset">Resetar</button> <!-- Reset reinicia as informações/valores dos inputs -->
+</form>
