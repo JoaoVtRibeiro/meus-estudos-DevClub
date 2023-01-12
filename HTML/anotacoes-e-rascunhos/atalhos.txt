@@ -2,6 +2,6 @@ Montar uma estrutura inicial = html:5
 
 Ajustar o código = shift + alt + f
 
-CTRL + SHIFT + P, reiniciar/reload = reiniciar o vscode
+reiniciar o vscode = CTRL + SHIFT + P, reiniciar/reload 
 
-lorem = cria um texto aleatório
+cria um texto aleatório = lorem
