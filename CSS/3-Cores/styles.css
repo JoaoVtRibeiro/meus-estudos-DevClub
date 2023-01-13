@@ -1,0 +1,25 @@
+/* 
+    Cores
+
+    Existem três formas de indicar uma cor, são elas:
+
+    Nome : literalmente pelo nome da cor (obviamente em inglês)
+
+    rgb : red / green / blue, um código que através das quantidades dessas três cores (no min 0 e no max 255) podem formar outras
+    
+    Hexadecimal : parecido com rgb, esse código representa as três cores na base 16 em apenas dois digitos
+
+*/
+
+
+#Nome-da-cor{
+    color: red;
+}
+
+#rgb{
+    color: rgb(11, 151, 81);
+}
+
+#Hexadecimal{
+    color: #0f72e2;
+}
