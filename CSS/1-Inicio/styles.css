@@ -1,0 +1,26 @@
+/* 
+    Estrutura
+
+    tag,id,class{
+        propriedade: valor; <- Lembrar do ponto e virgula no final!
+    }
+ */
+
+h1 {
+    color: white;
+    /* cor da fonte */
+    background-color: blue;
+    /* cor de fundo  */
+}
+
+p {
+    font-size: 20px;
+    /* tamanho da fonte */
+    color: red;
+}
+
+button {
+    background-color: purple;
+    border-color: orange;
+    /* cor da borda */
+}
