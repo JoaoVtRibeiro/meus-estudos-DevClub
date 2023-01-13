@@ -1,0 +1,41 @@
+/* 
+    Seletores
+
+    Eles indicam qual ou quais elementos receberam uma determinada estilização.
+
+    Os seletores que existem são:
+
+    - * : Litelmente tudo, toda a aplicação receberá a estilização
+
+    - <tag> : todos os elementos com essa tag receberam a estilização
+
+    - #id : apenas o elemento com o id (como um rg ou cpf)
+
+    - .class : um grupo de elementos que faz parte da classe (como um cep)
+
+    - tag, #id, .class : ao colocar a virgula, mais de um tipo de seletor pode receber a mesma estilização
+     
+*/
+
+
+*{
+    background: cadetblue;
+}
+
+h1{
+    color: brown; 
+    font-weight: bold; /* grossura da fonte : negrito */
+}
+
+#paragrafo{
+    color: crimson;
+    font-size: 20px;
+}
+
+.button{
+    background-color: darkcyan;
+}
+
+h2, #texto, .botao{
+    color: aliceblue;
+}
