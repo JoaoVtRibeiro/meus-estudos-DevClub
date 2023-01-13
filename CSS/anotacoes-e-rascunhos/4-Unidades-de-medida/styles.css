@@ -1,0 +1,58 @@
+/* 
+    Unidades de Medida
+
+        -> Absolutas
+
+        Unidades absolutas são aquelas que não mudam, ficam com o mesmo tamanho independente da tela
+         ou elemento pai/raiz, são elas:
+
+        px (pixels) 1/100 de polegada 0,254mm (1 polegada 2,54cm)
+        in (inches/polegadas)
+        cm / mm (centímetro / milímetro)
+
+        -> Relativas
+
+        
+        Unidades relativas são aquelas que mudam conforme alguma referencia, seja a tela ou um 
+        elemento mais próximo da fonte (pai/raiz), são elas:
+
+        % calcula o tamanho relativo ao elemento pai
+        vh (view height) 1vh é 1% da altura da janela
+        vw (view width) 1vw é 1% da largura da janela
+        em é uma unidade relativa ao elemento pai (emphemeral unit - unidade transitória)
+        rem é uma unidade relativa ao elemento raiz (root emphemeral unit - unidade transitória raiz)
+
+*/
+
+*{ /* Tirando margens padrões do navegador */
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.quadradoRaiz{
+    background-color: brown;
+    color: white;
+    width: 500px;
+    height: 500px;
+}
+
+.quadradoPai{
+    background-color: rgb(19, 163, 168);
+    color: rgb(255, 255, 255);
+    width: 50%; /* 250px (500/2)*/
+    height: 50%; /* 250px (500/2)*/
+}
+
+.quadradoFilho{
+    background-color: #301ca1;
+    color: #FFFFFF;
+    width: 50%; /* 125px (250/2)*/
+    height: 50%; /* 125px (250/2)*/
+}
+
