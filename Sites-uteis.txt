@@ -13,3 +13,7 @@ Cores
 - color.adobe.com
 - coolors
 - colorZilla (extensão)
+
+Fonts para Texto
+
+- Google Fonts
