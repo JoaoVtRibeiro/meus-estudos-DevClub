@@ -1,0 +1,46 @@
+/* 
+    Margin e Padding
+
+    Ambos são para dar espaçamento aos elementos, enquanto a "Margin" da um espaçamento externo (afasta os elementos)
+    o "padding" da um espaçamento interno (afasta os elementos de uma mesma div por exemplo, 
+    além de também poder aumento o tamanho de um background)
+
+    Direções (posicionamento da margin e padding)
+        
+        - Padrão : Por padrão, margin e padding vão ser aplicados em todas as direções o mesmo valor
+
+        - Cima, Baixo, Direita e Esquerda: Top, Button, Right e Left.
+
+        Atalhos
+
+            - "Relógio" / 4 valores : Seguindo como se fosse um ponteiro de relógio (12h, 15h, 18h, 21h)
+               da os valores pra respectiva direção (cima, direita, baixo, esquerda)
+
+            - 3 valores : Cima, Lados, Baixo
+            
+            - 2 valores : Cima e baixo, Lados
+
+*/
+
+
+.caixa-1{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    padding: 100px; /* Todas as direções */
+    /* Vai aumentar o tamanho da caixa e afastar o texto do centro com a borda do background */
+    margin-top: 10px; /* Cima */
+    margin-right: 20px; /* Direita */
+    margin-left: 100px; /* Esquerda */
+    margin-bottom: 10px; /* Baixo */
+}
+
+.caixa-2{
+    width: 50px;
+    height: 50px;
+    background-color: purple;
+    padding: 10px 20px 30px 40px; /* Ex do "atalho do relógio"
+           /* 12h  15h  18h  21h  */
+    margin: 100px 50px; /* Ex do atalho de dois valores
+/* Cima e baixo / Direita e esquerda */
+}
