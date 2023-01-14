@@ -17,3 +17,8 @@ Cores
 Fonts para Texto
 
 - Google Fonts
+
+Layouts
+
+- Figma
+- Adobe Xd (Programa / Ferramenta)
