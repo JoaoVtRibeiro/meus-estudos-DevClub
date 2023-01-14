@@ -1,0 +1,63 @@
+/* 
+    Textos - parâmetros
+
+    color: cor da fonte
+
+    font-size: tamanho da fonte
+
+    font-weight: peso da fonte (grossura)
+        - bold: negrito
+        - bolder: negrito mais forte
+        - lighter: deixa a fonte mais fina
+
+    font-family: familia da fonte, ex: Arial, Times new Roman, etc.
+        - Google fonts: site para importar as fontes ao projeto
+    
+        A duas maneiras de importar as fontes para o projeto:
+            - por <link> e inserir no head do html
+            - por @ e colocar no inicio do css
+
+    font-style: muda o estilo da fonte, ex: italic, oblique
+
+    line-height: espaçamento entre as linhas
+    letter-spacing: espaçamento entre as letras
+    word-spacing: espaçamento entre as palavras
+
+    text-align: alinhamento, ex: justify, center, right
+
+    text-transform: transforma a letras do texto em maiusculas ou minusculas (podem ser todas ou só a primeira)
+
+    text-decoration: coloca um decoração adicional ao texto, ex: underline, overline 
+
+    text-shadow: adiciona uma sombra ao texto (horizontal, vertical, o tanto que será esfumançada, cor)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+h1{
+    color: red;
+    font-size: 48px;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif; 
+    /* Caso acontecer algo que impeça a primeira fonte de funcionar, a segunda (sans-serif) será a substituta */
+    font-style: oblique;
+    text-shadow: 5px 5px 5px red;
+}
+
+p{
+    color: blue; /* Cor */
+    font-size: 28px; /* tamanho */
+    font-weight: lighter; /* grossura */
+    font-family: 'Roboto', sans-serif; /* familia */
+    font-style: italic; /* estilo */
+    line-height: 50px; /* e linha */
+    letter-spacing: 5px; /* e letras */
+    word-spacing: 5px; /* e palavras */
+    text-align: justify; /* alinhamento */
+    text-transform: lowercase; /* transformação das letras */
+    text-decoration: underline; /* decoração */
+    text-shadow: 5px 5px 5px blue; /* sombra (horizontal, vertical, fumaça e cor) */
+}
+
+
+
