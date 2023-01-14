@@ -1,0 +1,47 @@
+/* 
+    Display
+
+        Diz como vai ser disposição dos itens na tela (como serão mostrados)
+
+        Block
+
+            - Vem como padrão em tags como: div, section, p, h1, ul, li, article...
+            - Ocupa 100% da largura do elemento pai
+            - Sempre ocupa toda a sua linha
+            - Altura se adapta de acordo com o conteúdo
+            - Podemos definir height e width
+            - Podemos definir valores de margin
+
+        Inline
+
+            - Vem como padrão em tags como: a, span, b, i...
+            - Elementos em linha
+            - Não permite alterar height e width
+            - Não podemos definir valores de margin top e bottom
+            - Ganha comportamento de uma palavra
+
+        Inline-block
+
+            - Elementos em linha, porém com carcterística do display block (alterar o tamanho, margin e padding)
+            - Altura e largura podem ser alteradas
+
+*/
+
+.box{
+    background-color: rgb(172, 49, 49);
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.box-2{
+    background-color: rgb(36, 174, 184);
+}
+
+.box-3{
+    background-color: rgb(238, 204, 14);
+}
+
