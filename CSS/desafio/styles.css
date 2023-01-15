@@ -9,6 +9,10 @@ header {
     margin: 47px 0px 163px 42px;
 }
 
+a, button{
+    cursor: pointer;
+}
+
 .header-link {
     font-weight: 400;
     font-size: 14px;
