@@ -1,0 +1,13 @@
+/* 
+    Important
+
+    Um comando que prioriza uma propriedade, isso quer dizer que mesmo se um estilização 
+    igual a anterior existir não ocorrerá o efeito em cascata do css
+
+    Obs: Essa prioridade só muda se a propriedade seguinte também tiver um !important
+*/
+
+h1{
+    color: blue !important; /* Essa propriedade vai ser priorizada, o titulo ficará azul */
+    color: red;
+}
