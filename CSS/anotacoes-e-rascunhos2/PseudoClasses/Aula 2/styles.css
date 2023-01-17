@@ -1,0 +1,45 @@
+/* 
+     Pseudo Classes 2
+
+    :first-child -> primeiro filho / ex: primeira li de uma ul / primeiro span de uma div
+    :first-of-type -> primeiro elemento de seu tipo entre os filhos de seu elemento pai
+    :last-child ->  último elemento de seu tipo entre os filhos de seu elemento pai
+     :not() -> estiliza os elementos, exceto o que está dentro do () (lembrar de colocar um espaço entre o elemento e o :not)
+    :nth-child() ->  seleciona o elemento baseado na sua posição. Ex: :nth-child(3)
+    :nth-last-child() ->  seleciona o elemento baseado na sua posição, contando de trás para frente
+
+*/
+
+*{
+    font-size: 50px;
+}
+
+
+li:first-child{
+    color: rgb(20, 138, 138);
+}
+
+span:first-of-type{
+    color: brown;
+}
+
+
+li:last-child{
+    color:green
+}
+
+p:last-of-type{
+    color: chocolate;
+}
+
+
+div :not(.exception){ /* (lembrar de colocar um espaço entre o elemento e o :not) */
+   text-decoration: overline;
+}
+
+li:nth-child(3){
+    text-decoration: underline;
+}
+li:nth-last-child(2){
+    color: rgb(218, 0, 0);
+}
