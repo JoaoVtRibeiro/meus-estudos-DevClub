@@ -1,5 +1,9 @@
 /* 
-    Pseudo Classes
+    Pseudo Classes 1
+
+    Diferente dos pseudo elementos, pseudo classes em vez de trocar a estilização 
+    de uma parte em especifico, troca estilização do elemento em momentos especificos, por exemplo:
+
 
     :active -> quando o elemento está ativo, ou seja, está sendo pressionado
     :visited -> seleciona o link que foi visitado
@@ -19,3 +23,57 @@
     :nth-last-child() ->  seleciona o elemento baseado na sua posição, contando de trás para frente
 
 */
+
+
+a{
+    font-size: 50px;
+    color: blue;
+}
+
+a:active{
+    color: red;
+}
+
+a:visited{
+    color: blueviolet;
+}
+
+a:hover{
+    color: chartreuse;
+}
+
+input:checked{ /* Ao ser selecionado */
+    height: 200px;
+    width: 200px;
+}
+
+button:disabled{
+    border: 5px coral solid;
+    background-color: brown;
+    color: white;
+}
+
+button:enabled{
+    border: 5px rgb(80, 0, 145) solid;
+    background-color: rgb(13, 43, 177);
+    color: white;
+}
+
+input:focus{
+    width: 200px;
+    height: 200px;
+}
+
+input:read-only{
+    background: #76FF;
+}
+
+div:empty{
+    width: 200px;
+    height: 200px;
+    background-color: darkslategrey;
+}
+
+div:hover, input:hover, button:hover{ /* Caso for mais de um elemento a ser estilizado, é necessario indicar qual pseudo será em cada um */
+    background: cornflowerblue;
+}
