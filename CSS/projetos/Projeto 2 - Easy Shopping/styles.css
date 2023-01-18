@@ -1,49 +1,50 @@
+/* Configurações gerais, tamanhos e posicionamentos das caixas*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
-}
-
-body{
-    width: 100vw;
-    height: 100vh;
-}
-
-main, section{
-    display: inline-block;
-}
-
-a, button{
-    cursor: pointer;
-}
-
-a {
     font-weight: 400;
-    font-size: 28px;
-    line-height: 41px;
     color: #5D5D7D;
 }
 
-a:hover{
-    opacity: 0.4;
+body {
+    width: 100%;
+    height: 100%;
+}
+
+main,
+section {
+    display: inline-block;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+/* ========== Main ==========  */
+
+main {
+    position: absolute;
+    top: 361px;
+    left: 116px;
 }
 
 h1 {
     width: 368px;
-    font-weight: 400;
     font-size: 70px;
     line-height: 80px;
-    color: #5D5D7D;
+
 }
 
 p {
     width: 540px;
-    font-weight: 400;
     font-size: 28px;
     line-height: 48px;
-    color: #5D5D7D;
     opacity: 0.6;
+    margin: 15px 0px;
 }
 
 button {
@@ -53,9 +54,107 @@ button {
     border-radius: 40px;
     background: #9499EA;
     box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
-    font-weight: 400;
     font-size: 24px;
     line-height: 36px;
     text-align: center;
     color: #FFFFFF;
+}
+
+button:hover {
+    background: #FFFFFF;
+    color: #9499EA;
+    border: 3px #9499EA solid;
+
+}
+
+button:active {
+    border: none;
+    background: #7679b8;
+    color: #FFFFFF;
+}
+
+/* ==========  Section e Header ==========  */
+
+section {
+    background: rgba(93, 93, 125, 0.16);
+    /* rgba permite colocar um fundo com opacidade sem interferir nos outros elementos */
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    width: 35vw;
+}
+
+header {
+    margin-left: 57px;
+    margin-top: 24px;
+}
+
+a {
+    font-size: 28px;
+    line-height: 41px;
+    margin-right: 41px;
+}
+
+a:hover {
+    opacity: 0.4;
+}
+
+a:active {
+    color: #3c3c50;
+    opacity: 1;
+}
+
+img {
+    position: relative;
+    top: 125px;
+    right: 140px;
+}
+
+@media screen and (max-width:900px) {
+
+    main {
+        width: 0%;
+        height: 0%;
+        top: 7%;
+        left: 15%;
+    }
+
+    section {
+        width: 100%;
+        height: 50vh;
+        bottom: 0;
+        left:0;
+    }
+
+    header {
+        display: none;
+    }
+
+    /* main */
+
+    h1 {
+        width:269px;
+        font-size: 36px;
+        line-height: 52px;
+        text-align: center;
+    }
+
+    p {
+        width:296px;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    /* section */
+
+    img {
+        position: absolute;
+        left: 15%;
+        top: 10%;
+        width: 271px;
+        height: 322px;
+    }
+
+
 }
