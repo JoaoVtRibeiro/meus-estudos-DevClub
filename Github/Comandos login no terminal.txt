@@ -1,0 +1,13 @@
+- Comandos para logar no terminal(Gitbash):
+
+git config --global user.email emaildogithub@gmail.com
+
+git config --global user.name usernamedogithub
+
+git config --list *para conferir se deu tudo certo*
+
+
+
+- Para deixar o Terminal Gitbash como padrão:
+
+ Ctrl + Shift + P, Select Default Profile, Gitbash.
