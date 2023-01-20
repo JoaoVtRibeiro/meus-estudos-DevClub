@@ -1,0 +1,18 @@
+/* 
+    Calc
+
+    Uma propriedade que auxilia em definições especificas de valores de outras propriedades, ex: width, height
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div{
+    width: 50vw;
+    height: calc((100vh - 200px) + 2em);
+    background-color:darkred ;
+}
+
