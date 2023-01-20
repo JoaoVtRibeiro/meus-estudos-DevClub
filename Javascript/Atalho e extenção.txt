@@ -1,0 +1,7 @@
+Code runner
+
+Ajuda a executar os códigos javascript no vscode
+
+Ctrl + alt + n = Começa a executar o código
+
+Ctrl + alt + m = Pausa a execução do código
