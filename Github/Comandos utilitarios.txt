@@ -1,0 +1,24 @@
+git config --list (confere a lista de comandos)
+
+clear (limpa o terminal)
+
+git init (inicia um repositório na pasta atual)
+
+git remote and origin *githublink* (linka o repositório remoto com um repositório do github, precisa do link do rp do gh)
+
+
+OBS: Quando estiver subindo a primeira vez o código precisa criar uma branch, use o codigo git push --set-upstream origin master/outronomeprabranch
+
+
+git status (ve o estado atual do repositório)
+
+git add nomedoarquivo (jogar o arquivo para area de stage para fazer o commit) 
+
+git commit -m"mensagem" (realizar o commit e a mensagem)
+
+git push (empurrar os arquivos para o github)
+
+git pull (puxa os arquivos atualizados no github)
+
+git comando . (ponto significa todos, ex git add .)
+
