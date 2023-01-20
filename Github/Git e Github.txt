@@ -1,0 +1,13 @@
+Git
+
+Uma forma de criar um "linha do tempo" de versões diferentes de um código através de commits
+
+Commits
+
+São como "fotos" tiradas do código naquele determinado momento
+
+Github / Gitlab / Bitbucket ...
+
+Plataformas que servem para armazenar arquivos e seus commits, possibilitando o compartilhamento de códigos, 
+além de varias pessoas poderem trabalhar no mesmo código ao mesmo tempo
+
