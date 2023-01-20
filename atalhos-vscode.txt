@@ -8,5 +8,9 @@ Ajustar o código : shift + alt + f
 
 Fazer um comentário : shift + alt + a
 
-Botão direito -> Inspect/ Inspecionar Elemento = Olhar a configurações (No Navegador)
+Olhar a configurações (No Navegador) : Botão direito -> Inspect/ Inspecionar Elemento
+
+Mostrar arquivos ocultos (Windows) = ctrl + shift + .
+
+
 
