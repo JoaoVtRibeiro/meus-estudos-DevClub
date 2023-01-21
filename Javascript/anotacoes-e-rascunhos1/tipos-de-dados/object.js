@@ -1,7 +1,7 @@
 /* 
     Object
 
-    Variaveis capazes de armanezar mais de um valor ao mesmo tempo (e da mais de um tipo)
+    Capazes de armanezar mais de um valor ao mesmo tempo e com tipos de propriedades variadas
 
 */
 
