@@ -7,7 +7,7 @@
 
 let number = 120 / 2
 
-let fractionalNumber = 1.23 /* Permite números fracionados */
+let fractionalNumber = 1.23 /* Permite números decimais */
 
 let string = "texto"
 
