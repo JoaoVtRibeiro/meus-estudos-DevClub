@@ -16,3 +16,16 @@ console.log(number == number2)
 
 console.log(number === number2)
 
+/* 
+    >   -> maior
+    >=  -> maior ou igual
+    <   -> menor
+    <=  -> menor ou igual
+*/
+
+const firstnumber = 12
+const seccondNumber = 10
+
+console.log(10 <= 20)
+
+
