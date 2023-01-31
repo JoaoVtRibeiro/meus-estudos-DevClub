@@ -6,6 +6,8 @@
     Obs: diferente dos objetos, array não guardam variaveis apenas valores, 
     mas é possivel guardar um objeto dentro de uma array
 
+    Para saber o tamanho de um array coloque seu nome e .length (array.length)
+
 */
 
 const numbersArray = [230, 45, 20, "texto", true]
