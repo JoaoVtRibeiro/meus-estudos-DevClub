@@ -4,8 +4,10 @@
     For é auxilia a criar repitições a partir de uma determinada condição
 
     Sua estrutura é formada por:
-
-    variavel - condição(determina o que será necessario para repetição acontecer) - o que irá acontecer a cada looping
+    
+        1. variavel 
+        2. condição (determina o que será necessario para repetição acontecer)
+        3. ação (o que irá acontecer a cada looping)
 
     Obs: geralmente, a variavel que será utilizada no "for" é um "i" que seria a abreviação de "index"
 */
