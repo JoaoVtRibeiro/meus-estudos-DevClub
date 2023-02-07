@@ -13,33 +13,23 @@ const population = [{ salary: 3000, children: 2 }, { salary: 2000, children: 1 }
 
 const average = (population) => {
 
-    // Média de sálario
+    // Média de salário e filhos
 
     let salarySum = 0
-    let salaryCounter = 0
-
+    let childrenSum = 0
+    let counter = 0
+   
     for (value of population) {
         if (value.salary > 0) {
-            salarySum = salarySum + value.salary
-            salaryCounter++
+            salarySum += value.salary
+            childrenSum += value.children
+            counter++
         }
     }
 
-    let salaryAverage = salarySum / salaryCounter
+    let salaryAverage = salarySum / counter
 
-    // Média de filhos
-
-    let childrenSum = 0
-    let childrenCounter = 0
-
-    for (value of population) {
-        if (value.salary > 0) { // Tem que parar se algum dos ->salários<- for negativo
-            childrenSum = childrenSum + value.children
-            childrenCounter++
-        }
-    }
-
-    let childrenAverage = childrenSum / childrenCounter
+    let childrenAverage = childrenSum / counter
 
     // Maior salário
 
@@ -59,6 +49,9 @@ const average = (population) => {
 }
 
 average(population)
+
+
+
 
 
 
