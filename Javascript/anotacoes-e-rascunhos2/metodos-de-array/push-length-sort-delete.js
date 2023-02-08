@@ -4,7 +4,7 @@
         Push : Adiciona novos itens em um array
         Length : Informa o tamanho do array
         Sort : Organiza o array em ordem alfabética
-        Delete : Exclui um item do array
+        Delete : Exclui um item do array (Mas não exclui a posição, apenas o valor que ela tinha)
 */
 
 let students = ["João", "Maria", "Rodolfo"]
