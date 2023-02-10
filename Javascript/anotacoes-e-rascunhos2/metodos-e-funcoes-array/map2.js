@@ -8,7 +8,7 @@
 
 */
 
-
+// Exemplo, com números
 const numbers = [1,2,3,4]
 
 const double = number => number * 2
@@ -17,3 +17,14 @@ const sum = number => number + 10
 const newNumbers = numbers.map(double).map(sum)
 
 console.log(newNumbers)
+
+// Exemplo, com template string
+
+const toReais = number => `R$ ${number.toFixed(2)}`
+
+const reais = newNumbers.map(toReais)
+
+console.log(reais)
+
+
+
