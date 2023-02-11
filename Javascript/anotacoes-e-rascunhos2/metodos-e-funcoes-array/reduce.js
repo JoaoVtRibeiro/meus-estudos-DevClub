@@ -9,6 +9,9 @@
         - array completo
 
     Sua estrutura é formada por array.reduce + (função) + valor inicial do acumulador
+
+    Obs: Colocando no parâmetro "valor atual" o nome do atributo entre chaves, 
+    será enviado o valor do atributo sem a necessecidade do "parametro.atributo"
 */
 
 // Exemplo com array de números
