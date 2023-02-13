@@ -1,7 +1,7 @@
 /* 
     Manipular textos
 
-    É possivel alterar textos com os comandos:
+    É possivel alterar textos com as propriedades:
 
     - .innerText
     - .textContent
