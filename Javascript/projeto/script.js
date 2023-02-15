@@ -1,55 +1,82 @@
 // Main
-const convertFrom = document.querySelector('#convertFrom') // Converter de (primeiro select)
-const convertTo = document.querySelector('#convertTo') // Converter para (segundo select)
-const convertButton = document.querySelector('#convertButton') // Botão
+const convertFrom = document.querySelector('#convert-from') // Converter de (primeiro select)
+const convertTo = document.querySelector('#convert-to') // Converter para (segundo select)
+const valueSent = document.querySelector('#value-sent') // Valor enviado no input
+const convertButton = document.querySelector('#convert-button') // Botão
 
 // Section - A ser convertido
-const flagToConvert = document.querySelector('#flagToConvert') // Bandeira
-const captionToConvert = document.querySelector('#captionToConvert') // Legenda
-const valueToConvert = document.querySelector('#valueToConvert') // Valor 
+const flagConvertFrom = document.querySelector('#flag-convert-from') // Bandeira
+const captionConvertFrom = document.querySelector('#caption-convert-from') // Legenda
+const valueConvertFrom = document.querySelector('#value-convert-from') // Valor 
 
 // Section - Convertido
-const flagConverted = document.querySelector('#flagConverted') // Bandeira
-const captionConverted = document.querySelector('#captionConverted') // Legenda
-const valueConverted = document.querySelector('#valueConverted') // Valor
+const flagConvertTo = document.querySelector('#flag-convert-to') // Bandeira
+const captionConvertTo = document.querySelector('#caption-convert-to') // Legenda
+const valueConvertTo = document.querySelector('#value-convert-to') // Valor
 
+const conversionRateReal = {
+    "US$ Dólar americano": 5,
+    "€ Euro": 6,
+    "₿ Bitcoin": 115000
+}
+
+// Conversão de valor
 const currentConvert = () => {
-    const valueSent = document.querySelector('#valueSent') // Valor enviado no input
+    const conversionRate = conversionRateReal[convertTo.value]
+    const result = valueSent.value / conversionRate
 
-    let result = 0
+    if (convertFrom.value === "R$ Real brasileiro") {
+        valueConvertFrom.innerHTML = new Intl.NumberFormat('pt-BR', { style: "currency", currency: "BRL" }).format(valueSent.value)
 
-    if(convertFrom.value === "R$ Real brasileiro"){
-
-        flagToConvert.src = "./assets/brazil-flag.png"
-        captionToConvert.innerHTML = "Real"
-        valueToConvert.innerHTML = new Intl.NumberFormat('pt-BR', {style : "currency", currency : "BRL"}).format(valueSent.value)
-
-        switch(convertTo.value){
-            case "US$ Dólar americano":
-                result = valueSent.value / 5
-                flagConverted.src = "./assets/usa-flag.png"
-                captionConverted.innerHTML = "Dólar Americano"
-                valueConverted.innerHTML = new Intl.NumberFormat('en-US', {style : "currency", currency : "USD"}).format(result)
+        switch (convertTo.value) {
+            case "US$ Dólar americano":               
+                valueConvertTo.innerHTML = new Intl.NumberFormat('US', { style: "currency", currency: "USD" }).format(result)
                 break;
-            case "€ Euro":
-                result = valueSent.value / 6
-                flagConverted.src = "./assets/euro.png"
-                captionConverted.innerHTML = "Euro"
-                valueConverted.innerHTML = new Intl.NumberFormat('eu-EU', {style : "currency", currency : "EUR"}).format(result)
+
+            case "€ Euro":             
+                flagConvertTo.src = "./assets/euro.png"
+                captionConvertTo.innerHTML = "Euro"
+                valueConvertTo.innerHTML = new Intl.NumberFormat('eu-EU', { style: "currency", currency: "EUR" }).format(result)
                 break;
+
             case "₿ Bitcoin":
-                result = valueSent.value / 115.000
-                flagConverted.src = "./assets/bitcoin.png"
-                captionConverted.innerHTML = "Bitcoin"
-                valueConverted.innerHTML = new Intl.NumberFormat('en-US', {style : "currency", currency : "BTC"}).format(result)
+                flagConvertTo.src = "./assets/bitcoin.png"
+                captionConvertTo.innerHTML = "Bitcoin"
+                valueConvertTo.innerHTML = new Intl.NumberFormat('en-US', { style: "currency", currency: "BTC" }).format(result)
                 break;
         }
-    }     
+    }
 }
 
 convertButton.addEventListener('click', currentConvert)
 
-convertTo.addEventListener('change', currentConvert)
+// Alteração de imagem e caption
+convertTo.addEventListener('change', () => {
+    if (convertFrom.value === "R$ Real brasileiro") {
+        flagConvertFrom.src = "./assets/brazil-flag.png"
+        captionConvertFrom.innerHTML = "Real"
+
+        switch (convertTo.value) {
+            case "US$ Dólar americano":
+                flagConvertTo.src = "./assets/usa-flag.png"
+                captionConvertTo.innerHTML = "Dólar Americano"
+                break;
+
+            case "€ Euro":
+                flagConvertTo.src = "./assets/euro.png"
+                captionConvertTo.innerHTML = "Euro"
+                break;
+
+            case "₿ Bitcoin":
+                result = valueSent.value / 115.000
+                flagConvertTo.src = "./assets/bitcoin.png"
+                captionConvertTo.innerHTML = "Bitcoin"
+                break;
+        }
+
+        currentConvert()
+    }
+})
 
 /* 
     Comando para fazer com que resultados tenham formatos de diferentes tipos de moedas:
