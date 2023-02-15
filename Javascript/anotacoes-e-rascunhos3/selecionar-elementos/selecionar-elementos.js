@@ -7,7 +7,7 @@
           
         - getElementByName : Trás os elementos com o nome selecionado (NodeList)
         - querySelector : Trás apenas um elemento, o primeiro que encontrar (element)
-        - querySelector : Trás TODOS os elementos que encontrar (NodeList)
+        - querySelectorAll : Trás TODOS os elementos que encontrar (NodeList)
             Obs: No querySelector é necessário colocar id ou class como no css .(class) #(id)
             
     - NodeList x HTML Collection
