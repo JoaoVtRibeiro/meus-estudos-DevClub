@@ -1,0 +1,26 @@
+ Instalando o Express
+
+    No Node é possivel instalar bibliotecas e frameworks, um dos mais utilizados é o Express.
+    Para fazer a instalação utilize o comando: npm install express / npm i express  
+
+    O express oferece um conjunto de recursos para desenvolver aplicativos web,
+    ele permite criar rotas para manipular solicitações HTTP (como GET, POST, PUT, DELETE) 
+    e fornecer respostas HTTP. Ele também fornece recursos para lidar com sessões, cookies, 
+    autenticação e outras tarefas comuns de aplicativos web
+
+    Quando instalado é criado: 
+    
+    - Uma nova pasta será criada chamada node_modules
+    nela estão todas as dependencias do express
+    Essa pasta é essencial para executar uma aplicação
+
+    - package.json que inclui informações sobre o projeto como:
+        - Nome do projeto
+        - Versão
+        - Nome do autor
+        - Dependencias
+        - Scripts personalizados
+
+     - package-lock.json é uma versão mais detalhada do package.json que garante 
+        que as versões de dependências sejam registradas quando o projeto foi iniciado
+        evitando conflito de versões.
