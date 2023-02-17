@@ -1,0 +1,36 @@
+Lista de Comandos : PowerShell
+
+ls : lista todos os arquivos da pasta atual / na que você está localizado
+
+pwd : mostra o caminho da pasta atual
+
+clear : limpa a tela
+
+mkdir "nome da pasta" : cria uma pasta
+
+cd "nome da pasta" : entra em uma pasta
+
+cd .. : retorna uma pasta anterior
+
+npm init : inicia um projeto node
+    Ao iniciar algumas perguntas são feitas:
+    - nome do projeto
+    - versão do projeto
+    - descrição
+    - entry point (arquivo principal do projeto)
+    - comando de teste
+    - repositório do git
+    - palavras chave
+    - autor
+    - licença
+    - está tudo ok?
+
+npm init -y : inicia um projeto node sem responder as perguntas
+
+npm -v : verifica a versão do npm instalada no sistema
+
+rm "nome do arquivo" : deleta um arquivo
+
+code . : abre a pasta atual no vscode
+
+
