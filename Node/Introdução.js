@@ -34,5 +34,10 @@
     Após o envio de um request, o back-end(servidor) interpreta o pedido,
     realiza uma determinada ação e envia uma resposta ao usuario.
 
+    npm (Node Project Manager)
+
+    O npm é um gerenciador de pacotes do Node,
+    ele auxilia a cria projetos e gerenciar bibliotecas.
+
 */
 
