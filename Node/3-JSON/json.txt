@@ -1,0 +1,22 @@
+JSON (Javascript Object Notation)
+
+Uma extensão que serve como o padrão de troca de dados entre o front-end e back-end
+
+Sua estruta é muito parecida com a de um objeto em Javascript, mas possui algumas regras:
+
+- Sempre utilizar aspas duplas para tudo (com excessão de dados Numbers), ampas simples não funcionam
+- Separar os dados com virgulas, porém o ultimo não pode terminar com uma virgula
+- Aceita array de jsons (parecido com array de objetos)
+
+Exemplo:
+
+[
+    {
+        "name":"Rodolfo",
+        "age":28
+    },
+    {
+        "name":"Maria",
+        "age":26
+    }
+]
