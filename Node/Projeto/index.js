@@ -40,18 +40,31 @@ app.put('/users/:id', (request, response) =>{ // Atualiza um usuário (Modifica 
     
     const updatedUser = {id, name, age} // Usuario sendo atualizado (id se mantem e recebe o novo nome e idade)
 
-    // findIndex é um dos métodos para percorrer arrays, este procura uma posição que se encaixa na condição dada (caso não encontrar, responde com -1)
-    const listPosition = usersList.findIndex(user => user.id === id)
+    // findIndex é um dos métodos para percorrer arrays, este procura uma indice/posição que se encaixa na condição dada (caso não encontrar, responde com -1)
+    const index = usersList.findIndex(user => user.id === id)
 
-    if(listPosition < 0){ // Caso o findIndex não encontrar, sua resposta vai ser -1
+    if(index < 0){ // Caso o findIndex não encontrar, sua resposta vai ser -1
         return response.status(404).json({message: "User not found"}) // 404 - Informa que não foi encontrado (Semântica)
     }
 
-    usersList[listPosition] = updatedUser // Adiciona o usuario atualizado na posição encontrada pelo findIndex
+    usersList[index] = updatedUser // Adiciona o usuario atualizado na indice/posição encontrada pelo findIndex
 
     return response.json(updatedUser)
 })
 
+app.delete('/users/:id', (request, response) =>{ // Deleta um usuário
+    const {id} = request.params
+
+    const index = usersList.findIndex(user => user.id === id)   
+
+    if(index < 0){
+        return response.status(404).json({message: "User not founded"})
+    }
+
+    usersList.splice(index, 1) // .splice(índice inicial - quantos serão deletados - adicionar um novo item(situacional))
+
+    return response.status(204).json() // 204 - Sem contéudo, mas confirma que a operação foi bem sucedida
+})
 
 app.listen(3000, () =>{
     console.log("Server started on port 3000")
