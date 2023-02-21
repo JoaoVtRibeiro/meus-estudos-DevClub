@@ -7,7 +7,6 @@
     Obs: Os endereços de rota podem ter o mesmo nome contanto que o verbo http seja diferente
 */
 
-const { response, request } = require('express')
 const express = require('express')
 const uuid = require('uuid') // Biblioteca que permite gerar id único universal
 
