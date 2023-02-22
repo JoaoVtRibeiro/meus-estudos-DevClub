@@ -5,26 +5,12 @@ const app = express()
 
 app.use(express.json())
 
-/* 
-    [x] post - criar os pedidos 
-    [x] get - mostra todos os pedidos
-    [x] put - altera o pedido
-    [x] delete - deletar um pedido
-    [x] get - mostra um em especifico
-    [x] patch - atualiza o status
-
-    midleware
-    [x] - verifica os id
-    [x] - mostra o metodo de requisição e url
-
-*/
-
 
 // Array simulando o que seria o banco de dados
 const orderList = []
 
 // Middlewares
-const idChecker = (request, response, next) =>{
+const idChecker = (request, response, next) =>{ // Verifica se o id existe
     const {id} = request.params
 
     const index = orderList.findIndex(order => order.id === id)
@@ -36,7 +22,7 @@ const idChecker = (request, response, next) =>{
     next()
 }
 
-const methodAndUrl = (request, response, next) =>{
+const methodAndUrl = (request, response, next) =>{ // Mostra no console o método e url da requisição
 
     console.log(`
     Requisição realizada!
@@ -48,7 +34,7 @@ const methodAndUrl = (request, response, next) =>{
 }
 
 // Rotas
-app.post('/order-creation', methodAndUrl, (request, response) =>{
+app.post('/order-creation', methodAndUrl, (request, response) =>{ // Cria novos pedidos 
     const {order, clientName, price} = request.body
 
     const newOrder = {id: uuid.v4(), order, clientName, price, status:"Em preparação"}
@@ -58,12 +44,12 @@ app.post('/order-creation', methodAndUrl, (request, response) =>{
     return response.status(201).json(newOrder)
 })
 
-app.get('/order-list', methodAndUrl, (request, response) =>{
+app.get('/order-list', methodAndUrl, (request, response) =>{ // Mostra todos os pedidos já feitos
 
     return  response.json(orderList)
 })
 
-app.put('/order-change/:id', idChecker, methodAndUrl, (request, response) =>{
+app.put('/order-change/:id', idChecker, methodAndUrl, (request, response) =>{ // Altera os dados do pedido
     const {id} = request.params
     const {order, clientName, price} = request.body
     const index = request.index
@@ -75,7 +61,7 @@ app.put('/order-change/:id', idChecker, methodAndUrl, (request, response) =>{
     return response.json(orderChange)
 })
 
-app.delete('/order-delete/:id', idChecker, methodAndUrl, (request, response) =>{
+app.delete('/order-delete/:id', idChecker, methodAndUrl, (request, response) =>{ // Deleta um pedido
     const index = request.index
 
     orderList.splice(index, 1)
@@ -84,13 +70,13 @@ app.delete('/order-delete/:id', idChecker, methodAndUrl, (request, response) =>{
 
 })
 
-app.get('/order-check/:id', idChecker, methodAndUrl, (request, response) =>{
+app.get('/order-check/:id', idChecker, methodAndUrl, (request, response) =>{ // Mostra um pedido em específico
     const index = request.index
 
     return  response.json(orderList[index])
 })
 
-app.patch('/order-ready/:id', idChecker, methodAndUrl, (request, response) =>{
+app.patch('/order-ready/:id', idChecker, methodAndUrl, (request, response) =>{ // Atualiza o status do pedido
     const index = request.index
 
     const newStatus = "Pronto"
