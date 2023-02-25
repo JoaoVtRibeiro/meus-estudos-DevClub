@@ -16,20 +16,6 @@ const app = express()
 
 app.use(express.json())
 
-const idChecker = (request, response, next) => {
-    const { id } = request.params
-
-    const index = usersList.findIndex(user => user.id === id)
-
-    if (index < 0) {
-        return response.status(404).json({ error: "User not found" })
-    }
-
-    request.id = id
-    request.index = index
-
-    next()
-}
 const usersList = []
 
 app.get('/users', (request, response) => {
@@ -55,26 +41,6 @@ app.post('/users', (request, response) => {
     } finally { // Finally (Opcional) trecho de código executado após o fim do try catch
         console.log("Fim do try catch")
     }
-})
-
-app.put('/users/:id', idChecker, (request, response) => {
-    const id = request.id
-    const { name, age } = request.body
-    const index = request.index
-
-    const updatedUser = { id, name, age }
-
-    usersList[index] = updatedUser
-
-    return response.json(updatedUser)
-})
-
-app.delete('/users/:id', idChecker, (request, response) => {
-    const index = request.index
-
-    usersList.splice(index, 1)
-
-    return response.status(204).json()
 })
 
 app.listen(3000, () =>{
