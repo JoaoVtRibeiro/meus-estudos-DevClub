@@ -68,7 +68,6 @@ convertTo.addEventListener('change', () => {
                 break;
 
             case "₿ Bitcoin":
-                result = valueSent.value / 115.000
                 flagConvertTo.src = "./assets/bitcoin.png"
                 captionConvertTo.innerHTML = "Bitcoin"
                 break;
