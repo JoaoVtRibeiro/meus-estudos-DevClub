@@ -1,0 +1,9 @@
+Async Await
+
+"Async" é uma maneira de definir uma função como assíncrona, permitindo que o "await" 
+defina um trecho de código que necessite de uma espera para ser executado (sem o javascript "pular" esse trecho)
+
+Dado como exemplo uma copia do projeto "Conversor de moeda", na function "currentConvert"
+há uma variavel "data" com o comando "fetch" que acessa uma api que fornece dados das moedas em tempo real
+
+Para dar o tempo necessario para acessar a api, a function foi definida como async e o comando fetch recebe o await
