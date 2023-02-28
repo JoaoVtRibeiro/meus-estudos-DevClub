@@ -1,0 +1,36 @@
+/* 
+    Display flex
+
+    Um display que se caracteriza por ser bastante flexivel, ele facilita com o alinhamento de itens, centralizar, 
+    a lidar com espaçamentos e posicionamentos, além disso ele também auxilia com a resposividade.
+
+    - Alinha os itens um do lado do outro
+*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+.container{
+    margin:10px;
+    border: 1px solid #9758A6;
+    display: flex;
+}
+
+.block{
+    width: 100px;
+    height: 100px;
+    background: #CDD728;
+    border: 5px solid #9758A6;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
