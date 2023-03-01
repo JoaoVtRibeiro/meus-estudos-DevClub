@@ -1,0 +1,41 @@
+/* 
+    Flex Direction
+
+    Propriedade que muda a direção que os itens vão estar alinhados, 
+    especificando o valor vão estar alinhados por:
+
+    - row // linha ou eixo X (padrão)
+    - row-reverse // linha ou eixo X inverso
+    - column // coluna ou eixo Y
+    - column-reverse // coluna ou eixo Y inverso
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    flex-direction: column; /* Blocos agora estão alinhados no eixo Y (coluna) */
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
