@@ -1,0 +1,41 @@
+/* 
+    Flex Wrap
+
+    Permite que exista um quebra de linha para que o itens 
+    não tenham que ser diminuídos e caber no espaço disponível
+
+    - nowrap (padrão) : sem o flex wrap / quebra de linha , itens irão diminuir para caber no espaço disponível
+    - wrap : quebra linha, itens vão se adaptar de forma flexivel ao espaço disponível
+    - wrap-reverse : quebra de linha reversa, os ultimos itens vão ficar em cima e os primeiros em baixo
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    width: 400px; /* Limitando o espaço disponivel */
+    flex-wrap: wrap; /* elementos se adaptando quebrando linhas */
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
