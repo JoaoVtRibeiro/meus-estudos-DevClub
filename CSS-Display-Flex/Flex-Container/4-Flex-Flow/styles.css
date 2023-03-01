@@ -1,0 +1,40 @@
+/* 
+    Flex-Flow
+
+    Permite aplicar as propriedades Flex direction e wrap em apenas uma linha, ex:
+
+    - row nowrap
+    - row-reverse wrap-reverse
+    - column wrap
+    - etc
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    width: 400px; /* Limitando o espaço disponivel */
+    flex-flow: row-reverse wrap; /* Aplicando Direction e Wrap em uma linha */
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
