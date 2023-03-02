@@ -1,0 +1,43 @@
+/* 
+    Align Items
+
+    Ele é bem parecido com Justify Content, mas esse parâmetro trabalha no eixo secundário
+    também com o alinhamento do conteúdo, seus valores são:
+
+    - stretch (padrão) / Faz com que os itens ocupem todo o espaço disponivel (a menos que seu tamanho seja definido
+    - flex-start(padrão) / Alinha ao inicio do eixo principal
+    - flex-end / Alinha ao final do eixo principal
+    - center / Centraliza 
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    flex-direction: column; /* Eixo principal */
+    align-items: center; /* Centralizando os itens no eixo X secundário (column)*/
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
