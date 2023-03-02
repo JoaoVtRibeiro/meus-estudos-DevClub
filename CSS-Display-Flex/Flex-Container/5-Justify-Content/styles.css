@@ -1,0 +1,48 @@
+/* 
+    Justify Content
+
+    O Display Flex contém dois eixos:
+    
+    MAIN AXIS - eixo principal
+    CROSS AXIS - eixo secundário
+
+    Esse Parâmetro trabalha no eixo principal com o alinhamento do conteúdo, seus valores são:
+
+    - flex-start(padrão) / Alinha ao inicio do eixo principal
+    - flex-end / Alinha ao final do eixo principal
+    - center / Centraliza 
+    - space-between / Espaço apenas entre os itens do conteúdo
+    - space-around / Espaço no item por completo (do eixo principal)
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    justify-content: center; /* Centralizando os itens do eixo Y (Column)*/
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
