@@ -4,7 +4,7 @@
     Ele é bem parecido com Justify Content, mas esse parâmetro trabalha no eixo secundário
     também com o alinhamento do conteúdo, seus valores são:
 
-    - stretch (padrão) / Faz com que os itens ocupem todo o espaço disponivel (a menos que seu tamanho seja definido
+    - stretch (padrão) / Faz com que os itens ocupem todo o espaço disponivel (a menos que seu tamanho seja definido)
     - flex-start(padrão) / Alinha ao inicio do eixo principal
     - flex-end / Alinha ao final do eixo principal
     - center / Centraliza 
