@@ -1,0 +1,49 @@
+/* 
+    Align Content
+
+    Seguindo a mesma linha do Align Items (trabalha no eixo secundário e alinhamento do conteúdo)
+    o Align Content em vez utilizar a área total como base para o alinhamento, ele junta todos os itens para depois alinhar
+    seus valores são:
+
+    - stretch  / Faz com que os itens ocupem todo o espaço disponivel (a menos que seu tamanho seja definido)
+    - flex-start/ Alinha ao inicio do eixo principal
+    - flex-end / Alinha ao final do eixo principal
+    - center / Centraliza
+    - space-between / Espaço apenas entre os itens do conteúdo
+    - space-around / Espaço no item por completo (do eixo principal)
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    width: 300px; /* Limitando o espaço disponivel para facilitar a visualização */
+    flex-wrap: wrap;
+    align-content: center; /* Juntando e centralizando os itens*/
+}
+
+/* Obs: Com align items os item ficaram centralizados, mas separados */
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+} 
