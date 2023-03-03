@@ -1,0 +1,38 @@
+/* 
+    Gap
+
+    Parâmetro que da um espaçamento entre os itens.
+    Esse espaçamento pode ser adicionado tanto no eixo principal quanto no eixo secundário (gap: principal secundario), 
+    a menos que sejam definidos valores diferentes para as propriedades "row-gap" e "column-gap"
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    gap: 70px
+}
+
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+} 
