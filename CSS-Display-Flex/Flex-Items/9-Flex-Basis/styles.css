@@ -1,0 +1,41 @@
+/* 
+    Flex Basis
+
+    Define o tamanho da base um elemento (caso ele não tenha o tamanho de height e width definidos)
+    a base será difinida com o eixo principal, 
+    caso row/x os elementos irão aumentar o width
+    caso coluwn/y os elementos irão aumentar o height
+
+    Obs: Sem o width e height definidos, o align items (que trabalha com eixo secundário) tem como padrão o stretch,
+    assim o eixo secundário será todo ocupado
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+}
+
+
+.block {
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    flex-basis: 100px;
+} 
