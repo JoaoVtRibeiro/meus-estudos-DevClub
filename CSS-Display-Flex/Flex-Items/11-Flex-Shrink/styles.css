@@ -1,0 +1,41 @@
+/* 
+    Flex Shrink
+
+    Funciona de forma parecida com flex grow, porém em vez de aumentar
+    ele diminui os itens conforme o espaço vai diminuindo também (menor que o tamanho de sua base)
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    flex-direction: row;
+}
+
+
+.block {
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    flex-basis: 300px;
+    flex-shrink: 1; /* Blocos diminuindo em escala 1 */
+}
+
+.small-block {
+    flex-shrink: 5; /* Terceiro, quarto e quinto bloco diminuindo em maior escala, 5 */
+}
