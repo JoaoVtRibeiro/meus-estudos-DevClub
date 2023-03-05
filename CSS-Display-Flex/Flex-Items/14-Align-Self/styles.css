@@ -1,0 +1,43 @@
+/* 
+    Align Self
+
+    Muito parecido com Align Items (alinhamento do segundo eixo),
+    porém ele é usado para aplicar em um item especifico
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    flex-direction: row;
+    align-items: center; /* Eixo secundário de todos os itens no centro */
+}
+
+
+.block {
+    width: 200px;
+    height: 200px;
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+.block3{
+    align-self: flex-end; /* Eixo secundário do 3º bloco no final */
+}
