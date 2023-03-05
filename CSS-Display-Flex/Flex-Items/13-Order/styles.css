@@ -1,0 +1,52 @@
+/* 
+    Order
+
+    Organiza a ordem que os itens serão mostrados
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 600px;
+    flex-direction: row;
+}
+
+
+.block {
+    background: #56c1ff;
+    border: 5px solid #122cbd;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    flex: 200px 1 1;
+}
+
+.block1{
+    order: 3;
+}
+.block2{
+    order: 1;
+}
+.block3{
+    order: 5;
+}
+.block4{
+    order: 4;
+}
+.block5{
+    order: 2;
+}
