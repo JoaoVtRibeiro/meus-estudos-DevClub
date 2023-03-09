@@ -1,0 +1,25 @@
+React
+
+    Uma biblioteca Javascript para a criação de interfaces de usúario.
+    Além disso, essa ferramenta é utilizada para criação de SPA (Single Page Application)
+    que são Aplicações Web com o objetivo de trazer uma experiência similar a de um APP desktop
+    (sem os reloads e afins comuns em sites), assim quando o site for aberto todas as páginas já serão carregadas.
+
+    Como ele funciona?
+
+    Com base na DOM (Árvore de elementos html do site em estrutura hierárquica), o React cria uma cópia,
+    uma DOM Virtual, para permitir a manipulação dos elementos. Dessa forma ele faz as alterações necessárias 
+    conforme as intruções programadas e atualiza o navegador de forma inteligente.
+    Esse processo oferece mais agilidade na manipulação das páginas
+
+JSX (Javascript Syntax Extension)
+
+    Uma sintaxe que contém uma extensão ao Javascript, oferecendo algumas
+    funcionalidades a mais e permitindo a escrita de html e javascript no mesmo código
+
+Yarn
+
+    Parecido com o npm, yarn é um gerenciador de pacotes 
+    que ajuda a criar e gerenciar projetos JavaScript, incluindo bibliotecas React.
+    Além disso, o Yarn é compatível com o ecossistema de pacotes npm, o que significa 
+    que você pode instalar pacotes npm usando o Yarn e vice-versa.
