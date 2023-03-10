@@ -1,0 +1,15 @@
+CSS no React
+
+Há duas maneiras, a primeira criando um arquivo css:
+
+- crie um arquivo CSS
+- no arquivo da aplicação (app.js) = import "./nomedoarquivo.css"
+
+A segunda, instalando a biblioteca styled components:
+
+- No terminal = yarn add styled-components / npm i styled-components
+- crie um arquivo .js (ex: styles.js)
+- (opcional) extensão para cor no vscode: vscode-sytled-components
+- importe o styled-components no arquivo styles.js
+- importe o arquivo styles para o app.js
+
