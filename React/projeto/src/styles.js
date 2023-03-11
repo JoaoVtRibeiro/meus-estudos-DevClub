@@ -2,11 +2,27 @@ import styled from "styled-components"
 
 // export const nome = styled.tag = componente
 
-export const Container = styled.div`
-    background-color: red;
+export const Main = styled.main`
+    
 `
+export const Figure = styled.figure`
+    
+`
+export const Img = styled.img`
 
+`
+export const Section = styled.section`
+
+`
 export const H1 = styled.h1`
-    color: blue;
-    font-size: 20px;
+   
+`
+export const Label = styled.label`
+    
+`
+export const Input = styled.input`
+    
+`
+export const Button = styled.button`
+    
 `
