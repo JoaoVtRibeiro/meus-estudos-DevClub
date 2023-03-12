@@ -1,9 +1,15 @@
+// Importando Biblioteca
 import styled from "styled-components"
 
-// export const nome = styled.tag = componente
+// Importanando Imagens
+import Background from './assets/Log_in/background-login.png'
+
+
+// componente : export const nome = styled.tag 
 
 export const Main = styled.main`
-    
+    background: url('${Background}'); // url utilizando a imagem importada
+    background-size: cover; // por padrão a imagem se repete, cover estica a imagem
 `
 export const Figure = styled.figure`
     
