@@ -10,6 +10,8 @@ import ArrowRight from "./assets/Log_in/arrow-right.png"
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
+    const users = [{ id: Math.random, name: "Joao", age: "22" }, { id: Math.random, name: "Maria", age: "23" }]
+
     return (
         <Body>
             <Container>
@@ -27,6 +29,14 @@ const App = () => {
                     <Input id="Idade" placeholder="Idade" />
 
                     <Button>Cadastrar<Img src={ArrowRight} alt="seta"></Img></Button>
+
+                    <ul>
+                        {users.map((user) => (
+                            <li key={user.id}>
+                                {user.name} - {user.age}
+                            </li>
+                        ))}
+                    </ul>
                 </Main>
             </Container>
         </Body>
