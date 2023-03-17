@@ -1,11 +1,12 @@
 import React from "react"
 
 // Estilizações do styles.js
-import { Body, Container, Figure, Img, Main, H1, Label, Input, Button } from "./styles"; // Importação dos componentes CSS
+import { Body, Container, Figure, Main, H1, Label, Input, Button, User } from "./styles"; // Importação dos componentes CSS
 
 // Imagens
 import PeopleTalk from "./assets/Log_in/people-talk.png"
 import ArrowRight from "./assets/Log_in/arrow-right.png"
+import DeleteButton from "./assets/Sign_up/delete-button.png"
 
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
@@ -16,7 +17,7 @@ const App = () => {
         <Body>
             <Container>
                 <Figure>
-                    <Img src={PeopleTalk} alt="Pessoas conversando"></Img>
+                    <img src={PeopleTalk} alt="Pessoas conversando"></img>
                 </Figure>
 
                 <Main>
@@ -28,13 +29,14 @@ const App = () => {
                     <Label for="Idade">Idade</Label>
                     <Input id="Idade" placeholder="Idade" />
 
-                    <Button>Cadastrar<Img src={ArrowRight} alt="seta"></Img></Button>
+                    <Button>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
 
                     <ul>
                         {users.map((user) => (
-                            <li key={user.id}>
-                                {user.name} - {user.age}
-                            </li>
+                            <User key={user.id}>
+                                <p>{user.name}</p>  <p>{user.age}</p> 
+                                <button><img src={DeleteButton} alt="botão de deletar"></img></button>
+                            </User>
                         ))}
                     </ul>
                 </Main>
