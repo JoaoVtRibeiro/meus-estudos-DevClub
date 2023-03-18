@@ -1,0 +1,10 @@
+Para evitar uma constância renderização para cada pequena alteração 
+em uma variável (a aplicação não ficaria boa performance), o React tem um conceito chamado de "Estado"/"State"
+
+O Estado/State é como uma variável, porém ele só irá renderizar a página novamente quando solicitado
+
+Para importar: import { useState } from "react"; (Também é possivel importar junto com o react = import React, { useState }  from "react")
+
+Sua estrutura é: [nome do estado, função que atualiza o estado] = useState([itens])
+
+

@@ -19,7 +19,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 100%;  
+    height: 100vh;  
 `
 export const Figure = styled.figure`
     margin-top: 30px;

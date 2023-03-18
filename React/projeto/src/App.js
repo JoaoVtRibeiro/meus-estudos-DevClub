@@ -8,10 +8,19 @@ import PeopleTalk from "./assets/Log_in/people-talk.png"
 import ArrowRight from "./assets/Log_in/arrow-right.png"
 import DeleteButton from "./assets/Sign_up/delete-button.png"
 
+// React Hooks, Ferramentas Auxiliares do React
+import { useState } from "react"; // Criar estados
+
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
-    const users = [{ id: Math.random, name: "Joao", age: "22" }, { id: Math.random, name: "Maria", age: "23" }]
+
+    // Utilizando um React Hook para criar um "Estado/State"
+    const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
+
+    function addNewUser(){
+        setUsers([{ id: Math.random, name: "Joao", age: "22" }])
+    }
 
     return (
         <Body>
@@ -29,7 +38,7 @@ const App = () => {
                     <Label for="Idade">Idade</Label>
                     <Input id="Idade" placeholder="Idade" />
 
-                    <Button>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
+                    <Button onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
 
                     <ul>
                         {users.map((user) => (
