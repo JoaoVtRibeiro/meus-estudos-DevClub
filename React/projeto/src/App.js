@@ -17,9 +17,19 @@ const App = () => {
 
     // Utilizando um React Hook para criar um "Estado/State"
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
+    const [name, setName] = useState([])
+    const [age, setAge] = useState([])
 
     function addNewUser(){
-        setUsers([{ id: Math.random, name: "Joao", age: "22" }])
+        setUsers([{id: Math.random, name, age}])
+    }
+
+    function changeInputName(event){
+        setName(event.target.value) // event = parametro da função rebendo tudo sobre o evento, target = input e value valor do input
+    }
+
+    function changeInputAge(event){
+        setAge(event.target.value)
     }
 
     return (
@@ -33,10 +43,10 @@ const App = () => {
                     <H1>Olá!</H1>
 
                     <Label for="Nome">Nome</Label>
-                    <Input id="Nome" placeholder="Nome" />
+                    <Input onChange={changeInputName} id="Nome" placeholder="Nome" />
 
                     <Label for="Idade">Idade</Label>
-                    <Input id="Idade" placeholder="Idade" />
+                    <Input onChange={changeInputAge} id="Idade" placeholder="Idade" />
 
                     <Button onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
 
