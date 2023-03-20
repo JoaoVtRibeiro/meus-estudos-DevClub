@@ -21,7 +21,7 @@ const App = () => {
     const [age, setAge] = useState([])
 
     function addNewUser(){
-        setUsers([{id: Math.random, name, age}])
+        setUsers([... users, {id: Math.random, name, age}]) // Spread "espalhando" os itens do array anterior no novo array
     }
 
     function changeInputName(event){
