@@ -10,26 +10,17 @@ import DeleteButton from "./assets/Sign_up/delete-button.png"
 
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
-
-
+import { useRef } from "react"; // Permite utilizar os componentes como refencia e obter os valores de suas propriedades
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
 
     // Utilizando um React Hook para criar um "Estado/State"
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
-    const [name, setName] = useState([])
-    const [age, setAge] = useState([])
+    const inputName = useRef() // Variaveis dos inputs usadas para referenciar o componente
+    const inputAge = useRef()
 
     function addNewUser(){
-        setUsers([... users, {id: Math.random, name, age}]) // Spread "espalhando" os itens do array anterior no novo array
-    }
-
-    function changeInputName(event){
-        setName(event.target.value) // event = parametro da função rebendo tudo sobre o evento, target = input e value valor do input
-    }
-
-    function changeInputAge(event){
-        setAge(event.target.value)
+        setUsers([... users, {id: Math.random, name: inputName.current.value, age: inputAge.current.value}]) // Spread "espalhando" os itens do array anterior no novo array
     }
 
     return (
@@ -43,10 +34,10 @@ const App = () => {
                     <H1>Olá!</H1>
 
                     <Label for="Nome">Nome</Label>
-                    <Input onChange={changeInputName} id="Nome" placeholder="Nome" />
+                    <Input ref={inputName} id="Nome" placeholder="Nome" />
 
                     <Label for="Idade">Idade</Label>
-                    <Input onChange={changeInputAge} id="Idade" placeholder="Idade" />
+                    <Input ref={inputAge} id="Idade" placeholder="Idade" />
 
                     <Button onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
 
