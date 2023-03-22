@@ -19,8 +19,13 @@ const App = () => {
     const inputName = useRef() // Variaveis dos inputs usadas para referenciar o componente
     const inputAge = useRef()
 
-    function addNewUser(){
-        setUsers([... users, {id: Math.random, name: inputName.current.value, age: inputAge.current.value}]) // Spread "espalhando" os itens do array anterior no novo array
+    function addNewUser() {
+        setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }]) // Spread "espalhando" os itens do array anterior no novo array
+    }
+
+    function deleteUser(userIdToDelete) {
+        const newUsers = users.filter((user) => user.id !== userIdToDelete);
+        setUsers(newUsers)
     }
 
     return (
@@ -44,8 +49,10 @@ const App = () => {
                     <ul>
                         {users.map((user) => (
                             <User key={user.id}>
-                                <p>{user.name}</p>  <p>{user.age}</p> 
-                                <button><img src={DeleteButton} alt="botão de deletar"></img></button>
+                                <p>{user.name}</p>  <p>{user.age}</p>
+                                <button onClick={() => deleteUser(user.id)}> {/* Funções com parâmetros precisam ser arrow functions */ }
+                                    <img src={DeleteButton} alt="botão de deletar"></img>
+                                </button>
                             </User>
                         ))}
                     </ul>
