@@ -1,0 +1,13 @@
+React Hooks
+
+    Ferramentas auxiliares do react que ajudam na lógica e tratamento de componentes
+    e podem ser importandas, algumas delas são:
+
+useState
+
+    Utilizado para criar estados/states (explicação no arquivo "3-Estados.txt")
+
+useRef
+
+    Permite utilizar os componentes do DOM como referência e com isso pode, por exemplo, acessar os valores de suas propriedades
+    

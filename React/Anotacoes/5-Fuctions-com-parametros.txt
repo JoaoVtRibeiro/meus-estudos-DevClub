@@ -1,0 +1,6 @@
+Lembre-se que quando for enviar/utilizar uma função com parâmetros no React,
+elas devem estar como arrow functions
+
+() => nomedafunção(parâmetro1, parâmetro2)
+
+Isso porque, se não for estiver dessa forma a função será chamada assim que iniciar a aplicação

@@ -1,10 +1,11 @@
-Para evitar uma constância renderização para cada pequena alteração 
-em uma variável (a aplicação não ficaria boa performance), o React tem um conceito chamado de "Estado"/"State"
+O Estado/State é como uma variável, porém ele representa a forma como um componente 
+está no momento em que é renderizado na tela e para modifica-lo é importante lembrar que o estado é imutavel, logo
+para ser atualizado ele será rederizado novamente, a atualização será por meio da função setState().
 
-O Estado/State é como uma variável, porém ele só irá renderizar a página novamente quando solicitado
+Sua estrutura é: [nome do estado, função que atualiza o estado] = useState([itens])
 
 Para importar: import { useState } from "react"; (Também é possivel importar junto com o react = import React, { useState }  from "react")
 
-Sua estrutura é: [nome do estado, função que atualiza o estado] = useState([itens])
+
 
 
