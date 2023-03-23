@@ -1,4 +1,5 @@
 import React from "react"
+import axios from 'axios' // Biblioteca para acessar / consumir API
 
 // Estilizações do styles.js
 import { Body, Container, Figure, Main, H1, Label, Input, Button, User } from "./styles"; // Importação dos componentes CSS
@@ -19,8 +20,23 @@ const App = () => {
     const inputName = useRef() // Variaveis dos inputs usadas para referenciar o componente
     const inputAge = useRef()
 
-    function addNewUser() {
-        setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }]) // Spread "espalhando" os itens do array anterior no novo array
+    async function addNewUser() {
+
+        const backEndPost = await axios.post("http://localhost:3001/users", { // axios.tipodarota("endereçodarota", {dados em .json})
+            name: inputName.current.value,
+            age: inputAge.current.value
+        })
+
+        console.log(backEndPost)
+
+        /*setUsers([
+            ...users, // Spread "espalhando" os itens do array anterior no novo array
+            { 
+                id: Math.random(), 
+                name: inputName.current.value, 
+                age: inputAge.current.value 
+            }
+        ]) */
     }
 
     function deleteUser(userIdToDelete) {
@@ -50,7 +66,7 @@ const App = () => {
                         {users.map((user) => (
                             <User key={user.id}>
                                 <p>{user.name}</p>  <p>{user.age}</p>
-                                <button onClick={() => deleteUser(user.id)}> {/* Funções com parâmetros precisam ser arrow functions */ }
+                                <button onClick={() => deleteUser(user.id)}> {/* Funções com parâmetros precisam ser arrow functions */}
                                     <img src={DeleteButton} alt="botão de deletar"></img>
                                 </button>
                             </User>
