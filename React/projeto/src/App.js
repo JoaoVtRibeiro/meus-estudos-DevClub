@@ -11,7 +11,7 @@ import DeleteButton from "./assets/Sign_up/delete-button.png"
 
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
-import { useRef } from "react"; // Permite utilizar os componentes como refencia e obter os valores de suas propriedades
+import { useRef } from "react"; // Permite utilizar os componentes como referência e com isso acessar os valores de suas propriedades
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
 
