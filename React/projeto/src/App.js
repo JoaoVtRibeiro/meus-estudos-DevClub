@@ -22,26 +22,18 @@ const App = () => {
 
     async function addNewUser() {
 
-        const backEndPost = await axios.post("http://localhost:3001/users", { // axios.tipodarota("endereçodarota", {dados em .json})
+        const { data: newUser } = await axios.post("http://localhost:3001/users", { // axios.tipodarota("endereçodarota", {dados em .json})
             name: inputName.current.value,
             age: inputAge.current.value
         })
 
-        console.log(backEndPost)
-
-        /*setUsers([
-            ...users, // Spread "espalhando" os itens do array anterior no novo array
-            { 
-                id: Math.random(), 
-                name: inputName.current.value, 
-                age: inputAge.current.value 
-            }
-        ]) */
+        console.log(newUser)
+        setUsers([...users, newUser]) // Spread "espalhando" os itens do array anterior no novo array
     }
 
     function deleteUser(userIdToDelete) {
-        const newUsers = users.filter((user) => user.id !== userIdToDelete);
-        setUsers(newUsers)
+        const newListUsers = users.filter((user) => user.id !== userIdToDelete);
+        setUsers(newListUsers)
     }
 
     return (
