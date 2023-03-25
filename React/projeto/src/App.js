@@ -12,6 +12,8 @@ import DeleteButton from "./assets/Sign_up/delete-button.png"
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
 import { useRef } from "react"; // Permite utilizar os componentes como referência e com isso acessar os valores de suas propriedades
+import { useEffect } from "react"; // Causa "efeitos colaterais", quando a página inicia ou quando estados são alterados
+
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
 
@@ -22,18 +24,27 @@ const App = () => {
 
     async function addNewUser() {
 
-       /*  const { data: newUser } = await axios.post("http://localhost:3001/users", { // axios.tipodarota("endereçodarota", {dados em .json})
+        const { data: newUser } = await axios.post("http://localhost:3001/users", { // axios.tipodarota("endereçodarota", {dados em .json})
             name: inputName.current.value,
             age: inputAge.current.value
         })
 
         console.log(newUser)
-        setUsers([...users, newUser]) // Spread "espalhando" os itens do array anterior no novo array */
+        setUsers([...users, newUser]) // Spread "espalhando" os itens do array anterior no novo array
 
-        const {data: userList} = await axios.get("http://localhost:3001/users")
 
-        setUsers(userList)
     }
+
+    useEffect(() => { // Rota Get sendo chamada quando a página é iniciada
+        async function fetchUsers() {
+            const { data: userList } = await axios.get("http://localhost:3001/users")
+
+            setUsers(userList)
+        }
+
+        fetchUsers() // Como useEffect não aceita o async, é necessario criar e chamar uma nova função
+
+    }, []) // [] específica quais estados (quando alterados) vão chamar o useEffect
 
     function deleteUser(userIdToDelete) {
         const newListUsers = users.filter((user) => user.id !== userIdToDelete);
