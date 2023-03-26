@@ -46,7 +46,9 @@ const App = () => {
 
     }, []) // [] específica quais estados (quando alterados) vão chamar o useEffect
 
-    function deleteUser(userIdToDelete) {
+    async function deleteUser(userIdToDelete) {
+        await axios.delete(`http://localhost:3001/users/${userIdToDelete}`)
+
         const newListUsers = users.filter((user) => user.id !== userIdToDelete);
         setUsers(newListUsers)
     }
