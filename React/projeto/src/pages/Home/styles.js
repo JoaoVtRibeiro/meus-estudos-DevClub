@@ -2,14 +2,14 @@
 import styled from "styled-components"
 
 // Importanando imagens do fundo
-import Background from './assets/Log_in/background-login.png'
+import Background from '../../assets/Log_in/background-login.png'
 
 
 // componente : export const nome = styled.tag 
 
 export const Body = styled.body`
     width: 100%;
-    height: 100%;
+    height: 100vh;
 `
 
 export const Container = styled.div`
@@ -19,7 +19,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 100%;  
+    height: 110vh;  
 `
 export const Figure = styled.figure`
     margin-top: 30px;
@@ -82,33 +82,11 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 26px;
+    margin-top: 60px;
     &:hover{
         opacity: .8;
     }
     &:active{
         opacity: .6;
-    }
-`
-export const User = styled.li`
-    margin-top: 25px;
-    width: 342px;
-    height: 58px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 14px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    p{
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 28px;
-        color: #FFFFFF;
-    }
-
-    button{
-        background: none;
-        border: none;
-        cursor: pointer;
     }
 `
