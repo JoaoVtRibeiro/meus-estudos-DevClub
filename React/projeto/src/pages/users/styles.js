@@ -2,14 +2,14 @@
 import styled from "styled-components"
 
 // Importanando imagens do fundo
-import Background from '../../assets/Log_in/background-login.png'
+import Background from '../../assets/Sign_up/background-signup.png'
 
 
 // componente : export const nome = styled.tag 
 
 export const Body = styled.body`
     width: 100%;
-    height: 100%;
+    height: 100vh;
 `
 
 export const Container = styled.div`
@@ -19,7 +19,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 100%;  
+    height: 110vh;  
 `
 export const Figure = styled.figure`
     margin-top: 30px;
@@ -32,6 +32,7 @@ export const Main = styled.main`
     flex-direction: column;
     padding: 50px 36px;
     height: 100%;
+    backdrop-filter: blur(22.5px);
 `
 
 export const H1 = styled.h1`
@@ -42,38 +43,12 @@ export const H1 = styled.h1`
     margin-top: 11px;
     margin-bottom: 70px;
 `
-export const Label = styled.label`
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: -0.408px;
-    color: #EEEEEE;
-    padding-left: 25px;
-`
-export const Input = styled.input`
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.25);
-    border: none;
-    outline: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 14px; 
-    width: 342px;
-    height: 58px;
-    padding-left: 25px;
-    margin-bottom: 34px;
-    &::placeholder{
-        color: #FFFFFF;
-        opacity: .6;
-    }
-`
 export const Button = styled.button`
     font-size: 17px;
     line-height: 28px;
     color: #FFFFFF;
-    border: none;
-    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #FFFFFF;
+    background: transparent;
     border-radius: 14px;
     width: 342px;
     height: 74px;
@@ -82,12 +57,12 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 26px;
+    margin-top: 60px;
     &:hover{
-        opacity: .8;
+        opacity: .5;
     }
     &:active{
-        opacity: .6;
+        opacity: .2;
     }
 `
 export const User = styled.li`
@@ -99,13 +74,13 @@ export const User = styled.li`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     p{
         font-weight: 400;
         font-size: 24px;
         line-height: 28px;
         color: #FFFFFF;
     }
-
     button{
         background: none;
         border: none;
