@@ -9,8 +9,8 @@ import Users from "./pages/Users";
 function Routes() {
     return (
         <Router> {/* Permite definir rotas */}
-            <Switch> {/* Quando a rota for encontra ele para de procurar outras com o mesmo nome */}
-                <Route exact path="/" component={Home} /> {/* cria a rota */}
+            <Switch> {/* Quando a rota for encontrada, outras não vão mais ser procuradas (performace) */}
+                <Route exact path="/" component={Home} /> {/* Criação da rota, exact path="/caminho" component{Página} */}
                 <Route exact path="/usuarios" component={Users} />
             </Switch>
         </Router>
