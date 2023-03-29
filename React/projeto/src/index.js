@@ -1,7 +1,7 @@
 import React from "react"; // Importando a biblioteca React
 import ReactDOM from "react-dom"; // Modulo/Dependencia react, permite manipular a DOM
-import Users from "./pages/Users"; // Aplicação (após "Home", não é necessario escrever o nome do arquivo caso for index.js)
-import GlobalStyles from './globalStyles' // Estilos globais
+import Users from "./pages/Users"; 
+import GlobalStyles from './styles/globalStyles' // Estilos globais
 
 ReactDOM.render( /* Método  que renderiza os componentes react na página (atualizando a árvore da DOM) 
 Ele recebe dois argumentos:

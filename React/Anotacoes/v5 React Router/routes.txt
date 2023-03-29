@@ -1,0 +1,33 @@
+React Router é uma biblioteca de roteamento, que permite navegar 
+entre diferentes páginas em um aplicativo React sem precisar recarregar a página inteira
+
+Link sobre os componentes: https://v5.reactrouter.com/web/guides/quick-start
+
+- BrowserRouter as Router / <Router></Router>
+    Permite que você defina rotas
+
+- Route
+    Dentro do componente <Router>, route cria uma rota com base no caminho 
+    especificado pela propriedade "path" e pela página que você quer redenrizar nesse caminho
+
+    Ex:
+
+    import Home from "./pages/Home"
+
+    <Router>
+      <Route path="/" component={Home} />
+    </Router>
+
+    As propriedades do Route são:
+
+        - path, especifica o caminho da URL que deve ser correspondido para ativar a rota.
+        - exact, indica que a rota só deve ser correspondida se a URL for exatamente igual ao caminho especificado.
+        - render, permite que você defina uma função que renderize o componente correspondente em vez de passá-lo diretamente como uma prop.
+        - children, permite que você aninhe rotas dentro de outras rotas para criar uma hierarquia de roteamento.
+
+- Switch
+
+    Por padrão quando o React Router recebe uma requisição ele confere todas 
+    as rotas mesmo já tendo encontrado a requisitada, o Switch faz com que quando a rota 
+    for encontrada seja renderizada, sem a necessidade de procurar por outras, melhorando a perfomace
+
