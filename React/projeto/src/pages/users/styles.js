@@ -1,5 +1,6 @@
 // Importando Biblioteca
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 // Importanando imagens do fundo
 import Background from '../../assets/Sign_up/background-signup.png'
@@ -43,7 +44,7 @@ export const H1 = styled.h1`
     margin-top: 11px;
     margin-bottom: 70px;
 `
-export const Button = styled.button`
+export const Button = styled(Link)`
     font-size: 17px;
     line-height: 28px;
     color: #FFFFFF;

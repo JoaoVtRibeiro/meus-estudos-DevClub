@@ -11,8 +11,10 @@ function Routes() {
         <Router> {/* Permite definir rotas */}
             <Switch> {/* Quando a rota for encontrada, outras não vão mais ser procuradas (performace) */}
                 <Route exact path="/" component={Home} /> {/* Criação da rota, exact path="/caminho" component{Página} */}
-                <Route exact path="/usuarios" component={Users} />
+                <Route exact path="/users" component={Users} />
             </Switch>
         </Router>
     )
 }
+
+export default Routes

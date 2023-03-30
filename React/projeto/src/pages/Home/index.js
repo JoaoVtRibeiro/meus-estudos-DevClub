@@ -42,12 +42,12 @@ const App = () => {
                     <H1>Olá!</H1>
 
                     <Label for="Nome">Nome</Label>
-                    <Input ref={inputName} id="Nome" placeholder="Nome" />
+                    <Input ref={inputName} id="Nome" placeholder="Nome" autoComplete="off" />
 
                     <Label for="Idade">Idade</Label>
-                    <Input ref={inputAge} id="Idade" placeholder="Idade" />
+                    <Input ref={inputAge} id="Idade" placeholder="Idade" autoComplete="off" />
 
-                    <Button onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
+                    <Button to="/users" onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
 
                 </Main>
             </Container>

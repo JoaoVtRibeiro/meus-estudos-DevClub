@@ -18,7 +18,7 @@ const Users = () => {
 
     // Utilizando um React Hook para criar um "Estado/State"
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
- 
+
     useEffect(() => { // Rota Get sendo chamada quando a página é iniciada
         async function fetchUsers() {
             const { data: userList } = await axios.get("http://localhost:3001/users")
@@ -58,7 +58,7 @@ const Users = () => {
                         ))}
                     </ul>
 
-                    <Button><img src={ArrowLeft} alt="seta"></img>Voltar</Button>
+                    <Button to="/"><img src={ArrowLeft} alt="seta"></img>Voltar</Button>
                 </Main>
             </Container>
         </Body>

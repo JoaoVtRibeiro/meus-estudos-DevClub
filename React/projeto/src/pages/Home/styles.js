@@ -1,5 +1,6 @@
 // Importando Biblioteca
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 // Importanando imagens do fundo
 import Background from '../../assets/Log_in/background-login.png'
@@ -68,7 +69,7 @@ export const Input = styled.input`
         opacity: .6;
     }
 `
-export const Button = styled.button`
+export const Button = styled(Link)`
     font-size: 17px;
     line-height: 28px;
     color: #FFFFFF;

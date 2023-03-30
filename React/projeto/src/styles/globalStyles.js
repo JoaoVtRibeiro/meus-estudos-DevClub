@@ -13,6 +13,7 @@ export default createGlobalStyle` // Exportando os estilos
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    text-decoration:none;
 }`;
 
 

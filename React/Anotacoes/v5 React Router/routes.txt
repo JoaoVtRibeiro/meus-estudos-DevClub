@@ -31,3 +31,18 @@ Link sobre os componentes: https://v5.reactrouter.com/web/guides/quick-start
     as rotas mesmo já tendo encontrado a requisitada, o Switch faz com que quando a rota 
     for encontrada seja renderizada, sem a necessidade de procurar por outras, melhorando a perfomace
 
+- Link
+    Muito parecido com a tag <a> do html, o Link permite referenciar e navegar entre rotas
+
+    Estrutura:
+        import { Link } from "react-router-dom"
+
+        <Link to="/nomedarota"></Link>
+
+    Também é possivel utilizar o Link como um componente html/css no styles.js:
+
+        import { Link } from "react-router-dom"
+
+        export const Nomedocomponente = styled(Link)
+
+    Dessa forma, o componente será tratado como Link
