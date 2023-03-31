@@ -1,17 +1,12 @@
 // Importando Biblioteca
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+
 
 // Importanando imagens do fundo
 import Background from '../../assets/Sign_up/background-signup.png'
 
 
 // componente : export const nome = styled.tag 
-
-export const Body = styled.body`
-    width: 100%;
-    height: 100vh;
-`
 
 export const Container = styled.div`
     background: url('${Background}'); // url utilizando a imagem importada
@@ -20,10 +15,11 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 110vh;  
+    height: 100%;
+    min-height: 100vh; 
 `
 export const Figure = styled.figure`
-    margin-top: 30px;
+    margin-top: 20px;
 `
 
 export const Main = styled.main`
@@ -32,7 +28,7 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     padding: 50px 36px;
-    height: 100%;
+    min-height: calc(100vh - 100px - 20px - 40px); // 100vh - altura da imagem - margin figure - gap container
     backdrop-filter: blur(22.5px);
 `
 
@@ -44,7 +40,7 @@ export const H1 = styled.h1`
     margin-top: 11px;
     margin-bottom: 70px;
 `
-export const Button = styled(Link)`
+export const Button = styled.button`
     font-size: 17px;
     line-height: 28px;
     color: #FFFFFF;

@@ -2,7 +2,7 @@ import React from "react"
 import axios from 'axios' // Biblioteca para acessar / consumir API
 
 // Estilizações do styles.js
-import { Body, Container, Figure, Main, H1, Button, User } from "./styles"; // Importação dos componentes CSS
+import { Container, Figure, Main, H1, Button, User } from "./styles"; // Importação dos componentes CSS
 
 // Imagens
 import UsersImage from "../../assets/Sign_up/users-image.png"
@@ -12,12 +12,14 @@ import DeleteButton from "../../assets/Sign_up/delete-button.png"
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
 import { useEffect } from "react"; // Causa "efeitos colaterais", quando a página inicia ou quando estados são alterados
+import { useHistory } from "react-router-dom"; // Permite navegar entre páginas
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const Users = () => {
 
     // Utilizando um React Hook para criar um "Estado/State"
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
+    const history = useHistory()
 
     useEffect(() => { // Rota Get sendo chamada quando a página é iniciada
         async function fetchUsers() {
@@ -37,31 +39,33 @@ const Users = () => {
         setUsers(newListUsers)
     }
 
+    function backToHome() {
+        history.push("/")
+    }
+
     return (
-        <Body>
-            <Container>
-                <Figure>
-                    <img src={UsersImage} alt="Imagem representando os usuários"></img>
-                </Figure>
+        <Container>
+            <Figure>
+                <img src={UsersImage} alt="Imagem representando os usuários"></img>
+            </Figure>
 
-                <Main>
-                    <H1>Usuários</H1>
+            <Main>
+                <H1>Usuários</H1>
 
-                    <ul>
-                        {users.map((user) => (
-                            <User key={user.id}>
-                                <p>{user.name}</p>  <p>{user.age} Anos</p>
-                                <button onClick={() => deleteUser(user.id)}> {/* Funções com parâmetros precisam ser arrow functions */}
-                                    <img src={DeleteButton} alt="botão de deletar"></img>
-                                </button>
-                            </User>
-                        ))}
-                    </ul>
+                <ul>
+                    {users.map((user) => (
+                        <User key={user.id}>
+                            <p>{user.name}</p>  <p>{user.age} Anos</p>
+                            <button onClick={() => deleteUser(user.id)}> {/* Funções com parâmetros precisam ser arrow functions */}
+                                <img src={DeleteButton} alt="botão de deletar"></img>
+                            </button>
+                        </User>
+                    ))}
+                </ul>
 
-                    <Button to="/"><img src={ArrowLeft} alt="seta"></img>Voltar</Button>
-                </Main>
-            </Container>
-        </Body>
+                <Button onClick={backToHome}><img src={ArrowLeft} alt="seta"></img>Voltar</Button>
+            </Main>
+        </Container>
     )
 }
 

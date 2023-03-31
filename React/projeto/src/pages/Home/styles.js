@@ -1,6 +1,6 @@
 // Importando Biblioteca
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+
 
 // Importanando imagens do fundo
 import Background from '../../assets/Log_in/background-login.png'
@@ -8,31 +8,27 @@ import Background from '../../assets/Log_in/background-login.png'
 
 // componente : export const nome = styled.tag 
 
-export const Body = styled.body`
-    width: 100%;
-    height: 100vh;
-`
-
 export const Container = styled.div`
     background: url('${Background}'); // url utilizando a imagem importada
     background-size: cover; // por padrão a imagem se repete, cover estica a imagem
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    height: 110vh;  
+    gap: 25px;
+    height: 100%;
+    min-height: 100vh;
 `
 export const Figure = styled.figure`
-    margin-top: 30px;
+    display:flex;
+    margin-top: 10px;
 `
-
 export const Main = styled.main`
     background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
     border-radius: 61px 61px 0px 0px;
     display: flex;
     flex-direction: column;
     padding: 50px 36px;
-    height: 100%;
+    min-height: calc(100vh - 177px - 10px - 25px); // 100vh - altura da imagem - margin figure - gap container 
 `
 
 export const H1 = styled.h1`
@@ -69,7 +65,7 @@ export const Input = styled.input`
         opacity: .6;
     }
 `
-export const Button = styled(Link)`
+export const Button = styled.button`
     font-size: 17px;
     line-height: 28px;
     color: #FFFFFF;

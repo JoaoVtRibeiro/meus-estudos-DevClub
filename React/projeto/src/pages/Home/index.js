@@ -2,7 +2,7 @@ import React from "react"
 import axios from 'axios' // Biblioteca para acessar / consumir API
 
 // Estilizações do styles.js
-import { Body, Container, Figure, Main, H1, Label, Input, Button } from "./styles"; // Importação dos componentes CSS
+import { Container, Figure, Main, H1, Label, Input, Button } from "./styles"; // Importação dos componentes CSS
 
 // Imagens
 import PeopleTalk from "../../assets/Log_in/people-talk.png"
@@ -11,6 +11,7 @@ import ArrowRight from "../../assets/Log_in/arrow-right.png"
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
 import { useRef } from "react"; // Permite utilizar os componentes como referência e com isso acessar os valores de suas propriedades
+import { useHistory } from "react-router-dom" // Permite navegar entre páginas
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
     const inputName = useRef() // Variaveis dos inputs usadas para referenciar o componente
     const inputAge = useRef()
+    const history = useHistory() 
 
     async function addNewUser() {
 
@@ -29,29 +31,29 @@ const App = () => {
 
         console.log(newUser)
         setUsers([...users, newUser]) // Spread "espalhando" os itens do array anterior no novo array
+
+        history.push("/users")
     }
 
     return (
-        <Body>
-            <Container>
-                <Figure>
-                    <img src={PeopleTalk} alt="Pessoas conversando"></img>
-                </Figure>
+        <Container>
+            <Figure>
+                <img src={PeopleTalk} alt="Pessoas conversando"></img>
+            </Figure>
 
-                <Main>
-                    <H1>Olá!</H1>
+            <Main>
+                <H1>Olá!</H1>
 
-                    <Label for="Nome">Nome</Label>
-                    <Input ref={inputName} id="Nome" placeholder="Nome" autoComplete="off" />
+                <Label for="Nome">Nome</Label>
+                <Input ref={inputName} id="Nome" placeholder="Nome" autoComplete="off" />
 
-                    <Label for="Idade">Idade</Label>
-                    <Input ref={inputAge} id="Idade" placeholder="Idade" autoComplete="off" />
+                <Label for="Idade">Idade</Label>
+                <Input ref={inputAge} id="Idade" placeholder="Idade" autoComplete="off" />
 
-                    <Button to="/users" onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
+                <Button onClick={addNewUser}>Cadastrar<img src={ArrowRight} alt="seta"></img></Button>
 
-                </Main>
-            </Container>
-        </Body>
+            </Main>
+        </Container>
     )
 }
 

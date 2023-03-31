@@ -10,4 +10,8 @@ useState
 useRef
 
     Permite utilizar os componentes do DOM como referência e com isso pode, por exemplo, acessar os valores de suas propriedades
+
+useHistory (react-router-dom)
+
+    Hook da Biblioteca React Router Dom, ele permite navegar entre páginas
     
