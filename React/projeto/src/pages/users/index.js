@@ -12,14 +12,14 @@ import DeleteButton from "../../assets/Sign_up/delete-button.png"
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
 import { useEffect } from "react"; // Causa "efeitos colaterais", quando a página inicia ou quando estados são alterados
-import { useHistory } from "react-router-dom"; // Permite navegar entre páginas
+import { useNavigate } from "react-router-dom"; // Permite navegar entre páginas
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const Users = () => {
 
     // Utilizando um React Hook para criar um "Estado/State"
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
-    const history = useHistory()
+    const navigate = useNavigate()
 
     useEffect(() => { // Rota Get sendo chamada quando a página é iniciada
         async function fetchUsers() {
@@ -40,7 +40,7 @@ const Users = () => {
     }
 
     function backToHome() {
-        history.push("/")
+        navigate("/")
     }
 
     return (

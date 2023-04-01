@@ -11,7 +11,7 @@ import ArrowRight from "../../assets/Log_in/arrow-right.png"
 // React Hooks, Ferramentas Auxiliares do React
 import { useState } from "react"; // Criar estados
 import { useRef } from "react"; // Permite utilizar os componentes como referência e com isso acessar os valores de suas propriedades
-import { useHistory } from "react-router-dom" // Permite navegar entre páginas
+import { useNavigate } from "react-router-dom" // Permite navegar entre páginas
 
 // JSX (Sintaxe que permite html e javascript no mesmo código)
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
     const [users, setUsers] = useState([]) // [nome do estado, função que atualiza o estado] = useState([itens])
     const inputName = useRef() // Variaveis dos inputs usadas para referenciar o componente
     const inputAge = useRef()
-    const history = useHistory() 
+    const navigate = useNavigate() 
 
     async function addNewUser() {
 
@@ -32,7 +32,7 @@ const App = () => {
         console.log(newUser)
         setUsers([...users, newUser]) // Spread "espalhando" os itens do array anterior no novo array
 
-        history.push("/users")
+        navigate("/users")
     }
 
     return (

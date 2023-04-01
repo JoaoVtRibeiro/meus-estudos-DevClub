@@ -1,0 +1,13 @@
+As alterações da versão 5 para 6 são:
+
+    Switch -> Routes
+
+    useHistory -> useNavigate
+    history -> navigate (não há mais necessidade de colocar .push para especificar a rota)
+    
+    component -> element (dentro do element não é apenas o nome, é o componente montado ex: <Home />)
+
+    exact -> Não é mais utilizado
+
+
+    Para atualizar para a ultima versão utilize o comando "yarn add react-router-dom@latest"
