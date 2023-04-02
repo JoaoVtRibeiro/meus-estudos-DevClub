@@ -2,7 +2,9 @@ import React from "react"
 import axios from 'axios' // Biblioteca para acessar / consumir API
 
 // Estilizações do styles.js
-import { Container, Figure, Main, H1, Button, User } from "./styles"; // Importação dos componentes CSS
+import { Container, Figure, Main, Button, User } from "./styles"; // Importação dos componentes CSS
+
+import H1 from '../../components/Title'
 
 // Imagens
 import UsersImage from "../../assets/Sign_up/users-image.png"

@@ -30,15 +30,6 @@ export const Main = styled.main`
     padding: 50px 36px;
     min-height: calc(100vh - 177px - 10px - 25px); // 100vh - altura da imagem - margin figure - gap container 
 `
-
-export const H1 = styled.h1`
-    font-size: 34px;
-    line-height: 40px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 11px;
-    margin-bottom: 70px;
-`
 export const Label = styled.label`
     font-size: 18px;
     line-height: 22px;
