@@ -2,9 +2,10 @@ import React from "react"
 import axios from 'axios' // Biblioteca para acessar / consumir API
 
 // Estilizações do styles.js
-import { Container, Figure, Main, Button, User } from "./styles"; // Importação dos componentes CSS
+import { Container, Figure, Button, User } from "./styles"; // Importação dos componentes CSS
 
 import H1 from '../../components/Title'
+import Main from '../../components/MainDiv'
 
 // Imagens
 import UsersImage from "../../assets/Sign_up/users-image.png"
@@ -51,7 +52,7 @@ const Users = () => {
                 <img src={UsersImage} alt="Imagem representando os usuários"></img>
             </Figure>
 
-            <Main>
+            <Main withBlur={true}>
                 <H1>Usuários</H1>
 
                 <ul>

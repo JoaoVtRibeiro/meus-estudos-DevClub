@@ -2,9 +2,10 @@ import React from "react"
 import axios from 'axios' // Biblioteca para acessar / consumir API
 
 // Estilizações do styles.js
-import { Container, Figure, Main, Label, Input, Button } from "./styles"; // Importação dos componentes CSS
+import { Container, Figure, Label, Input, Button } from "./styles"; // Importação dos componentes CSS
 
 import H1 from '../../components/Title'
+import Main from '../../components/MainDiv'
 
 // Imagens
 import PeopleTalk from "../../assets/Log_in/people-talk.png"
