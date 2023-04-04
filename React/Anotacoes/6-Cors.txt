@@ -1,0 +1,17 @@
+Cors (Cross-Origin Resource Sharing / Compartilhamento de recursos entre origens)
+
+Uma politica de segurança que permite o acesso a uma api apenas páginas https com autorização
+para evitar que origens malisiosas tenham acesso ao back-end
+
+para importar utilize:
+
+    - No terminal: 
+    yarn add cors
+
+    - No back-end: 
+    import cors from 'cors
+
+    variavel_com_o_express.use(cors('endereçoquepodeteracesso.com'))
+
+
+Obs: Caso o cors esteja vazio todas as páginas http serão permitidas
