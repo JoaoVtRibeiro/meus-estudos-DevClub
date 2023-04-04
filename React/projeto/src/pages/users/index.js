@@ -1,11 +1,12 @@
 import React from "react"
 import axios from 'axios' // Biblioteca para acessar / consumir API
 
-// Estilizações do styles.js
-import { Container, Figure, Button, User } from "./styles"; // Importação dos componentes CSS
+// Importação das estilizações (styles.js) e componentes
+import { Container, Figure, User } from "./styles"; // Importação dos componentes CSS
 
 import H1 from '../../components/Title'
 import Main from '../../components/MainDiv'
+import Button from '../../components/Button'
 
 // Imagens
 import UsersImage from "../../assets/Sign_up/users-image.png"
@@ -66,7 +67,7 @@ const Users = () => {
                     ))}
                 </ul>
 
-                <Button onClick={backToHome}><img src={ArrowLeft} alt="seta"></img>Voltar</Button>
+                <Button onClick={backToHome} backButton={true} ><img src={ArrowLeft} alt="seta"></img>Voltar</Button>
             </Main>
         </Container>
     )
