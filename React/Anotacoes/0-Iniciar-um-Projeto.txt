@@ -1,0 +1,29 @@
+React
+
+    Para iniciar um projeto react:
+
+    npx create-react-app nomedaaplicação
+
+Yarn
+
+    Para instalar o Yarn exclua o arquivo "package-lock.json" e no terminal acesse a pasta do projeto e:
+
+        - npm install -g yarn / sudo npm install -g yarn (caso não houver permissão de administrador)
+
+        - yarn
+
+    Adicionar pacotes com yarn:
+
+        yarn add nomedopacote
+
+    Lembrar de adicionar nos scripts(package.json) para ligar a aplicação:
+
+        - "nome": "nodemon",
+        No terminal:
+        - yarn nome
+
+
+
+
+
+
