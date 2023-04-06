@@ -1,4 +1,5 @@
 import React from "react";
+import axious from "axious";
 
 import HomeLogo from "../../assets/home-logo.png";
 import { Container, Figure, Section, Label, Input } from "./styles";
@@ -6,7 +7,16 @@ import { Container, Figure, Section, Label, Input } from "./styles";
 import H1 from "../../components/Title";
 import Button from "../../components/Button"
 
+import { useNavigate } from "react-router-dom";
+
 const App = () => {
+
+  const navigate = useNavigate()
+
+  const RequestPage = () =>{
+    navigate("/pedidos")
+  }
+  
   return (
     <Container>
       <Figure>
@@ -22,7 +32,7 @@ const App = () => {
           <Label for="nome">Nome</Label>
           <Input id="nome" placeholder="Digite seu nome"></Input>
 
-          <Button>Novo Pedido</Button>
+          <Button onClick={RequestPage}>Novo Pedido</Button>
         
       </Section>
     </Container>
