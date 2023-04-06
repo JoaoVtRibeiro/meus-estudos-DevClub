@@ -16,11 +16,11 @@ const App = () => {
       <Section>
         <H1>Faça seu pedido!</H1>
       
-          <Label for="pedido">Pedido</Label>
-          <Input id="pedido" placeholder="Exemplo: 1 Coca-Cola, 1-X Salada"></Input>
+          <Label for="pedido" class="pedido">Pedido</Label>
+          <Input id="pedido" placeholder="Digite seu pedido"></Input>
 
           <Label for="nome">Nome</Label>
-          <Input id="nome" placeholder="Steve Jobs"></Input>
+          <Input id="nome" placeholder="Digite seu nome"></Input>
 
           <Button>Novo Pedido</Button>
         
