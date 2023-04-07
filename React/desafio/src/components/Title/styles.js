@@ -5,5 +5,4 @@ export const H1 = styled.h1`
     font-size: 28px;
     line-height: 33px;
     text-align: center;
-
 `

@@ -1,5 +1,5 @@
 import React from "react";
-import axious from "axious";
+import axios from "axios";
 
 import HomeLogo from "../../assets/home-logo.png";
 import { Container, Figure, Section, Label, Input } from "./styles";
@@ -7,16 +7,23 @@ import { Container, Figure, Section, Label, Input } from "./styles";
 import H1 from "../../components/Title";
 import Button from "../../components/Button"
 
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
-
+  const inputDemand = useRef()
+  const inputName = useRef()
   const navigate = useNavigate()
 
-  const RequestPage = () =>{
+  async function addNewDemand() {
+    const { data } = await axios.post("http://localhost:3001/demand-create", {
+      demand: inputDemand.current.value,
+      name: inputName.current.value
+    })
+
     navigate("/pedidos")
   }
-  
+
   return (
     <Container>
       <Figure>
@@ -25,15 +32,15 @@ const App = () => {
 
       <Section>
         <H1>Faça seu pedido!</H1>
-      
-          <Label for="pedido" class="pedido">Pedido</Label>
-          <Input id="pedido" placeholder="Digite seu pedido"></Input>
 
-          <Label for="nome">Nome</Label>
-          <Input id="nome" placeholder="Digite seu nome"></Input>
+        <Label for="demand" class="demand">Pedido</Label>
+        <Input ref={inputDemand} id="demand" placeholder="Digite seu pedido" autoComplete="off"></Input>
 
-          <Button onClick={RequestPage}>Novo Pedido</Button>
-        
+        <Label for="name">Nome</Label>
+        <Input ref={inputName} id="name" placeholder="Digite seu nome" autoComplete="off"></Input>
+
+        <Button onClick={addNewDemand}>Novo Pedido</Button>
+
       </Section>
     </Container>
   );

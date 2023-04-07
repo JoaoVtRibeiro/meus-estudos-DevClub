@@ -22,10 +22,10 @@ export const Label = styled.label`
   line-height: 22px;
   position: relative;
   right: 130px;
-  &[for="pedido"]{
+  &[for="demand"]{
     margin-top: 56px;
   }
-  &[for="nome"]{
+  &[for="name"]{
     margin-top: 32px;
   }
 `;
@@ -40,8 +40,8 @@ export const Input = styled.input`
   &::placeholder {
     color: #A9A9A9;
   }
-  &#nome{
+  &#name{
     margin-bottom: 46px;
   }
-  padding-left: 15px;
+    padding-left: 15px;
 `;
