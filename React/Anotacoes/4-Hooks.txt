@@ -1,7 +1,7 @@
 React Hooks
 
     Ferramentas auxiliares do react que ajudam na lógica e tratamento de componentes
-    e podem ser importandas, algumas delas são:
+    e podem ser importadas, algumas delas são:
 
 useState
 
@@ -11,7 +11,10 @@ useRef
 
     Permite utilizar os componentes do DOM como referência e com isso pode, por exemplo, acessar os valores de suas propriedades
 
-useHistory (react-router-dom)
+useHistory (react-router-dom v5)
 
     Hook da Biblioteca React Router Dom, ele permite navegar entre páginas
+
+useNavigate (react-router-dom v6)
     
+    Versão atualizada do useHistory
