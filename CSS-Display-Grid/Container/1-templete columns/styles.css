@@ -1,0 +1,82 @@
+/* 
+    Grid template columns
+
+    Faz com que os itens de um container sejam organizados em coluna.
+    Para definir o número e espaçamento colunas basta colocar o valor do tamanho de cada uma em ordem, ex:
+
+        grid-template-columns: 100px 100px 100px; // Três colunas de 100px
+
+    Isso funciona da mesma forma utilizando o repeat:
+
+        grid-template-columns: (3, 100px);
+
+    Há também uma unidade de medida chamada fr (fração/fraction) que permite dividir os itens utilizando todo espaço disponivel, ex:
+
+        grid-template-columns: 1fr 1fr; Duas colunas e cada uma ocupando metade do espaço disponivel
+
+    Para definir o valor minimo e máximo de uma coluna:
+
+        grid-templete-columns: minmax(200px, 1fr) 1fr; // Primeira coluna com valor minimo de 200px e maximo de 1fr
+
+    Por fim, é possível definir o numero das colunas automaticamente (conforme o tamanho dos itens e espaço disponivel):
+
+        grid-templete-columns: repeat(auto-fit, minmax(100px, auto);
+                               auto-fit número das colunas automáticas, minmax(tamanho minimo em 100px, tamanho maximo automático conforme o espaço disponivel)
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+}
+
+.space{
+    /* height: 300px;
+    width: 300px; */
+    color: white;
+    font-size: 30px;
+}
+
+.one{
+    background: rgb(32, 45, 75);
+}
+
+.two{
+    background: green;
+}
+
+.three{
+    background-color: rgb(131, 25, 46);
+}
+
+.four{
+    background: rgb(39, 141, 141);
+}
+
+.five{
+    background: red;
+}
+
+.six{
+    background: gray;
+}
+
+.seven{
+    background: blue;
+}
+
+.eight{
+    background: violet;
+}
+
+.nine{
+    background: greenyellow;
+}
