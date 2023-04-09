@@ -1,0 +1,65 @@
+/* 
+    Grid template rows
+
+    Parecido com templete columns, rows faz com que o itens sejam organizados em linha, recebe os mesmos parâmetros do templete columns
+
+    Obs: Ambos os templetes podem ser utilizados em conjunto
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 3fr; 
+}
+
+.space{
+    /* height: 300px;
+    width: 300px; */
+    color: white;
+    font-size: 30px;
+}
+
+.one{
+    background: rgb(32, 45, 75);
+}
+
+.two{
+    background: green;
+}
+
+.three{
+    background-color: rgb(131, 25, 46);
+}
+
+.four{
+    background: rgb(39, 141, 141);
+}
+
+.five{
+    background: red;
+}
+
+.six{
+    background: gray;
+}
+
+.seven{
+    background: blue;
+}
+
+.eight{
+    background: violet;
+}
+
+.nine{
+    background: greenyellow;
+}
