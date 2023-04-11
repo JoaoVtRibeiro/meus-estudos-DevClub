@@ -1,0 +1,67 @@
+/* 
+    Grid auto rows
+
+    Com o mesmo propósito do "grid templete rows", grid auto rows como o próprio nome 
+    diz define o tamanho das linhas de forma mais automatica, dessa forma ele pode, por exemplo, ser um pouco mais adaptavél a novos elementos 
+
+    Outra diferença é que com apenas um valor é possivel definir o tamanho das linhas.
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(400px, auto); 
+}
+
+.space{
+    /* height: 300px;
+    width: 300px; */
+    color: white;
+    font-size: 30px;
+}
+
+.one{
+    background: rgb(32, 45, 75);
+}
+
+.two{
+    background: green;
+}
+
+.three{
+    background-color: rgb(131, 25, 46);
+}
+
+.four{
+    background: rgb(39, 141, 141);
+}
+
+.five{
+    background: red;
+}
+
+.six{
+    background: gray;
+}
+
+.seven{
+    background: blue;
+}
+
+.eight{
+    background: violet;
+}
+
+.nine{
+    background: greenyellow;
+}
