@@ -1,0 +1,69 @@
+/* 
+    Grid row
+
+    Determina qual linha o item irá começar qual em qual ele irá terminar
+
+        grid-row-start: numero da linha -> Onde inicia
+
+        grid-row-end: numero da linha -> Onde termina
+
+        grid-row: numero onde inicia / numero onde termina  -> Ambos
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.space{
+    color: white;
+    font-size: 30px;
+}
+
+.one{
+    background: rgb(32, 45, 75);
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.two{
+    background: green;
+}
+
+.three{
+    background-color: rgb(131, 25, 46);
+    grid-row: 2/4;
+}
+
+.four{
+    background: rgb(39, 141, 141);
+}
+
+.five{
+    background: red;
+}
+
+.six{
+    background: gray;
+}
+
+.seven{
+    background: blue;
+}
+
+.eight{
+    background: violet;
+}
+
+.nine{
+    background: greenyellow;
+}
