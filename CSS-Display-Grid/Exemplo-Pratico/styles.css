@@ -1,0 +1,51 @@
+/* 
+    "Tag Caixas" posicionadas conforme a imagem "layout.png"
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 4.5fr 1fr;
+}
+
+.space{
+    color: white;
+    font-size: 30px;
+}
+
+header{
+    background: rgb(32, 45, 75);
+    grid-column: 1/4;
+}
+
+main{
+    background: green;
+    grid-column: 2/3;
+}
+
+aside{
+    background-color: rgb(131, 25, 46);
+}
+
+aside{
+    background: rgb(39, 141, 141);
+}
+
+footer{
+    background: red;
+    grid-column: 1/4;
+}
+
+nav{
+    background: gray;
+    grid-row: 2/3;
+}
