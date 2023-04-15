@@ -1,0 +1,77 @@
+/* 
+    Propriedades de Alinhamento no Container
+
+        Algumas das propriedades do display flex podem ser utilizadas no display grid como:
+
+        justify-content: Justificar o conteúdo do container no eixo principal
+        align- content: Alinhar o conteúdo do container no eixo secundario
+        justify-items: Justificar os items conforme o espaço disponivel em sua célula
+        align-items: Alinha os items conforme o espaço disponivel em sua célula
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(161, 161, 161);
+    display: grid;
+
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 10px;
+
+    justify-content: center;
+    align-content: center;
+    justify-items: start;
+    align-items: end;
+}
+
+.space{
+    color: black;
+    font-size: 30px;
+    background-color: rgb(12, 184, 98);
+}
+
+/* .one{
+    background: rgb(32, 45, 75);
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.two{
+    background: green;
+}
+
+.three{
+    background-color: rgb(131, 25, 46);
+    grid-column: 2/4;
+}
+
+.four{
+    background: rgb(39, 141, 141);
+}
+
+.five{
+    background: red;
+}
+
+.six{
+    background: gray;
+}
+
+.seven{
+    background: blue;
+}
+
+.eight{
+    background: violet;
+}
+
+.nine{
+    background: greenyellow;
+} */
