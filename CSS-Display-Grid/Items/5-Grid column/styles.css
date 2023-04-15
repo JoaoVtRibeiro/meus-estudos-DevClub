@@ -8,6 +8,13 @@
         grid-column-end: numero da coluna -> Onde termina
 
         grid-column: numero onde inicia / numero onde termina  -> Ambos
+
+    Obs: Também é possivel definir seu inicio e fim baseado em sua largura 
+        (para quantas linhas irá crescer) com a palavra-chave "span", 
+        exemplo: Um container que irá ocupar 3 linhas, irá começar na 1 e terá span 2 (largura cresceu 2 linhas)
+
+        grid-column-start: 1;
+        grid-column-end: span 2;
 */
 
 *{
