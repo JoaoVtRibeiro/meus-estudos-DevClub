@@ -15,11 +15,15 @@
 
         E para indicar o nome de cada item use o grid-area
 
-            divfilho{
+            divfilho {
                 grid-area: nomeitem1;
             }
 
         Dessa forma os itens irão ficar organizados conforme foram descritos no grid-template-areas
+
+        Além disso, grid area aceita 4 parâmetros como valores representando respectivamente:
+
+            grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end
 */
 
 * {
