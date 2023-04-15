@@ -5,6 +5,8 @@
 
         justify-self: Justifica o item em especifico no eixo principal conforme seu espaço/tamanho
         align-self: Alinha o item em especifico no eixo secundario conforme seu espaço/tamanho
+        order: Altera a ordem dos itens (Por padrão, todos os itens vem como valor 0, 
+               mas isso pode ser definido para qualquer valor positivo ou negativo)
 */
 
 *{
@@ -57,10 +59,12 @@
 
 .six{
     background: gray;
+    order:1;
 }
 
 .seven{
     background: blue;
+    order:-1;
 }
 
 .eight{
