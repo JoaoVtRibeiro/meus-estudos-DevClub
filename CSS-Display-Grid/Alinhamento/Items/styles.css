@@ -1,0 +1,73 @@
+/* 
+    Propriedades de Alinhamento nos Items
+
+        Além das propriedades do container, algumas propriedades do display flex podem ser aplicadas no items também:
+
+        justify-self: Justifica o item em especifico no eixo principal conforme seu espaço/tamanho
+        align-self: Alinha o item em especifico no eixo secundario conforme seu espaço/tamanho
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(161, 161, 161);
+    display: grid;
+
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 10px;
+
+    justify-content: center;
+    align-content: center;
+}
+
+.space{
+    color: black;
+    font-size: 30px;
+    background-color: rgb(12, 184, 98);
+}
+
+.one{
+    background: rgb(32, 45, 75);
+    align-self: flex-start;
+}
+
+.two{
+    background: green;
+}
+
+.three{
+    background-color: rgb(131, 25, 46);
+}
+
+.four{
+    background: rgb(39, 141, 141);
+}
+
+.five{
+    background: red;
+    justify-self: center;
+}
+
+.six{
+    background: gray;
+}
+
+.seven{
+    background: blue;
+}
+
+.eight{
+    background: violet;
+}
+
+.nine{
+    background: greenyellow;
+    align-self: flex-end;
+}
