@@ -2,7 +2,7 @@ Para tirar dúvidas
 
 - W3School
 - Developerzilla
-- Origamid (Display Flex)
+- Origamid (Display Flex e Display Grid)
 
 Utilizar imagens sem direitos autorais (Gratuitas)
 
