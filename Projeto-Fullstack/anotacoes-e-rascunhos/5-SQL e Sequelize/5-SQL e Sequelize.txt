@@ -1,0 +1,25 @@
+Banco de Dados
+
+    Uma coleção organizada de informações estruturadas,
+    normalmente armazenadas eletronicamente em um sistema de computador
+
+SQL (Structured Query Language / Linguagem de Consulta Estruturada)
+
+    Uma linguagem de programação para manejar um banco de dados relacional (baseado em tabelas)
+    com ele é possível que vários desenvolvedores possam acessar e 
+    modicar dados simultaneamente em uma empresa por exemplo
+
+ORM (Object Relational Mapping / Mapeamento Relacional de Objeto) e Sequelize
+
+    É uma técnica de mapeamento, que cria uma camada entre a aplicação e o banco de dados
+    Em resumo, ORM é como se fosse um "tradutor" de Javascript para SQL ao bando de dados
+    Com isso, alguns frameworks ORM foram criados, dentre eles o Sequelize
+
+
+
+
+
+
+
+
+
