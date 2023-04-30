@@ -1,0 +1,22 @@
+Comandos Migration com Sequelize, CLI (Command Line Interface / Interface da Linha de comando)
+
+    1. Instalar o CLI
+        - yarn add sequelize-cli -D
+
+    2. Criar a migration
+
+        versão antiga
+        - yarn sequelize migration:create --name=nomedamigration
+
+        versão recente
+        - yarn sequelize-cli migration:generate --name nomedamigration
+
+    3. Rodar a Migration no banco (método up)
+        - yarn sequelize db:migrate
+
+    4. Desfazer as alterações (Rodar o método down)
+        - yarn sequelize db:migrate:undo        // desfaz a última alteração
+        - yarn sequelize db:migrate:undo:all    // desfaz todas as alterações
+
+Obs: As migrations serão criadas na localização definida através da função "resolve"
+     no arquivo de configuração do sequelize (.sequelize.rc)
