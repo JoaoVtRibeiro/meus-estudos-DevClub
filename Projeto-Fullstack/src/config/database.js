@@ -5,7 +5,7 @@ module.exports = {
     password: 'postgres',
     database: 'codeburger',
     define: { // Definições 
-        timespamps: true, // cria dois campos adicionais, "created_at" (data de criação) e "updated_at" (data de atualização)
+        timespamps: true, // Preenche automaticamente campos adicionais, "created_at" (data de criação) e "updated_at" (data de atualização)
         underscored: true, 
         underscoredAll: true, 
     },
