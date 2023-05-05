@@ -36,6 +36,16 @@ class UserController {
             return response.status(400).json({ error: err.errors })
         }
 
+        // Validação do email (email duplicado)
+
+        const emailVerification = await User.findOne({
+            where: { email }
+        })
+
+        if(emailVerification){
+            return response.status(400).json({ error: 'Email already exists'})
+        }
+
         // Criação do Usuário
 
         const user = await User.create({
