@@ -3,34 +3,34 @@
 
         store   => Cadastrar / Adicionar
         index   => Listar vários
-        show    => LIstar apenas um
+        show    => Listar apenas um
         update  => Atualizar
         delete  => Deletar
 */
 
 import { v4 } from 'uuid'
-import * as Yup from 'yup'
+import * as Yup from 'yup' // Biblioteca que auxilia com validação de dados
 
 import User from '../models/User'
 
 class UserController {
     async store(request, response) {
-        const { name, email, password_hash, admin } = request.body
+        const { name, email, password, admin } = request.body
 
         // Validação dos dados
 
         const schema = Yup.object().shape({
             name: Yup.string().required(),
             email: Yup.string().email().required(),
-            password_hash: Yup.string().required().min(6),
+            password: Yup.string().required().min(6),
             admin: Yup.boolean(),
         })
-
-        /*  if (!(await schema.isValid(request.body))) {
+    
+        /* if (!(await schema.isValid(request.body))) { // Validação geral (mesma mensagem para qualquer erro) 
             return response.status(400).json({ error: 'Make sure your data is correct' })
         } */
-
-        try {
+        
+        try { // Validação por erro em especifico (mensagem mostra qual campo está incorreto)
             await schema.validateSync(request.body, { abortEarly: false })
         } catch (err) {
             return response.status(400).json({ error: err.errors })
@@ -42,8 +42,8 @@ class UserController {
             where: { email }
         })
 
-        if(emailVerification){
-            return response.status(400).json({ error: 'Email already exists'})
+        if (emailVerification) {
+            return response.status(400).json({ error: 'Email already exists' })
         }
 
         // Criação do Usuário
@@ -52,13 +52,12 @@ class UserController {
             id: v4(),
             name,
             email,
-            password_hash,
+            password,
             admin,
         })
 
         return response.status(201).json({ id: user.id, name, email, admin })
     }
 }
-
 
 export default new UserController()
