@@ -8,7 +8,7 @@ class SessionController {
 
         // Validação dos dados
 
-        /* const userEmailOrPasswordIncorrect = () => { //  -----  Entender o erro depois ---------
+        /* const userEmailOrPasswordIncorrect = () => { //  -----  Entender o erro depois (tentar criar como function normal talvez?) ---------
             return response.status(401).json({ error: 'Make sure your email or password are correct' })
         } */
 
