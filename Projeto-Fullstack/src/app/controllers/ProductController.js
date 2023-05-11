@@ -1,7 +1,9 @@
 import * as Yup from 'yup'
+import Product from '../models/Product'
 
 class ProductController {
     async store(request, response) {
+        // Validação dos dados
         const schema = Yup.object().shape({
             name: Yup.string().required(),
             price: Yup.number().required(),
@@ -14,7 +16,18 @@ class ProductController {
             return response.status(400).json({ error: err.errors })
         }
 
-        return response.json({ ok: true })
+        // Criação do produto no banco
+        const { filename: path } = request.file
+        const { name, price, category } = request.body
+
+        const product = await Product.create({
+            name,
+            price,
+            category,
+            path,
+        })
+
+        return response.json(product)
     }
 }
 
