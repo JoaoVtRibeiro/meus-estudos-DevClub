@@ -1,6 +1,6 @@
-import multer from 'multer'
+import multer from 'multer' // biblioteca que permite adicionar upload de arquivos
 import { v4 } from 'uuid'
-import { extname, resolve } from 'path'
+import { extname, resolve } from 'path' // extname pega 
 
 export default {
     storage: multer.diskStorage({
