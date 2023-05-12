@@ -2,7 +2,7 @@ import * as Yup from 'yup'
 import Product from '../models/Product'
 
 class ProductController {
-    async store(request, response) {
+    async store(request, response) { // Validação e criação de um produto
         // Validação dos dados
         const schema = Yup.object().shape({
             name: Yup.string().required(),
@@ -28,6 +28,12 @@ class ProductController {
         })
 
         return response.json(product)
+    }
+
+    async index(request, response) { // Lista de todos os produtos
+        const products = await Product.findAll()
+
+        return response.json(products)
     }
 }
 
