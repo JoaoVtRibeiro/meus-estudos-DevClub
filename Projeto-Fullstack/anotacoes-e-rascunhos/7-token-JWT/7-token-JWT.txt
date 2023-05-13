@@ -1,0 +1,23 @@
+JWT - JSON Web Token
+
+    Um padrão que define um formato compacto e autônomo para transmitir informações de forma segura
+    entre partes como um objeto JSON. Ele é frequentemente utilizado para autenticação e autorização em sistemas web e APIs.
+    
+    Com ele é possível privar páginas da aplicação para que sejam permitidas apenas para usuarios logados
+
+    Um token JWT consiste em três partes separadas por pontos: o cabeçalho (header), a carga útil (payload) e a assinatura (signature):
+
+        - Header: contém informações sobre o tipo de token e o algoritmo de criptografia usado na assinatura
+
+        - Payload: contém as informações que são transportadas pelo token, como o ID do usuário, permissões ou outros dados relevantes
+
+        - Signature: uma sequência de caracteres criptografados que verifica a integridade do token e permite sua verificação posterior
+        (ex: caso o token seja interceptado e as informações do payload fossem trocadas, a payload vai deixar de se conectar com a assinatura e será inválido)
+
+    O processo geral de utilização do JWT envolve a geração de um token pelo servidor de autenticação,
+    que é então assinado usando uma chave secreta conhecida apenas pelo servidor. 
+    O token é então enviado para o cliente, que o armazena (geralmente em um cookie ou cabeçalho de autorização) 
+    e o envia de volta para o servidor em solicitações subsequentes. 
+
+    O servidor pode verificar a autenticidade e integridade do token ao recalculá-lo usando a mesma chave
+    secreta e comparar a assinatura resultante com a fornecida pelo cliente.
