@@ -1,6 +1,8 @@
 import * as Yup from 'yup'
+import jwt from 'jsonwebtoken'
 
 import User from '../models/User'
+import authConfig from '../../config/auth'
 
 class SessionController {
     async store(request, response) {
@@ -27,13 +29,20 @@ class SessionController {
 
         if (!user) { // Verificação se o email existe do banco de dados
             return response.status(401).json({ error: 'Make sure your email or password are correct' })
-        } 
+        }
 
         if (!(await user.checkPassword(password))) { // Verificação se a senha corresponde ao email
             return response.status(401).json({ error: 'Make sure your email or password are correct' })
-        } 
+        }
 
-        return response.json({ id: user.id, email, name: user.name, admin: user.admin })
+        return response.json({
+            id: user.id,
+            email,
+            name: user.name,
+            admin: user.admin,
+            token: jwt.sign({ id: user.id }, authConfig.secret, { expiresIn: authConfig.expiresIn, }) 
+            // jwt.sign(info do usuário, string criptografa (ex: em md5 hash), periodo para o token expirar)
+        })
     }
 }
 
