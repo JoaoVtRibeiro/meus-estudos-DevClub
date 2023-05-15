@@ -15,9 +15,8 @@ import User from '../models/User'
 
 class UserController {
     async store(request, response) {
-        const { name, email, password, admin } = request.body
-
-        // Validação dos dados
+         
+        // Validação dos dados - Yup
 
         const schema = Yup.object().shape({
             name: Yup.string().required(),
@@ -37,6 +36,8 @@ class UserController {
         }
 
         // Validação do email (email duplicado)
+
+        const { name, email, password, admin } = request.body
 
         const emailVerification = await User.findOne({
             where: { email }

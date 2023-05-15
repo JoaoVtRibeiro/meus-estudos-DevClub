@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import multer from 'multer'
+import multer from 'multer' // biblioteca que permite upload de arquivos
 import multerConfig from './config/multer'
 
 import UserController from './app/controllers/UserController'

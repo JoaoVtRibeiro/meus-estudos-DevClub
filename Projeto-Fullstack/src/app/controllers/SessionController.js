@@ -6,9 +6,8 @@ import authConfig from '../../config/auth'
 
 class SessionController {
     async store(request, response) {
-        const { email, password } = request.body
-
-        // Validação dos dados
+        
+        // Validação dos dados - Yup
 
         /* const userEmailOrPasswordIncorrect = () => { //  -----  Entender o erro depois (tentar criar como function normal talvez?) ---------
             return response.status(401).json({ error: 'Make sure your email or password are correct' })
@@ -22,6 +21,10 @@ class SessionController {
         if (!(await schema.isValid(request.body))) { // Verificação da escrita dos dados em cada campo
             return response.status(401).json({ error: 'Make sure your email or password are correct' })
         }
+
+        // Validação dos dados - conferindo se existe no Banco de dados
+
+        const { email, password } = request.body
 
         const user = await User.findOne({
             where: { email },
