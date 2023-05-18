@@ -33,8 +33,6 @@ class ProductController {
     async index(request, response) { // Lista de todos os produtos
         const products = await Product.findAll()
 
-        console.log(request.userId)
-
         return response.json(products)
     }
 }
