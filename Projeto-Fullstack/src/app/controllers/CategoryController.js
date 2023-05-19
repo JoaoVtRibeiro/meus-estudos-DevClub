@@ -17,9 +17,17 @@ class CategoryController {
         // Criação da categoria no banco
         const { name } = request.body
 
-        const category = await Category.create({ name })
+        const categoryVerification = await Category.findOne({ // Verificação se a categoria já existe
+            where: { name }
+        })
 
-        return response.json(category)
+        if (categoryVerification) {
+            return response.status(400).json({ error: 'Category already exists' })
+        }
+
+        const { id } = await Category.create({ name })
+
+        return response.json({ id, name })
     }
 
     async index(request, response) { // Lista de todas as categorias
