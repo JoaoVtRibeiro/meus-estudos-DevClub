@@ -16,7 +16,10 @@ class Database {
 
     init() {
         this.connection = new Sequelize(configDatabase)
-        models.map((model) => model.init(this.connection))
+
+        models
+            .map((model) => model.init(this.connection)) // Map para gerar a conexão dos models com o banco
+            .map(model => model.associate && model.associate(this.connection.models)) // Map para todos os models com associações poderem ser conectar com outros models
     }
 }
 
