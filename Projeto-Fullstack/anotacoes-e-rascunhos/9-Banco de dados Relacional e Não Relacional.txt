@@ -1,0 +1,40 @@
+A escolha entre um banco de dados relacional e não relacional depende das necessidades e requisitos do projeto. 
+Os bancos de dados relacionais são adequados para dados com estrutura bem definida e relações complexas, 
+enquanto os bancos de dados não relacionais são mais flexíveis e escaláveis, adequados para
+dados não estruturados e necessidades de escalabilidade horizontal.
+
+Banco de Dados Relacional:
+
+    - Estrutura: Os bancos de dados relacionais são baseados em tabelas, onde os dados são organizados em linhas e colunas. 
+    Cada tabela tem um esquema pré-definido, com colunas e tipos de dados específicos.
+
+    - Esquema fixo: Os bancos de dados relacionais possuem um esquema fixo, o que significa que a 
+    estrutura das tabelas, os tipos de dados e as relações entre elas são definidos antecipadamente.
+
+    - Relações: Os dados são organizados em várias tabelas relacionadas, e as relações entre elas são estabelecidas 
+    por meio de chaves primárias e estrangeiras. Isso permite a integridade referencial e a consistência dos dados.
+
+    - Linguagem: Os bancos de dados relacionais utilizam a Structured Query Language (SQL)
+     como linguagem padrão para consulta e manipulação dos dados.
+     
+    - ACID: Os bancos de dados relacionais geralmente garantem propriedades ACID 
+    (Atomicidade, Consistência, Isolamento e Durabilidade), que garantem a consistência dos dados mesmo em caso de falhas no sistema.
+    
+Banco de Dados Não Relacional (NoSQL):
+
+    - Estrutura flexível: Os bancos de dados não relacionais não possuem um esquema fixo. Eles permitem armazenar dados
+     não estruturados, sem uma estrutura pré-definida, como documentos, gráficos, pares chave-valor ou colunas.
+
+    - Escalabilidade: Os bancos de dados não relacionais são projetados para lidar com grandes volumes de dados e 
+    alta escalabilidade. Eles são distribuídos e podem ser dimensionados horizontalmente, adicionando mais servidores conforme a demanda aumenta.
+    
+    - Desnormalização: Os bancos de dados não relacionais muitas vezes utilizam a desnormalização, o que significa que
+     os dados relacionados podem ser armazenados juntos para melhorar o desempenho das consultas.
+     
+    - Consistência eventual: Alguns bancos de dados não relacionais oferecem garantias de consistência eventual em 
+    vez de garantias ACID. Isso significa que as atualizações nos dados podem levar algum tempo para serem propagadas 
+    por todo o sistema, o que pode resultar em leituras não consistentes em alguns casos.
+    
+    - Linguagem: Embora muitos bancos de dados não relacionais tenham sua própria API ou 
+    linguagem de consulta, a SQL não é amplamente utilizada nesse contexto.
+
