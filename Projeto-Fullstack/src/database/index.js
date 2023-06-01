@@ -25,9 +25,10 @@ class Database {
     }
 
     mongo(){
-        this.mongoConnection = mongoose.connect('mongodb://localhost:27017/codeburger', { //mongodb://local on o banco está rodando/ nome da base de dados
-            userNewUrlParser: true, // configurações padrões necessárias
-            userUnifiedTopology: true,
+        mongoose.set('strictQuery', false);
+        this.mongoConnection = mongoose.connect('mongodb://localhost:27017/codeburger-mongo', { //mongodb://local on o banco está rodando/ nome da base de dados
+            useNewUrlParser: true, // configurações padrões necessárias
+            useUnifiedTopology: true,
         })
     }
 }

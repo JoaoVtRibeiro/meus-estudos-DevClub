@@ -7,7 +7,7 @@ import Order from '../schemas/Order'
 class OrderController {
     async store(request, response) {
         const schema = Yup.object().shape({
-            product: Yup.array().required().of(
+            products: Yup.array().required().of(
                 Yup.object().shape({
                     id: Yup.number().required(),
                     quantity: Yup.number().required(),
@@ -25,26 +25,26 @@ class OrderController {
 
         const updatedProducts = await Product.findAll({
             where: {
-                id: productsId
+                id: productsId,
             },
-            include: {
+            include: [{
                 model: Category,
                 as: 'category',
-                attributes: ['name']
-            }
+                attributes: ['name'],
+            },],
         })
 
-        const editedProduct = updatedProducts.map((upProduct) => {
+        const editedProduct = updatedProducts.map((product) => {
             const productIndex = request.body.products.findIndex(
-                (requestBodyProduct) => requestBodyProduct.id === upProduct.id
+                (requestBodyProduct) => requestBodyProduct.id == product.id
             )
 
             const newProduct = {
-                id: upProduct.id,
-                name: upProduct.name,
-                price: upProduct.price,
-                category: upProduct.category.name,
-                url: upProduct.url,
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                category: product.category.name,
+                url: product.url,
                 quantity: request.body.products[productIndex].quantity
             }
 
