@@ -30,8 +30,8 @@ class OrderController {
             include: [{
                 model: Category,
                 as: 'category',
-                attributes: ['name'],
-            },],
+                attributes: ['name']
+            }]
         })
 
         const editedProduct = updatedProducts.map((product) => {
@@ -65,10 +65,19 @@ class OrderController {
         return response.status(201).json(orderResponse)
     }
 
-    async index(request, response){
+    async index(request, response) {
         const orders = await Order.find() // .find() encontra todas as ocorrencias
 
         return response.json(orders)
+    }
+
+    async update(request, response) {
+        const { id } = request.params
+        const { status } = request.body
+
+        await Order.updateOne({ _id: id }, { status })
+
+        return response.json({message: 'Status was updated'})
     }
 }
 
