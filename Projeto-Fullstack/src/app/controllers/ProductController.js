@@ -17,6 +17,13 @@ class ProductController {
             return response.status(400).json({ error: err.errors })
         }
 
+        // Validação de admin
+        const { admin: isAdmin } = await User.findByPk(request.userId)
+
+        if (!isAdmin) {
+            return response.status(401).json()
+        }
+
         // Criação do produto no banco
         const { filename: path } = request.file
         const { name, price, category_id } = request.body
