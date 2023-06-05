@@ -18,7 +18,7 @@ class ProductController {
         }
 
         // Validação de admin
-        const { admin: isAdmin } = await User.findByPk(request.userId)
+        const { admin: isAdmin } = await User.findByPk(request.userId) //.findByPk - encontrar por primary key
 
         if (!isAdmin) {
             return response.status(401).json()
