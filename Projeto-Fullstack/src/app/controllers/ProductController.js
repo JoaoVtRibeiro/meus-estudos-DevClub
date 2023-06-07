@@ -8,7 +8,8 @@ class ProductController {
         const schema = Yup.object().shape({
             name: Yup.string().required(),
             price: Yup.number().required(),
-            category_id: Yup.number().required()
+            category_id: Yup.number().required(),
+            offer: Yup.boolean()
         })
 
         try {
@@ -26,13 +27,14 @@ class ProductController {
 
         // Criação do produto no banco
         const { filename: path } = request.file
-        const { name, price, category_id } = request.body
+        const { name, price, category_id, offer } = request.body
 
         const product = await Product.create({
             name,
             price,
             category_id,
             path,
+            offer
         })
 
         return response.json(product)
@@ -51,6 +53,61 @@ class ProductController {
 
         return response.json(products)
     }
+
+    async uptade(request, response) { // Atualizar dados
+        // Validação dos dados
+        const schema = Yup.object().shape({
+            name: Yup.string(),
+            price: Yup.number(),
+            category_id: Yup.number(),
+            offer: Yup.boolean()
+        })
+
+        try {
+            await schema.validateSync(request.body, { abortEarly: false })
+        } catch (err) {
+            return response.status(400).json({ error: err.errors })
+        }
+
+        // Validação de admin
+        const { admin: isAdmin } = await User.findByPk(request.userId) //.findByPk - encontrar por primary key
+
+        if (!isAdmin) {
+            return response.status(401).json()
+        }
+
+        // Validação da existência do produto
+
+        const { id } = request.params
+
+        const product = await Product.findByPk(id)
+
+        if (!product) {
+            return response.status(401).json({ error: "Make sure your product ID is correct" })
+        }
+
+        // Verificação do envio de arquivo
+
+        let path
+        if (request.file) {
+            path = request.file.filename
+        }
+
+        const { name, price, category_id, offer } = request.body
+
+        await Product.create({
+            name,
+            price,
+            category_id,
+            path,
+            offer
+        },
+            { where: { id } }
+        )
+
+        return response.json(product)
+    }
+
 }
 
 export default new ProductController()
