@@ -93,9 +93,11 @@ class ProductController {
             path = request.file.filename
         }
 
+        // Atualização dos dados do produto
+
         const { name, price, category_id, offer } = request.body
 
-        await Product.create({
+        await Product.update({
             name,
             price,
             category_id,
@@ -105,7 +107,7 @@ class ProductController {
             { where: { id } }
         )
 
-        return response.json(product)
+        return response.status(200).json(product)
     }
 
 }
