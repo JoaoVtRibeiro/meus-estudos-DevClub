@@ -1,0 +1,13 @@
+Plugins de formatação do Eslint, Links com as instruções de instação e configuração
+
+    Eslint: yarn add eslint -D
+
+    Plugin import helper: https://github.com/Tibfib/eslint-plugin-import-helpers?_gl=1*m9mswm*_ga*MTcxMTQzMjcwMC4xNjgzOTg3MjAw*_ga_37GXT4VGQK*MTY4Njk0Njg4Ny4yMy4xLjE2ODY5NDY5MDAuMC4wLjA.
+
+    Plugin react hooks: https://www.npmjs.com/package/eslint-plugin-react-hooks?_gl=1*m9mswm*_ga*MTcxMTQzMjcwMC4xNjgzOTg3MjAw*_ga_37GXT4VGQK*MTY4Njk0Njg4Ny4yMy4xLjE2ODY5NDY5MDAuMC4wLjA.
+
+
+Plugins de formatação Prettier
+
+    
+    yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
