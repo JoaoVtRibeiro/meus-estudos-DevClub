@@ -1,17 +1,21 @@
 import React from 'react'
 
+import BurgerLogin from '../../assets/burger-login.png'
+import Logo from '../../assets/logo.png'
+
 import { Container, Figure, Main, H1, Label, Input, Button, P } from './styles'
+
 
 function Login() {
   return (
     <Container>
       <Figure>
-        <img></img>
+        <img src={BurgerLogin} atl="login image"></img>
       </Figure>
 
       <Main>
         <Figure>
-          <img></img>
+          <img src={Logo} alt="logo image"></img>
         </Figure>
 
         <H1>Login</H1>
