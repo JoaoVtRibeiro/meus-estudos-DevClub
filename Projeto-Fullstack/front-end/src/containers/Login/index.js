@@ -1,16 +1,18 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 
 import BurgerLogin from '../../assets/burger-login.png'
 import Logo from '../../assets/logo.png'
 
-import { Container, Figure, Main, H1, Label, Input, Button, P } from './styles'
+import { Container, Figure, BurgerLoginImage, Main, H1, Label, Input, Button, P } from './styles'
 
 
 function Login() {
   return (
     <Container>
       <Figure>
-        <img src={BurgerLogin} atl="login image"></img>
+        <BurgerLoginImage src={BurgerLogin} atl="login image"></BurgerLoginImage>
       </Figure>
 
       <Main>
