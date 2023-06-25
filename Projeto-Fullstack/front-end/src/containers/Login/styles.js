@@ -1,24 +1,33 @@
 import styled from 'styled-components'
 
+// Divs
+
 export const Container = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
+    overflow: hidden; /* impede barras de rolagem */
 `
-export const Figure = styled.figure``
-
-export const BurgerLoginImage = styled.img`
-    height: 99%;
-`
-
 export const Main = styled.main`
     background-color: #373737;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    padding: 25px 75px;
+    padding-left: 104px;
     justify-content: center;
+`
+
+// Elementos
+
+export const BurgerLoginImage = styled.img`
+    height: 100%;
+`
+
+export const LogoImage = styled.img`
+    position: fixed;
+    top: 84px;
+    padding-left: 30px;
 `
 
 export const H1 = styled.h1`
@@ -27,6 +36,9 @@ export const H1 = styled.h1`
     font-family: Roboto;
     font-weight: 500;
     text-align: center;
+    margin-top: 320px;
+    margin-bottom: 25px;
+    padding-right: 90px;
 `
 
 export const Label = styled.label`
@@ -34,13 +46,19 @@ export const Label = styled.label`
     font-size: 12px;
     font-family: Roboto;
     font-weight: 500;
+    &#label-password{
+        margin-top: 20px;
+    }
 `
 
 export const Input = styled.input`
-    color: #FFF;
-    font-size: 12px;
-    font-family: Poppins;
-    font-weight: 500;
+    width: 391px;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 0px rgba(74, 144, 226, 0.19);
+    margin-top: 7px;
 `
 
 export const Button = styled.button`
@@ -54,10 +72,23 @@ export const Button = styled.button`
     font-weight: 500;
     border-radius: 40px;
     border: none; 
+    cursor: pointer;
+    margin-top: 60px;
+    &:hover{
+        background-color: #8D529C;
+    }
+    &:active{
+        background-color: #A25FB3;
+    }
 `
 
 export const P = styled.p`
     color: #FFF;
     font-size: 14px;
     font-family: Roboto;
+    margin-top: 30px;
+    a{
+        text-decoration: underline;
+        cursor: pointer;
+    }
 `
