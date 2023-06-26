@@ -33,7 +33,6 @@ export const LogoImage = styled.img`
 export const H1 = styled.h1`
     color: #FFF;
     font-size: 24px;
-    font-family: Roboto;
     font-weight: 500;
     text-align: center;
     margin-top: 320px;
@@ -44,7 +43,6 @@ export const H1 = styled.h1`
 export const Label = styled.label`
     color: #FFF;
     font-size: 12px;
-    font-family: Roboto;
     font-weight: 500;
     &#label-password{
         margin-top: 20px;
@@ -55,10 +53,10 @@ export const Input = styled.input`
     width: 391px;
     height: 38px;
     border: none;
-    outline: none;
     border-radius: 5px;
     box-shadow: 3px 3px 10px 0px rgba(74, 144, 226, 0.19);
     margin-top: 7px;
+    padding-left: 12px;
 `
 
 export const Button = styled.button`
@@ -85,7 +83,6 @@ export const Button = styled.button`
 export const P = styled.p`
     color: #FFF;
     font-size: 14px;
-    font-family: Roboto;
     margin-top: 30px;
     a{
         text-decoration: underline;
