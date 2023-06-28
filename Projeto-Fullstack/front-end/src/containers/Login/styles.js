@@ -16,6 +16,11 @@ export const Main = styled.main`
     flex-direction: column;
     padding-left: 104px;
     justify-content: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 // Elementos
