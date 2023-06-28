@@ -11,7 +11,10 @@ import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, Button,
 
 function Login() {
   // Comandos e funções da biblioteca react-hook-form
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, // Mapear os campos
+    handleSubmit, // Enviar os dados
+    formState: { errors } // Identificar os erros
+  } = useForm()
 
   const onSubmit = data => console.log(data)
 
@@ -30,10 +33,10 @@ function Login() {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <Label>Email</Label>
-          <Input type="email" { ... register('email')}></Input>
+          <Input type="email" {...register('email')}></Input>
 
           <Label id="label-password">Senha</Label>
-          <Input type="password" { ... register('password')}></Input>
+          <Input type="password" {...register('password')}></Input>
 
           <Button type="submit">Entrar</Button>
         </form>
