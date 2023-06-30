@@ -57,11 +57,18 @@ export const Label = styled.label`
 export const Input = styled.input`
     width: 391px;
     height: 38px;
-    border: none;
+    border: ${ props => props.error ? '2px solid #CC1717' : 'none'}; // props : propriedades do elemento
     border-radius: 5px;
     box-shadow: 3px 3px 10px 0px rgba(74, 144, 226, 0.19);
     margin-top: 7px;
     padding-left: 12px;
+`
+
+export const ErrorMessage = styled.p `
+    color: #CC1717;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 2px;
 `
 
 export const Button = styled.button`

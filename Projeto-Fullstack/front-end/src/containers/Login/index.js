@@ -9,7 +9,7 @@ import * as Yup from 'yup'
 import BurgerLogin from '../../assets/burger-login.png'
 import Logo from '../../assets/logo.png'
 
-import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, Button, P } from './styles'
+import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMessage, Button, P } from './styles'
 
 
 function Login() {
@@ -45,12 +45,12 @@ function Login() {
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}> {/* noValidate = não irá validar pelo html (sem mensagem de aviso do html nos campos) */}
           <Label>Email</Label>
-          <Input type="email" {...register('email')}></Input>
-          <p>{errors.email?.message}</p> {/* mensagem de erro (validação pelo Yup) */}
+          <Input type="email" {...register('email')} error={errors.email?.message}></Input> {/* error = caso houver a mensagem, será true (para a estilização acontecer se necessário) */}
+          <ErrorMessage>{errors.email?.message}</ErrorMessage> {/* mensagem de erro (validação pelo Yup) */}
 
           <Label id="label-password">Senha</Label>
-          <Input type="password" {...register('password')}></Input>
-          <p>{errors.password?.message}</p>
+          <Input type="password" {...register('password')} error={errors.email?.message}></Input>
+          <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
           <Button type="submit">Entrar</Button>
         </form>
