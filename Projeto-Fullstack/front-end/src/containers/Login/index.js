@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamen
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
+import api from '../../services/api'
+
 import BurgerLogin from '../../assets/burger-login.png'
 import Logo from '../../assets/logo.png'
 
@@ -28,7 +30,12 @@ function Login() {
     resolver: yupResolver(schema) // Validar os campos
   })
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
+    const response = await api.post('sessions', {
+      email: inputsClientData.email,
+      password: inputsClientData.password
+    })
+  }
 
   return (
     <Container>

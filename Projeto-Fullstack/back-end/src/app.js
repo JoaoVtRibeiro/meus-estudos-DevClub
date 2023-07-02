@@ -8,10 +8,10 @@ import './database'
 class App {
   constructor() {
     this.app = express()
+    this.app.use(cors()) // Permitindo que todas as origens http tenham acesso a essa api
 
     this.middlewares()
     this.routes()
-    this.app.use(cors()) // Permitindo que todas as origens http tenham acesso a essa api
   }
 
   middlewares() {
