@@ -1,17 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
+
+// Bibliotecas e frameworks
 import React from 'react'
 import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamento de formulários
-
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
+// Api
 import api from '../../services/api'
 
+// Estilizações e componentes
 import BurgerLogin from '../../assets/burger-login.png'
 import Logo from '../../assets/logo.png'
-
-import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMessage, Button, P } from './styles'
+import Button from '../../components/Button'
+import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMessage, P } from './styles'
 
 
 function Login() {
@@ -59,7 +62,7 @@ function Login() {
           <Input type="password" {...register('password')} error={errors.email?.message}></Input>
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Button type="submit">Entrar</Button>
+          <Button type="submit" style={{ marginTop: 60 }}>Entrar</Button>
         </form>
 
         <P>Não possui conta? <a>Criar conta</a></P>

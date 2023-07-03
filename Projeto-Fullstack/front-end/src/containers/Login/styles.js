@@ -71,27 +71,6 @@ export const ErrorMessage = styled.p `
     margin-top: 2px;
 `
 
-export const Button = styled.button`
-    width: 182px;
-    height: 36px;
-    background-color: #9758A6;
-    color: #EEE;
-    text-align: center;
-    font-size: 16px;
-    font-family: Poppins;
-    font-weight: 500;
-    border-radius: 40px;
-    border: none; 
-    cursor: pointer;
-    margin-top: 60px;
-    &:hover{
-        background-color: #8D529C;
-    }
-    &:active{
-        background-color: #A25FB3;
-    }
-`
-
 export const P = styled.p`
     color: #FFF;
     font-size: 14px;
