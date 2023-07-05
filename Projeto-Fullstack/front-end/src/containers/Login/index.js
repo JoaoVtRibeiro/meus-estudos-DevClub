@@ -34,6 +34,7 @@ function Register() {
   })
 
   const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
+    // eslint-disable-next-line no-unused-vars
     const response = await api.post('sessions', {
       email: inputsClientData.email,
       password: inputsClientData.password

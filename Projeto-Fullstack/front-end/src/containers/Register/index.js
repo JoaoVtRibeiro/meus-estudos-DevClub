@@ -24,7 +24,7 @@ function Login() {
     name: Yup.string().required('Digite seu nome'),
     email: Yup.string().email('Digite um email válido').required('Digite seu email'),
     password: Yup.string().required('Digite sua senha').min(6, 'A senha deve ter no mínimo 6 digitos'),
-    confirmPassword: Yup.string().required('Confirme sua senha').min(6, 'A senha deve ter no mínimo 6 digitos')
+    confirmPassword: Yup.string().required('Confirme sua senha').oneOf([Yup.ref('password')], 'As senha devem ser iguais')
   })
 
   // Comandos e funções da biblioteca react-hook-form (Formulário)
@@ -36,6 +36,7 @@ function Login() {
   })
 
   const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
+    // eslint-disable-next-line no-unused-vars
     const response = await api.post('users', {
       name: inputsClientData.name,
       email: inputsClientData.email,
@@ -57,23 +58,23 @@ function Login() {
         <H1>Cadastre-se</H1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}> {/* noValidate = não irá validar pelo html (sem mensagem de aviso do html nos campos) */}
-          <Label>Nome</Label>
+          <Label error={errors.name?.message}>Nome</Label>
           <Input type="text" {...register('name')} error={errors.name?.message}></Input> {/* error = caso houver a mensagem, será true (para a estilização acontecer se necessário) */}
           <ErrorMessage>{errors.name?.message}</ErrorMessage> {/* mensagem de erro (validação pelo Yup) */}
 
-          <Label id="email">Email</Label>
+          <Label error={errors.email?.message}>Email</Label>
           <Input type="email" {...register('email')} error={errors.email?.message}></Input>
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
-          <Label id="password">Senha</Label>
+          <Label error={errors.password?.message}>Senha</Label>
           <Input type="password" {...register('password')} error={errors.password?.message}></Input>
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Label id="confirm-password">Confirmar Senha</Label>
-          <Input type="password" {...register('password')} error={errors.confirmpassword?.message}></Input>
-          <ErrorMessage>{errors.confirmpassword?.message}</ErrorMessage>
+          <Label error={errors.confirmPassword?.message}>Confirmar Senha</Label>
+          <Input type="password" {...register('confirmPassword')} error={errors.confirmPassword?.message}></Input>
+          <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
 
-          <Button type="submit" style={{ marginTop: 60 }}>Cadastrar</Button>
+          <Button type="submit" style={{ marginTop: 20 }}>Cadastrar</Button>
         </form>
 
         <P>Já possui conta? <a>Fazer login</a></P>

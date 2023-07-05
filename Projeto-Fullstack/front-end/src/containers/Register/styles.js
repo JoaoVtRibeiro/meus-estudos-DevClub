@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Main = styled.main`
     background-color: #373737;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding-left: 104px;
@@ -40,8 +40,7 @@ export const H1 = styled.h1`
     font-size: 24px;
     font-weight: 500;
     text-align: center;
-    margin-top: 320px;
-    margin-bottom: 25px;
+    margin-top: 280px;
     padding-right: 90px;
 `
 
@@ -49,9 +48,8 @@ export const Label = styled.label`
     color: #FFF;
     font-size: 12px;
     font-weight: 500;
-    &#label-password{
-        margin-top: 20px;
-    }
+    margin-top: ${ props => props.error ? '10px' : '25px'};
+    
 `
 
 export const Input = styled.input`
