@@ -6,6 +6,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamento de formulários
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import { toast } from 'react-toastify'
 
 // Api
 import api from '../../services/api'
@@ -39,6 +40,17 @@ function Register() {
       email: inputsClientData.email,
       password: inputsClientData.password
     })
+
+    toast.error('Erro (teste)', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   }
 
   return (
