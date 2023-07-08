@@ -35,22 +35,19 @@ function Register() {
   })
 
   const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
-    // eslint-disable-next-line no-unused-vars
-    const response = await api.post('sessions', {
-      email: inputsClientData.email,
-      password: inputsClientData.password
-    })
 
-    toast.error('Erro (teste)', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      });
+    // eslint-disable-next-line no-unused-vars
+    const response = await toast.promise(
+      api.post('sessions', {
+        email: inputsClientData.email,
+        password: inputsClientData.password
+      }),
+      {
+        pending: 'Verificando seus dados',
+        success: 'Login confirmado, seja bem-vindo(a)',
+        error: 'Erro, verifique seu email e senha'
+      }
+    )
   }
 
   return (
