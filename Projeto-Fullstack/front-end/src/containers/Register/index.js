@@ -6,6 +6,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamento de formulários
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import { toast } from 'react-toastify'
 
 // Api
 import api from '../../services/api'
@@ -36,12 +37,24 @@ function Login() {
   })
 
   const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
-    // eslint-disable-next-line no-unused-vars
-    const response = await api.post('users', {
-      name: inputsClientData.name,
-      email: inputsClientData.email,
-      password: inputsClientData.password
-    })
+    try {
+      const { status } = await api.post('users', {
+        name: inputsClientData.name,
+        email: inputsClientData.email,
+        password: inputsClientData.password
+      },
+        { validateStatus: () => true }) // validateStatus, permite que o axios retorne o status da requisição (200, 400, 409...)
+
+      if(status === 201 || status === 200){
+        toast.success('Cadastrado com sucesso!')
+      } else if(status === 409){
+        toast.error('Email já cadastrado! Faça login para continuar')
+      } else {
+        throw new Error() // 'Forçando um erro', para que independente de qual erro seja, a leitura do código continuar no catch
+      }
+    } catch (err) {
+      toast.error('Falha no sistema, tente novamente')
+    }
   }
 
   return (

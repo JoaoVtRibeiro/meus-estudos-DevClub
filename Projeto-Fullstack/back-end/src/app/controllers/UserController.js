@@ -44,7 +44,7 @@ class UserController {
         })
 
         if (emailVerification) {
-            return response.status(400).json({ error: 'Email already exists' })
+            return response.status(409).json({ error: 'Email already exists' })
         }
 
         // Criação do Usuário

@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
    <>
       <Login />
-      <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={2000} theme='colored'/>
       <GlobalStyles />
    </>
 )
