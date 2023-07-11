@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamen
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
+import { useUser } from '../../hooks/UserContext'
 
 // Api
 import api from '../../services/api'
@@ -19,8 +20,9 @@ import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMe
 
 
 function Register() {
-  // Yup (Validação dos campos)
+  const users = useUser()
 
+  // Yup (Validação dos campos)
   const schema = Yup.object().shape({
     email: Yup.string().email('Digite um email válido').required('Digite seu email'),
     password: Yup.string().required('Digite sua senha').min(6, 'A senha deve ter no mínimo 6 digitos')
