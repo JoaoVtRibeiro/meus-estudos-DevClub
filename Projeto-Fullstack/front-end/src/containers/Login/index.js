@@ -20,7 +20,7 @@ import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMe
 
 
 function Register() {
-  const users = useUser()
+  const {takeUserData, receivedUserData} = useUser()
 
   // Yup (Validação dos campos)
   const schema = Yup.object().shape({
@@ -37,19 +37,19 @@ function Register() {
   })
 
   const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
-
-    // eslint-disable-next-line no-unused-vars
-    const response = await toast.promise(
+    const { data } = await toast.promise( // data = uma das propriedades desse objeto (para visualizar trocar por um nome sem estar desestruturado e colocar um console.log)
       api.post('sessions', {
         email: inputsClientData.email,
         password: inputsClientData.password
       }),
-      {
+      { // Toast
         pending: 'Verificando seus dados',
         success: 'Login confirmado, seja bem-vindo(a)',
         error: 'Erro, verifique seu email e senha'
       }
     )
+
+    takeUserData(data) // Passando os dados para o state do UserContext
   }
 
   return (
