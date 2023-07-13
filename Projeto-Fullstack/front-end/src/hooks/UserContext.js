@@ -6,9 +6,11 @@ const UserContext = createContext({})
 export const UserProvider = ({ children }) => { // Provedor, aquele que tem a responsabilidade de ficar com os dados
     const [receivedUserData, setUserData] = useState({})
 
-    const takeUserData = userInfo => ( // Função responsavel por pegar os dados do usuario e colocar dentro do state
+    const takeUserData = async userInfo => { // Função responsavel por pegar os dados do usuario e colocar dentro do state
         setUserData(userInfo)
-    )
+
+        await localStorage.setItem('codeburger:userData', JSON.stringify(userInfo)) // Gravação dos dados localmente
+    }
 
     return (
         <UserContext.Provider value={{ takeUserData, receivedUserData }}> 
