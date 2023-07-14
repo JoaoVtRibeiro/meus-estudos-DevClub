@@ -1,5 +1,5 @@
 // Lembrar de olhar a documentação, caso aja duvida na estrutura
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 
 const UserContext = createContext({})
 
@@ -9,11 +9,23 @@ export const UserProvider = ({ children }) => { // Provedor, aquele que tem a re
     const takeUserData = async userInfo => { // Função responsavel por pegar os dados do usuario e colocar dentro do state
         setUserData(userInfo)
 
-        await localStorage.setItem('codeburger:userData', JSON.stringify(userInfo)) // Gravação dos dados localmente
+        await localStorage.setItem('codeburger:userData', JSON.stringify(userInfo)) // Gravação dos dados localmente, stringify = passando os dados para string (localStorage apenas aceita strings)
     }
 
+    useEffect(() => { // Inicia juntamente com a aplicação
+        const loadUserData = async () => {
+            const localUserData = await localStorage.getItem('codeburger:userData') // Recuperação dos dados gravados localmente
+
+            if (localUserData) { // Se houver algum dado gravado, já fica disponivel
+                setUserData(JSON.parse(localUserData)) // Retornando os dados ao seu formato de objeto
+            }
+        }
+
+        loadUserData()
+    }, [])
+
     return (
-        <UserContext.Provider value={{ takeUserData, receivedUserData }}> 
+        <UserContext.Provider value={{ takeUserData, receivedUserData }}>
             {children}
         </UserContext.Provider>
     )

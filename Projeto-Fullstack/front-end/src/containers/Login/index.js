@@ -20,7 +20,7 @@ import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMe
 
 
 function Register() {
-  const {takeUserData, receivedUserData} = useUser()
+  const { takeUserData } = useUser()
 
   // Yup (Validação dos campos)
   const schema = Yup.object().shape({
