@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamen
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 // Api
 import api from '../../services/api'
@@ -90,7 +91,7 @@ function Login() {
           <Button type="submit" style={{ marginTop: 20 }}>Cadastrar</Button>
         </form>
 
-        <P>Já possui conta? <a>Fazer login</a></P>
+        <P>Já possui conta? <Link style={{color: 'white'}} to="/login">Fazer login</Link></P>
       </Main>
     </Container>
   )

@@ -8,6 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
 import { useUser } from '../../hooks/UserContext'
+import { Link } from 'react-router-dom'
 
 // Api
 import api from '../../services/api'
@@ -74,10 +75,10 @@ function Register() {
           <Input type="password" {...register('password')} error={errors.password?.message}></Input>
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Button type="submit" style={{ marginTop: 60 }}>Entrar</Button>
+          <Button type="submit" style={{ marginTop: 60 }}>Entrar</Button> {/* Primeiro {} indica que o trecho será em javascript, a segunda {} significa um objeto */}
         </form>
 
-        <P>Não possui conta? <a>Criar conta</a></P>
+        <P>Não possui conta? <Link style={{color: 'white'}} to="/cadastro">Criar conta</Link></P>
       </Main>
     </Container>
   )

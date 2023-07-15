@@ -1,18 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify' // Toastys (Avisos laterais)
 
-import Login from './containers/Login'
-// import Register from './containers/Register'
-
+import { UserProvider } from './hooks/UserContext' // Disponibilizar dados do Usuario para toda a aplicação
+import Routes from './routes/routes'
 import GlobalStyles from './styles/globalStyles'
-import { UserProvider } from './hooks/UserContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
    <>
       <UserProvider>
-         <Login />
+         <Routes />
       </UserProvider>
       <ToastContainer autoClose={2000} theme='colored' />
       <GlobalStyles />
