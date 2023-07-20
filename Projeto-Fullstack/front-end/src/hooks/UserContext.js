@@ -47,7 +47,7 @@ export const useUser = () => { // Responsavel por disponibilizar os dados para o
     - Usuario informa seus dados no input e ativa a função "onSubmit" ao clicar no botão (Login/index.js)
     - api.post acessa o banco, confirma o acesso e trás todos os dados desse usuario 
     - takeUserData recebe esses dados e passa para o state (userProvider) 
-    -> UserProvider -> value (<UserConxtext.Provider>) -> useUser -> Toda a aplicação tem acesso
+    -> UserProvider -> value (<UserContext.Provider>) -> useUser -> Toda a aplicação tem acesso
     
     Lembrando: takeUserData e receivedUserData estão sendo passados para useUser (value) para Login/index.js
 

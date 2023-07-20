@@ -7,8 +7,8 @@ import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamen
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
-import { useUser } from '../../hooks/UserContext'
-import { Link } from 'react-router-dom'
+import { useUser } from '../../hooks/UserContext' // Pegando os dados dessa página de login para o resto da aplicação
+import { Link, useHistory } from 'react-router-dom'
 
 // Api
 import api from '../../services/api'
@@ -21,7 +21,10 @@ import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMe
 
 
 function Register() {
-  const { takeUserData } = useUser()
+  const { takeUserData } = useUser()// Importando a variavél que vai pegar os dados dessa página de login para o resto da aplicação
+
+  //  useHistory (Navegação entre página)
+  const history = useHistory()
 
   // Yup (Validação dos campos)
   const schema = Yup.object().shape({
@@ -37,6 +40,7 @@ function Register() {
     resolver: yupResolver(schema) // Validar os campos
   })
 
+  // Ao clicar no botão
   const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
     const { data } = await toast.promise( // data = uma das propriedades desse objeto (para visualizar trocar por um nome sem estar desestruturado e colocar um console.log)
       api.post('sessions', {
@@ -51,6 +55,11 @@ function Register() {
     )
 
     takeUserData(data) // Passando os dados para o state do UserContext
+
+    setTimeout(() =>{ // Só executa depois do tempo determinado (dar tempo para o usuário ver o toasty)
+      history.push('/') // Redirecionamento para "Home"
+    }, 1000) // 1 segundo
+    
   }
 
   return (
