@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import api from '../../services/api'
 
@@ -6,11 +6,13 @@ import Categories from '../../assets/categories.png'
 import { Container, CategoriesImg } from './styles'
 
 function CategoriesCarousel() {
-    useEffect(() =>{ // Sempre é executado quando: 1. A página é iniciada
-        async function loadCategories() {
-            const response = await api.get('categories')
+    const [categories, setCategories] = useState([])
 
-            console.log(response)
+    useEffect(() => { // Sempre é executado quando: 1. A página é iniciada
+        async function loadCategories() {
+            const { data } = await api.get('categories') // apenas o "data" é necessário dos atributos do objeto
+
+            setCategories(data)
         }
 
         loadCategories()
@@ -18,7 +20,7 @@ function CategoriesCarousel() {
 
     return (
         <Container>
-            <CategoriesImg src={Categories} alt="logo das categorias"/>
+            <CategoriesImg src={Categories} alt="logo das categorias" />
         </Container>
     )
 }
