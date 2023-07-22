@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Carousel from 'react-elastic-carousel'
 
 import api from '../../services/api'
 
@@ -21,6 +22,15 @@ function CategoriesCarousel() {
     return (
         <Container>
             <CategoriesImg src={Categories} alt="logo das categorias" />
+
+            <Carousel itemsToShow={4}>
+                {categories && categories.map(category => {
+                    <div key={category.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
+                        <img src={category.url} alt="foto da categoria"></img>
+                        <button>{category.name}</button>
+                    </div>
+                })}
+            </Carousel>
         </Container>
     )
 }
