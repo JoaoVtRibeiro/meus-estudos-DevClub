@@ -19,11 +19,19 @@ function CategoriesCarousel() {
         loadCategories()
     }, []) // Sempre é executado quando: 2. Atualização de algum componente (que devem estar dentro do [])
 
+    const breakPoints = [ // "Pontos de quebra" indicando a partir de um valor de largura quantos itens serão mostrados (responsividade)
+        { width: 1, itemsToShow: 1 },
+        { width: 400, itemsToShow: 2 },
+        { width: 600, itemsToShow: 3 },
+        { width: 900, itemsToShow: 4 },
+        { width: 1300, itemsToShow: 5 }
+    ]
+
     return (
         <Container>
-            <CategoriesImg src={Categories} alt="logo das categorias" />
+            <CategoriesImg src={Categories} alt="logo das categorias" breakPoints={breakPoints} />
 
-            <Carousel itemsToShow={4}>
+            <Carousel itemsToShow={4} style={{ width: '90%' }}>
                 {categories && categories.map(category => {
                     <div key={category.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
                         <img src={category.url} alt="foto da categoria"></img>
