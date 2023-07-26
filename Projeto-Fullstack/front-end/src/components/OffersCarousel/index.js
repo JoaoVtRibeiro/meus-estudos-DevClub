@@ -37,7 +37,9 @@ function OffersCarousel() {
                 {offers && offers.map(product => {
                     <CarouselItem key={product.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
                         <Image src={product.url} alt="foto da produto em oferta"></Image>
-                        <Button>{product.name}</Button>
+                        <p>{product.name}</p>
+                        <p>{product.price}</p>
+                        <Button>Peça agora</Button>
                     </CarouselItem>
                 })}
             </Carousel>
