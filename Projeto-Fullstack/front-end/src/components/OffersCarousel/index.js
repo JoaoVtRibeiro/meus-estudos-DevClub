@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Carousel from 'react-elastic-carousel'
 
 import api from '../../services/api'
+import formatCurrency from '../../utils/formatCurrency'
 
 import Offers from '../../assets/Offers.png'
 import { Container, OffersImg, CarouselItem, Image, Button } from './styles'
@@ -13,7 +14,11 @@ function OffersCarousel() {
         async function loadOffers() {
             const { data } = await api.get('products') // apenas o "data" é necessário dos atributos do objeto
 
-            const onlyOffers = data.filter(product => product.offer)
+            const onlyOffers = data
+                .filter(product => product.offer)
+                .map(product => { // Formatando todos o valores de preço de uma vez (Melhorar a Performace)
+                    return { ...product, formatedPrice: formatCurrency(product.price) }
+                })
 
             setOffers(onlyOffers)
         }
@@ -38,7 +43,7 @@ function OffersCarousel() {
                     <CarouselItem key={product.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
                         <Image src={product.url} alt="foto da produto em oferta"></Image>
                         <p>{product.name}</p>
-                        <p>{product.price}</p>
+                        <p>{product.formatedPrice}</p>
                         <Button>Peça agora</Button>
                     </CarouselItem>
                 })}
