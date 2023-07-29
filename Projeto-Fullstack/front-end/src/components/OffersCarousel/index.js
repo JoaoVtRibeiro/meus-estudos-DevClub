@@ -4,7 +4,7 @@ import Carousel from 'react-elastic-carousel'
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
 
-import Offers from '../../assets/Offers.png'
+import Offers from '../../assets/offers.png'
 import { Container, OffersImg, CarouselItem, Image, Button } from './styles'
 
 function OffersCarousel() {

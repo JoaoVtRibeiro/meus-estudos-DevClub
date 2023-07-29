@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    padding: 35px 0;
+    padding: 15px 0;
 
     .rec.rec-arrow{ // Botão da seta lateral do carrosel
         background-color: #9758a6;
