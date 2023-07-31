@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../services/api'
 
 import ProductsBanner from '../../assets/products-banner.png'
-import { Container, ProductsImg } from './styles'
+import { Container, ProductsImg, CategoryButton, CategoriesMenu } from './styles'
 
 function Products() {
     const [categories, setCategories] = useState([])
@@ -12,7 +12,7 @@ function Products() {
         async function loadCategories() {
             const { data } = await api.get('categories') // apenas o "data" é necessário dos atributos do objeto
 
-            const addAllCategories = [{ id: 0, name: 'Todas'}, ...data]
+            const addAllCategories = [{ id: 0, name: 'Todas' }, ...data]
 
             setCategories(addAllCategories)
         }
@@ -23,9 +23,11 @@ function Products() {
     return (
         <Container>
             <ProductsImg src={ProductsBanner} alt="banner da página" />
-            {categories && categories.map(category => (
-                <button key={category.id}>{category.name}</button>
-            ))}
+            <CategoriesMenu>
+                {categories && categories.map(category => (
+                    <CategoryButton type="button" key={category.id}>{category.name}</CategoryButton>
+                ))}
+            </CategoriesMenu>
         </Container >
     )
 }
