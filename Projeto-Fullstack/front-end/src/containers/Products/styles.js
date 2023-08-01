@@ -7,7 +7,7 @@ export const ProductsImg = styled.img`
 `
 
 export const CategoriesMenu = styled.div`
-    display: flex;
+    display: flex; // Display que auxilia com alinhamentos
     justify-content: center;
     gap: 50px;
     margin-top: 20px;
@@ -17,7 +17,9 @@ export const CategoryButton = styled.button`
     cursor: pointer;
     background: none;
     border: none;
-    color: #9a9a9d;
+    border-bottom: ${props => props.isActiveCategory && '2px solid #9758A6'}; // && = if sem o else (só vai ser aplicado se isActiveCategory for verdadeiro)
+    padding-bottom: 5px;
+    color: ${props => props.isActiveCategory ? '#9758A6' : '#9a9a9d'};
     font-size: 17px;
     line-height: 20px;
 `
