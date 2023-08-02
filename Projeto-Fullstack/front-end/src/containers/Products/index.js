@@ -8,6 +8,7 @@ import { Container, ProductsImg, CategoryButton, CategoriesMenu } from './styles
 function Products() {
     const [categories, setCategories] = useState([])
     const [activeCategory, setActiveCategory] = useState(0) // 0 porque começa ativo na categoria "todas"
+    const [products, setProducts] = useState([])
 
     useEffect(() => { // Sempre é executado quando: 1. A página é iniciada
         async function loadCategories() {
@@ -19,24 +20,36 @@ function Products() {
         }
 
         loadCategories()
+
+        async function loadProducts() {
+            const { data } = await api.get('products')
+    
+            setProducts(data)
+        }
+    
+        loadProducts()
     }, [])
 
-    return (
-        <Container>
-            <ProductsImg src={ProductsBanner} alt="banner da página" />
-            <CategoriesMenu>
-                {categories && categories.map(category => (
-                    <CategoryButton type="button"
-                        key={category.id}
-                        isActiveCategory={activeCategory === category.id}
-                        onClick={() => {setActiveCategory(category.id)}} // () => {} / função anônima para evitar que setActive seja chamado quando o botão for renderizado e sim só quando for clicado
-                    >
-                        {category.name}
-                    </CategoryButton>
-                ))}
-            </CategoriesMenu>
-        </Container >
-    )
+    
+
+
+
+return (
+    <Container>
+        <ProductsImg src={ProductsBanner} alt="banner da página" />
+        <CategoriesMenu>
+            {categories && categories.map(category => (
+                <CategoryButton type="button"
+                    key={category.id}
+                    isActiveCategory={activeCategory === category.id}
+                    onClick={() => { setActiveCategory(category.id) }} // () => {} / função anônima para evitar que setActive seja chamado quando o botão for renderizado e sim só quando for clicado
+                >
+                    {category.name}
+                </CategoryButton>
+            ))}
+        </CategoriesMenu>
+    </Container >
+)
 }
 
 export default Products
