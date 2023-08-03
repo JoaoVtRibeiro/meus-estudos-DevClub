@@ -23,3 +23,5 @@ export const CategoryButton = styled.button`
     font-size: 17px;
     line-height: 20px;
 `
+
+export const ProductsContainer = styled.div``
