@@ -26,4 +26,10 @@ export const CategoryButton = styled.button`
     line-height: 20px;
 `
 
-export const ProductsContainer = styled.div``
+export const ProductsContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 40px;
+    justify-items: center;
+`

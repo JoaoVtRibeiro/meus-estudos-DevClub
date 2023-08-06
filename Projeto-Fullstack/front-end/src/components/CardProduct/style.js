@@ -7,6 +7,7 @@ export const Container = styled.div`
     display: flex;
     gap: 12px;
     padding: 16px;
+    width: max-content; // Largura máxima limitada ao que os itens necessitam (não irá esticar mais do que o necessário)
     div {
         display: flex;
         flex-direction: column;
