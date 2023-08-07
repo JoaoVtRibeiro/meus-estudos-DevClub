@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import api from '../../services/api'
+import formatCurrency from '../../utils'
 
 import CardProduct from '../../components/CardProduct'
 import ProductsBanner from '../../assets/products-banner.png'
@@ -21,19 +22,19 @@ function Products() {
         }
 
         async function loadProducts() {
-            const { data } = await api.get('products')
+            const { data: allProducts } = await api.get('products') // data: allProducts, alteração do nome data -> allProducts (para ficar mais descritivo)
 
-            setProducts(data)
+            const productsWithFormatedPrice = allProducts.map(product => { // Formatando todos o valores de preço de uma vez (Melhorar a Performace)
+                return { ...product, formatedPrice: formatCurrency(product.price) } //...product = espalhando todos os atributos de product e adicionando um novo (criando um novo objeto)
+            })
+
+            setProducts(productsWithFormatedPrice)
         }
 
         loadCategories()
         loadProducts()
 
     }, [])
-
-
-
-
 
     return (
         <Container>

@@ -17,7 +17,7 @@ function OffersCarousel() {
             const onlyOffers = data
                 .filter(product => product.offer)
                 .map(product => { // Formatando todos o valores de preço de uma vez (Melhorar a Performace)
-                    return { ...product, formatedPrice: formatCurrency(product.price) }
+                    return { ...product, formatedPrice: formatCurrency(product.price) } //...product = espalhando todos os atributos de product e adicionando um novo (criando um novo objeto)
                 })
 
             setOffers(onlyOffers)
