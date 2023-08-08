@@ -11,6 +11,7 @@ function Products() {
     const [categories, setCategories] = useState([])
     const [activeCategory, setActiveCategory] = useState(0) // 0 porque começa ativo na categoria "todas"
     const [products, setProducts] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
 
     useEffect(() => { // Sempre é executado quando: 1. A página é iniciada
         async function loadCategories() {
@@ -35,6 +36,18 @@ function Products() {
         loadProducts()
 
     }, [])
+
+    useEffect(() => {
+        if (activeCategory === 0) { // 0 = categoria "todas"
+            setFilteredProducts(products) // Todos os produtos serão mostrados
+        } else {
+            const addFilteredProducts = products.filter(
+                product => product.category_id === activeCategory
+            )
+
+            setFilteredProducts(addFilteredProducts) // Apenas os produtos filtrados pela respectiva categoria serão mostrados
+        }
+    }, [activeCategory, products])
 
     return (
         <Container>
