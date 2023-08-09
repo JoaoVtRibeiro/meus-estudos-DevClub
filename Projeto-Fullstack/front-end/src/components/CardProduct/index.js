@@ -3,7 +3,7 @@ import React from 'react'
 import { Container, Image, ProductName, ProductPrice } from './style'
 import Button from '../Button'
 
-function CardProduct({ product }) {
+export function CardProduct({ product }) {
     return (
         <Container>
             <Image src={product.url} alt="imagem do produto" />
@@ -15,5 +15,3 @@ function CardProduct({ product }) {
         </Container>
     )
 }
-
-export default CardProduct

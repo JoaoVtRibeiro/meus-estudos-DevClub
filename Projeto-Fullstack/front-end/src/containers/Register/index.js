@@ -15,11 +15,11 @@ import api from '../../services/api'
 // Estilizações e componentes
 import RegisterImage from '../../assets/register-image.png'
 import Logo from '../../assets/logo.png'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import { Container, BurgerRegisterImage, Main, LogoImage, H1, Label, Input, ErrorMessage, P } from './styles'
 
 
-function Login() {
+export function Login() {
   // Yup (Validação dos campos)
 
   const schema = Yup.object().shape({
@@ -46,9 +46,9 @@ function Login() {
       },
         { validateStatus: () => true }) // validateStatus, permite que o axios retorne o status da requisição (200, 400, 409...)
 
-      if(status === 201 || status === 200){
+      if (status === 201 || status === 200) {
         toast.success('Cadastrado com sucesso!')
-      } else if(status === 409){
+      } else if (status === 409) {
         toast.error('Email já cadastrado! Faça login para continuar')
       } else {
         throw new Error() // 'Forçando um erro', para que independente de qual erro seja, a leitura do código continuar no catch
@@ -91,10 +91,8 @@ function Login() {
           <Button type="submit" style={{ marginTop: 20 }}>Cadastrar</Button>
         </form>
 
-        <P>Já possui conta? <Link style={{color: 'white'}} to="/login">Fazer login</Link></P>
+        <P>Já possui conta? <Link style={{ color: 'white' }} to="/login">Fazer login</Link></P>
       </Main>
     </Container>
   )
 }
-
-export default Login

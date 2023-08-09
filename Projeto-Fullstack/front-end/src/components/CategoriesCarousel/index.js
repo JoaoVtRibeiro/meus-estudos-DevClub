@@ -6,7 +6,7 @@ import api from '../../services/api'
 import Categories from '../../assets/categories.png'
 import { Container, CategoriesImg, CarouselItem, Image, Button } from './styles'
 
-function CategoriesCarousel() {
+export function CategoriesCarousel() {
     const [categories, setCategories] = useState([])
 
     useEffect(() => { // Sempre é executado quando: 1. A página é iniciada
@@ -43,4 +43,3 @@ function CategoriesCarousel() {
     )
 }
 
-export default CategoriesCarousel

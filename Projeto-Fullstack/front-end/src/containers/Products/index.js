@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import api from '../../services/api'
 import formatCurrency from '../../utils'
 
-import CardProduct from '../../components/CardProduct'
+import { CardProduct } from '../../components'
 import ProductsBanner from '../../assets/products-banner.png'
 import { Container, ProductsImg, CategoriesMenu, CategoryButton, ProductsContainer } from './styles'
 
-function Products() {
+export function Products() {
     const [categories, setCategories] = useState([])
     const [activeCategory, setActiveCategory] = useState(0) // 0 porque começa ativo na categoria "todas"
     const [products, setProducts] = useState([])
@@ -64,12 +64,10 @@ function Products() {
                 ))}
             </CategoriesMenu>
             <ProductsContainer>
-                {products && products.map(product => (
+                {filteredProducts && filteredProducts.map(product => (
                     <CardProduct key={product.id} product={product} />
                 ))}
             </ProductsContainer>
         </Container >
     )
 }
-
-export default Products

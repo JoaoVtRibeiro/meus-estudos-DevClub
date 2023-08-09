@@ -16,11 +16,11 @@ import api from '../../services/api'
 // Estilizações e componentes
 import LoginImage from '../../assets/login-image.png'
 import Logo from '../../assets/logo.png'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMessage, P } from './styles'
 
 
-function Register() {
+export function Register() {
   const { takeUserData } = useUser()// Importando a variavél que vai pegar os dados dessa página de login para o resto da aplicação
 
   //  useHistory (Navegação entre página)
@@ -56,10 +56,10 @@ function Register() {
 
     takeUserData(data) // Passando os dados para o state do UserContext
 
-    setTimeout(() =>{ // Só executa depois do tempo determinado (dar tempo para o usuário ver o toasty)
+    setTimeout(() => { // Só executa depois do tempo determinado (dar tempo para o usuário ver o toasty)
       history.push('/') // Redirecionamento para "Home"
     }, 1000) // 1 segundo
-    
+
   }
 
   return (
@@ -87,10 +87,8 @@ function Register() {
           <Button type="submit" style={{ marginTop: 60 }}>Entrar</Button> {/* Primeiro {} indica que o trecho será em javascript, a segunda {} significa um objeto */}
         </form>
 
-        <P>Não possui conta? <Link style={{color: 'white'}} to="/cadastro">Criar conta</Link></P>
+        <P>Não possui conta? <Link style={{ color: 'white' }} to="/cadastro">Criar conta</Link></P>
       </Main>
     </Container>
   )
 }
-
-export default Register

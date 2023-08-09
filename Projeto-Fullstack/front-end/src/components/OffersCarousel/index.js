@@ -7,7 +7,7 @@ import formatCurrency from '../../utils/formatCurrency'
 import Offers from '../../assets/offers.png'
 import { Container, OffersImg, CarouselItem, Image, Button } from './styles'
 
-function OffersCarousel() {
+export function OffersCarousel() {
     const [offers, setOffers] = useState([])
 
     useEffect(() => { // Sempre é executado quando: 1. A página é iniciada
@@ -51,5 +51,3 @@ function OffersCarousel() {
         </Container>
     )
 }
-
-export default OffersCarousel
