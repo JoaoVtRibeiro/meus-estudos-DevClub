@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => { // Provedor, aquele que tem a responsabilidade de ficar com os dados
-    const [receivedUserData, setUserData] = useState({})
+    const [receivedUserData, setUserData] = useState({}) // useState "{}" porque irá receber em objeto
 
     const takeUserData = async userInfo => { // Função responsavel por pegar os dados do usuario e colocar dentro do state
         setUserData(userInfo)
@@ -25,7 +25,7 @@ export const UserProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <UserContext.Provider value={{ takeUserData, receivedUserData }}>
+        <UserContext.Provider value={{ takeUserData, receivedUserData }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </UserContext.Provider>
     )
