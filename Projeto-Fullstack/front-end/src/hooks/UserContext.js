@@ -31,7 +31,7 @@ export const UserProvider = ({ children }) => { // Provedor, aquele que tem a re
     )
 }
 
-export const useUser = () => { // Responsavel por disponibilizar os dados para o resto da aplicação
+export const useUser = () => { // Responsavel por disponibilizar os dados e funções para o resto da aplicação (no caso, takeUserData e receivedUserData)
     const context = useContext(UserContext)
 
     if (!context) { // Erro caso o valor chegue nulo

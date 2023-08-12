@@ -5,7 +5,7 @@ const CartContext = createContext({})
 export const CartProvider = ({ children }) => { // Provedor, aquele que tem a responsabilidade de ficar com os dados
     const [receivedCartProducts, setCartProducts] = useState([]) // useState "[]" porque irá receber em array
 
-    const takeCartData = async product => { // Função responsavel por pegar os dados do carrinho e colocar dentro do state
+    const putProductInCart = async product => { // Função responsavel por pegar os dados do carrinho e colocar dentro do state
        
     }
 
@@ -22,13 +22,13 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <CartContext.Provider value={{ takeCartData, receivedCartProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
+        <CartContext.Provider value={{ putProductInCart, receivedCartProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </CartContext.Provider>
     )
 }
 
-export const useCart = () => { // Responsavel por disponibilizar os dados para o resto da aplicação
+export const useCart = () => { // Responsavel por disponibilizar os dados e funções para o resto da aplicação (no caso, putProductInCart e receivedCartProducts)
     const context = useContext(CartContext)
 
     if (!context) { // Erro caso o valor chegue nulo

@@ -13,7 +13,8 @@ export function Products() {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
 
-    useEffect(() => { // Sempre é executado quando: 1. A página é iniciada
+    useEffect(() => {
+        // Importação das categorias
         async function loadCategories() {
             const { data } = await api.get('categories') // apenas o "data" é necessário dos atributos do objeto
 
@@ -22,7 +23,8 @@ export function Products() {
             setCategories(addAllCategories)
         }
 
-        async function loadProducts() {
+        // Importação dos produtos e formatação de seus preços
+        async function loadProducts() { 
             const { data: allProducts } = await api.get('products') // data: allProducts, alteração do nome data -> allProducts (para ficar mais descritivo)
 
             const productsWithFormatedPrice = allProducts.map(product => { // Formatando todos o valores de preço de uma vez (Melhorar a Performace)
@@ -37,7 +39,8 @@ export function Products() {
 
     }, [])
 
-    useEffect(() => {
+    // Filtragem dos produtos por categoria
+    useEffect(() => { 
         if (activeCategory === 0) { // 0 = categoria "todas"
             setFilteredProducts(products) // Todos os produtos serão mostrados
         } else {
