@@ -3,10 +3,25 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 const CartContext = createContext({})
 
 export const CartProvider = ({ children }) => { // Provedor, aquele que tem a responsabilidade de ficar com os dados
-    const [receivedCartProducts, setCartProducts] = useState([]) // useState "[]" porque irá receber em array
+    const [cartProducts, setCartProducts] = useState([]) // useState "[]" porque irá receber em array
 
     const putProductInCart = async product => { // Função responsavel por pegar os dados do carrinho e colocar dentro do state
-       
+        const cartIndex = cartProducts.findIndex(prd => prd.id === product.id)
+
+        let newCartProducts = []
+        if (cartIndex >= 0) {
+            newCartProducts = cartProducts
+
+            ++newCartProducts[cartIndex].quantity
+
+            setCartProducts(newCartProducts)
+        } else {
+            product.quantity = 1
+            newCartProducts = [...cartProducts, product] // Lembrete: variaveis são sincronas, estado do react são asincronas, por isso o resultado desse variavel não está no setCartProducts
+            setCartProducts(newCartProducts)
+        }
+
+        await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts))
     }
 
     useEffect(() => { // Inicia juntamente com a aplicação
@@ -22,7 +37,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <CartContext.Provider value={{ putProductInCart, receivedCartProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
+        <CartContext.Provider value={{ putProductInCart, cartProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </CartContext.Provider>
     )
