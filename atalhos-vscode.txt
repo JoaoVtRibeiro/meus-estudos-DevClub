@@ -12,7 +12,11 @@ Olhar a configurações (No Navegador) : Botão direito -> Inspect/ Inspecionar 
 
 Mostrar arquivos ocultos (Windows) = ctrl + shift + .
 
-Selecionar uma mesma palavra que se repete varias vezes no código = ctrl + d
+Selecionar uma mesma palavra que se repete varias vezes no código (Uma por vez) = ctrl + d 
+
+Selecionar uma mesma palavra que se repete varias vezes no código (Todas de uma vez) = ctrl + shift + l
+
+
 
 
 
