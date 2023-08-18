@@ -3,7 +3,7 @@ import React from 'react'
 import { useCart } from './../../hooks/CardContext'
 import formatCurrency from './../../utils/formatCurrency'
 
-import { Container, Header, Body } from './styles'
+import { Container, Header, Body, EmptyCart } from './styles'
 
 export function CartItems() {
     const { cartProducts } = useCart()
@@ -11,14 +11,14 @@ export function CartItems() {
     return (
         <Container>
             <Header>
-                <p></p>
+                <p></p> {/* Parágrafo para auxiliar a estilização com display grid*/}
                 <p>Itens</p>
                 <p>Preços</p>
-                <p>Quantidade</p>
+                <p style={{ paddingRight: 30 }}>Quantidade</p>
                 <p>Total</p>
             </Header>
 
-            {cartProducts &&
+            {cartProducts && cartProducts.length > 0 ? (
                 cartProducts.map(product => (
                     <Body key={product.id}>
                         <img src={product.url} alt="Imagem do produto" />
@@ -27,7 +27,11 @@ export function CartItems() {
                         <p>{formatCurrency(product.quantity)}</p>
                         <p>{formatCurrency(product.quantity * product.price)}</p>
                     </Body>
-                ))}
-        </Container>
+                ))
+            ) : (
+                <EmptyCart>Carrinho vazio</EmptyCart>
+            )
+            }
+        </Container >
     )
 }
