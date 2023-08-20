@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
 
     const increaseProducts = async productId => {
         const newCartProducts = cartProducts.map(product => {
-            return product.id === productId ? { ...product, quantity: product.quantity + 1 } : product
+            return product.id === productId ? { ...product, quantity: product.quantity + 1 } : product // adicionando 1 na quantidade atraves do id recebido
         })
 
         setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
