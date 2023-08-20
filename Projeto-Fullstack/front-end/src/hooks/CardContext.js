@@ -24,6 +24,16 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
         await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts))
     }
 
+    const increaseProducts = async productId => {
+        const newCartProducts = cartProducts.map(product => {
+            return product.id === productId ? { ...product, quantity: product.quantity + 1 } : product
+        })
+
+        setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
+
+        await localStorage.setItem('codeburger:cartProducts', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuausuáriorio
+    }
+
     useEffect(() => { // Inicia juntamente com a aplicação
         const loadCardProducts = async () => {
             const localCardProducts = await localStorage.getItem('codeburger:cardProducts') // Recuperação dos dados gravados localmente
@@ -37,7 +47,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <CartContext.Provider value={{ putProductInCart, cartProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
+        <CartContext.Provider value={{ putProductInCart, cartProducts, increaseProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </CartContext.Provider>
     )

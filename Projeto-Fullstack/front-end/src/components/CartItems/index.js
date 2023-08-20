@@ -6,7 +6,7 @@ import formatCurrency from './../../utils/formatCurrency'
 import { Container, Header, Body, EmptyCart } from './styles'
 
 export function CartItems() {
-    const { cartProducts } = useCart()
+    const { cartProducts, increaseProducts } = useCart()
 
     return (
         <Container>
@@ -27,7 +27,7 @@ export function CartItems() {
                         <div className="quantity-div">
                             <button>-</button>
                             <p>{formatCurrency(product.quantity)}</p>
-                            <button>+</button>
+                            <button onClick={() => increaseProducts(product.id)}>+</button> {/* Função anonima para não chamar a função quando carregar o componente, só quando clicar no botão */}
                         </div>
                         <p>{formatCurrency(product.quantity * product.price)}</p>
                     </Body>
