@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { useCart } from './../../hooks/CardContext'
+import { useCart } from '../../hooks/CartContext'
 import formatCurrency from './../../utils/formatCurrency'
 
 import { Container, Header, Body, EmptyCart } from './styles'
 
 export function CartItems() {
-    const { cartProducts, increaseProducts } = useCart()
+    const { cartProducts, increaseProducts, decreaseProducts } = useCart()
 
     return (
         <Container>
@@ -25,7 +25,7 @@ export function CartItems() {
                         <p>{product.name}</p>
                         <p>{product.price}</p>
                         <div className="quantity-div">
-                            <button>-</button>
+                            <button onClick={() => decreaseProducts(product.id)}>-</button>
                             <p>{formatCurrency(product.quantity)}</p>
                             <button onClick={() => increaseProducts(product.id)}>+</button> {/* Função anonima para não chamar a função quando carregar o componente, só quando clicar no botão */}
                         </div>

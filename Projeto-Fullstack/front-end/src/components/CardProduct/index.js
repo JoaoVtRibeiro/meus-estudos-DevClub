@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCart } from '../../hooks/CardContext'
+import { useCart } from '../../hooks/CartContext'
 
 import { Container, Image, ProductName, ProductPrice } from './style'
 import Button from '../Button'

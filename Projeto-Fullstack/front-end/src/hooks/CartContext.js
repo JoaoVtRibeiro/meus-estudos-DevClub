@@ -31,7 +31,21 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
 
         setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
 
-        await localStorage.setItem('codeburger:cartProducts', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuausuáriorio
+        await localStorage.setItem('codeburger:cartProducts', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuário
+    }
+
+    const decreaseProducts = async productId => {
+        const cartIndex = cartProducts.findIndex(pd => pd.id === productId)
+
+        if(cartProducts[cartIndex].quantity > 1) { // Só será possivel diminuir a quantidade se for maior que 1
+            const newCartProducts = cartProducts.map(product => {
+                return product.id === productId? { ...product, quantity: product.quantity - 1} : product
+            })
+
+            setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
+
+            await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuário
+        }
     }
 
     useEffect(() => { // Inicia juntamente com a aplicação
@@ -47,7 +61,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <CartContext.Provider value={{ putProductInCart, cartProducts, increaseProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
+        <CartContext.Provider value={{ putProductInCart, cartProducts, increaseProducts, decreaseProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </CartContext.Provider>
     )
