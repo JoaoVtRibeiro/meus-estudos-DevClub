@@ -5,11 +5,12 @@ const CartContext = createContext({})
 export const CartProvider = ({ children }) => { // Provedor, aquele que tem a responsabilidade de ficar com os dados
     const [cartProducts, setCartProducts] = useState([]) // useState "[]" porque irá receber em array
 
-    const putProductInCart = async product => { // Função responsavel por pegar os dados do carrinho e colocar dentro do state
+    // Função responsavel por pegar os dados do produto e colocar dentro do state/carrinho 
+    const putProductInCart = async product => { 
         const cartIndex = cartProducts.findIndex(prd => prd.id === product.id)
 
         let newCartProducts = []
-        if (cartIndex >= 0) {
+        if (cartIndex >= 0) { // Caso esse produto já existir no carrinho, irá aumentar a quantidade (página dos produtos)
             newCartProducts = cartProducts
 
             ++newCartProducts[cartIndex].quantity
@@ -24,16 +25,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
         await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts))
     }
 
-    const increaseProducts = async productId => {
-        const newCartProducts = cartProducts.map(product => {
-            return product.id === productId ? { ...product, quantity: product.quantity + 1 } : product // adicionando 1 na quantidade atraves do id recebido
-        })
-
-        setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
-
-        await localStorage.setItem('codeburger:cartProducts', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuário
-    }
-
+    //  Diminuir a quantidade do produto
     const decreaseProducts = async productId => {
         const cartIndex = cartProducts.findIndex(pd => pd.id === productId)
 
@@ -48,6 +40,25 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
         }
     }
 
+    //  Aumentar a quantidade do produto (página do carrinho)
+    const increaseProducts = async productId => {
+        const newCartProducts = cartProducts.map(product => {
+            return product.id === productId ? { ...product, quantity: product.quantity + 1 } : product // adicionando 1 na quantidade atraves do id recebido
+        })
+
+        setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
+
+        await localStorage.setItem('codeburger:cartProducts', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuário
+    }
+
+    // Deletar o produto
+    const deleteProduct = async productId => {
+        const newCartProducts = cartProducts.filter(product => product.id !== productId )
+        
+        setCartProducts(newCartProducts)
+    }
+
+    // Carregar a informações do carrinho
     useEffect(() => { // Inicia juntamente com a aplicação
         const loadCardProducts = async () => {
             const localCardProducts = await localStorage.getItem('codeburger:cardProducts') // Recuperação dos dados gravados localmente
