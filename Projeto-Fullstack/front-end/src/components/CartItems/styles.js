@@ -10,13 +10,31 @@ export const Container = styled.div`
 
 export const Header = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     padding: 10px;
     border-bottom: 1px solid #b5b5b5;
 
     p {
         font-size: 16px;
         color: #b5b5b5;
+    }
+
+`
+
+export const Body = styled.div`
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: max-content;
+    grid-gap: 10px 15px;
+
+    img{
+        border-radius: 10px;
+        width: 120px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #000000;
     }
 
     .quantity-div{
@@ -34,24 +52,6 @@ export const Header = styled.div`
         p{
             margin-top: 5px;
         }
-    }
-
-`
-
-export const Body = styled.div`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    width: max-content;
-    grid-gap: 10px 15px;
-
-    img{
-        border-radius: 10px;
-        width: 120px;
-    }
-
-    p {
-        font-size: 16px;
-        color: #000000;
     }
 `
 

@@ -52,7 +52,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }
 
     // Deletar o produto
-    const deleteProduct = async productId => {
+    const deleteProducts = async productId => {
         const newCartProducts = cartProducts.filter(product => product.id !== productId )
         
         setCartProducts(newCartProducts)
@@ -72,7 +72,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <CartContext.Provider value={{ putProductInCart, cartProducts, increaseProducts, decreaseProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
+        <CartContext.Provider value={{ putProductInCart, cartProducts, decreaseProducts, increaseProducts, deleteProducts }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </CartContext.Provider>
     )
