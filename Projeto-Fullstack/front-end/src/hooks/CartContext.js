@@ -5,6 +5,10 @@ const CartContext = createContext({})
 export const CartProvider = ({ children }) => { // Provedor, aquele que tem a responsabilidade de ficar com os dados
     const [cartProducts, setCartProducts] = useState([]) // useState "[]" porque irá receber em array
 
+    const updateLocalStorage = async products => {
+        await localStorage.setItem('codeburger:cartInfo', JSON.stringify(products))
+    }
+
     // Função responsavel por pegar os dados do produto e colocar dentro do state/carrinho 
     const putProductInCart = async product => { 
         const cartIndex = cartProducts.findIndex(prd => prd.id === product.id)
@@ -22,7 +26,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
             setCartProducts(newCartProducts)
         }
 
-        await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts))
+        await updateLocalStorage(newCartProducts)
     }
 
     //  Diminuir a quantidade do produto
@@ -36,7 +40,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
 
             setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
 
-            await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuário
+            await updateLocalStorage(newCartProducts) // Gravando localmente para uma sessão futura do usuário
         }
     }
 
@@ -48,7 +52,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
 
         setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
 
-        await localStorage.setItem('codeburger:cartProducts', JSON.stringify(newCartProducts)) // Gravando localmente para uma sessão futura do usuário
+        await updateLocalStorage(newCartProducts)  // Gravando localmente para uma sessão futura do usuário
     }
 
     // Deletar o produto
@@ -56,6 +60,8 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
         const newCartProducts = cartProducts.filter(product => product.id !== productId )
         
         setCartProducts(newCartProducts)
+
+        await updateLocalStorage(newCartProducts)
     }
 
     // Carregar a informações do carrinho
