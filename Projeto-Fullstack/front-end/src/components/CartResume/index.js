@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
+import api from '../../services/api'
 import { useCart } from '../../hooks/CartContext'
 import formatCurrency from '../../utils/formatCurrency'
 import { Button } from '../Button'
@@ -14,12 +16,24 @@ export function CartResume() {
     const { cartProducts } = useCart()
 
     useEffect(() => {
-        const sumAllItems = cartProducts.reduce((acc, current) =>{
+        const sumAllItems = cartProducts.reduce((acc, current) => {
             return current.price * current.quantity + acc
         }, 0)
 
         setitemsSumPrice(sumAllItems)
     }, [cartProducts, deliveryTax]) //Sempre que esses tiverem alguma alteração o useEffect é executado
+
+    const submitOrder = async () => { // Enviar pedido para a api
+        const order = cartProducts.map(product => {
+            return { id: product.id, quantity: product.quantity }
+        })
+
+        await toast.promise(api.post('orders', { products: order }), {
+            pending: 'Realizando o seu pedido...',
+            success: 'Pedido realizado com sucesso',
+            error: 'Falaha ao tentar realizar o seu pedido, tente novamente'
+        })
+    }
 
     return (
         <div>
@@ -36,7 +50,7 @@ export function CartResume() {
                     <p>{formatCurrency(itemsSumPrice + deliveryTax)}</p>
                 </div>
             </Container>
-            <Button style={{ width: '100%', marginTop: 30 }}>Finalizar Pedido</Button>
+            <Button style={{ width: '100%', marginTop: 30 }} onClick={submitOrder}>Finalizar Pedido</Button>
         </div> // Fazer com que o botão assuma o tamanho total que ele tem disponivel (não ser alterado pela estilização do container)
     )
 }

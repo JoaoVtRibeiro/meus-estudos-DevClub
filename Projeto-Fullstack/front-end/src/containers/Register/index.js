@@ -37,7 +37,7 @@ export function Login() {
     resolver: yupResolver(schema) // Validar os campos
   })
 
-  const onSubmit = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
+  const onSubmitForm = async inputsClientData => { // inputsClientData = dados dos clientes recebidos pelos inputs
     try {
       const { status } = await api.post('users', {
         name: inputsClientData.name,
@@ -71,7 +71,7 @@ export function Login() {
 
         <H1>Cadastre-se</H1>
 
-        <form noValidate onSubmit={handleSubmit(onSubmit)}> {/* noValidate = não irá validar pelo html (sem mensagem de aviso do html nos campos) */}
+        <form noValidate onSubmit={handleSubmit(onSubmitForm)}> {/* noValidate = não irá validar pelo html (sem mensagem de aviso do html nos campos) */}
           <Label error={errors.name?.message}>Nome</Label>
           <Input type="text" {...register('name')} error={errors.name?.message}></Input> {/* error = caso houver a mensagem, será true (para a estilização acontecer se necessário) */}
           <ErrorMessage>{errors.name?.message}</ErrorMessage> {/* mensagem de erro (validação pelo Yup) */}
