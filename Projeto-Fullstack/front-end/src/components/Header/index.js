@@ -2,7 +2,7 @@ import React from 'react'
 
 import User from '../../assets/user.png'
 import Cart from '../../assets/cart.png'
-import { Container, LeftDiv, RightDiv, UserDiv, PageLink } from './styles'
+import { Container, LeftDiv, PageLink, RightDiv, Line, UserDiv } from './styles'
 
 
 
@@ -16,12 +16,13 @@ export function Header() {
 
             <RightDiv>
                 <PageLink><img src={User} alt='logo do usuário' /></PageLink>
+                <Line></Line>
                 <PageLink><img src={Cart} alt='carrinho' /></PageLink>
             </RightDiv>
 
             <UserDiv>
                 <p>Olá, User</p>
-                <PageLink>Sair</PageLink>
+                <a>Sair</a>
             </UserDiv>
         </Container>
     )
