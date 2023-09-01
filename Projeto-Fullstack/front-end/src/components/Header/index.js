@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import User from '../../assets/user.png'
 import Cart from '../../assets/cart.png'
@@ -7,11 +8,16 @@ import { Container, LeftDiv, PageLink, RightDiv, Line, UserDiv } from './styles'
 
 
 export function Header() {
+    const { push, 
+        location: { pathname } // Segunda desestruturação (pathname está em location)
+    } = useHistory()
+
     return (
         <Container>
             <LeftDiv>
-                <PageLink>Home</PageLink>
-                <PageLink>Ver Produtos</PageLink>
+                <PageLink onClick={() => push('/')} isActive={pathname === '/'}>Home</PageLink>
+                <PageLink onClick={() => push('/produtos')} isActive={pathname.includes('produtos')}>Ver Produtos</PageLink>
+                 {/* .includes, se o nome do path incluir 'produtos' ficará ativo (já que pode alterar por conta dos ids dos produtos junto ao path) */}
             </LeftDiv>
 
             <RightDiv>
