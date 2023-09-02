@@ -18,9 +18,10 @@ export const LeftDiv = styled.img`
 export const PageLink = styled.a`
     cursor: pointer;
     text-decoration: none;
-    color: #555555;
+    color: ${ props => (props.isActive ? '#9758A6' : '#555555')};
     font-size: 16px;
     line-height: 19px;
+    font-weight: ${ props => (props.isActive ? 'bold' : 'normal')};
 `
 
 export const RightDiv = styled.div`

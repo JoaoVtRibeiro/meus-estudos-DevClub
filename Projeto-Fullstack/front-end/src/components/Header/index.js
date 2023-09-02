@@ -23,7 +23,7 @@ export function Header() {
             <RightDiv>
                 <PageLink><img src={User} alt='logo do usuário' /></PageLink>
                 <Line></Line>
-                <PageLink><img src={Cart} alt='carrinho' /></PageLink>
+                <PageLink onClick={() => push('/carrinho')}><img src={Cart} alt='carrinho' /></PageLink>
             </RightDiv>
 
             <UserDiv>
@@ -33,3 +33,7 @@ export function Header() {
         </Container>
     )
 }
+
+/* 
+    Lembrando, o Header será retornado em 'routes/private-route.js' (Apenas para páginas que o usuário está logado)
+*/
