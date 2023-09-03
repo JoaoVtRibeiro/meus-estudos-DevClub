@@ -12,6 +12,10 @@ export const UserProvider = ({ children }) => { // Provedor, aquele que tem a re
         await localStorage.setItem('codeburger:userData', JSON.stringify(userInfo)) // Gravação dos dados localmente, stringify = passando os dados para string (localStorage apenas aceita strings)
     }
 
+    const logOutUser = async () => {
+        await localStorage.removeItem('codeburger:userData')
+    }
+
     useEffect(() => { // Inicia juntamente com a aplicação
         const loadUserData = async () => {
             const localUserData = await localStorage.getItem('codeburger:userData') // Recuperação dos dados gravados localmente
@@ -25,7 +29,7 @@ export const UserProvider = ({ children }) => { // Provedor, aquele que tem a re
     }, [])
 
     return (
-        <UserContext.Provider value={{ takeUserData, receivedUserData }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
+        <UserContext.Provider value={{ takeUserData, receivedUserData, logOutUser }}> {/* Tudo que está em "value" fica exposto para toda a aplicação */}
             {children}
         </UserContext.Provider>
     )

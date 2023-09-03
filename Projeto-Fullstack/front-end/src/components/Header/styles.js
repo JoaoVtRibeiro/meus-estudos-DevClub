@@ -42,11 +42,13 @@ export const UserDiv = styled.div`
         line-height: 16px;
         color: #555555;
     }
-    a{
+`
+
+export const LogOutLink = styled.a`
         font-weight: bold;
         font-size: 14px;
         line-height: 16px;
         cursor: pointer;
         color: #9758a6;
-    }
 `
+
