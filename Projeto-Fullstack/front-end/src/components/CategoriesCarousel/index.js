@@ -35,11 +35,21 @@ export function CategoriesCarousel() {
                 {categories && categories.map(category => {
                     <CarouselItem key={category.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
                         <Image src={category.url} alt="foto da categoria"></Image>
-                        <Button>{category.name}</Button>
+                        <Button to={{
+                            pathname: '/produtos', state: { categoryId: category.id }
+                        }}
+                        >{category.name}</Button> 
                     </CarouselItem>
                 })}
             </Carousel>
         </Container>
     )
 }
+
+/* Lembrando:
+
+    'to' parâmetro do react-router-dom
+
+    'state' permite criar uma variavel para nandar alguma informação, basicamento pathname você irá definir qual você vai mandar e state o que vai mandar
+*/
 

@@ -7,9 +7,16 @@ import { CardProduct } from '../../components'
 import ProductsBanner from '../../assets/products-banner.png'
 import { Container, ProductsImg, CategoriesMenu, CategoryButton, ProductsContainer } from './styles'
 
-export function Products() {
+export function Products({ location: { state } }) {
+
+    // categoria selecionada e sendo redirecionada da Home
+    let categoryIdFromHome = 0 // 0 porque começa ativo na categoria "todas"
+    if (state?.categoryId) { // '?' Elvis Operator: Permite que o fluxo da aplicação continue se o valor for undefined (Caso não houvesse, a aplicação quebraria) 
+        categoryIdFromHome = state.categoryId
+    }
+
     const [categories, setCategories] = useState([])
-    const [activeCategory, setActiveCategory] = useState(0) // 0 porque começa ativo na categoria "todas"
+    const [activeCategory, setActiveCategory] = useState(categoryIdFromHome) 
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
 
@@ -24,7 +31,7 @@ export function Products() {
         }
 
         // Importação dos produtos e formatação de seus preços
-        async function loadProducts() { 
+        async function loadProducts() {
             const { data: allProducts } = await api.get('products') // data: allProducts, alteração do nome data -> allProducts (para ficar mais descritivo)
 
             const productsWithFormatedPrice = allProducts.map(product => { // Formatando todos o valores de preço de uma vez (Melhorar a Performace)
@@ -40,7 +47,7 @@ export function Products() {
     }, [])
 
     // Filtragem dos produtos por categoria
-    useEffect(() => { 
+    useEffect(() => {
         if (activeCategory === 0) { // 0 = categoria "todas"
             setFilteredProducts(products) // Todos os produtos serão mostrados
         } else {
