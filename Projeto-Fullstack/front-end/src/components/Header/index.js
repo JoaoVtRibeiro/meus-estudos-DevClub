@@ -6,10 +6,8 @@ import User from '../../assets/user.png'
 import Cart from '../../assets/cart.png'
 import { Container, LeftDiv, PageLink, RightDiv, Line, UserDiv, LogOutLink } from './styles'
 
-
-
 export function Header() {
-    const { logOutUser } = useUser()
+    const { logOutUser, receivedUserData } = useUser()
 
     const logOut = () => {
         logOutUser()
@@ -35,7 +33,7 @@ export function Header() {
             </RightDiv>
 
             <UserDiv>
-                <p>Olá, User</p>
+                <p>Olá, {receivedUserData.name}</p>
                 <LogOutLink onClick={() => logOut()}>Sair</LogOutLink>
             </UserDiv>
         </Container>
