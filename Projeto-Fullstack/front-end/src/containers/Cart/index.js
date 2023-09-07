@@ -4,8 +4,6 @@ import CartBanner from '../../assets/cartpage-banner.png'
 import { CartItems, CartResume } from '../../components'
 import { Container, CartImg, Wrapper } from './styles'
 
-
-
 export function Cart() {
     return (
         <Container>
