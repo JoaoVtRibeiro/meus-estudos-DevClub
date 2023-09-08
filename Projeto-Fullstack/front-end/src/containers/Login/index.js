@@ -57,7 +57,11 @@ export function Register() {
     takeUserData(data) // Passando os dados para o state do UserContext
 
     setTimeout(() => { // Só executa depois do tempo determinado (dar tempo para o usuário ver o toasty)
-      history.push('/') // Redirecionamento para "Home"
+      if (data.admin) {
+        history.push('/pedidos')
+      } else {
+        history.push('/') // Redirecionamento para "Home"
+      }
     }, 1000) // 1 segundo
 
   }
