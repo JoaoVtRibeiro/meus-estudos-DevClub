@@ -23,3 +23,11 @@ Layouts
 
 - Figma
 - Adobe Xd (Programa / Ferramenta)
+- Milanote
+
+Biblioteca de componentes
+
+- MUI (Material UI)
+- Bootstrap
+- Ant Design
+- Prime React (Vue / Angular)
