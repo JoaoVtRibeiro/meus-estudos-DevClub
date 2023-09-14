@@ -15,9 +15,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import api from '../../../services/api'
+import Row from './row'
 import { Container } from '/style.js'
 
-export function Orders() {
+function Orders() {
     const [orders, setOrders] = useState([])
     const [rows, setRows] = useState([])
 
@@ -32,9 +33,9 @@ export function Orders() {
     }, [])
 
     function createData(order) { // Diagramação dos dados
-        return {
-            name: order.user.name,
+        return {       
             orderId: order.id,
+            name: order.user.name,
             date: order.createdAt,
             status: order.status,
             products: order.products
@@ -60,12 +61,14 @@ export function Orders() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {/* {rows.map((row) => (
-                            <Row key={row.name} row={row} />
-                        ))} */}
+                        {rows.map((row) => (
+                            <Row key={row.id} row={row} />
+                        ))}
                     </TableBody>
                 </Table>
             </TableContainer>
         </Container>
     )
 }
+
+export default Orders
