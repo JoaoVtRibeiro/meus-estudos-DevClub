@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 
 import Box from '@mui/material/Box';
@@ -16,7 +17,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import { Container } from '/style.js'
 
-function Row({ row }) {
+function Row({ row }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
     const [open, setOpen] = React.useState(false);
 
     return (
@@ -35,7 +36,6 @@ function Row({ row }) {
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.date}</TableCell>
                 <TableCell>{row.status}</TableCell>
-                <TableCell>{row.products}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -45,23 +45,19 @@ function Row({ row }) {
                             <Table size="small" aria-label="purchases">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Date</TableCell>
-                                        <TableCell>Customer</TableCell>
-                                        <TableCell align="right">Amount</TableCell>
-                                        <TableCell align="right">Total price ($)</TableCell>
+                                        <TableCell>Quantidade</TableCell>
+                                        <TableCell>Produto</TableCell>
+                                        <TableCell>Categoria</TableCell>
+                                        <TableCell></TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {row.history.map((historyRow) => (
-                                        <TableRow key={historyRow.date}>
-                                            <TableCell component="th" scope="row">
-                                                {historyRow.date}
-                                            </TableCell>
-                                            <TableCell>{historyRow.customerId}</TableCell>
-                                            <TableCell align="right">{historyRow.amount}</TableCell>
-                                            <TableCell align="right">
-                                                {Math.round(historyRow.amount * row.price * 100) / 100}
-                                            </TableCell>
+                                    {row.products.map((productRow) => (
+                                        <TableRow key={productRow.id}>
+                                            <TableCell component="th" scope="row">{productRow.quantity}</TableCell>
+                                            <TableCell>{productRow.name}</TableCell>
+                                            <TableCell>{productRow.category}</TableCell>
+                                            <TableCell><img src={row.url} /></TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>

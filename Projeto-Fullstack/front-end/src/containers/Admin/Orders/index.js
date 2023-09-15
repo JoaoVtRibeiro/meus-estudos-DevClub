@@ -19,10 +19,10 @@ import Row from './row'
 import { Container } from '/style.js'
 
 function Orders() {
-    const [orders, setOrders] = useState([])
-    const [rows, setRows] = useState([])
+    const [orders, setOrders] = useState([]) // Pedidos recebidos pela api
+    const [rows, setRows] = useState([]) // Pedidos atualizados para cada mudança em 'orders' e prontos para serem enviados para tabela
 
-    useEffect(() => {
+    useEffect(() => { // Pedidos recebidos pela api
         async function loadOrders() {
             const { data } = await api.get('orders')
 
@@ -42,9 +42,9 @@ function Orders() {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => { /// Pedidos atualizados para cada mudança em 'orders' e prontos para serem enviados para tabela
         const newRows = orders.map(ord => createData(ord))
-        setRows()
+        setRows(newRows)
     }, [orders])
 
     return (
@@ -61,7 +61,7 @@ function Orders() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
+                        {rows.map((row) => ( // Enviando os pedidos para formatação da tabela
                             <Row key={row.id} row={row} />
                         ))}
                     </TableBody>
