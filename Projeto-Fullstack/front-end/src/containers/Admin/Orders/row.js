@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 
 import Box from '@mui/material/Box';
@@ -13,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-import { Container } from '/style.js'
+import { ProductsImg } from '/style.js'
 
 function Row({ row }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
     const [open, setOpen] = React.useState(false);
@@ -55,7 +54,7 @@ function Row({ row }) { // Formatação de cada pedido/item da array (array 'row
                                             <TableCell component="th" scope="row">{productRow.quantity}</TableCell>
                                             <TableCell>{productRow.name}</TableCell>
                                             <TableCell>{productRow.category}</TableCell>
-                                            <TableCell><img src={row.url} /></TableCell>
+                                            <TableCell><ProductsImg src={row.url} /></TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
