@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 import api from '../../../services/api'
+import formatDate from '../../../utils/formatDate'
 import Row from './row'
 import { Container } from '/style.js'
 
@@ -27,10 +28,10 @@ function Orders() {
     }, [])
 
     function createData(order) { // Diagramação dos dados
-        return {       
+        return {
             orderId: order.id,
             name: order.user.name,
-            date: order.createdAt,
+            date: formatDate(order.createdAt),
             status: order.status,
             products: order.products
         }
