@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactSelect from 'react-select';
 
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
@@ -12,10 +13,15 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
+import api from '../../../services/api'
 import { ProductsImg } from '/style.js'
 
 function Row({ row }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
     const [open, setOpen] = React.useState(false);
+
+    async function setNewStatus(id, status) {
+        await api.put(`orders/${id}`, { status })
+    }
 
     return (
         <React.Fragment>
@@ -32,7 +38,7 @@ function Row({ row }) { // Formatação de cada pedido/item da array (array 'row
                 <TableCell component="th" scope="row">{row.orderId}</TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.date}</TableCell>
-                <TableCell>{row.status}</TableCell>
+                <TableCell> <ReactSelect /> </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
