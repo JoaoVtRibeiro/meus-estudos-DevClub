@@ -31,3 +31,4 @@ Biblioteca de componentes
 - Bootstrap
 - Ant Design
 - Prime React (Vue / Angular)
+- React Select (somente selects)
