@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactSelect from 'react-select';
+import ReactSelect from 'react-select'; // Biblioteca de componentes
 
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
+import status from './order-status'
 import api from '../../../services/api'
 import { ProductsImg } from '/style.js'
 
@@ -38,7 +39,15 @@ function Row({ row }) { // Formatação de cada pedido/item da array (array 'row
                 <TableCell component="th" scope="row">{row.orderId}</TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.date}</TableCell>
-                <TableCell> <ReactSelect /> </TableCell>
+                <TableCell>
+                    <ReactSelect
+                        options={status}
+                        menuPortalTarget={document.body}
+                        placeholder="Status"
+                        defaultValue={status.find( option => option.value = row.status) || null} // Definindo o valor inicial a partir do status de cada row(pedido/item), null para caso ele não carregue ao tempo da pagina ou nao encontre
+                    />
+
+                </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
