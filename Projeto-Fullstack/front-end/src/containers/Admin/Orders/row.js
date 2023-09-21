@@ -18,10 +18,18 @@ import api from '../../../services/api'
 import { ProductsImg } from '/style.js'
 
 function Row({ row }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(false)
+    const [isLoading, setIsLoading] = React.useState(false)
 
     async function setNewStatus(id, status) {
-        await api.put(`orders/${id}`, { status })
+        setIsLoading(true)
+        try{
+            await api.put(`orders/${id}`, { status })
+        } catch(err){
+            console.log(err)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     return (
@@ -45,6 +53,8 @@ function Row({ row }) { // Formatação de cada pedido/item da array (array 'row
                         menuPortalTarget={document.body}
                         placeholder="Status"
                         defaultValue={status.find( option => option.value = row.status) || null} // Definindo o valor inicial a partir do status de cada row(pedido/item), null para caso ele não carregue ao tempo da pagina ou nao encontre
+                        onChange={ newStatus => setNewStatus(row.orderId, newStatus.value)}
+                        isLoading={isLoading}
                     />
 
                 </TableCell>
