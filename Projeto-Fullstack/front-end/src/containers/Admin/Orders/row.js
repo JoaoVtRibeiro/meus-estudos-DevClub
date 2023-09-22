@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactSelect from 'react-select'; // Biblioteca de componentes
 
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
@@ -15,7 +14,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import status from './order-status'
 import api from '../../../services/api'
-import { ProductsImg } from '/style.js'
+import { ProductsImg, ReactSelectStyle } from '/style.js'
 
 function Row({ row }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
     const [open, setOpen] = React.useState(false)
@@ -48,7 +47,7 @@ function Row({ row }) { // Formatação de cada pedido/item da array (array 'row
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.date}</TableCell>
                 <TableCell>
-                    <ReactSelect
+                    <ReactSelectStyle
                         options={status}
                         menuPortalTarget={document.body}
                         placeholder="Status"
