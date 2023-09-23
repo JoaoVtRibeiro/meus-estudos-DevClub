@@ -20,3 +20,7 @@ export const ReactSelectStyle = styled(ReactSelect)` /* Componentes importatos, 
         cursor: pointer;
     }
 `
+
+export const Menu = styled.div``
+
+export const LinkMenu= styled.a``
