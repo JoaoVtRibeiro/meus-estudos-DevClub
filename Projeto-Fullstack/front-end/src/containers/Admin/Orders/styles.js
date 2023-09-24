@@ -21,6 +21,14 @@ export const ReactSelectStyle = styled(ReactSelect)` /* Componentes importatos, 
     }
 `
 
-export const Menu = styled.div``
+export const Menu = styled.div`
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 20px 0;
+`
 
-export const LinkMenu= styled.a``
+export const LinkMenu= styled.a`
+    color: #323d5d;
+    cursor: pointer;
+`

@@ -1,5 +1,10 @@
 const status = [
     {
+        id: 1,
+        value: 'Todos',
+        label: 'Todos',
+    },
+    {
         id: 2,
         value: 'Pedido Realizado',
         label: 'Pedido Realizado',
