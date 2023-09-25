@@ -16,13 +16,15 @@ import { Container, Menu, LinkMenu } from '/style.js'
 
 function Orders() {
     const [orders, setOrders] = useState([]) // Pedidos recebidos pela api
-    const [rows, setRows] = useState([]) // Pedidos atualizados para cada mudança em 'orders' e prontos para serem enviados para tabela
+    const [filteredOrders, setFilteredOrders] = useState([])
+    const [rows, setRows] = useState([]) // Pedidos atualizados para cada mudança em 'filteredOrders' e prontos para serem enviados para tabela
 
     useEffect(() => { // Pedidos recebidos pela api
         async function loadOrders() {
             const { data } = await api.get('orders')
 
             setOrders(data)
+            setFilteredOrders(data)
         }
 
         loadOrders()
@@ -38,15 +40,26 @@ function Orders() {
         }
     }
 
-    useEffect(() => { /// Pedidos atualizados para cada mudança em 'orders' e prontos para serem enviados para tabela
-        const newRows = orders.map(ord => createData(ord))
+    useEffect(() => { /// Pedidos atualizados para cada mudança em 'filteredOrders' e prontos para serem enviados para tabela
+        const newRows = filteredOrders.map(ord => createData(ord))
         setRows(newRows)
-    }, [orders])
+    }, [filteredOrders])
+
+    function handleOrders(status) {
+        if (status.id === 1) {
+            setFilteredOrders(orders)
+        } else {
+            const newOrders = orders.filter(order => order.status === status.value)
+            setFilteredOrders(newOrders)
+        }
+    }
 
     return (
         <Container>
             <Menu>
-                {status && status.map(status => <LinkMenu key={status.id}>{status.label}</LinkMenu>)}
+                {status && status.map(status =>
+                    <LinkMenu key={status.id} onClick={() => handleOrders(status)}>{status.label}</LinkMenu>
+                )}
             </Menu>
 
             <TableContainer component={Paper}>
