@@ -17,6 +17,7 @@ import { Container, Menu, LinkMenu } from '/style.js'
 function Orders() {
     const [orders, setOrders] = useState([]) // Pedidos recebidos pela api
     const [filteredOrders, setFilteredOrders] = useState([])
+    const [activeStatus, setActiveStatus] = useState(1)
     const [rows, setRows] = useState([]) // Pedidos atualizados para cada mudança em 'filteredOrders' e prontos para serem enviados para tabela
 
     useEffect(() => { // Pedidos recebidos pela api
@@ -52,13 +53,21 @@ function Orders() {
             const newOrders = orders.filter(order => order.status === status.value)
             setFilteredOrders(newOrders)
         }
+
+        setActiveStatus(status.id)
     }
 
     return (
         <Container>
             <Menu>
                 {status && status.map(status =>
-                    <LinkMenu key={status.id} onClick={() => handleOrders(status)}>{status.label}</LinkMenu>
+                    <LinkMenu
+                        key={status.id}
+                        onClick={() => handleOrders(status)}
+                        isActiveStatus={activeStatus === status.id} // Verifica item por item (por conta do map) qual tem o id igual ao clicado (enviado para o handleOrders), mandando true/false para styled-components
+                    >
+                        {status.label}
+                    </LinkMenu>
                 )}
             </Menu>
 
