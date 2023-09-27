@@ -16,15 +16,21 @@ import status from './order-status'
 import api from '../../../services/api'
 import { ProductsImg, ReactSelectStyle } from '/style.js'
 
-function Row({ row }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
+function Row({ row, orders, setOrders }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
     const [open, setOpen] = React.useState(false)
     const [isLoading, setIsLoading] = React.useState(false)
 
     async function setNewStatus(id, status) {
         setIsLoading(true)
-        try{
+        try {
             await api.put(`orders/${id}`, { status })
-        } catch(err){
+
+            const newOrders = orders.map(order => {
+                return order._id === id ? { ...order, status } : order
+            })
+
+            setOrders(newOrders)
+        } catch (err) {
             console.log(err)
         } finally {
             setIsLoading(false)
@@ -51,8 +57,8 @@ function Row({ row }) { // Formatação de cada pedido/item da array (array 'row
                         options={status}
                         menuPortalTarget={document.body}
                         placeholder="Status"
-                        defaultValue={status.find( option => option.value = row.status) || null} // Definindo o valor inicial a partir do status de cada row(pedido/item), null para caso ele não carregue ao tempo da pagina ou nao encontre
-                        onChange={ newStatus => setNewStatus(row.orderId, newStatus.value)}
+                        defaultValue={status.find(option => option.value = row.status) || null} // Definindo o valor inicial a partir do status de cada row(pedido/item), null para caso ele não carregue ao tempo da pagina ou nao encontre
+                        onChange={newStatus => setNewStatus(row.orderId, newStatus.value)}
                         isLoading={isLoading}
                     />
 

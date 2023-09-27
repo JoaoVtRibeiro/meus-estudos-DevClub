@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 
 import Table from '@mui/material/Table';
@@ -33,7 +34,7 @@ function Orders() {
 
     function createData(order) { // Diagramação dos dados
         return {
-            orderId: order.id,
+            orderId: order._id,
             name: order.user.name,
             date: formatDate(order.createdAt),
             status: order.status,
@@ -43,8 +44,20 @@ function Orders() {
 
     useEffect(() => { /// Pedidos atualizados para cada mudança em 'filteredOrders' e prontos para serem enviados para tabela
         const newRows = filteredOrders.map(ord => createData(ord))
+
         setRows(newRows)
     }, [filteredOrders])
+
+    useEffect(() => {
+        if (activeStatus === 1) {
+            setFilteredOrders(orders)
+        } else {
+            const statusIndex = status.findIndex(sts => sts.id === activeStatus)
+            const newFilteredOrders = orders.filter(order => order.status === status[statusIndex].value)
+
+            setFilteredOrders(newFilteredOrders)
+        }
+    }, [orders])
 
     function handleOrders(status) {
         if (status.id === 1) {
@@ -84,7 +97,7 @@ function Orders() {
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => ( // Enviando os pedidos para formatação da tabela
-                            <Row key={row.orderId} row={row} />
+                            <Row key={row.orderId} row={row} orders={orders} setOrders={setOrders} />
                         ))}
                     </TableBody>
                 </Table>
