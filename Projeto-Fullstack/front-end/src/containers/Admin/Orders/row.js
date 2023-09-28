@@ -23,10 +23,10 @@ function Row({ row, orders, setOrders }) { // Formatação de cada pedido/item d
     async function setNewStatus(id, status) {
         setIsLoading(true)
         try {
-            await api.put(`orders/${id}`, { status })
+            await api.put(`orders/${id}`, { status }) // Mudança do status na api
 
             const newOrders = orders.map(order => {
-                return order._id === id ? { ...order, status } : order
+                return order._id === id ? { ...order, status } : order // Mudança do status na aplicação (na linha/row do item na tabela)
             })
 
             setOrders(newOrders)
@@ -54,7 +54,7 @@ function Row({ row, orders, setOrders }) { // Formatação de cada pedido/item d
                 <TableCell>{row.date}</TableCell>
                 <TableCell>
                     <ReactSelectStyle
-                        options={status}
+                        options={status.filter( sts => sts.value !== 'Todos')}
                         menuPortalTarget={document.body}
                         placeholder="Status"
                         defaultValue={status.find(option => option.value = row.status) || null} // Definindo o valor inicial a partir do status de cada row(pedido/item), null para caso ele não carregue ao tempo da pagina ou nao encontre

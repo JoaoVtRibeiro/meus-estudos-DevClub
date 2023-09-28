@@ -48,12 +48,12 @@ function Orders() {
         setRows(newRows)
     }, [filteredOrders])
 
-    useEffect(() => {
+    useEffect(() => { // Nova filtragrem sempre que algum pedido mudar o status
         if (activeStatus === 1) {
             setFilteredOrders(orders)
         } else {
-            const statusIndex = status.findIndex(sts => sts.id === activeStatus)
-            const newFilteredOrders = orders.filter(order => order.status === status[statusIndex].value)
+            const statusIndex = status.findIndex(sts => sts.id === activeStatus) // Define uma posição baseado no status ativo
+            const newFilteredOrders = orders.filter(order => order.status === status[statusIndex].value) // Filtra os pedidos que apenas contém o status igual ao ativo
 
             setFilteredOrders(newFilteredOrders)
         }
