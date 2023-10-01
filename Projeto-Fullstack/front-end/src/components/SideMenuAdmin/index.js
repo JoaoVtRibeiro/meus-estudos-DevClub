@@ -7,11 +7,12 @@ export function SideMenuAdmin() {
     return (
         <Container>
             <hr></hr>
-            {listLinks.map(item => {
+            {listLinks.map(item => (
                 <ItensContainer key={item.id}>
+                    <item.icon className="icon" />
                     <ListLink to={item.link}>{item.label}</ListLink>
                 </ItensContainer>
-            })}
+            ))}
         </Container>
     )
 }
