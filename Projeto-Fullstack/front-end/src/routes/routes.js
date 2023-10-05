@@ -14,7 +14,9 @@ function Routes() {
                 <PrivateRoute exact component={Home} path="/" />
                 <PrivateRoute component={Products} path="/produtos" />
                 <PrivateRoute component={Cart} path="/carrinho" />
+
                 <PrivateRoute component={Admin} path="/pedidos" isAdmin /> {/* isAdmin sendo passado como true (desse jeito da no mesmo que isAdmin={true}) */}
+                <PrivateRoute component={Admin} path="/listar-produtos" isAdmin />
             </Switch>
         </Router >
     )
