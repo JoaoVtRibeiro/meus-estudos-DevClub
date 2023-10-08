@@ -18,6 +18,7 @@ import LoginImage from '../../assets/login-image.png'
 import Logo from '../../assets/logo.png'
 import { Button } from '../../components'
 import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, ErrorMessage, P } from './styles'
+import paths from '../../constants/path'
 
 
 export function Register() {
@@ -58,7 +59,7 @@ export function Register() {
 
     setTimeout(() => { // Só executa depois do tempo determinado (dar tempo para o usuário ver o toasty)
       if (data.admin) {
-        history.push('/pedidos')
+        history.push(paths.OrderAdm)
       } else {
         history.push('/') // Redirecionamento para "Home"
       }
@@ -91,7 +92,7 @@ export function Register() {
           <Button type="submit" style={{ marginTop: 60 }}>Entrar</Button> {/* Primeiro {} indica que o trecho será em javascript, a segunda {} significa um objeto */}
         </form>
 
-        <P>Não possui conta? <Link style={{ color: 'white' }} to="/cadastro">Criar conta</Link></P>
+        <P>Não possui conta? <Link style={{ color: 'white' }} to={paths.Register}>Criar conta</Link></P>
       </Main>
     </Container>
   )

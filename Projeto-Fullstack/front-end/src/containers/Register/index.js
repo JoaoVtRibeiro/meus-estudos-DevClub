@@ -17,6 +17,7 @@ import RegisterImage from '../../assets/register-image.png'
 import Logo from '../../assets/logo.png'
 import { Button } from '../../components'
 import { Container, BurgerRegisterImage, Main, LogoImage, H1, Label, Input, ErrorMessage, P } from './styles'
+import paths from '../../constants/path'
 
 
 export function Login() {
@@ -91,7 +92,7 @@ export function Login() {
           <Button type="submit" style={{ marginTop: 20 }}>Cadastrar</Button>
         </form>
 
-        <P>Já possui conta? <Link style={{ color: 'white' }} to="/login">Fazer login</Link></P>
+        <P>Já possui conta? <Link style={{ color: 'white' }} to={paths.Login}>Fazer login</Link></P>
       </Main>
     </Container>
   )

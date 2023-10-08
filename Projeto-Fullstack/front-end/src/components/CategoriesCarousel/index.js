@@ -5,6 +5,7 @@ import api from '../../services/api'
 
 import Categories from '../../assets/categories.png'
 import { Container, CategoriesImg, CarouselItem, Image, Button } from './styles'
+import paths from '../../constants/path'
 
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([])
@@ -36,7 +37,7 @@ export function CategoriesCarousel() {
                     <CarouselItem key={category.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
                         <Image src={category.url} alt="foto da categoria"></Image>
                         <Button to={{
-                            pathname: '/produtos', state: { categoryId: category.id }
+                            pathname: paths.Products, state: { categoryId: category.id }
                         }}
                         >{category.name}</Button> 
                     </CarouselItem>

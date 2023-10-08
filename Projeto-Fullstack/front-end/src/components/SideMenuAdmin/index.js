@@ -5,6 +5,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import { useUser } from '../../hooks/UserContext'
 import listLinks from './menu-list'
 import { Container, ItensContainer, ListLink } from './styles'
+import paths from '../../constants/path'
 
 export function SideMenuAdmin() {
 
@@ -22,7 +23,7 @@ export function SideMenuAdmin() {
             <hr></hr>
             <ItensContainer>
                 <LogoutIcon style={{ position: 'absolute', bottom: '30px'}}/>
-                <ListLink to="/login" onClick={logOutUser} style={{ color: '#FFFFFF' }}>Sair</ListLink>
+                <ListLink to={paths.Login} onClick={logOutUser} style={{ color: '#FFFFFF' }}>Sair</ListLink>
             </ItensContainer>
         </Container>
     )

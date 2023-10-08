@@ -8,6 +8,7 @@ import { useCart } from '../../hooks/CartContext'
 
 import Offers from '../../assets/offers.png'
 import { Container, OffersImg, CarouselItem, Image, Button } from './styles'
+import paths from '../../constants/path'
 
 export function OffersCarousel() {
     const [offers, setOffers] = useState([])
@@ -50,7 +51,7 @@ export function OffersCarousel() {
                         <p>{product.formatedPrice}</p>
                         <Button onClick={() => {
                             putProductInCart(product)
-                            push('/carrinho')
+                            push(paths.Cart)
                         }}>Peça agora</Button>
                     </CarouselItem>
                 })}
