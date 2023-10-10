@@ -7,7 +7,7 @@ import listLinks from './menu-list'
 import { Container, ItensContainer, ListLink } from './styles'
 import paths from '../../constants/path'
 
-export function SideMenuAdmin() {
+export function SideMenuAdmin({ path }) {
 
     const { logOutUser } = useUser()
 
@@ -15,7 +15,7 @@ export function SideMenuAdmin() {
         <Container>
             <hr></hr>
             {listLinks.map(item => (
-                <ItensContainer key={item.id} isActive={true}>
+                <ItensContainer key={item.id} isActive={path === item.link}>
                     <item.icon className="icon" />
                     <ListLink to={item.link}>{item.label}</ListLink>
                 </ItensContainer>
