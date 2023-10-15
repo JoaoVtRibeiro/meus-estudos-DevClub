@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import ReactSelect from 'react-select'
 
 import api from '../../../services/api'
-import { Container, Label, Input, ButtonStyles } from './style'
+import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
 
 function NewProduct() {
     const { register, handleSubmit } = useForm()
@@ -27,8 +27,10 @@ function NewProduct() {
                 <Label for="name">Preço</Label>
                 <Input id="name" type="number" {...register('price')} />
 
-                <Label for="name">Upload da imagem</Label>
-                <Input id="name" type="file" accept="image/png, image/jpeg" />
+                <LabelUpload>
+                    Selecione a imagem do produto
+                    <input type="file" accept="image/png, image/jpeg" />
+                </LabelUpload>
 
                 <ReactSelect />
 
