@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import ReactSelect from 'react-select'
 
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 import api from '../../../services/api'
 import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
 
 function NewProduct() {
+    const [fileName, setFileName] = useState(null)
     const { register, handleSubmit } = useForm()
     const onSubmit = data => console.log(data)
 
@@ -28,8 +30,20 @@ function NewProduct() {
                 <Input id="name" type="number" {...register('price')} />
 
                 <LabelUpload>
-                    Selecione a imagem do produto
-                    <input type="file" accept="image/png, image/jpeg" />
+                    {fileName ? fileName : (
+                        <>
+                            <UploadFileIcon />
+                            Selecione a imagem do produto
+                        </>
+                    )}
+
+                    <input
+                        type="file"
+                        accept="image/png, image/jpeg"
+                        {...register('file')}
+                        onChange={value => setFileName(value.target.files[0]?.name)}
+                    // '?' Elvis operator: caso ele não encontre a informação (no caso o '.name'), será ignorado essa necessidade da mesma para não quebrar o código
+                    />
                 </LabelUpload>
 
                 <ReactSelect />

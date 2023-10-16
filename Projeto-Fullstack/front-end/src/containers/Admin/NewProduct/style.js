@@ -40,7 +40,8 @@ export const LabelUpload = styled.label`
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 25px;
-    
+    gap: 10px;
+
     input{
         opacity: 0;
         width: 1px;
