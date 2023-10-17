@@ -8,16 +8,17 @@ import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
 
 function NewProduct() {
     const [fileName, setFileName] = useState(null)
+    const [categories, setCategories] = useState([])
     const { register, handleSubmit } = useForm()
     const onSubmit = data => console.log(data)
 
 
     useEffect(() => {
-        async function loadOrders() {
-            const { data } = await api.get('products')
+        async function loadCategories() {
+            const { data } = await api.get('categories')
         }
 
-        loadOrders()
+        loadCategories()
     }, [])
 
     return (
@@ -46,7 +47,12 @@ function NewProduct() {
                     />
                 </LabelUpload>
 
-                <ReactSelect />
+                <ReactSelect 
+                    options={categories} // De onde será tirado as opções
+                    getOptionLabel={category => category.name} // O que será mostrado
+                    getOptionValue={category => category.id} // Valor que será enviado
+                    placeholder="Categoria"
+                />
 
                 <ButtonStyles>Adicionar Produto</ButtonStyles>
             </form>
