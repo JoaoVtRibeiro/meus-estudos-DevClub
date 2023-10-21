@@ -15,8 +15,8 @@ import api from '../../services/api'
 // Estilizações e componentes
 import RegisterImage from '../../assets/register-image.png'
 import Logo from '../../assets/logo.png'
-import { Button } from '../../components'
-import { Container, BurgerRegisterImage, Main, LogoImage, H1, Label, Input, ErrorMessage, P } from './styles'
+import { Button, ErrorMessage } from '../../components'
+import { Container, BurgerRegisterImage, Main, LogoImage, H1, Label, Input, P } from './styles'
 import paths from '../../constants/path'
 
 

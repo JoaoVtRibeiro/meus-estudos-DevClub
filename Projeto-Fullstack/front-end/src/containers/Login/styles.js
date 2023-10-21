@@ -64,13 +64,6 @@ export const Input = styled.input`
     padding-left: 12px;
 `
 
-export const ErrorMessage = styled.p `
-    color: #CC1717;
-    font-size: 14px;
-    font-weight: 400;
-    margin-top: 2px;
-`
-
 export const P = styled.p`
     color: #FFF;
     font-size: 14px;
