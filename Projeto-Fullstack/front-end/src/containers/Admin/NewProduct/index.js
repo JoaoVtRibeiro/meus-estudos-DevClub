@@ -16,9 +16,10 @@ function NewProduct() {
     useEffect(() => {
         async function loadCategories() {
             const { data } = await api.get('categories')
-        }
 
-        loadCategories()
+            setCategories(data)
+        }
+        loadCategories() 
     }, [])
 
     return (
