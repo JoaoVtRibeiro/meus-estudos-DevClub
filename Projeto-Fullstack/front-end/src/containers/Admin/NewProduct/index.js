@@ -2,14 +2,33 @@ import React, { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import ReactSelect from 'react-select'
 
-import UploadFileIcon from '@mui/icons-material/UploadFile';
+import * as Yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
+import UploadFileIcon from '@mui/icons-material/UploadFile'
+
 import api from '../../../services/api'
+import { ErrorMessage } from '../../../components'
 import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
 
 function NewProduct() {
     const [fileName, setFileName] = useState(null)
     const [categories, setCategories] = useState([])
-    const { register, handleSubmit, control } = useForm()
+
+    const schema = Yup.object().shape({
+        name: Yup.string().required('Digite o nome do produto'),
+        price: Yup.string().required('Digite o preço do produto'), // por mais que o price seja um número ele vem como uma string
+        category: Yup.object().required('Escolha uma categoria')
+        /* file: Yup.file().required('Digite o preço do produto') */
+    })
+
+    const {
+        register,
+        handleSubmit,
+        control,
+        formState: { errors }
+    } = useForm({
+        resolver: yupResolver(schema)
+    })
 
     const onSubmit = data => console.log(data)
 
@@ -19,7 +38,7 @@ function NewProduct() {
 
             setCategories(data)
         }
-        loadCategories() 
+        loadCategories()
     }, [])
 
     return (
@@ -27,9 +46,11 @@ function NewProduct() {
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
                 <Label for="name">Nome</Label>
                 <Input id="name" type="text" {...register('name')} />
+                <ErrorMessage>{errors.name?.message}</ErrorMessage>
 
                 <Label for="name">Preço</Label>
                 <Input id="name" type="number" {...register('price')} />
+                <ErrorMessage>{errors.price?.message}</ErrorMessage>
 
                 <LabelUpload>
                     {fileName ? fileName : (
@@ -47,9 +68,10 @@ function NewProduct() {
                     // '?' Elvis operator: caso ele não encontre a informação (no caso o '.name'), será ignorado essa necessidade da mesma para não quebrar o código
                     />
                 </LabelUpload>
+                <ErrorMessage>{errors.file?.message}</ErrorMessage>
 
                 <Controller
-                    name="category_id"
+                    name="category"
                     control={control}
                     render={({ field }) => {
                         return (
@@ -63,6 +85,7 @@ function NewProduct() {
                         )
                     }}
                 ></Controller>
+                <ErrorMessage>{errors.category?.message}</ErrorMessage>
 
                 <ButtonStyles>Adicionar Produto</ButtonStyles>
             </form>
@@ -87,7 +110,8 @@ export default NewProduct
         - React Select: Controlado
         - Demais inputs: Não controlados
 
-    Obs: React Hook form não funciona com inputs de terceiros (Como o react select), utilize o Controller
+
+    Obs: React Hook form não funciona com inputs de terceiros (Como o react select), utilize o Controller para auxiliar com esses tipos de inputs
 
         - Controller: Faz uma interface entre o React hook form e o componente, no caso o React select (faz um "meio de campo" entre os dois)
 
