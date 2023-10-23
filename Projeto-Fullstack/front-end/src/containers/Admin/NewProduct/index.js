@@ -17,8 +17,14 @@ function NewProduct() {
     const schema = Yup.object().shape({
         name: Yup.string().required('Digite o nome do produto'),
         price: Yup.string().required('Digite o preço do produto'), // por mais que o price seja um número ele vem como uma string
-        category: Yup.object().required('Escolha uma categoria')
-        /* file: Yup.file().required('Digite o preço do produto') */
+        category: Yup.object().required('Escolha uma categoria'),
+        file: Yup.mixed().test('required', 'Carregue uma imagem', value => { // .test('nome do teste', 'mensagem de erro', teste em si)
+            return value?.length > 0
+        }).test('fileSize', 'Carregue um arquivo de até 2mb', value => {
+            return value[0]?.size <= 200000
+        }).test('type', 'Carregue um arquivo JPEG ou PNG', value => {
+            return value => value[0]?.type === 'image/jpeg' || value[0]?.type === 'image/png'
+        })
     })
 
     const {
