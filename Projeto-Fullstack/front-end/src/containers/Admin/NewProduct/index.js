@@ -50,48 +50,56 @@ function NewProduct() {
     return (
         <Container>
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
-                <Label for="name">Nome</Label>
-                <Input id="name" type="text" {...register('name')} />
-                <ErrorMessage>{errors.name?.message}</ErrorMessage>
+                <div>
+                    <Label for="name">Nome</Label>
+                    <Input id="name" type="text" {...register('name')} />
+                    <ErrorMessage>{errors.name?.message}</ErrorMessage>
+                </div>
 
-                <Label for="name">Preço</Label>
-                <Input id="name" type="number" {...register('price')} />
-                <ErrorMessage>{errors.price?.message}</ErrorMessage>
+                <div>
+                    <Label for="name">Preço</Label>
+                    <Input id="name" type="number" {...register('price')} />
+                    <ErrorMessage>{errors.price?.message}</ErrorMessage>
+                </div>
 
-                <LabelUpload>
-                    {fileName ? fileName : (
-                        <>
-                            <UploadFileIcon />
-                            Selecione a imagem do produto
-                        </>
-                    )}
+                <div>
+                    <LabelUpload>
+                        {fileName ? fileName : (
+                            <>
+                                <UploadFileIcon />
+                                Selecione a imagem do produto
+                            </>
+                        )}
 
-                    <input
-                        type="file"
-                        accept="image/png, image/jpeg"
-                        {...register('file')}
-                        onChange={value => setFileName(value.target.files[0]?.name)}
-                    // '?' Elvis operator: caso ele não encontre a informação (no caso o '.name'), será ignorado essa necessidade da mesma para não quebrar o código
-                    />
-                </LabelUpload>
-                <ErrorMessage>{errors.file?.message}</ErrorMessage>
+                        <input
+                            type="file"
+                            accept="image/png, image/jpeg"
+                            {...register('file')}
+                            onChange={value => setFileName(value.target.files[0]?.name)}
+                        // '?' Elvis operator: caso ele não encontre a informação (no caso o '.name'), será ignorado essa necessidade da mesma para não quebrar o código
+                        />
+                    </LabelUpload>
+                    <ErrorMessage>{errors.file?.message}</ErrorMessage>
+                </div>
 
-                <Controller
-                    name="category"
-                    control={control}
-                    render={({ field }) => {
-                        return (
-                            <ReactSelect
-                                {...field}
-                                options={categories} // De onde será tirado as opções
-                                getOptionLabel={category => category.name} // O que será mostrado
-                                getOptionValue={category => category.id} // Valor que será enviado 
-                                placeholder="Categoria"
-                            />
-                        )
-                    }}
-                ></Controller>
-                <ErrorMessage>{errors.category?.message}</ErrorMessage>
+                <div>
+                    <Controller
+                        name="category"
+                        control={control}
+                        render={({ field }) => {
+                            return (
+                                <ReactSelect
+                                    {...field}
+                                    options={categories} // De onde será tirado as opções
+                                    getOptionLabel={category => category.name} // O que será mostrado
+                                    getOptionValue={category => category.id} // Valor que será enviado 
+                                    placeholder="Categoria"
+                                />
+                            )
+                        }}
+                    ></Controller>
+                    <ErrorMessage>{errors.category?.message}</ErrorMessage>
+                </div>
 
                 <ButtonStyles>Adicionar Produto</ButtonStyles>
             </form>
