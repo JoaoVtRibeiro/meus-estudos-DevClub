@@ -36,7 +36,16 @@ function NewProduct() {
         resolver: yupResolver(schema)
     })
 
-    const onSubmit = data => console.log(data)
+    const onSubmit = async data => {
+        const productFormData = new FormData()
+
+        productFormData.append('name', data.name)
+        productFormData.append('price', data.price)
+        productFormData.append('category_id', data.category.id)
+        productFormData.append('file', data.file[0]) // Por padrão o file virá como array para receber vários arquivos (mas na aplicação está travado apenas a 1, por isso posição 0)
+
+        await api.post('products', productFormData)
+    }
 
     useEffect(() => {
         async function loadCategories() {
