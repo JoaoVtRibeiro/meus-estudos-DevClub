@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import ReactSelect from 'react-select'
+import { toast } from 'react-toastify'
+import { useHistory } from 'react-router-dom'
 
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import UploadFileIcon from '@mui/icons-material/UploadFile'
 
 import api from '../../../services/api'
+import paths from '../../../constants/path'
 import { ErrorMessage } from '../../../components'
 import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
 
 function NewProduct() {
     const [fileName, setFileName] = useState(null)
     const [categories, setCategories] = useState([])
+    const { push } = useHistory()
 
     const schema = Yup.object().shape({
         name: Yup.string().required('Digite o nome do produto'),
@@ -44,7 +48,15 @@ function NewProduct() {
         productFormData.append('category_id', data.category.id)
         productFormData.append('file', data.file[0]) // Por padrão o file virá como array para receber vários arquivos (mas na aplicação está travado apenas a 1, por isso posição 0)
 
-        await api.post('products', productFormData)
+        await toast.promise(api.post('products', productFormData), {
+            pending: 'Criando novo produto...',
+            success: 'Produto criado com sucesso',
+            error: 'Falha ao criar novo produto, tente novamente'
+        })
+     
+        setTimeout(() => {
+            push(paths.ListProductsAdm)
+        }, 2000)
     }
 
     useEffect(() => {
