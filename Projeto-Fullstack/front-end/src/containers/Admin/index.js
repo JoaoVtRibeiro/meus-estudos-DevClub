@@ -4,6 +4,7 @@ import { SideMenuAdmin } from '../../components/SideMenuAdmin'
 import Orders from './Orders'
 import ListProducts from './ListProducts'
 import NewProduct from './NewProduct'
+import EditProduct from './EditProduct'
 import paths from '../../constants/path'
 import { Container, ContainerItems } from '/style.js'
 
@@ -14,7 +15,8 @@ export function Admin({ math: { path } }) { // props dos componentes em componen
             <ContainerItems>
                 {path === paths.OrderAdm && <Orders /> } {/* Se path for igual a url então renderizar componente */}
                 {path === paths.ListProductsAdm && <ListProducts /> }
-                {path === paths.NewProductAdm && <NewProduct /> }   
+                {path === paths.NewProductAdm && <NewProduct /> }
+                {path === paths.EditProductsAdm && <EditProduct /> }   
             </ContainerItems>
         </Container>
     )

@@ -5,8 +5,8 @@ const paths = {
     Cart: '/carrinho',
     OrderAdm: '/pedidos',
     ListProductsAdm: '/lista-de-produtos',
-    EditProductsAdm: '/editar-produto',
-    NewProductAdm:'/novo-produto'
+    NewProductAdm:'/novo-produto',
+    EditProductsAdm: '/editar-produto'
 }
 
 export default paths
