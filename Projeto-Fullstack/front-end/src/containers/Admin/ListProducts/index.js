@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -12,10 +13,12 @@ import Paper from '@mui/material/Paper'
 
 import formatCurrency from '../../../utils/formatCurrency'
 import api from '../../../services/api'
+import paths from '../../../constants/path';
 import { Container, Img, EditIconButton } from './style'
 
 function ListProducts() {
     const [products, setProducts] = useState([])
+    const { push } = useHistory()
 
     useEffect(() => {
         async function loadOrders() {
@@ -31,6 +34,10 @@ function ListProducts() {
             return <CheckCircleIcon style={{ color: '#228822' }} /> // Lembrando, ao chegar no return a execução da função termina (por isso não é necessário um else, apesar de funcionar da mesma maneira)
         }
         return <RemoveIcon style={{ color: '#CC1717' }} />
+    }
+
+    function editProduct(product) {
+        push(paths.EditProductsAdm, { product }) // Há como enviar props pelo push também (rota, { props })
     }
 
     return (
@@ -58,7 +65,7 @@ function ListProducts() {
                                     <TableCell>{formatCurrency(product.price)}</TableCell>
                                     <TableCell align='center'>{isOffer(product.offer)}</TableCell>
                                     <TableCell align='center'><Img src={product.url} alt='imagem do produto'></Img></TableCell>
-                                    <TableCell><EditIconButton /></TableCell>
+                                    <TableCell><EditIconButton onClick={() => editProduct(product)} /></TableCell>
                                 </TableRow>
                             ))}
                     </TableBody>
