@@ -36,7 +36,7 @@ function ListProducts() {
         return <RemoveIcon style={{ color: '#CC1717' }} />
     }
 
-    function editProduct(product) {
+    function sendToEditProduct(product) {
         push(paths.EditProductsAdm, { product }) // Há como enviar props pelo push também (rota, { props })
     }
 
@@ -65,7 +65,7 @@ function ListProducts() {
                                     <TableCell>{formatCurrency(product.price)}</TableCell>
                                     <TableCell align='center'>{isOffer(product.offer)}</TableCell>
                                     <TableCell align='center'><Img src={product.url} alt='imagem do produto'></Img></TableCell>
-                                    <TableCell><EditIconButton onClick={() => editProduct(product)} /></TableCell>
+                                    <TableCell><EditIconButton onClick={() => sendToEditProduct(product)} /></TableCell>
                                 </TableRow>
                             ))}
                     </TableBody>

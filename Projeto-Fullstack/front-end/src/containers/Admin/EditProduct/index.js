@@ -16,7 +16,10 @@ import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
 function EditProduct() {
     const [fileName, setFileName] = useState(null)
     const [categories, setCategories] = useState([])
-    const { push } = useHistory()
+    const { push, location: { // location: terá o pathname(path atual) e state com o product enviado de ListProducts
+        state: { product } // Desestruturação: location -> state -> product
+    }
+    } = useHistory() 
 
     const schema = Yup.object().shape({
         name: Yup.string().required('Digite o nome do produto'),
@@ -53,7 +56,7 @@ function EditProduct() {
             success: 'Produto criado com sucesso',
             error: 'Falha ao criar novo produto, tente novamente'
         })
-     
+
         setTimeout(() => {
             push(paths.ListProductsAdm)
         }, 2000)
