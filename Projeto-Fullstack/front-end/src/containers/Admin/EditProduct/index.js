@@ -25,13 +25,6 @@ function EditProduct() {
         name: Yup.string().required('Digite o nome do produto'),
         price: Yup.string().required('Digite o preço do produto'), // por mais que o price seja um número ele vem como uma string
         category: Yup.object().required('Escolha uma categoria'),
-        file: Yup.mixed().test('required', 'Carregue uma imagem', value => { // .test('nome do teste', 'mensagem de erro', teste em si)
-            return value?.length > 0
-        }).test('fileSize', 'Carregue um arquivo de até 2mb', value => {
-            return value[0]?.size <= 200000
-        }).test('type', 'Carregue um arquivo JPEG ou PNG', value => {
-            return value => value[0]?.type === 'image/jpeg' || value[0]?.type === 'image/png'
-        })
     })
 
     const {
@@ -51,10 +44,10 @@ function EditProduct() {
         productFormData.append('category_id', data.category.id)
         productFormData.append('file', data.file[0]) // Por padrão o file virá como array para receber vários arquivos (mas na aplicação está travado apenas a 1, por isso posição 0)
 
-        await toast.promise(api.post('products', productFormData), {
-            pending: 'Criando novo produto...',
-            success: 'Produto criado com sucesso',
-            error: 'Falha ao criar novo produto, tente novamente'
+        await toast.promise(api.put(`products/${product.id}`, productFormData), {
+            pending: 'Editando novo produto...',
+            success: 'Produto editado com sucesso',
+            error: 'Falha ao editar produto, tente novamente'
         })
 
         setTimeout(() => {
@@ -76,13 +69,13 @@ function EditProduct() {
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <Label for="name">Nome</Label>
-                    <Input id="name" type="text" {...register('name')} />
+                    <Input id="name" type="text" {...register('name')} defaultValue={product.name}/>
                     <ErrorMessage>{errors.name?.message}</ErrorMessage>
                 </div>
 
                 <div>
                     <Label for="name">Preço</Label>
-                    <Input id="name" type="number" {...register('price')} />
+                    <Input id="name" type="number" {...register('price')} defaultValue={product.price}/>
                     <ErrorMessage>{errors.price?.message}</ErrorMessage>
                 </div>
 
@@ -110,6 +103,7 @@ function EditProduct() {
                     <Controller
                         name="category"
                         control={control}
+                        defaultValue={product.category}
                         render={({ field }) => {
                             return (
                                 <ReactSelect
@@ -118,6 +112,7 @@ function EditProduct() {
                                     getOptionLabel={category => category.name} // O que será mostrado
                                     getOptionValue={category => category.id} // Valor que será enviado 
                                     placeholder="Categoria"
+                                    defaultValue={product.category}
                                 />
                             )
                         }}
