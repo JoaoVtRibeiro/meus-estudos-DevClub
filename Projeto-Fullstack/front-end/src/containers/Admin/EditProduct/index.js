@@ -11,7 +11,7 @@ import UploadFileIcon from '@mui/icons-material/UploadFile'
 import api from '../../../services/api'
 import paths from '../../../constants/path'
 import { ErrorMessage } from '../../../components'
-import { Container, Label, Input, LabelUpload, ButtonStyles } from './style'
+import { Container, Label, Input, LabelUpload, ButtonStyles, ContainerInput } from './style'
 
 function EditProduct() {
     const [fileName, setFileName] = useState(null)
@@ -19,12 +19,13 @@ function EditProduct() {
     const { push, location: { // location: terá o pathname(path atual) e state com o product enviado de ListProducts
         state: { product } // Desestruturação: location -> state -> product
     }
-    } = useHistory() 
+    } = useHistory()
 
     const schema = Yup.object().shape({
         name: Yup.string().required('Digite o nome do produto'),
         price: Yup.string().required('Digite o preço do produto'), // por mais que o price seja um número ele vem como uma string
         category: Yup.object().required('Escolha uma categoria'),
+        offer: Yup.bool()
     })
 
     const {
@@ -43,6 +44,7 @@ function EditProduct() {
         productFormData.append('price', data.price)
         productFormData.append('category_id', data.category.id)
         productFormData.append('file', data.file[0]) // Por padrão o file virá como array para receber vários arquivos (mas na aplicação está travado apenas a 1, por isso posição 0)
+        productFormData.append('offer', data.offer)
 
         await toast.promise(api.put(`products/${product.id}`, productFormData), {
             pending: 'Editando novo produto...',
@@ -69,13 +71,13 @@ function EditProduct() {
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <Label for="name">Nome</Label>
-                    <Input id="name" type="text" {...register('name')} defaultValue={product.name}/>
+                    <Input id="name" type="text" {...register('name')} defaultValue={product.name} />
                     <ErrorMessage>{errors.name?.message}</ErrorMessage>
                 </div>
 
                 <div>
                     <Label for="name">Preço</Label>
-                    <Input id="name" type="number" {...register('price')} defaultValue={product.price}/>
+                    <Input id="name" type="number" {...register('price')} defaultValue={product.price} />
                     <ErrorMessage>{errors.price?.message}</ErrorMessage>
                 </div>
 
@@ -120,7 +122,12 @@ function EditProduct() {
                     <ErrorMessage>{errors.category?.message}</ErrorMessage>
                 </div>
 
-                <ButtonStyles>Adicionar Produto</ButtonStyles>
+                <ContainerInput>
+                    <input id="offer" type="checkbox" {...register('offer')} defaultChecked={product.offer}></input>
+                    <Label for="offer">Produto em Oferta?</Label>
+                </ContainerInput>
+
+                <ButtonStyles>Editar Produto</ButtonStyles>
             </form>
         </Container >
     )
