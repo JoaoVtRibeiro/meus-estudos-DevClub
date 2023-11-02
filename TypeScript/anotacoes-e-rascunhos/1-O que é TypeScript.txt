@@ -1,0 +1,37 @@
+O que é o TypeScript?
+
+- Um SuperSet do Javascript, ou seja, uma linguagem que foi criada com baseada no Javascript (Uma extensão/superconjunto do Javascript)
+- Desenvolvido pela Microsoft
+
+
+Por que da sua criação?
+
+- Auxilia a resolver desafios de desenvolvimento em larga escala
+- Adiciona novos recursos ao Javascript
+- Melhora a manutenção do código
+ 
+Por que utilizar?
+
+- Ajuda a prevenir erros em tempo de execução 
+(Já que o Typescript é uma linguagem compilada, enquanto o javascript é uma linguagem interpretada)
+
+- Facilita a detecção precoce de bugs
+- Aumenta a produtividade em IDE's
+- Destaque de erros de tipo durante a codificação
+- Melhora a organização de código em projetos grandes
+- Tipagem estática
+
+Além disso o TypeScript:
+
+- Transpila para Javascript (para programas, plataformas, browsers e afins que não interpretam TypeScript)
+- Possui interpretador próprio
+
+
+
+
+Utilização e Frameworks
+
+- Angular, NestJS: escritos em TypeScript
+- React, Vue.Js: suportam TypeScript
+- Express, Fastify: suportam TypeScript
+- A maioria das bibliotecas Javascript possuem suporte ao TypeScript
