@@ -1,0 +1,17 @@
+{
+  "name": "aulas",
+  "version": "1.0.0",
+  "description": "Studing TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "João Vitor Ribeiro",
+  "email": "joaoribeiro.cpu@gmail.com",
+  "url": "https://github.com/JoaoVtRibeiro",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

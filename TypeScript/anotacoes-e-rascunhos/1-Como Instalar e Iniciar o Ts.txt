@@ -1,0 +1,7 @@
+Comando para instalar o TypeScript:
+
+    - npm/yarn i -D typescript
+
+Configurar a transpilação do typescript para javascript:
+
+    - npx tsc --initnpx
