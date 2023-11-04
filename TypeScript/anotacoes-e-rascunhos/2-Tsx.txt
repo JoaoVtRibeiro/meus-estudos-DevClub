@@ -1,0 +1,9 @@
+TSX
+
+    Uma ferramenta que auxilia na produtividade do desenvolvimento com TypeScript, 
+    isso porque não será necessário transpilar o código para javascript toda vez que rodar o código
+
+    Basicamente ele permite, o node por exemplo, "entender" TypeScript 
+    (Ele também gerá um código javascript "por baixo dos panos" para o node entender)
+    Eliminando o processo de manualmente ter que transpilar o código varias vezes, 
+    durante o processo de desenvolvimento, deixando apenas para quando o projeto estiver completo
