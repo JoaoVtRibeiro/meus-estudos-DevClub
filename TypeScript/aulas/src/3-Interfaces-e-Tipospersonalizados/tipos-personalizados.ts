@@ -1,5 +1,5 @@
 /* 
-    Interfaces e Tipos Personalizados
+    Tipos Personalizados
 
         Permitem definir estruturas próprias de dados com base nas necessidades do seu código.
         Isso é feito usando a palavra-chave type ou interface para definir um novo tipo, 
