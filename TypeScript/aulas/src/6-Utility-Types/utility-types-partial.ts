@@ -8,9 +8,6 @@
         - Partial (Nativo do TypeScript)
             Permite criar um "tipo parcial", que é basicamente 
             um tipo que não precisa necessáriamente de todas as propriedades
-
-        - Omit
-        - Pick
 */
 
 // Exemplo Partial
@@ -42,26 +39,6 @@ const userPartial3: PartialUser = {
 
 
 /* 
-
-type User1 = {
-    id: number;
-    username: string;
-    password: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
-
-const user: User = {
-    id: 1,
-    username: 'agustinhopneto',
-    password: 'typescript123',
-    createdAt: new Date(),
-    updatedAt: new Date()
-}
-
-
-
-type NewUser = Omit<User, 'id' | 'username'>
 
 type SearchUser = Pick<User, 'username'>
 
