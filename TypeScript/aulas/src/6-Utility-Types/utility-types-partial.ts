@@ -36,14 +36,3 @@ const userPartial3: PartialUser = {
     username: 'vitor',
     password: '123typescript',
 }
-
-
-/* 
-
-type SearchUser = Pick<User, 'username'>
-
-const searchUser: SearchUser = {
-    username: 'agustinhopneto'
-}
-
- */
