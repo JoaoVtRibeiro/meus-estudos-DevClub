@@ -15,6 +15,7 @@ Mostrar arquivos ocultos (Windows) = ctrl + shift + .
 Selecionar uma mesma palavra que se repete varias vezes no código (Uma por vez) = ctrl + d 
 
 Selecionar uma mesma palavra que se repete varias vezes no código (Todas de uma vez) = ctrl + shift + l
+    - Após selecionar a palavra, segurar o shift e apertar "end" para selecionar toda a linha
 
 Receber sugestões para completar o contexto (ex: informações do author em um package.json) = ctrl + espaço
 
