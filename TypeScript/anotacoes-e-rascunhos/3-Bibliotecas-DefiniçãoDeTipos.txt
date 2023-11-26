@@ -1,0 +1,9 @@
+    Definições de tipos de Bibliotecas
+
+    Algumas bibliotecas não tem suporte para TypeScript, pensando nisso, outros pacotes foram criados
+    com as definições de tipos para poderem ser utilizadas com TypeScript.
+    Esses pacotes fornecem informações sobre a estrutura e os tipos de dados
+    esperados pela biblioteca em questão, permitindo que o TypeScript forneça um melhor
+    suporte de autocompletar, detecção de erros e verificação de tipos durante o desenvolvimento.
+
+    Por padrão essas definições são escritas: @types/nomedabiblioteca
