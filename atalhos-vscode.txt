@@ -19,6 +19,8 @@ Selecionar uma mesma palavra que se repete varias vezes no código (Todas de uma
 
 Receber sugestões para completar o contexto (ex: informações do author em um package.json) = ctrl + espaço
 
+Emojis: Windows + .
+
 
 
 
