@@ -6,7 +6,8 @@
     "extends": [
         "standard",
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -17,11 +18,27 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": ["error", 4] // quatro espaços
+        "indent": ["error", 4], // quatro espaços
+        "prettier/prettier": "error", // ver erros do prettier como: warn(aviso) ou error
     }
 }
 /* 
-    npm i -D eslint
-    npx i eslint --init
-    npm i -D eslint-config-standard   
+    Configuração e comandos:
+        -Eslint
+        npm i -D eslint
+        npx i eslint --init
+        npm i -D eslint-config-standard
+        "extends":"standard"
+        
+        
+        -Prettier
+        npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+        "extends":"plugin:prettier/recommended"
+
+        "printWidhth": 80, // Limite de caracteres por linha
+        "tabWidth": 4, // Espaço do tab
+        "singleQuote": true, // Ampas simples
+        "trailingComma": "none", // Virgula no final da linha de estrutaras que se encaixem (uma lista de array por exemplo)
+        "arrowParens": "always", // Colocar o parenteses em arrow functions
+        "semi": false, // Ponto e virgula no final de cada comando 
 */
