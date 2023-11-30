@@ -14,12 +14,35 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
-        "@typescript-eslint"
+    "plugins": [ // Lembrar de informar o plugins utilizados
+        "@typescript-eslint",
+        "prettier",
+        "eslint-plugin-import-helpers"
     ],
     "rules": {
         "indent": ["error", 4], // quatro espaços
         "prettier/prettier": "error", // ver erros do prettier como: warn(aviso) ou error
+        "no-useless-constructor": "off", // Desliga métodos construtores não utilizados
+        "@typescript-eslint/no-unused-vars": "off", // Desliga variaveis não utilizadas
+        "import-helpers/order-imports": [ // Define como será a ordem dos grupos das importações
+            "warn",
+            {
+                "newlinesBetween": "always", // Pular uma linha para separar os grupos das importações
+                "groups": [
+                    "/^node:*/",
+                    "module",
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "ignoreCase": true
+                }
+            }
+        ]
     }
 }
 /* 
@@ -29,7 +52,7 @@
         npx i eslint --init
         npm i -D eslint-config-standard
         "extends":"standard"
-        
+        npm i -D eslint-plugin-import-helpers // Ajuda na organização dos imports
         
         -Prettier
         npm i -D prettier eslint-config-prettier eslint-plugin-prettier
