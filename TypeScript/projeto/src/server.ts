@@ -10,3 +10,15 @@ app.use(routes)
 app.listen(3333, () => {
     console.log('Server is running at port 3333')
 })
+
+/* 
+    Arquitetura dos caminhos do projeto
+
+        Request:
+
+            Entity -> Service -> Controller -> Route
+
+        Response:
+
+            Route -> Controller -> Service -> Entity
+*/
