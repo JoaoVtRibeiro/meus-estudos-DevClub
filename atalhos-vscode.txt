@@ -21,6 +21,8 @@ Receber sugestões para completar o contexto (ex: informações do author em um 
 
 Emojis: Windows + .
 
+Copiar uma linha: shif + alt + (seta para cima ou baixo)
+
 
 
 
