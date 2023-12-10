@@ -23,6 +23,7 @@ Emojis: Windows + .
 
 Copiar uma linha: shif + alt + (seta para cima ou baixo)
 
+Refazer a alteração mais recente (após um ctrl z): ctrl + shift + z
 
 
 
