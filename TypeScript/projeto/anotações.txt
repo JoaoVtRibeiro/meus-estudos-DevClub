@@ -1,1 +1,2 @@
 - Docker Composer: Como serão os containers serão criados/modelados
+    Rodar o DockerComposer: docker-compose up -d
