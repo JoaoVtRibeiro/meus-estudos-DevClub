@@ -1,7 +1,7 @@
 import { Category } from '../../entities/category.entity'
 import { CategoryModel } from '../schemas/category.schema'
 
-export class CategorieesRepository {
+export class CategoriesRepository {
     constructor(private model: typeof CategoryModel) {}
 
     async create({ title, color}: Category) {
