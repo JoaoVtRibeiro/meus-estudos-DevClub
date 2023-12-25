@@ -1,4 +1,4 @@
-import { CategoriesRepository } from '../database/repositories/category.repository'
+import { CategoriesRepository } from '../database/repositories/categories.repository'
 import { Category } from '../entities/category.entity'
 
 export class CategoriesService {

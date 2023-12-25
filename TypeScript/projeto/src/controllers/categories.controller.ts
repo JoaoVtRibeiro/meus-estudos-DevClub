@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 
 import { CategoriesService } from '../services/categories.services'
 import { CategoryModel } from '../database/schemas/category.schema'
-import { CategoriesRepository } from '../database/repositories/category.repository'
+import { CategoriesRepository } from '../database/repositories/categories.repository'
 
 export class CategoriesController {
     async create(_: Request, res: Response) {
