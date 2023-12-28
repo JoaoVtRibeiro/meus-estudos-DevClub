@@ -12,8 +12,8 @@ export class Category{
     constructor({ id , color, title}: CategoryProps){
         this.id = id
         this.title = title
-        this.color = color.toUpperCase()
+        this.color = color.toUpperCase() // Padronizando os dados para serem todos em maiúsculo
     }
 }
 
-const category = new Category({id: 'id-da-instancia', title:'title', color: '#ff33bb'})
+const category = new Category({id: 'id-da-instancia', title:'title', color: '#ff33bb'}) // Instanciando a classe

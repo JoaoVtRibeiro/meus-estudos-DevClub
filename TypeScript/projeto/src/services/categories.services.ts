@@ -5,7 +5,7 @@ export class CategoriesService {
     constructor(private categoriesRepository: CategoriesRepository) {}
 
     async create(): Promise<Category> {
-        const category = new Category({
+        const category = new Category({ // Instanciando a classe
             title: 'Example Category',
             color: '#ff33bb'
         })
@@ -15,3 +15,12 @@ export class CategoriesService {
         return category
     }
 }
+
+
+/* 
+    - Funções como a "async create()" já são publicas mesmo sem o "public"
+
+    - Funções assíncronas no typescript devolvem uma "Promise" e por consequencia, quando ela se revolver, ela devolve um tipo
+        No caso, a "Promise" de "create" está devolvendo a entidade "Category"
+
+*/
