@@ -18,6 +18,8 @@ export class CategoriesService {
 
 
 /* 
+    Service: Responsavel pelas regras de negócio (quem faz a roda girar)
+
     - Funções como a "async create()" já são publicas mesmo sem o "public"
 
     - Funções assíncronas no typescript devolvem uma "Promise" e por consequencia, quando ela se revolver, ela devolve um tipo

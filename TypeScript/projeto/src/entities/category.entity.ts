@@ -17,3 +17,8 @@ export class Category{
 }
 
 const category = new Category({id: 'id-da-instancia', title:'title', color: '#ff33bb'}) // Instanciando a classe
+
+
+/* 
+    Entity: Modelagem os dados, o "coração" do projeto (Não necessáriamente só os dados do banco, mas também auxiliares)
+*/

@@ -14,3 +14,6 @@ export class CategoriesController {
         return res.status(201).json(result)
     }
 }
+/* 
+    Controller: Gerencia as requisições/Saber quem chamar a partir da requisição (ex: qual service ou método) 
+*/
