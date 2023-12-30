@@ -5,11 +5,11 @@ import { CategoryModel } from '../database/schemas/category.schema'
 import { CategoriesRepository } from '../database/repositories/categories.repository'
 
 export class CategoriesController {
-    async create(_: Request, res: Response) {
+    async create(_: Request, res: Response) { // "_" significa que a propriedade não será utilizada (no caso o request)
         const repository = new CategoriesRepository(CategoryModel)
         const service = new CategoriesService(repository)
 
-        const result = await service.create()
+        const result = await service.create() // Salvando o retorno do service.create() (uma Category) na variavel result
 
         return res.status(201).json(result)
     }
