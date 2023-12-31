@@ -1,4 +1,6 @@
-import { Router } from 'express'
+//
+
+import { Router } from 'express' // Permite a criação de rotas
 
 import packageJson from '../../package.json'
 
