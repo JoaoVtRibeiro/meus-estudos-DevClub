@@ -6,4 +6,4 @@ export const categoriesRoutes = Router() // Permite a criação de rotas
 
 const controller = new CategoriesController() // Instanciando a classe
 
-categoriesRoutes.get('/', controller.create) // rota base irá executar o método (create) criado no controler
+categoriesRoutes.post('/', controller.create) // ao ser chamada irá executar o método (create) criado no controler
