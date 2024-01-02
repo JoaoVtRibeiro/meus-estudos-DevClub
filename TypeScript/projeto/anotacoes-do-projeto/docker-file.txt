@@ -1,0 +1,20 @@
+O Dockerfile é um arquivo de texto que contém uma série de instruções e comandos utilizados para criar uma imagem personalizada no Docker. 
+Ele é usado para automatizar o processo de criação de imagens e facilitar a reprodução do ambiente de desenvolvimento em diferentes máquinas. 
+Você pode definir quais pacotes, dependências e configurações serão incluídos na imagem, além de especificar comandos para a execução de tarefas durante a criação da imagem.
+
+Resumindo, DockerFile é como uma "receita" para o docker, de como ele irá criar a aplicação
+
+
+Descrições dos comandos do arquivo do projeto como exemplo:
+
+    FROM node:18-alpine             //
+
+    WORKDIR /home/app               //
+
+    COPY . ./                       //
+
+    RUN npm i                       //
+
+    EXPOSE 3333                     //
+
+    CMD ["npm", "run", "dev"]       //
