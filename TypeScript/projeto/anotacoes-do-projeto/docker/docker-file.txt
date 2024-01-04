@@ -7,14 +7,16 @@ Resumindo, DockerFile é como uma "receita" para o docker, de como ele irá cria
 
 Descrições dos comandos do arquivo do projeto como exemplo:
 
-    FROM node:18-alpine             //
+    FROM node:18-alpine             // Qual imagem será utilizada, no caso a do node na versão 18 e 
+                                       alpine (uma versão menor, com só as principais funcionalidades para economizar memória dentro do container)
 
-    WORKDIR /home/app               //
+    WORKDIR /home/app               // Qual será o diretório de trabalho 
+                                       (está nesse formato porque, "por baixo" o docker irá rodar o linux)
 
-    COPY . ./                       //
+    COPY . ./                       // Será copiado tudo que está na raiz do projeto para dentro do container
 
-    RUN npm i                       //
+    RUN npm i                       // Gerenciador de pacotes para instalar as dependências
 
-    EXPOSE 3333                     //
+    EXPOSE 3333                     // Porta que será utilizada
 
-    CMD ["npm", "run", "dev"]       //
+    CMD ["npm", "run", "dev"]       // Comando que será executado
