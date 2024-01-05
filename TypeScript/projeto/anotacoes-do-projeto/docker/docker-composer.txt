@@ -1,2 +1,16 @@
-- Docker Composer: Como serão os containers serão criados/modelados
-    Rodar o DockerComposer: docker-compose up -d
+Docker Composer
+
+    Uma extensão do Docker, que permite orquestrar a execução de vários containers em conjunto, 
+    facilitando o gerenciamento de aplicações compostas por diferentes serviços.
+
+    Você pode definir os serviços, redes e volumes necessários para sua aplicação em um arquivo YAML.
+    Esse arquivo descreve a configuração do ambiente, incluindo as imagens Docker a serem utilizadas, as portas a serem expostas, 
+    as variáveis de ambiente, as dependências entre os serviços e outras configurações.
+
+    Resumindo, é como serão os containers serão criados/modelados, é a "receita dos containers"
+
+
+    - Para rodar o DockerComposer: docker-compose up -d
+
+        Executando o comando "docker-compose up", o Docker Compose irá ler o arquivo YAML cria e 
+        inicia automaticamente os containers necessários para sua aplicação, garantindo que eles estejam interconectados e funcionando corretamente.
