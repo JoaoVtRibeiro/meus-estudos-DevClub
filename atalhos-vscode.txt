@@ -27,7 +27,7 @@ Refazer a alteração mais recente (após um ctrl z): ctrl + shift + z
 
 Pesquisar uma palavra em específico nos arquivos: ctrl + shift + f
 
-Abrir o terminal mais facilmente: ctrl + shift + p -> terminal
+Abrir um novo terminal diretamente: ctrl + shift + '
 
 
 
