@@ -9,8 +9,46 @@ Docker Composer
 
     Resumindo, é como serão os containers serão criados/modelados, é a "receita dos containers"
 
+---------------------------------------------------------------------------------------------------------------------
 
     - Para rodar o DockerComposer: docker-compose up -d
 
         Executando o comando "docker-compose up", o Docker Compose irá ler o arquivo YAML cria e 
         inicia automaticamente os containers necessários para sua aplicação, garantindo que eles estejam interconectados e funcionando corretamente.
+
+---------------------------------------------------------------------------------------------------------------------
+
+    Descrição dos comandos do arquivo do projeto como exemplo:
+
+    version: '3'                                            //
+
+    services:                                               //
+        mongo:
+            container_name: mongodb                         //
+            restart: always                                 //
+            image: mongo                                    //
+            environment:                                    //
+                MONGO_INITDB_ROOT_USERNAME: 'devbills'      //
+                MONGO_INITDB_ROOT_PASSWORD: 'pass123'       //
+            ports:                                          //
+                - '27017:27017'                             //
+            networks:                                       //
+                - local                                     //
+
+        app:                                                //
+            depends_on:                                     //
+                - mongo                                     //
+            container_name: devbills-api                    //
+            build:                                          //
+                context: .                                  //
+                dockerfile: Dockerfile                      //
+            volumes:                                        //
+            - ./:/home/app                                  //
+            ports:                                          //
+                - '3333:3333'                               //
+            networks:                                       //
+                - local                                     //
+
+        networks:                                           //
+            local:                                          //
+                name: local                                 //
