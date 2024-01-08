@@ -20,20 +20,20 @@ Docker Composer
 
     Descrição dos comandos do arquivo do projeto como exemplo:
 
-    version: '3'                                            //
+    version: '3'                                            // número da versão
 
-    services:                                               //
-        mongo:
-            container_name: mongodb                         //
-            restart: always                                 //
-            image: mongo                                    //
-            environment:                                    //
-                MONGO_INITDB_ROOT_USERNAME: 'devbills'      //
-                MONGO_INITDB_ROOT_PASSWORD: 'pass123'       //
-            ports:                                          //
-                - '27017:27017'                             //
-            networks:                                       //
-                - local                                     //
+    services:                                               // Configuração dos serviços
+        mongo:                                              // Banco de dados que será utilizado
+            container_name: mongodb                         // Nome do container
+            restart: always                                 // Sempre reiniciar (quando ele cair, ele volta)
+            image: mongo                                    // Nome da imagem
+            environment:                                    // Definição dos valores das variaveis de ambiente (Obs: Os valores tem que ser em caixa alta/maiúsculas)
+                MONGO_INITDB_ROOT_USERNAME: 'devbills'      // Valor do Username da imagem 
+                MONGO_INITDB_ROOT_PASSWORD: 'pass123'       // Valor da Senha da imagem
+            ports:                                          // Definição da porta
+                - '27017:27017'                             // 27017:27017 é a porta do mongo
+            networks:                                       // Definição da Rede
+                - local                                     // rede local
 
         app:                                                //
             depends_on:                                     //
