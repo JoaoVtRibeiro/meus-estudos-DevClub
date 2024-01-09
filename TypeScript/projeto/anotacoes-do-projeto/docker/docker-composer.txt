@@ -22,8 +22,8 @@ Docker Composer
 
     version: '3'                                            // número da versão
 
-    services:                                               // Configuração dos serviços
-        mongo:                                              // Banco de dados que será utilizado
+    services:                                               // Configuração/"Receita" dos serviços
+        mongo:                                              // Configuração do container do banco
             container_name: mongodb                         // Nome do container
             restart: always                                 // Sempre reiniciar (quando ele cair, ele volta)
             image: mongo                                    // Nome da imagem
@@ -35,20 +35,20 @@ Docker Composer
             networks:                                       // Definição da Rede
                 - local                                     // rede local
 
-        app:                                                //
-            depends_on:                                     //
-                - mongo                                     //
-            container_name: devbills-api                    //
-            build:                                          //
-                context: .                                  //
-                dockerfile: Dockerfile                      //
-            volumes:                                        //
-            - ./:/home/app                                  //
-            ports:                                          //
-                - '3333:3333'                               //
-            networks:                                       //
-                - local                                     //
+        app:                                                // Configuração do container da aplicação
+            depends_on:                                     // Dependências
+                - mongo                                     // Banco de dados que será utilizado
+            container_name: devbills-api                    // Nome do container
+            build:                                          // Definição da construção
+                context: .                                  // Caminho aonde se encontra o arquivo da imagem para se basear (No caso já está na raiz, por isso o ".")
+                dockerfile: Dockerfile                      // Imagem que será utilizada
+            volumes:                                        // Qual será a base da aplicação, baseado no "workdir" do dockerfile 
+            - ./:/home/app                                  // Caminho da base da aplicação (isso faz com que qualquer alteração feita no projeto reflita no container, sem precisar rodar o build toda vez)
+            ports:                                          // Definição da porta
+                - '3333:3333'                               // Porta que está sendo utilizada na aplicação
+            networks:                                       // Definição da Rede
+                - local                                     // rede local
 
-        networks:                                           //
-            local:                                          //
-                name: local                                 //
+        networks:                                           // Configuração da rede (Uma garantia que app e o mongo consigam se comunicar por estarem na mesma rede)
+            local:                                          // Definição da Rede para as outras duas configurações/"receitas"
+                name: local                                 // Nome da rede
