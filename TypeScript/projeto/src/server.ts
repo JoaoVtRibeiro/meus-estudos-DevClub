@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import 'dotenv/config' // Uma biblioteca para acessar as variaveis de ambiente
 import express, { json } from 'express'
 
 import { routes } from './routes'

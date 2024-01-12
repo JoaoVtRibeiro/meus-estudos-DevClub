@@ -15,8 +15,24 @@ export async function setupMongo(): Promise<void> { // Função para configurar 
     }
 }
 
+
 /* 
     Obs: await mongoose.connect(process.env.MONGO_URL as string)
 
+    Tipagem
+
+        - process.env é uma tipagem do node (o typescript não entende por si só)
+        - MONGO_URL é uma variavel de ambiente
+        - Para acessar variaveis de ambiente, o node precisa de um pacote de tipagens do node
+        - Para instalar a pacote = npm i -D @types/node, para utilizar os recursos nativos do node e o typescript conseguir entendelos
+
+        Basicamente, esse pacote vai permitir o typescript entender esses tipagens, assim dando acesso ao node para utilizalas
+
+    Para acessar as variaveis de ambiente
+        - npm i dotenv, uma biblioteca para acessar as variaveis de ambiente
+
+    as string
+        - A variavel de ambiente pode vir como string ou undefined, se ela vier undefined o banco não irá conectar,
+          então colocando 'as string' faz o typescript assumir que será utilizado apenas a tipagem de string
 
 */
