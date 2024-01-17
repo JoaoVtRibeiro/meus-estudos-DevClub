@@ -8,7 +8,7 @@ export const CategorySchema = new mongoose.Schema( // Colection, estrutura dos d
     { versionKey: false} // descrição final do arquivo
 )
 
-export const CategoryModel = mongoose.model('Category', CategorySchema)
+export const CategoryModel = mongoose.model('Category', CategorySchema) // ('nome do model', schema que será utilizado)
 
 // Repository Pattern
 
@@ -29,11 +29,18 @@ export const CategoryModel = mongoose.model('Category', CategorySchema)
         colocar uma propriedade nova no futuro, criando assim uma versão nova
         com false, não serão permitidas novas propriedades 
 
+        Lembrete importe: Se você não usa não coloca, ainda mais em banco de dados,
+        porque em sistemas que milhares de registros são feitos, uma coluna inutil já faz um estrago
+        tanto em performace quanto em custo
 
-    Lembrete importe: Se você não usa não coloca, ainda mais em banco de dados,
-    porque em sistemas que milhares de registros são feitos, uma coluna inutil já faz um estrago
-    tanto em performace quanto em custo
+    Model
 
+        - Ele desempenha o papel de criar uma conexão entre a aplicação e o banco mongoDB
+        - Faz a modelagem dos dados, definindo a estrutura utilizando um schema
+        - Realiza operações CRUD (Create, Read, Update, Delete) nos documentos do banco
+
+        Em resumo ele simplifica o processo de interação com o mongoDB, 
+        permitindo a manipular os dados de uma maneira mais facil
 */
 
 
