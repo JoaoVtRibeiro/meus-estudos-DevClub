@@ -1,0 +1,20 @@
+Repository Pattern
+
+    Um padrão de design de sofware (da lógica da arquitetura do projeto), 
+    que separa a lógica de negócios do acesso aos dados,
+    usando interfaces para operações de leitura/gravação.
+
+    Isso simplifica a manutenção, teste e extensão do código, isolando os detalhes do
+    armazenamento de dados e provendo a reutilização do código
+
+    - Ele é responsavel por toda manipulação de dados externos (pode ser no bando ou api externas)
+    - Nele que ficaram todos os metódos de persistencia de dados*
+
+
+    O que é persistencia de dados?
+
+        Significa manter os dados além da duração da execução do programa,
+        ou seja, a capacidade de armazenar dados de forma permanente
+        com um meio de armazenamento persistente (como um banco de dados)
+        mesmo sem a aplicação estar em execução
+

@@ -10,8 +10,6 @@ export const CategorySchema = new mongoose.Schema( // Colection, estrutura dos d
 
 export const CategoryModel = mongoose.model('Category', CategorySchema) // ('nome do model', schema que será utilizado)
 
-// Repository Pattern
-
 /*  
     Schemas
 
