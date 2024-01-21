@@ -29,5 +29,7 @@ Pesquisar uma palavra em específico nos arquivos: ctrl + shift + f
 
 Abrir um novo terminal diretamente: ctrl + shift + '
 
+Acessar a origem ou definições de tipo de uma classe, método, etc = segurar o ctrl + clicar na classe, método
+
 
 
