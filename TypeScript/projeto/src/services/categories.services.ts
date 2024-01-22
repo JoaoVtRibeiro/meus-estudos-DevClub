@@ -2,7 +2,7 @@ import { CategoriesRepository } from '../database/repositories/categories.reposi
 import { Category } from '../entities/category.entity'
 
 export class CategoriesService {
-    constructor(private categoriesRepository: CategoriesRepository) {}
+    constructor(private categoriesRepository: CategoriesRepository) {} // Acesso aos métodos de persistencia de dados
 
     async create(): Promise<Category> {
         const category = new Category({ // Instanciando a classe
@@ -10,9 +10,9 @@ export class CategoriesService {
             color: '#ff33bb'
         })
 
-        const createdCategory = await this.categoriesRepository.create(category)
+        const createdCategory = await this.categoriesRepository.create(category) // Repassando a category criada para o repository
 
-        return category
+        return createdCategory
     }
 }
 

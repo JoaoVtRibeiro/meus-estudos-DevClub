@@ -13,3 +13,8 @@ export class CategoriesRepository {
 }
 
 // Lembrando que o model que permite a conexão com o banco
+
+/* 
+    - Funções assíncronas no typescript devolvem uma "Promise" e por consequencia, quando ela se revolver, ela devolve um tipo
+        No caso, a "Promise" de "create" está devolvendo a entidade "Category"
+*/
