@@ -2,10 +2,17 @@ import { Request, Response } from 'express'
 
 import { CategoriesService } from '../services/categories.services'
 import { CategoryModel } from '../database/schemas/category.schema'
+import { CreateCategoryDTO } from '../dtos/categories.dtos'
 import { CategoriesRepository } from '../database/repositories/categories.repository'
 
 export class CategoriesController {
-    async create(_: Request, res: Response) { // "_" significa que a propriedade não será utilizada (no caso o request)
+    async create(
+        req: Request<unknown, unknown, CreateCategoryDTO>,
+        res: Response,
+    ) {
+
+        const { title, color } = req.body
+
         const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
         const service = new CategoriesService(repository) // Instanciando o Service
 
