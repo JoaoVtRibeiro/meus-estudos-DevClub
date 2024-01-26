@@ -7,7 +7,7 @@ import { CategoriesRepository } from '../database/repositories/categories.reposi
 
 export class CategoriesController {
     async create(
-        req: Request<unknown, unknown, CreateCategoryDTO>,
+        req: Request<unknown, unknown, CreateCategoryDTO>, // Os Generics (basta passar o mouse em cima do Request) <P, ResBody, ReqBody> 
         res: Response,
     ) {
 
