@@ -16,7 +16,7 @@ export class CategoriesController {
         const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
         const service = new CategoriesService(repository) // Instanciando o Service
 
-        const result = await service.create() // Salvando o retorno do service.create() (uma Category) na variavel result
+        const result = await service.create({ title, color }) // Salvando o retorno do service.create() (uma Category) na variavel result
 
         return res.status(201).json(result)
     }

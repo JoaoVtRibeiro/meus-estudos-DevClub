@@ -1,13 +1,14 @@
 import { CategoriesRepository } from '../database/repositories/categories.repository'
+import { CreateCategoryDTO } from '../dtos/categories.dtos'
 import { Category } from '../entities/category.entity'
 
 export class CategoriesService {
     constructor(private categoriesRepository: CategoriesRepository) {} // Acesso aos métodos de persistencia de dados
 
-    async create(): Promise<Category> {
+    async create({ title, color }: CreateCategoryDTO): Promise<Category> { // Passando os paramêtros de titulo e cor do DTO para criar a categoria, tendo a Classe Category como "forma" para criação do "bolo" (a categoria)
         const category = new Category({ // Instanciando a classe
-            title: 'Example Category',
-            color: '#ff33bb'
+            title,
+            color
         })
 
         const createdCategory = await this.categoriesRepository.create(category) // Repassando a category criada para o repository
