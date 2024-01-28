@@ -10,6 +10,12 @@ export class CategoriesRepository {
         return createdCategory.toObject<Category>() 
         // sem o "toObject", será retornado apenas um objeto de documento do mongo, como será um json da resposta, além disso ele recebe uma tipagem genérica, no caso o Category
     }
+
+    async findByTitle(title: string): Promise<Category | undefined>{
+        const category = await this.model.findOne({ title })
+
+        return category?.toObject<Category>()
+    }
 }
 
 // Lembrando que o model que permite a conexão com o banco
