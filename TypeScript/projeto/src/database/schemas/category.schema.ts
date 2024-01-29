@@ -8,7 +8,7 @@ export const CategorySchema = new mongoose.Schema( // Colection, estrutura dos d
     { versionKey: false} // descrição final do arquivo
 )
 
-export const CategoryModel = mongoose.model('Category', CategorySchema) // ('nome do model', schema que será utilizado)
+export const CategoryModel = mongoose.model('Category', CategorySchema) // Model ('nome do model', schema que será utilizado)
 
 /*  
     Schemas
