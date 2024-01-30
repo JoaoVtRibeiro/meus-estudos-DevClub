@@ -6,6 +6,12 @@ export class CategoriesService {
     constructor(private categoriesRepository: CategoriesRepository) {} // Acesso aos métodos de persistencia de dados
 
     async create({ title, color }: CreateCategoryDTO): Promise<Category> { // Passando os paramêtros de titulo e cor do DTO para criar a categoria, tendo a Classe Category como "forma" para criação do "bolo" (a categoria)
+        const foundCategory = await this.categoriesRepository.findByTitle(title) // Irá utilizar o método para verificar se já tem uma categoria com esse titulo
+
+        if (foundCategory) { // Caso encontre, um erro será ativado, avisando que a categoria já existe
+            throw new Error('Category already exists.')
+        }
+        
         const category = new Category({ // Instanciando a classe
             title,
             color
