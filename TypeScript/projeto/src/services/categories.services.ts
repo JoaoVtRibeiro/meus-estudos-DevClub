@@ -1,6 +1,8 @@
+import { StatusCodes } from 'http-status-codes'
 import { CategoriesRepository } from '../database/repositories/categories.repository'
 import { CreateCategoryDTO } from '../dtos/categories.dtos'
 import { Category } from '../entities/category.entity'
+import { AppError } from '../errors/app.error'
 
 export class CategoriesService {
     constructor(private categoriesRepository: CategoriesRepository) {} // Acesso aos métodos de persistencia de dados
@@ -9,7 +11,7 @@ export class CategoriesService {
         const foundCategory = await this.categoriesRepository.findByTitle(title) // Irá utilizar o método para verificar se já tem uma categoria com esse titulo
 
         if (foundCategory) { // Caso encontre, um erro será ativado, avisando que a categoria já existe
-            throw new Error('Category already exists.')
+            throw new AppError('Category already exists.', StatusCodes.BAD_REQUEST)
         }
         
         const category = new Category({ // Instanciando a classe
