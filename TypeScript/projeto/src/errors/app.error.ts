@@ -9,3 +9,11 @@ export class AppError extends Error { // Herança*anotar
         this.statusCode = statusCode
     }
 }
+
+
+/* 
+    App Error, a função desse arquivo/classe é fazer com que os erros sejam retornados na api também 
+    para que os erros esperados não interrompam o funcionamento da aplicação.
+
+
+*/
