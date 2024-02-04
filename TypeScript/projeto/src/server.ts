@@ -3,12 +3,14 @@ import express, { json } from 'express'
 
 import { routes } from './routes'
 import { setupMongo } from './database'
+import { errorHandler } from '../middlewares/error-handler.middleware'
 
 const app = express()
 
 setupMongo().then(() => {
     app.use(json())
     app.use(routes)
+    app.use(errorHandler)
 
     app.listen(3333, () => {
         console.log('Server is running at port 3333')

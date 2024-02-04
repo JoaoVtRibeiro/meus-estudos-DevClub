@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express'
 
 import { CategoriesService } from '../services/categories.services'
 import { CategoryModel } from '../database/schemas/category.schema'
@@ -9,16 +9,20 @@ export class CategoriesController {
     async create(
         req: Request<unknown, unknown, CreateCategoryDTO>, // Os Generics (basta passar o mouse em cima do Request) <P, ResBody, ReqBody> 
         res: Response,
+        next: NextFunction,
     ) {
+        try {
+            const { title, color } = req.body
 
-        const { title, color } = req.body
+            const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
+            const service = new CategoriesService(repository) // Instanciando o Service
 
-        const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
-        const service = new CategoriesService(repository) // Instanciando o Service
+            const result = await service.create({ title, color }) // Salvando o retorno do service.create() (uma Category) na variavel result
 
-        const result = await service.create({ title, color }) // Salvando o retorno do service.create() (uma Category) na variavel result
-
-        return res.status(201).json(result)
+            return res.status(201).json(result)
+        } catch(err) {
+            next(err)
+        }
     }
 }
 /* 
