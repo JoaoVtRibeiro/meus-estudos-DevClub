@@ -3,7 +3,7 @@ import express, { json } from 'express'
 
 import { routes } from './routes'
 import { setupMongo } from './database'
-import { errorHandler } from '../middlewares/error-handler.middleware'
+import { errorHandler } from './middlewares/error-handler.middleware'
 
 const app = express()
 
