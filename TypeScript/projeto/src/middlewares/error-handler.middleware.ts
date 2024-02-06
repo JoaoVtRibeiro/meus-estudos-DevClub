@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 
 import { AppError } from '../errors/app.error'
-import { StatusCodes } from 'http-status-codes'
+import { StatusCodes } from 'http-status-codes' // Enums sobre os status das requisições 
 
 export function errorHandler(
     error: AppError | Error,

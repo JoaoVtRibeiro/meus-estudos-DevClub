@@ -1,4 +1,4 @@
-import { StatusCodes } from 'http-status-codes' // Semantica*anotar (Ele é basicamente um enum)
+import { StatusCodes } from 'http-status-codes' // Enums sobre os status das requisições 
 
 export class AppError extends Error { // Herança*anotar
     public statusCode: StatusCodes
