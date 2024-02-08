@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
+import { z } from 'zod'
 
 import { CategoriesService } from '../services/categories.services'
 import { CategoryModel } from '../database/schemas/category.schema'
@@ -12,6 +13,11 @@ export class CategoriesController {
         next: NextFunction,
     ) {
         try {
+            const validateSchema = z.object({
+                title: z.string(),
+                color: z.string().regex(/^#[A-Fa-f0-9]{6}$/)
+            })
+
             const { title, color } = req.body
 
             const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
@@ -20,7 +26,7 @@ export class CategoriesController {
             const result = await service.create({ title, color }) // Salvando o retorno do service.create() (uma Category) na variavel result
 
             return res.status(201).json(result)
-        } catch(err) {
+        } catch (err) {
             next(err)
         }
     }
