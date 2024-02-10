@@ -3,6 +3,7 @@ Para tirar dúvidas
 - W3School
 - Developerzilla
 - Origamid (Display Flex e Display Grid)
+- Regex101 (.regex / lidar com padrões de caracteres)
 
 Utilizar imagens sem direitos autorais (Gratuitas)
 
