@@ -18,5 +18,7 @@ export function validator(params: ValidateParams) {
         if(!result.success) {
             console.log(result.error.issues)
         }
+
+        next()
     }
 }
