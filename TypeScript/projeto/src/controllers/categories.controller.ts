@@ -13,12 +13,9 @@ export class CategoriesController {
         next: NextFunction,
     ) {
         try {
-            const validateSchema = z.object({
-                title: z.string(),
-                color: z.string().regex(/^#[A-Fa-f0-9]{6}$/)
-            })
+           
 
-            validateSchema.parse(req.body) // Dados sendo passados para validação do schema
+          /*  validateSchema.parse(req.body) Dados sendo passados para validação do schema */
 
             const { title, color } = req.body
 
