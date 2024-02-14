@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const createCategorySchema = {
+export const createCategorySchema = {
     title: z.string(),
     color: z.string().regex(/^#[A-Fa-f0-9]{6}$/)
 }
