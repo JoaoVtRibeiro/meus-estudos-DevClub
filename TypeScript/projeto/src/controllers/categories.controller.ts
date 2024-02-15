@@ -1,10 +1,11 @@
 import { NextFunction, Request, Response } from 'express'
-import { z } from 'zod'
+// import { z } from 'zod'
 
 import { CategoriesService } from '../services/categories.services'
 import { CategoryModel } from '../database/schemas/category.schema'
 import { CreateCategoryDTO } from '../dtos/categories.dtos'
 import { CategoriesRepository } from '../database/repositories/categories.repository'
+import { StatusCodes } from 'http-status-codes'
 
 export class CategoriesController {
     async create(
@@ -24,7 +25,7 @@ export class CategoriesController {
 
             const result = await service.create({ title, color }) // Salvando o retorno do service.create() (uma Category) na variavel result
 
-            return res.status(201).json(result)
+            return res.status(StatusCodes.CREATED).json(result)
         } catch (err) {
             next(err)
         }
