@@ -1,10 +1,11 @@
 import { StatusCodes } from 'http-status-codes' // Enums sobre os status das requisições 
 
-export class AppError extends Error { // Herança*anotar
+export class AppError { // Herança*anotar
     public statusCode: StatusCodes
+    public message: string | string[]
 
-    constructor(message: string, statusCode: StatusCodes) {
-        super(message)
+    constructor(message: string | string[], statusCode: StatusCodes) {
+        this.message = message
 
         this.statusCode = statusCode
     }

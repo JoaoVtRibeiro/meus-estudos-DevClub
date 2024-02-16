@@ -14,9 +14,9 @@ export class CategoriesController {
         next: NextFunction,
     ) {
         try {
-           
 
-          /*  validateSchema.parse(req.body) Dados sendo passados para validação do schema */
+
+            /*  validateSchema.parse(req.body) Dados sendo passados para validação do schema */
 
             const { title, color } = req.body
 
