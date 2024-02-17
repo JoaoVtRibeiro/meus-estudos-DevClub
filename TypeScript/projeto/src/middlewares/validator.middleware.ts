@@ -23,6 +23,8 @@ export function validator(params: ValidateParams) {
             throw new AppError(errorForwatted, StatusCodes.UNPROCESSABLE_ENTITY)
         }
 
+        req[params.type] = result.data
+
         next()
     }
 }
