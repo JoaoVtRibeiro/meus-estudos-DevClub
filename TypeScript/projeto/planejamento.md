@@ -14,7 +14,7 @@
 # Dados de balanço com filtros
     - por ano
 
-# Criar categorias
+# Criar categorias *Feito*
     - nome, cor
     - Não é possivel criar categorias com o mesmo nome
 

@@ -8,6 +8,8 @@ export const categoriesRoutes = Router() // Permite a criação de rotas
 
 const controller = new CategoriesController() // Instanciando a classe
 
+categoriesRoutes.get('/', controller)
+
 categoriesRoutes.post(
     '/', 
     validator({
