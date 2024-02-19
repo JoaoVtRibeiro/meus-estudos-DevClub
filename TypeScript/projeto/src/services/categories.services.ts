@@ -23,6 +23,10 @@ export class CategoriesService {
 
         return createdCategory
     }
+
+    async index(): Promise<Category[]> {
+        
+    }
 }
 
 

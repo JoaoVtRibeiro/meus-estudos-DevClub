@@ -32,12 +32,12 @@ export class CategoriesController {
     }
 
     async index(
-        req: Request<unknown, unknown>, res: Response, next: NextFunction) {
+        req: Request, res: Response, next: NextFunction) {
         try {
             const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
             const service = new CategoriesService(repository) // Instanciando o Service
 
-            const result = await service // Salvando o retorno do service.create() (uma Category) na variavel result
+            const result = await service
 
             return res.status(StatusCodes.CREATED).json(result)
         } catch (err) {

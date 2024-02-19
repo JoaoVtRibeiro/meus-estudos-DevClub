@@ -16,6 +16,14 @@ export class CategoriesRepository {
 
         return category?.toObject<Category>() // ? Porque pode não existir (undefined) e conversão para json
     }
+
+    async index(): Promise<Category[]> {
+        const categories = await this.model.find()
+
+        const categoriesMap = categories.map((item) => item.toObject<Category>()) // Transformando cada item que está como documento do mongo para json do tipo da entidade Category
+
+        return categoriesMap
+    }
 }
 
 // Lembrando que o model que permite a conexão com o banco
