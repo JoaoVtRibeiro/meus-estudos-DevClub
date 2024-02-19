@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import api from '../../services/api'
-import formatCurrency from '../../utils'
+import formatCurrency from '../../utils/formatCurrency'
 
 import { CardProduct } from '../../components'
 import ProductsBanner from '../../assets/products-banner.png'

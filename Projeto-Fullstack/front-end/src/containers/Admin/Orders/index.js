@@ -13,7 +13,7 @@ import api from '../../../services/api'
 import status from './order-status'
 import formatDate from '../../../utils/formatDate'
 import Row from './row'
-import { Container, Menu, LinkMenu } from '/style.js'
+import { Container, Menu, LinkMenu } from './styles.js'
 
 function Orders() {
     const [orders, setOrders] = useState([]) // Pedidos recebidos pela api

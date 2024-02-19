@@ -6,7 +6,7 @@ import ListProducts from './ListProducts'
 import NewProduct from './NewProduct'
 import EditProduct from './EditProduct'
 import paths from '../../constants/path'
-import { Container, ContainerItems } from '/style.js'
+import { Container, ContainerItems } from './styles.js'
 
 export function Admin({ math: { path } }) { // props dos componentes em components/SideMenuAdmin (caso aja duvida: console.log(props)) *obs fim da página
     return (

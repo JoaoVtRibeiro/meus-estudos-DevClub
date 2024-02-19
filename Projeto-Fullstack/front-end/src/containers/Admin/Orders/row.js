@@ -14,7 +14,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import status from './order-status'
 import api from '../../../services/api'
-import { ProductsImg, ReactSelectStyle } from '/style.js'
+import { ProductsImg, ReactSelectStyle } from './styles.js'
 
 function Row({ row, orders, setOrders }) { // Formatação de cada pedido/item da array (array 'rows' em orders/index.js)
     const [open, setOpen] = React.useState(false)
