@@ -3,14 +3,14 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom" // Rou
 
 import paths from '../constants/path'
 import { Login, Register, Home, Products, Cart, Admin } from '../containers'
-import PrivateRoute from './private-route' // Verifica se o usúario está logado (Caso não será redirecionado para tela de login)
+import PrivateRoute from './private-route' // Verifica se o usuário está logado (Caso não será redirecionado para tela de login)
 
 function Routes() {
     return (
         <Router>
             <Switch>
-                <Route component={Login} path={paths.Login} />
                 <Route component={Register} path={paths.Register} />
+                <Route component={Login} path={paths.Login} />
                 <PrivateRoute exact component={Home} path="/" />
                 <PrivateRoute component={Products} path={paths.Products} />
                 <PrivateRoute component={Cart} path={paths.Cart} />

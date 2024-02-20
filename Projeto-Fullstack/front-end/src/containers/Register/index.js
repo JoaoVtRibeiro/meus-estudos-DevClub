@@ -20,7 +20,7 @@ import { Container, BurgerRegisterImage, Main, LogoImage, H1, Label, Input, P } 
 import paths from '../../constants/path'
 
 
-export function Login() {
+export function Register() {
   // Yup (Validação dos campos)
 
   const schema = Yup.object().shape({

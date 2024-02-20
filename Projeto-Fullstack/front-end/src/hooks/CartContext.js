@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     }
 
     // Função responsavel por pegar os dados do produto e colocar dentro do state/carrinho 
-    const putProductInCart = async product => { 
+    const putProductInCart = async product => {
         const cartIndex = cartProducts.findIndex(prd => prd.id === product.id)
 
         let newCartProducts = []
@@ -33,9 +33,9 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
     const decreaseProducts = async productId => {
         const cartIndex = cartProducts.findIndex(pd => pd.id === productId)
 
-        if(cartProducts[cartIndex].quantity > 1) { // Só será possivel diminuir a quantidade se for maior que 1
+        if (cartProducts[cartIndex].quantity > 1) { // Só será possivel diminuir a quantidade se for maior que 1
             const newCartProducts = cartProducts.map(product => {
-                return product.id === productId? { ...product, quantity: product.quantity - 1} : product
+                return product.id === productId ? { ...product, quantity: product.quantity - 1 } : product
             })
 
             setCartProducts(newCartProducts) // Atualizando o carrinho para sessão atual do usuário
@@ -57,8 +57,8 @@ export const CartProvider = ({ children }) => { // Provedor, aquele que tem a re
 
     // Deletar o produto
     const deleteProducts = async productId => {
-        const newCartProducts = cartProducts.filter(product => product.id !== productId )
-        
+        const newCartProducts = cartProducts.filter(product => product.id !== productId)
+
         setCartProducts(newCartProducts)
 
         await updateLocalStorage(newCartProducts)

@@ -5,7 +5,7 @@ const paths = {
     Cart: '/carrinho',
     OrderAdm: '/pedidos',
     ListProductsAdm: '/lista-de-produtos',
-    NewProductAdm:'/novo-produto',
+    NewProductAdm: '/novo-produto',
     EditProductsAdm: '/editar-produto'
 }
 

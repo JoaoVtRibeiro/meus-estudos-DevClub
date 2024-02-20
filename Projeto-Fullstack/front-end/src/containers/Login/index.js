@@ -21,7 +21,7 @@ import { Container, BurgerLoginImage, Main, LogoImage, H1, Label, Input, P } fro
 import paths from '../../constants/path'
 
 
-export function Register() {
+export function Login() {
   const { takeUserData } = useUser()// Importando a variavél que vai pegar os dados dessa página de login para o resto da aplicação
 
   //  useHistory (Navegação entre página)

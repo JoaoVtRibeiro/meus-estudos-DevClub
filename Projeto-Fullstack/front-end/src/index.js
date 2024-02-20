@@ -9,9 +9,9 @@ import GlobalStyles from './styles/globalStyles'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
    <>
-      <AppProvider>
+      {/* <AppProvider> */}
          <Routes />
-      </AppProvider>
+     {/*  </AppProvider> */}
       <ToastContainer autoClose={2000} theme='colored' />
       <GlobalStyles />
    </>
