@@ -25,7 +25,9 @@ export class CategoriesService {
     }
 
     async index(): Promise<Category[]> {
-        
+        const categories = await this.categoriesRepository.index()
+
+        return categories
     }
 }
 
