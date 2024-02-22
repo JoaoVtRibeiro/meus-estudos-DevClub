@@ -49,9 +49,11 @@ Docker Composer
             networks:                                       // Definição da Rede
                 - local                                     // rede local
 
-        networks:                                           // Configuração da rede (Uma garantia que app e o mongo consigam se comunicar por estarem na mesma rede)
-            local:                                          // Definição da Rede para as outras duas configurações/"receitas"
-                name: local                                 // Nome da rede
+    networks:                                               // Configuração da rede (Uma garantia que app e o mongo consigam se comunicar por estarem na mesma rede)
+        local:                                              // Definição da Rede para as outras duas configurações/"receitas"
+            name: local                                     // Nome da rede
                 
+
+        A identação é algo critico na construção de um arquivo .yml, caso algo tiver de errado pode acontecer errors como "services.networks Additional property local is not allowed" 
 
         Obs: quando uma propriedade é passada com "-" no inicio, o yml entenderá como uma array, quando não será uma string
