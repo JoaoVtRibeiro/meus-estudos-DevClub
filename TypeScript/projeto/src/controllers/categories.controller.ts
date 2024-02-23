@@ -37,9 +37,9 @@ export class CategoriesController {
             const repository = new CategoriesRepository(CategoryModel) // Repository + Model para o Service
             const service = new CategoriesService(repository) // Instanciando o Service
 
-            const result = await service
+            const result = await service.index()
 
-            return res.status(StatusCodes.CREATED).json(result)
+            return res.status(StatusCodes.OK).json(result)
         } catch (err) {
             next(err)
         }
