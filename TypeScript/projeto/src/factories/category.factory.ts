@@ -6,7 +6,7 @@ export class CategoriesFactory {
     private static categoriesService: CategoriesService
 
     static getServiceInstance() {
-        if( this.categoriesService) {
+        if (this.categoriesService) {
             return this.categoriesService
         }
 
