@@ -61,7 +61,7 @@ export function Products({ location: { state } }) {
 
     return (
         <Container>
-            <ProductsImg src={ProductsBanner} alt="banner da página" />
+            <ProductsImg src={ProductsBanner} alt="banner-da-página" />
             <CategoriesMenu>
                 {categories && categories.map(category => (
                     <CategoryButton type="button"

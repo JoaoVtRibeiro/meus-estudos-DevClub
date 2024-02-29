@@ -70,12 +70,12 @@ export function Login() {
   return (
     <Container>
       <figure>
-        <BurgerLoginImage src={LoginImage} atl="register image"></BurgerLoginImage>
+        <BurgerLoginImage src={LoginImage} atl="imagem-da-página-de-login"></BurgerLoginImage>
       </figure>
 
       <Main>
         <figure>
-          <LogoImage src={Logo} alt="logo image"></LogoImage>
+          <LogoImage src={Logo} alt="logo"></LogoImage>
         </figure>
 
         <H1>Login</H1>

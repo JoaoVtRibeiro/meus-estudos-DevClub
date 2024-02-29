@@ -62,12 +62,12 @@ export function Register() {
   return (
     <Container>
       <figure>
-        <BurgerRegisterImage src={RegisterImage} atl="login image"></BurgerRegisterImage>
+        <BurgerRegisterImage src={RegisterImage} atl="imagem-da-página-de-registro"></BurgerRegisterImage>
       </figure>
 
       <Main>
         <figure>
-          <LogoImage src={Logo} alt="logo image"></LogoImage>
+          <LogoImage src={Logo} alt="logo"></LogoImage>
         </figure>
 
         <H1>Cadastre-se</H1>

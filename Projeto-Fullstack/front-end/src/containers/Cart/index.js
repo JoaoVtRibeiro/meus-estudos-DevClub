@@ -7,7 +7,7 @@ import { Container, CartImg, Wrapper } from './styles'
 export function Cart() {
     return (
         <Container>
-            <CartImg src={CartBanner} alt="banner da página" />
+            <CartImg src={CartBanner} alt="banner-da-página-do-carrinho" />
             <Wrapper>
                 <CartItems />
                 <CartResume />

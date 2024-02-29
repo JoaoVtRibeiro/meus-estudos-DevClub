@@ -7,7 +7,7 @@ import { CategoriesCarousel, OffersCarousel } from '../../components'
 export function Home() {
     return (
         <Container>
-            <HomeImg src={HomeBanner} alt="banner da página" />
+            <HomeImg src={HomeBanner} alt="banner-da-página-principal" />
             <CategoriesCarousel />
             <OffersCarousel />
         </Container>
