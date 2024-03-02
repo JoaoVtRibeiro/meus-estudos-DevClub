@@ -70,7 +70,7 @@ export function Login() {
   return (
     <Container>
       <figure>
-        <BurgerLoginImage src={LoginImage} atl="imagem-da-página-de-login"></BurgerLoginImage>
+        <BurgerLoginImage src={LoginImage} alt="imagem-da-pagina-de-login"></BurgerLoginImage>
       </figure>
 
       <Main>
