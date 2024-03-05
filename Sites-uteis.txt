@@ -34,3 +34,7 @@ Biblioteca de componentes
 - Ant Design
 - Prime React (Vue / Angular)
 - React Select (somente selects)
+
+API de servidores
+
+- Open Weather (Clima de cidades em tempo real)
