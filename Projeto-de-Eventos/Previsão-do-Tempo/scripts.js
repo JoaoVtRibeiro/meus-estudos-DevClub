@@ -1,4 +1,4 @@
-//let apiKey = 
+//let apiKey =  
 
 function displayOnScreen(data){
     
