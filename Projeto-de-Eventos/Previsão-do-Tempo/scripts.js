@@ -1,4 +1,4 @@
-let apiKey = "39ccb8b26c47d47b30ca9c5e45b609b8"
+//let key = 
 
 function displayOnScreen(data){
     
@@ -14,7 +14,7 @@ async function searchCity(city) {
     let apiData = await fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" + // Endereço da Api
         city + // Nome da Cidade
-        "&appid=" + apiKey + // Verificador da chave + chave
+        "&appid=" + key + // Verificador da chave + chave
         "&lang=pt_br" + // Idioma das informações
         "&units=metric" // Por padrão as unidades vem em kelvin, metric converte para celsius
     )
