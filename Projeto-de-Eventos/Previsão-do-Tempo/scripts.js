@@ -1,9 +1,10 @@
-//let key = 
+let key = "cebcd482eda57fa9a6714c1c2ba91885" // key do rodolfo
 
 function displayOnScreen(data){
     
     document.querySelector("h2").innerHTML = "Tempo em " + data.name
     document.querySelector("#temp").innerHTML = Math.floor(data.main.temp) + "°C"
+    document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png" 
     document.querySelector("#description").innerHTML = data.weather[0].description
     document.querySelector("#humidity").innerHTML = "Humidade: " + data.main.humidity + " %"
    

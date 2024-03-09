@@ -55,7 +55,7 @@ button:hover {
     height: 20px;
 }
 
-div {
+#main-div {
     margin-top: 15px;
 }
 
@@ -68,6 +68,13 @@ p{
     font-size: 20px;
 }
 
-#description{
+#description-div{
     text-transform: capitalize;
+    display: flex;
+    margin-top: 45px;
+    p {
+        margin-top: 0px;
+        padding-top: 10px;
+        margin-left: 5px;
+    }
 }
