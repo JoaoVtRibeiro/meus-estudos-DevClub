@@ -5,25 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix - Replica</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <img src="./assets/logo.svg" alt="logo-netflix">
-        <button>Entrar</button>
-    </header>
+    <div id="top-container">
+        <header>
+            <img src="./assets/logo.svg" alt="logo-netflix">
+            <button id="enter-button">Entrar</button>
+        </header>
 
-    <main>
-        <h1>Filmes, séries e muito maias, Sem limites.</h1>
-        <p>A partir de R$ 18,90. Cancele quando quiser.</p>
-        <p>Quer assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
+        <main>
+            <h1>Filmes, séries e muito mais, sem limites.</h1>
+            <p id="first-p">A partir de R$ 18,90. Cancele quando quiser.</p>
+            <p id="second-p"></p>Quer assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
 
-        <input placeholder="Email">
-        <button>Vamos lá <img src="./assets/arrow.svg" alt="seta"></button>
+            <div id="input-div">
+                <input placeholder="Email">
+                <button id="email-button">Vamos lá <img src="./assets/arrow.svg" alt="seta"></button>
+            </div>
+        </main>
+    </div>
 
+    <div id="bottom-container">
         <h2>Perguntas frequentes</h2>
         <button>O que é a Netflix? <img src="./assets/close.svg" alt="icone-de-fechar"></button>
-    </main>
+        <div>
+            <p>A Netflix é um serviço de streaming que oferece uma ampla variedade de séries, filmes e documentários
+                premiados em milhares de aparelhos conectados à internet.</p>
+            <p>Você pode assistir a quantos filmes e séries quiser, quando e onde quiser - tudo por um preço mensal
+                acessível. Aqui você sempre encontra novidades. A cada semana, adicionamos novas séries e filmes.</p>
+        </div>
+    </div>
 </body>
 
 </html>

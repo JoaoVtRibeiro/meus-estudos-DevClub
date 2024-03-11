@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: sans-serif;
+}
+
+body {
+    background: black;
+}
+
+#top-container {
+    background: url("./assets/background.jpeg");
+    padding-bottom: 100px;
+}
+
+header{
+    padding: 28px 166px;
+}
+
+#enter-button{
+    background-color: #e50914;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+    width: 75px;
+}
+
+main{
+    width: 50%;
+    text-align: center;
+    margin: 100px auto;
+}
+
+h1{ 
+    font-size: 56px; 
+}
+
+#first-p{
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 14px;
+}
+
+#second-p{
+    font-size: 20px;
+    margin-top: 14px;
+}
+
+#input-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 50px;
+}
+
+input{
+    width: 400px;
+    font-size: 17px;
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: black;
+    opacity: 0.7;
+    padding-left: 14px;
+    margin-right: 10px;
+}
+
+input::placeholder{
+    color: white;
+}
+
+#email-button{
+    width: 180px;
+    background-color: #e50914;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+
+
+
