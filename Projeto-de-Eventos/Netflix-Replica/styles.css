@@ -81,6 +81,10 @@ input::placeholder{
     cursor: pointer;
 }
 
+#email-button:hover{
+    background-color: #910a11;
+}
+
 #bottom-container{
     background-color: black;
     border-top: 10px solid #303030;
@@ -109,6 +113,7 @@ h2{
     float: right;
     margin-top: 8px;
     margin-right: 2px;
+    transform: rotate(45deg);
 }
 
 #answer-div{
@@ -116,7 +121,8 @@ h2{
     background-color: #303030;
     margin: 3px auto;
     padding: 24px; 
-    font-size: 24px;  
+    font-size: 24px;
+    display: none;
 }
 
 
