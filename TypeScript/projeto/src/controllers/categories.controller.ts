@@ -9,11 +9,11 @@ import { CreateCategoryDTO } from '../dtos/categories.dtos'
 export class CategoriesController {
     constructor(private categoriesService: CategoriesService) { }
 
-    async create(
+    create = async (
         req: Request<unknown, unknown, CreateCategoryDTO>, // Os Generics (basta passar o mouse em cima do Request) <P, ResBody, ReqBody> 
         res: Response,
         next: NextFunction,
-    ) {
+    ) => {
         try {
             const { title, color } = req.body
 
@@ -25,7 +25,7 @@ export class CategoriesController {
         }
     }
 
-    async index(_: Request, res: Response, next: NextFunction) {
+     index = async (_: Request, res: Response, next: NextFunction) => {
         try {
             const result = await this.categoriesService.index()
 
