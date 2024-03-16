@@ -57,3 +57,15 @@ const {multiplication, division} = require('./multiDivision')
 
 console.log(multiplication(5,5))
 console.log(division(15,5))
+
+
+/* 
+    Observação, sobre o erro "Uncaught SyntaxError: Cannot use import statement outside a module":
+
+        Indica que o navegador está interpretando o arquivo scripts.js como um script comum, e não como um módulo.
+        Para resolver isso, você precisa indicar explicitamente ao navegador que scripts.js é um módulo:
+
+        type="module"
+
+        <script src="scripts.js" type="module"></script>
+*/
