@@ -32,6 +32,7 @@ Abrir um novo terminal diretamente: ctrl + shift + '
 Acessar a origem ou definições de tipo de uma classe, método, etc = segurar o ctrl + clicar na classe, método
 
 Colocar no inicio e fim da linha (inclusive com mais de uma linha selicionada): Home = inicio, End = final
+    - Obs: Com shift pressionado é possivel selecionar a linha (ou as linhas) com esses mesmo comandos
 
 
 
