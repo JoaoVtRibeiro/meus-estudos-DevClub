@@ -2,7 +2,7 @@ import { Category } from './category.entity'
 
 export enum TransactionType {
     INCOME = 'income',
-    EXPENSE = 'expanse',
+    EXPENSE = 'expense',
 }
 
 type TransactionProps =  {

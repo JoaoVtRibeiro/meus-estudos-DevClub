@@ -11,3 +11,4 @@ export const createTransactionSchema = {
 
 const createTransactionObject = z.object(createTransactionSchema)
 export type createTransactionDTO = z.infer<typeof createTransactionObject>
+
