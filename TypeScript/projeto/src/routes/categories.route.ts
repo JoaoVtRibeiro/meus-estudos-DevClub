@@ -2,7 +2,7 @@ import { Router } from 'express'
 
 import { CategoriesController } from '../controllers/categories.controller'
 import { ParamsType, validator } from '../middlewares/validator.middleware'
-import { createCategorySchema } from '../dtos/categories.dtos'
+import { createCategorySchema } from '../dtos/categories.dto'
 
 export const categoriesRoutes = Router() // Permite a criação de rotas
 

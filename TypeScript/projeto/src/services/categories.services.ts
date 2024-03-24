@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes'
 import { CategoriesRepository } from '../database/repositories/categories.repository'
-import { CreateCategoryDTO } from '../dtos/categories.dtos'
+import { CreateCategoryDTO } from '../dtos/categories.dto'
 import { Category } from '../entities/category.entity'
 import { AppError } from '../errors/app.error'
 

@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { StatusCodes } from 'http-status-codes'
 
 import { CategoriesService } from '../services/categories.services'
-import { CreateCategoryDTO } from '../dtos/categories.dtos'
+import { CreateCategoryDTO } from '../dtos/categories.dto'
 
 
 
