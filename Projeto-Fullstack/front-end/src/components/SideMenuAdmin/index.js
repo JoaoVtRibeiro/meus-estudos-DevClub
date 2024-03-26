@@ -9,7 +9,7 @@ import paths from '../../constants/path'
 
 export function SideMenuAdmin({ path }) {
 
-    const { logOutUser } = useUser()
+    const { logout } = useUser()
 
     return (
         <Container>
@@ -23,7 +23,7 @@ export function SideMenuAdmin({ path }) {
             <hr></hr>
             <ItensContainer>
                 <LogoutIcon style={{ position: 'fixed', bottom: '30px'}}/>
-                <ListLink to={paths.Login} onClick={logOutUser} style={{ color: '#FFFFFF' }}>Sair</ListLink>
+                <ListLink to={paths.Login} onClick={logout} style={{ color: '#FFFFFF' }}>Sair</ListLink>
             </ItensContainer>
         </Container>
     )

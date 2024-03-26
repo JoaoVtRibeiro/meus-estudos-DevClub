@@ -4,11 +4,13 @@
 // Bibliotecas e frameworks
 import React from 'react'
 import { useForm } from 'react-hook-form' // Biblioteca react hook para tratamento de formulários
+import { Link, useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { toast } from 'react-toastify'
+
 import { useUser } from '../../hooks/UserContext' // Pegando os dados dessa página de login para o resto da aplicação
-import { Link, useHistory } from 'react-router-dom'
 
 // Api
 import api from '../../services/api'
@@ -22,10 +24,8 @@ import paths from '../../constants/path'
 
 
 export function Login() {
-  const { takeUserData } = useUser()// Importando a variavél que vai pegar os dados dessa página de login para o resto da aplicação
-
-  //  useHistory (Navegação entre página)
-  const history = useHistory()
+  const history = useHistory() // useHistory (Navegação entre página)
+  const { putUserData } = useUser()// Importando a variavél que vai pegar os dados dessa página de login para o resto da aplicação
 
   // Yup (Validação dos campos)
   const schema = Yup.object().shape({
@@ -55,11 +55,11 @@ export function Login() {
       }
     )
 
-    takeUserData(data) // Passando os dados para o state do UserContext
+    putUserData(data) // Passando os dados para o state do UserContext
 
     setTimeout(() => { // Só executa depois do tempo determinado (dar tempo para o usuário ver o toasty)
       if (data.admin) {
-        history.push(paths.OrderAdm)
+        history.push(paths.OrderAdm) // Redirecionamento para página de Adm
       } else {
         history.push('/') // Redirecionamento para "Home"
       }

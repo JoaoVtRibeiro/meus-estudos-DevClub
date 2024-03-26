@@ -8,10 +8,10 @@ import { Container, LeftDiv, PageLink, RightDiv, Line, UserDiv, LogOutLink } fro
 import paths from '../../constants/path'
 
 export function Header() {
-    const { logOutUser, receivedUserData } = useUser()
+    const { logout, userData } = useUser()
 
     const logOut = () => {
-        logOutUser()
+        logout()
         push(paths.Login)
     }
 
@@ -34,7 +34,7 @@ export function Header() {
             </RightDiv>
 
             <UserDiv>
-                <p>Olá, {receivedUserData.name}</p>
+                <p>Olá, {userData.name}</p>
                 <LogOutLink onClick={() => logOut()}>Sair</LogOutLink>
             </UserDiv>
         </Container>
