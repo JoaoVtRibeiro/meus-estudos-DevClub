@@ -10,7 +10,7 @@ export const Container = styled.div`
     justify-content: space-around;
 `
 
-export const LeftDiv = styled.img`
+export const LeftDiv = styled.div`
     display: flex;
     gap: 30px;
 `

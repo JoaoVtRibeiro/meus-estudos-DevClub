@@ -30,18 +30,18 @@ export function CategoriesCarousel() {
 
     return (
         <Container>
-            <CategoriesImg src={Categories} alt="logo das categorias" breakPoints={breakPoints} />
+            <CategoriesImg src={Categories} alt="logo-das-categorias" />
 
-            <Carousel itemsToShow={4} style={{ width: '90%' }}>
-                {categories && categories.map(category => {
+            <Carousel itemsToShow={5} style={{ width: '90%' }} breakPoints={breakPoints}>
+                {categories && categories.map(category => (
                     <CarouselItem key={category.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
-                        <Image src={category.url} alt="foto da categoria"></Image>
+                        <Image src={category.url} alt="foto-da-categoria" />
                         <Button to={{
                             pathname: paths.Products, state: { categoryId: category.id }
                         }}
                         >{category.name}</Button> 
                     </CarouselItem>
-                })}
+                ))}
             </Carousel>
         </Container>
     )

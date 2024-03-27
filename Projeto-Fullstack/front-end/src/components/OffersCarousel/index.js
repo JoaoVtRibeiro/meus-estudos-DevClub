@@ -41,12 +41,12 @@ export function OffersCarousel() {
 
     return (
         <Container>
-            <OffersImg src={Offers} alt="logo das ofertas" breakPoints={breakPoints} />
+            <OffersImg src={Offers} alt="logo-das-ofertas" />
 
-            <Carousel itemsToShow={4} style={{ width: '90%' }}>
-                {offers && offers.map(product => {
+            <Carousel itemsToShow={5} style={{ width: '90%' }} breakPoints={breakPoints}>
+                {offers && offers.map(product => (
                     <CarouselItem key={product.id}> {/* key = Permite identificação unica para cada item (Garantindo que o React irá detectar quaisquer alteração em cada um deles)  */}
-                        <Image src={product.url} alt="foto da produto em oferta"></Image>
+                        <Image src={product.url} alt="foto-do-produto-em-oferta" />
                         <p>{product.name}</p>
                         <p>{product.formatedPrice}</p>
                         <Button onClick={() => {
@@ -54,7 +54,7 @@ export function OffersCarousel() {
                             push(paths.Cart)
                         }}>Peça agora</Button>
                     </CarouselItem>
-                })}
+                ))}
             </Carousel>
         </Container>
     )

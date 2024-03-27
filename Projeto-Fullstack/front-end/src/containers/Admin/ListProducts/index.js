@@ -64,7 +64,7 @@ function ListProducts() {
                                     <TableCell>{product.name}</TableCell>
                                     <TableCell>{formatCurrency(product.price)}</TableCell>
                                     <TableCell align='center'>{isOffer(product.offer)}</TableCell>
-                                    <TableCell align='center'><Img src={product.url} alt='imagem do produto'></Img></TableCell>
+                                    <TableCell align='center'><Img src={product.url} alt='imagem do produto' /></TableCell>
                                     <TableCell><EditIconButton onClick={() => sendToEditProduct(product)} /></TableCell>
                                 </TableRow>
                             ))}
