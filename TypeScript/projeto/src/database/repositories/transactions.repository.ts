@@ -1,18 +1,19 @@
 import { CreateTransactionDTO } from '../../dtos/transactions.dto'
+import { Category } from '../../entities/category.entity'
 import { Transaction } from '../../entities/transactions.entity'
 import { TransactionModel } from '../schemas/transactions.schema'
 
 export class TransactionsRepository {
-    constructor(private model: typeof TransactionModel) {} // typeof definindo que o model da classe será "do tipo" do model criado no category.schema
+    constructor(private model: typeof TransactionModel) { } // typeof definindo que o model da classe será "do tipo" do model criado no category.schema
 
-    async create({ title, date, amount, type, category}: Transaction): Promise<Transaction> { 
+    async create({ title, date, amount, type, category }: Transaction): Promise<Transaction> {
         const createdTransaction = await this.model.create({
             title, date, amount, type, category,
-        }) 
+        })
 
         return createdTransaction.toObject<Transaction>()
     }
-
+    
     async index(): Promise<Transaction[]> {
         const transactions = await this.model.find()
 
