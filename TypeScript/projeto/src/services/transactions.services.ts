@@ -5,7 +5,7 @@ import { CreateTransactionDTO } from '../dtos/transactions.dto'
 import { Transaction } from '../entities/transactions.entity'
 import { AppError } from '../errors/app.error'
 
-export class TransactionService {
+export class TransactionsService {
     constructor(
         private transactionsRepository: TransactionsRepository,
         private categoriesRepository: CategoriesRepository

@@ -4,8 +4,6 @@ import { StatusCodes } from 'http-status-codes'
 import { CategoriesService } from '../services/categories.services'
 import { CreateCategoryDTO } from '../dtos/categories.dto'
 
-
-
 export class CategoriesController {
     constructor(private categoriesService: CategoriesService) { }
 
