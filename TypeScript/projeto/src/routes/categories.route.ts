@@ -3,10 +3,13 @@ import { Router } from 'express'
 import { CategoriesController } from '../controllers/categories.controller'
 import { ParamsType, validator } from '../middlewares/validator.middleware'
 import { createCategorySchema } from '../dtos/categories.dto'
+import { CategoriesFactory } from '../factories/category.factory'
 
 export const categoriesRoutes = Router() // Permite a criação de rotas
 
-const controller = new CategoriesController() // Instanciando a classe
+const controller = new CategoriesController(  // Instanciando a classe
+    CategoriesFactory.getServiceInstance()
+) 
 
 categoriesRoutes.get('/', controller.index)
 
