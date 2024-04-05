@@ -18,5 +18,5 @@
     - nome, cor
     - Não é possivel criar categorias com o mesmo nome
 
-# Criar transações
+# Criar transações *Feito*
     - categoria, nome, valor, data, tipo
