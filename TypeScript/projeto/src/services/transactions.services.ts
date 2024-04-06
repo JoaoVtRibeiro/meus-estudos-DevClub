@@ -30,4 +30,10 @@ export class TransactionsService {
 
         return createTransaction
     }
+
+    async index(): Promise<Transaction[]> {
+        const transactions = await this.transactionsRepository.index()
+
+        return transactions
+    }
 }
