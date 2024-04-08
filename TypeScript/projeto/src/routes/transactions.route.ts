@@ -18,3 +18,5 @@ transactionsRoutes.post(
         type: ParamsType.BODY
     }),
      controller.create) // ao ser chamada irá executar o método (create) criado no controler
+
+transactionsRoutes.get('/', controller.index)
