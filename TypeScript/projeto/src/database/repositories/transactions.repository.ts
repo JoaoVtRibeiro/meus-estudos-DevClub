@@ -1,5 +1,4 @@
-import { CreateTransactionDTO } from '../../dtos/transactions.dto'
-import { Category } from '../../entities/category.entity'
+import { IndexTransactionsDTO } from '../../dtos/transactions.dto'
 import { Transaction } from '../../entities/transactions.entity'
 import { TransactionModel } from '../schemas/transactions.schema'
 
@@ -8,13 +7,13 @@ export class TransactionsRepository {
 
     async create({ title, date, amount, type, category }: Transaction): Promise<Transaction> {
         const createdTransaction = await this.model.create({
-            title, date, amount, type, category,
+            title, date, amount, type, category
         })
 
         return createdTransaction.toObject<Transaction>()
     }
-    
-    async index(): Promise<Transaction[]> {
+
+    async index({ title, categoryId, beginDate, endDate }: IndexTransactionsDTO): Promise<Transaction[]> {
         const transactions = await this.model.find()
 
         const transactionsMap = transactions.map((item) => item.toObject<Transaction>()) // Transformando cada item que está como documento do mongo para json do tipo da entidade Category

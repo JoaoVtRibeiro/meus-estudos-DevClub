@@ -21,7 +21,7 @@ export const indexTransactionsSchema = {
 
 
 const indexTransactionsObject = z.object(indexTransactionsSchema)
-export type indexTransactionsDTO = z.infer<typeof indexTransactionsObject>
+export type IndexTransactionsDTO = z.infer<typeof indexTransactionsObject>
 
 
 
