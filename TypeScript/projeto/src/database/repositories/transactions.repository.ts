@@ -14,7 +14,17 @@ export class TransactionsRepository {
     }
 
     async index({ title, categoryId, beginDate, endDate }: IndexTransactionsDTO): Promise<Transaction[]> {
-        const transactions = await this.model.find()
+        const transactions = await this.model.find({
+            title: {
+                $regex: title,
+                $options: 'i'
+            },
+            'category._id': categoryId,
+            date: {
+                $gte: beginDate,
+                $lte: endDate,
+            }
+        })
 
         const transactionsMap = transactions.map((item) => item.toObject<Transaction>()) // Transformando cada item que está como documento do mongo para json do tipo da entidade Category
 
