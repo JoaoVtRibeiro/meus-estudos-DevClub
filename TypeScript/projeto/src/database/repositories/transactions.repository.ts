@@ -15,7 +15,8 @@ export class TransactionsRepository {
 
     async index({ title, categoryId, beginDate, endDate }: IndexTransactionsDTO): Promise<Transaction[]> {
         const whereParams: Record<string, unknown> = {
-            ...(title && { title: { $regex: title, $options: 'i' } })
+            ...(title && { title: { $regex: title, $options: 'i' } }),
+            ...(categoryId && {'category._id': categoryId})
         }
 
         const transactions = await this.model.find({
