@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
@@ -54,7 +55,7 @@ function Row({ row, orders, setOrders }) { // Formatação de cada pedido/item d
                 <TableCell>{row.date}</TableCell>
                 <TableCell>
                     <ReactSelectStyle
-                        options={status.filter( sts => sts.value !== 'Todos')}
+                        options={status.filter(sts => sts.value !== 'Todos')}
                         menuPortalTarget={document.body}
                         placeholder="Status"
                         defaultValue={status.find(option => option.value = row.status) || null} // Definindo o valor inicial a partir do status de cada row(pedido/item), null para caso ele não carregue ao tempo da pagina ou nao encontre
@@ -95,6 +96,25 @@ function Row({ row, orders, setOrders }) { // Formatação de cada pedido/item d
             </TableRow>
         </React.Fragment>
     )
+}
+
+Row.propTypes = {
+    orders: PropTypes.array,
+    setOrders: PropTypes.func,
+    row: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        orderId: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        status: PropTypes.string.isRequired,
+        products: PropTypes.arrayOf(
+            PropTypes.shape({
+                quantity: PropTypes.number.isRequired,
+                name: PropTypes.string.isRequired,
+                category: PropTypes.string.isRequired,
+                url: PropTypes.string.isRequired
+            })
+        ).isRequired
+    }).isRequired
 }
 
 export default Row

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import LogoutIcon from '@mui/icons-material/Logout'
 
@@ -27,4 +28,8 @@ export function SideMenuAdmin({ path }) {
             </ItensContainer>
         </Container>
     )
+}
+
+SideMenuAdmin.propTypes = {
+    path: PropTypes.string
 }
