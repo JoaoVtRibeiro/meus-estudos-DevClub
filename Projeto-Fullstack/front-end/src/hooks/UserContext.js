@@ -1,6 +1,5 @@
 // Lembrar de olhar a documentação, caso aja duvida na estrutura
 import React, { createContext, useContext, useState, useEffect } from 'react'
-
 import PropTypes from 'prop-types'
 
 const UserContext = createContext({})

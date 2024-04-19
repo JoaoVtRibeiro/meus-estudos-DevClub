@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Route, Redirect } from 'react-router-dom'
 
 import { Header } from '../components'
@@ -24,3 +25,8 @@ function PrivateRoute({ component, isAdmin, ...rest }) {
 }
 
 export default PrivateRoute
+
+PrivateRoute.propTypes = {
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+    isAdmin: PropTypes.bool
+}

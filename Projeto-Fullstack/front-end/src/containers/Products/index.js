@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
@@ -80,4 +81,8 @@ export function Products({ location: { state } }) {
             </ProductsContainer>
         </Container >
     )
+}
+
+Products.propTypes = {
+    location: PropTypes.object
 }
