@@ -42,4 +42,6 @@ export class TransactionsRepository {
 
         return transactionsMap
     }
+
+    async getBalance() {}
 }
