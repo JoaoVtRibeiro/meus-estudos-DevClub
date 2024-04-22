@@ -1,5 +1,5 @@
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
-import ClassIcon from '@mui/icons-material/Class'
+import CategoryIcon from '@mui/icons-material/Sell'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
@@ -28,7 +28,7 @@ const listLinks = [
         id: 4,
         label: 'Categorias',
         link: paths.Categories,
-        icon: ClassIcon
+        icon: CategoryIcon
     }
 ]
 

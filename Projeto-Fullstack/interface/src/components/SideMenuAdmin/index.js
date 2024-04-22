@@ -11,7 +11,6 @@ export function SideMenuAdmin({ path }) {
     const { logout } = useUser()
     return (
         <Container>
-            <H1>Administrador</H1>
             <hr></hr>
             {listLinks.map(item => (
                 <ItemContainer key={item.id} isActive={path === item.link}>

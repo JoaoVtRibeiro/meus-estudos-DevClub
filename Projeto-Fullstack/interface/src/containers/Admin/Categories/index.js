@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom'
 
 import paths from '../../../constants/paths'
 import api from '../../../services/api'
-import { Container, Img, EditIconStyles, NewCategory } from './styles'
+import { Container, Img, EditIconStyles, AddCategory } from './styles'
 
 function Categories() {
     const [categories, setCategories] = useState([])
@@ -38,10 +38,10 @@ function Categories() {
 
     return (
         <Container>
-            <NewCategory onClick={() => AddNewCategory()}>
+            <AddCategory onClick={() => AddNewCategory()}>
                 <AddIcon />
                 Nova Categoria
-            </NewCategory>
+            </AddCategory>
             <TableContainer component={Paper}>
                 <Table
                     sx={{ minWidth: 650 }}

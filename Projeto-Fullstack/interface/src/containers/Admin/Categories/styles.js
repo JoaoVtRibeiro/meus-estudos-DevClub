@@ -13,7 +13,7 @@ export const EditIconStyles = styled(EditIcon)`
     color: #323d5d;
 `
 
-export const NewCategory = styled.button`
+export const AddCategory = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;

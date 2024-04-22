@@ -1,12 +1,7 @@
 import React from 'react'
 
 import CartLogo from '../../assets/cart-products.svg'
-import {
-    CartItems,
-    CartResume,
-    OffersCarousel,
-    FooterComponent
-} from '../../components'
+import { CartItems, CartResume, OffersCarousel } from '../../components'
 import { Container, CartImage, Wrapper } from './styles'
 
 export function Cart() {
@@ -18,7 +13,6 @@ export function Cart() {
                 <CartResume />
             </Wrapper>
             <OffersCarousel />
-            <FooterComponent />
         </Container>
     )
 }

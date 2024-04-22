@@ -36,12 +36,6 @@ export const ListLink = styled(Link)`
     text-decoration: none;
     margin-left: 17px;
 `
-export const H1 = styled.h1`
-    text-align: center;
-    color: white;
-    margin-top: 15px;
-    margin-bottom: -32px;
-`
 
 export const MenuBottom = styled.div`
     display: flex;
