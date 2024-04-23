@@ -29,6 +29,6 @@ export const getDashboardSchema = {
 }
 
 const getDashboardObject = z.object(getDashboardSchema)
-export type GetDashBoardDTO = z.infer<typeof getDashboardObject>
+export type GetDashboardDTO = z.infer<typeof getDashboardObject>
 
 
