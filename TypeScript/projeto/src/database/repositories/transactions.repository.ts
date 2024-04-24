@@ -43,57 +43,47 @@ export class TransactionsRepository {
         return transactionsMap
     }
 
-    async getBalance({ beginDate, endDate }: GetDashboardDTO) { }
-}
-
-const x = [
-    {
-        $match: {
+    async getBalance({ beginDate, endDate }: GetDashboardDTO) {
+        const result = await this.model.aggregate().match({
             date: {
                 $gte: new Date('2024-04-01'),
                 $lte: new Date('2024-04-31')
-            },
-        },
-    },
-    {
-        $project: {
-            _id: 0,
-            income: {
-                $cond: [
-                    {
-                        $eq: ['$type', 'income']
-                    },
-                    '$amount',
-                    0
-                ]
             }
-        },
-        expense: {
-            $cond: [
-                {
-                    $eq: ['$type', 'expense']
+        })
+            .project({
+                _id: 0,
+                income: {
+                    $cond: [
+                        {
+                            $eq: ['$type', 'income']
+                        },
+                        '$amount',
+                        0
+                    ]
                 },
-                '$amount',
-                0
-            ]
-        }
-    },
-    {
-        $group: {
-            _id: null,
-            incomes: {
-                $sum: '$income'
-            },
-            expenses: {
-                $sum: '$expense'
-            }
-        }
-    },
-    {
-        $set: {
-            balance: {
-                $subtract: ['$incomes', '$expenses']
-            }
-        }
+                expense: {
+                    $cond: [
+                        {
+                            $eq: ['$type', 'expense']
+                        },
+                        '$amount',
+                        0,
+                    ]
+                }
+            })
+            .group({
+                _id: null,
+                incomes: {
+                    $sum: '$income'
+                },
+                expenses: {
+                    $sum: '$expense'
+                }
+            })
+            .addFields({
+                balance: {
+                    $subtract: ['$incomes', '$expenses']
+                }
+            })
     }
-]
+}
