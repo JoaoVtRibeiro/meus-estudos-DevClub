@@ -1,0 +1,26 @@
+Vite - Iniciar um projeto
+
+    Assim como o create react app cria uma estrutura inicial,
+    o vite faz a mesma coisa, porem ele é mais rápido.
+    Ele ainda não é tão comum por ser uma tecnologia mais nova.
+
+    Para iniciar:
+        - Escolha/Acesse uma pasta que vai conter o projeto (atraves do terminal)
+        - No terminal utilize esse comando: 
+            npm create vite@latest
+
+            *Caso não tenha o vite instalado, você receberá uma pergunta para instalar, enter para confirmar
+        
+            As seguintes perguntas serão feitas:
+                - Qual será o nome do projeto?
+                - Qual framework?
+                - Qual variante?
+        - Após isso, instalar os pacotes npm
+            npm i 
+
+        - Para rodar a aplicação
+            npm run dev
+
+    Em estrutura, a unica diferença (tirando os arquivos que não serão utilizados em ambos)
+    entre o Vite e o Create React App, é que no Vite o projeto criado terá o index.html
+    fora da pasta public, enquanto o CRA será dentro da pasta
