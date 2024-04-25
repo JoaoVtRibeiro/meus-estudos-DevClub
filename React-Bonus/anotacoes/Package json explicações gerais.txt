@@ -1,0 +1,25 @@
+scripts
+
+    Eles são como "atalhos" para executar um comando atraves do terminal
+
+        Ex: npm run nomedoscript
+
+dependencies
+
+    Bibliotecas e ferramentas que o projeto PRECISA para rodar
+    conforme as bibliotecas forem instaladas na projeto serão adicionadas nas dependencias
+
+    Elas podem ajudar com css, javascript, trazem praticidade, etc
+    É possivel criar uma dependencia também
+
+    Para instalar uma, por exemplo styled-components:
+        npm i styled-components
+
+devDependencies
+
+    Dependencias que só serão utilizados no desenvolvimento e
+    não serão necessarias para rodar o aplicação final
+
+    Para instalar uma, por exemplo vite:
+        npm i vite -D (o menos d indica ser devDependencie)
+    
