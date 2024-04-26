@@ -1,0 +1,47 @@
+Componentes React
+
+    Em sua maioria são codados com funções, porém alguns antigos podem ser por classe
+    Além disso também podem ser arrow function (não faz diferença nessa caso)
+    Detalhe, componentes SEMPRE devem ser escritos com letra maiuscula
+
+        Ex Function comum:
+
+            function App() {
+
+                return (
+                <div>Hello React</div>
+                )
+            }
+
+            export default App
+
+        Ex Arrow function:
+
+            const App = () => {
+
+                return (
+                <div>Hello React</div>
+                )
+            }
+
+            export default App
+
+    Outra coisa importante é que eles sempre serão exportados, para estarem visiveis para os outros arquivos
+    
+        Nas importações de arquivos: import NomeDoArquivo from './localdoarquivo'
+        Nas importações de bibliotecas: import NomeDaBiblioteca from 'nome-da-biblioteca'
+
+    A sintaxe do componente (Sintaxe JSX, misturar html e javascript):
+        importações EmCima from 'inicio/doArquivo'
+
+        function NomedoComponente {
+            // Código javascript, onde ficam as "manipulações" do componente
+
+            return{
+                // retorna Html, o componente em si
+            }
+        }
+
+        export default NomedoComponente
+
+    Para inserir javascript no return basta colocar {}, tudo dentro das chaves será considerado javascript

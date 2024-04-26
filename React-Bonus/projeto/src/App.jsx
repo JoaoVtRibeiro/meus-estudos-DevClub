@@ -1,8 +1,9 @@
 
 function App() {
- 
+  const hello = "Olá"
+
   return (
-    <div>Hello React</div>
+    <div>{hello}</div>
   )
 }
 
