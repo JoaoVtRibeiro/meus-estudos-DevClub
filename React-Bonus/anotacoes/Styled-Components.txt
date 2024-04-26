@@ -1,0 +1,17 @@
+Styled-Components
+
+    Uma biblioteca que permite a utilização de css e javascript juntos
+    é possivel por exemplo, trocar a cor de um botão baseada em uma variavel
+    então toda vez que essa variavel mudar, a cor do botão pode trocar também
+
+    Para instalar a biblioteca:
+
+        npm i --save styled-components
+
+    A estrutura será:
+
+        import styled from 'styled-components'
+
+        export const Componente = styled.taghtml`
+            propriedades: css;
+        `
