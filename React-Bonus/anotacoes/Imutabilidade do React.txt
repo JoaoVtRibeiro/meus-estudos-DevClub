@@ -1,0 +1,10 @@
+Imutabilidade do React e UseState
+
+    No React, quando há alterações de valores, essas alterações não refletem
+    na DOM (árvore de elementos), ou seja, a tela não vai renderizar novamente.
+    Os elementos só vão renderizar novamente quando eles mudarem completamente
+    Deletando e criando denovo, por exemplo uma variavel
+
+    O UseState permite que façamos isso, no exemplo da variavel
+    ele irá deletar o valor anterior e cria um completamente novo
+
