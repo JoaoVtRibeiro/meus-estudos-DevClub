@@ -34,5 +34,6 @@ Acessar a origem ou definições de tipo de uma classe, método, etc = segurar o
 Colocar no inicio e fim da linha (inclusive com mais de uma linha selicionada): Home = inicio, End = final
     - Obs: Com shift pressionado é possivel selecionar a linha (ou as linhas) com esses mesmo comandos
 
+Em uma importação no React, pressionando Ctrl + espaço, será mostrado as opções possiveis daquela biblioteca
 
 
