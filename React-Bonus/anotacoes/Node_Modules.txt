@@ -1,0 +1,18 @@
+Pasta node_modules
+
+    Basicamente a pasta onde vão ficar as dependencias do projeto
+    bibliotecas e ferramentas em geral
+
+    Sempre quando o comando "npm i" for ativado no terminal
+    o gerenciador de pacotes irá verificar as dependencias no package.json,
+    cria a pasta node_modules e instala elas lá
+
+    O motivo dela ter tantas coisas, mesmo sendo poucos dependencias
+    e que as proprias dependencias tem seu package.json outras dependencias
+    a serem instaladas
+
+    Essa pasta não vai fazer parte dos commits ao git por ser muito pesada,
+    então é importante ter um .gitignore com o node_modules lá (ou *node_modules caso for mais de uma)
+    quando o projeto for para outra maquina, "npm i" pode instalar as dependencias lá
+
+    
