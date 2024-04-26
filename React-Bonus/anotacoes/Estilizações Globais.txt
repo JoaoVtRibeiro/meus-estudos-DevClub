@@ -1,0 +1,28 @@
+Estilizações globais em um Projeto React
+
+    Para fazer isso basta criar um arquivo, comumente chamado de "globalStyles.js"
+
+    Nele é necessario a importação:
+
+        import { createGlobalStyle } from 'styled-components'
+
+    Depois disso crie um componente utilizando o createGlobalStyle e exporte:
+
+        const GlobalStyles = createGlobalStyle`
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        `
+        export default GlobalStyles
+    
+    No arquivo main/principal do projeto (Onde se encontra o ReactDOM renderizando os componentes),
+    importe o componente e coloque ele para ser renderizando no ReactDOM:
+
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            <React.StrictMode>
+                <GlobalStyles />
+                <OutrosComponentes />
+            </React.StrictMode>,
+            ) 
