@@ -1,0 +1,39 @@
+Eventos no React
+
+    Sempre que um evento no react acontecer, será enviado como propriedade:
+    "SyntheticBaseEvent", com uma serie de informações
+
+    É bem comum ser chamado de "event" ou apenas "e"
+
+        Ex Pratico: 
+
+            function App() {
+                function inputChange(event) {
+                    console.log(event)
+                }
+
+                return (
+                    <>
+                        <input onChange={inputChange}></input>
+                    </>
+                )
+            }
+    
+    Nessa caso para utilizar o valor do input seria: event.target.value
+    Da mesma forma seria para utilizar qualquer outra info do SyntheticBaseEvent, basta procurar no console.log(SyntheticBaseEvent)
+
+    Claro que se for uma função que não precise de nenhuma informação, não será necessário colocar o event
+
+        Ex:
+
+            function App() {
+                function buttonClick() {
+                    console.log("função ativada")
+                }
+
+                return (
+                    <>
+                        <button onClick={buttonClick}></button>
+                    </>
+                )
+            }
