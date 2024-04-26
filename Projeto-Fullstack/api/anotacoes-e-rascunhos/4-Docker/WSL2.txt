@@ -1,0 +1,13 @@
+WSL2 (Windows Subsystem for Linux 2)
+
+    Uma ferramenta que permite executar um ambiente Linux dentro do sistema operacional Windows 10. 
+    O WSL2 é uma atualização do WSL original e traz várias melhorias em relação à versão anterior,
+    incluindo melhor desempenho e compatibilidade com um maior número de aplicativos e distribuições Linux.
+
+    O WSL2 usa um kernel* Linux real, em vez de emular o sistema operacional, o que permite que as ferramentas
+    Linux executem diretamente no Windows, sem a necessidade de uma máquina virtual separada.
+
+
+    * Em sistemas operacionais de computadores, o kernel é o componente central 
+    responsável por gerenciar os recursos do sistema, fornecer serviços para as aplicações 
+    e intermediar o acesso aos recursos de hardware.

@@ -1,0 +1,11 @@
+Deeker
+
+    Docker é um aplicativo de virtualização de contêiners que permite aos usuários empacotar, 
+    distribuir e executar aplicações em ambientes isolados e portáteis. 
+    Ele fornece uma camada adicional de abstração acima do sistema operacional, 
+    permitindo que os desenvolvedores criem e distribuam aplicativos com todas as suas dependências 
+    e configurações, independentemente do ambiente de hospedagem.
+
+    Em resumo, aplicações podem ser salvas em contêiners para que não aja conflito quando exportada 
+    para outra máquina/servidor que utilize outro sistema operacional ou que contenha versões diferentes 
+    das tecnologias utilizadas na aplicação, como por exemplo o Node ou algum banco de dados como MongoDB

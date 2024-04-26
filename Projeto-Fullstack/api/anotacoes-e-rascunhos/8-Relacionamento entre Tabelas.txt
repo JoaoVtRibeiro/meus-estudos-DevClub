@@ -1,0 +1,31 @@
+Relacionamentos entre tabelas em bancos de dados referem-se à forma como as tabelas se conectam e 
+interagem umas com as outras com base em chaves primárias e estrangeiras. 
+Esses relacionamentos são estabelecidos para organizar e estruturar os dados em um banco de dados relacional.
+
+Existem três tipos principais de relacionamentos entre tabelas:
+
+    - Relacionamento Um-para-Um (1:1): Nesse tipo de relacionamento, 
+      uma linha em uma tabela está associada a no máximo uma linha em outra tabela e vice-versa. 
+      Por exemplo, considere duas tabelas: "Clientes" e "Endereços". 
+      Cada cliente pode ter apenas um endereço e cada endereço está associado a apenas um cliente.
+      Nesse caso, uma chave estrangeira é usada em uma das tabelas para se referir à chave primária da outra tabela.
+
+    - Relacionamento Um-para-Muitos (1:N): Esse tipo de relacionamento ocorre quando
+      uma linha em uma tabela está associada a várias linhas em outra tabela. 
+      Por exemplo, considere duas tabelas: "Departamentos" e "Funcionários".
+      Cada departamento pode ter vários funcionários, mas cada funcionário pertence a apenas um departamento. 
+      Nesse caso, a tabela dos "Funcionários" teria uma chave estrangeira que faz referência à chave primária da tabela dos "Departamentos".
+
+    - Relacionamento Muitos-para-Muitos (N:N): Esse tipo de relacionamento ocorre quando 
+      várias linhas em uma tabela estão associadas a várias linhas em outra tabela. 
+      Para representar esse tipo de relacionamento, é necessário criar uma terceira tabela, 
+      conhecida como "tabela de associação" ou "tabela de junção". 
+      Essa tabela contém as chaves primárias das tabelas relacionadas. 
+      Por exemplo, considere duas tabelas: "Alunos" e "Cursos". Cada aluno pode se matricular em 
+      vários cursos e cada curso pode ter vários alunos matriculados. 
+      Nesse caso, seria criada uma terceira tabela chamada "Matrículas" que teria as chaves
+      primárias das tabelas "Alunos" e "Cursos" como chaves estrangeiras.
+
+Os relacionamentos entre tabelas permitem que os dados sejam armazenados de forma estruturada e eficiente, 
+facilitando consultas e operações complexas nos bancos de dados. Esses relacionamentos são definidos através do uso
+de chaves primárias e estrangeiras, garantindo a integridade dos dados e evitando redundância e inconsistências.

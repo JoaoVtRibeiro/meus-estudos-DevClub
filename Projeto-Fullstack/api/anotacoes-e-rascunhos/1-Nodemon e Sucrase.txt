@@ -1,0 +1,26 @@
+Sucrase
+
+    A biblioteca Sucrase é um compilador JavaScript, que permite escrever código moderno
+    como por exemplo substituir o método de exportação e importação:
+
+        const variavel = require('componente/biblioteca') // importação
+        module.exports = componente // exportação
+
+        Para:
+
+        import 'Componente' from 'local/arquivo.js' // importação
+        export default componente // exportação
+
+
+Nodemon.json
+
+    O nodemon é uma ferramenta que permite que o servidor seja reiniciado a cada alteração, 
+    O arquivo nodemon.json é um arquivo de configuração do nodemon que permite especificar 
+    opções e configurações para a ferramenta, como por exemplo:
+    {
+        "execMap":{
+            "js": "node -r sucrase/register"
+        }
+    }
+    execMap é usado para mapear extensões de arquivos específicas para executar um comando personalizado,
+    nesse exemplo está sendo especificado ao nodemon que quando executar um arquivo "js" utilizar também o sucrase

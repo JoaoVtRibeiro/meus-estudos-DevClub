@@ -1,0 +1,13 @@
+Como corrigir erros da instalação do Docker no Windows
+
+    1- Verificar se a virtualização está habilitada (Gerenciador de tarefas - Desempenho)
+        
+        - Caso não esteja, reinicie o computador e acesse a Bios, 
+        apertando f1/f2/f10/del repetidamente (a tecla varia dependendo do fabricante)
+
+        - Procure nas opções para habilitar a virtualização
+
+    2- Siga as instruções da doc (os comandos serão feitos no powershell): 
+    https://docs.microsoft.com/pt-br/windows/wsl/install-win10?_gl=1*bpajhv*_ga*NjIzOTUxOTM4LjE2ODExMzE3Mzg.*_ga_37GXT4VGQK*MTY4MjI3MjgyMy4zNS4xLjE2ODIyNzU1NzEuMC4wLjA.
+
+    3- Instalar o Ubuntu LTS

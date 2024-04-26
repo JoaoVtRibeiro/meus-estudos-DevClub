@@ -1,0 +1,12 @@
+Postgres
+    - Abrir o PostBird
+    host: localhost
+    port: 5432 (porta padrão do postgres)
+    username: postgres
+    password: postgres
+    database: -
+    start query: -
+
+MongoDB
+    - Abrir o MongoDB Compass
+    port: 27017 (porta padrão do mongodb)

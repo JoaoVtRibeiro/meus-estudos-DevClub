@@ -1,0 +1,17 @@
+- docker -v: mostra o número da versão
+
+- docker ps: mostra todos os container ativos
+
+- docker ps -a: mostra todos os container ativos e não ativos
+
+- docker start nomedocontainer: liga/"sobe" o container
+
+- docker stop nomedocontainer: desliga/"derruba" o container
+
+Comando para criar um container docker:
+    
+    - docker run --name nomedocontainer-postgres -e POSTGRES_PASSWORD=digitarsenha -p porta:porta -d postgres
+        --name: nome
+        -e: senha
+        -p: porta do computador e porta do container (Por padrão o Postgres usa a porta 5432)
+        -d: nome da imagem que vai ser utilizada (Neste caso, postgres)

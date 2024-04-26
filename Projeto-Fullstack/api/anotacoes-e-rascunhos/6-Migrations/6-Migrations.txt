@@ -1,0 +1,21 @@
+Migrations
+
+    Migrations são arquivos/recursos utilizados em bancos de dados para gerenciar as alterações 
+    na estrutura do esquema (tabelas, índices, colunas, etc.) de forma controlada e automatizada.
+    Com elas é possível criar, modificar ou excluir tabelas e colunas, além de outras ações,
+    sem ter que fazer manualmente as alterações no banco de dados. 
+    Em vez disso, as alterações são escritas nesses arquivos de migração, 
+    que descrevem as mudanças que devem ser aplicadas no banco de dados.
+
+    As migrations também permitem que as alterações no banco de dados sejam versionadas, 
+    facilitando a colaboração entre desenvolvedores e o controle de versão do código. 
+    Além disso, elas permitem que o histórico de alterações seja registrado e revertido, caso seja necessário.
+
+    São frequentemente usadas em conjuntos com ORM (Object-Relational Mapping) 
+    ou frameworks de banco de dados, como Sequelize, Django, Ruby on Rails, Laravel, entre outros.
+
+    Com Sequelize, as migrations podem ser criadas usando a CLI (Command Line Interface) 
+    fornecida pelo próprio framework, o que torna o processo de criação 
+    e gerenciamento de migrations bastante fácil e conveniente.
+
+    Obs: As migrations rodam em ordem de criação
