@@ -1,8 +1,8 @@
 Componentes React
 
-    Em sua maioria são codados com funções, porém alguns antigos podem ser por classe
-    Além disso também podem ser arrow function (não faz diferença nessa caso)
-    Detalhe, componentes SEMPRE devem ser escritos com letra maiuscula
+    - Em sua maioria são codados com funções, porém alguns antigos podem ser por classe
+      Além disso também podem ser arrow function (não faz diferença nessa caso)
+      Detalhe, componentes SEMPRE devem ser escritos com letra maiuscula
 
         Ex Function comum:
 
@@ -26,12 +26,12 @@ Componentes React
 
             export default App
 
-    Outra coisa importante é que eles sempre serão exportados, para estarem visiveis para os outros arquivos
+    - Outra coisa importante é que eles sempre serão exportados, para estarem visiveis para os outros arquivos
     
         Nas importações de arquivos: import NomeDoArquivo from './localdoarquivo'
         Nas importações de bibliotecas: import NomeDaBiblioteca from 'nome-da-biblioteca'
 
-    A sintaxe do componente (Sintaxe JSX, misturar html e javascript):
+    - A sintaxe do componente (Sintaxe JSX, misturar html e javascript):
         importações EmCima from 'inicio/doArquivo'
 
         function NomedoComponente {
@@ -44,4 +44,28 @@ Componentes React
 
         export default NomedoComponente
 
-    Para inserir javascript no return basta colocar {}, tudo dentro das chaves será considerado javascript
+    - Para inserir javascript no return basta colocar {}, tudo dentro das chaves será considerado javascript
+
+    - Componentes React exportam APENAS UM elemento html, ou seja, 
+      os elementos html tem que estar dentro de um unico pai que será o componente
+      "principal" que será o exportado, em um geral eles sempre vão estar dentro de uma div principal
+      Outra opção seria o fragment <>, uma tag que não irá conter nada, inclusive não irá aplicar nenhuma regra
+      de estruturação que uma div aplicaria por exemplo.
+
+        Ex:
+            function Componente {
+                <> // Fragment
+                    <outroselementos></outroselementos>
+                <>
+            }
+
+      Há uma outra possibilidade para o fragment, importando ele do React, mas não faz diferença, é apenas visual ao código
+
+        Ex:
+            import { Fragment } from 'react'
+
+            function Componente {
+                <Fragment>
+                    <outroselementos></outroselementos>
+                </Fragment>
+            }
