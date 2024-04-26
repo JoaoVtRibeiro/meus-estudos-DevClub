@@ -1,0 +1,12 @@
+Inputs
+
+    Não controlados => Eles não são controlados por NINGUÉM, se viram sozinhos
+    Ex: Um input que ele próprio guarda o seu valor (Auto-suficiente)
+
+    Controlados => Eles são controlados por algum outro componente ou não são auto-suficientes
+    Ex: Um input que não guarda o valor dele próprio, ele necessita guardar em uma variável
+
+
+    Ambos os exemplos podem ser encontrados em front-end/src/containers/Admin/NewProducts/index.js
+        - React Select: Controlado
+        - Demais inputs: Não controlados
