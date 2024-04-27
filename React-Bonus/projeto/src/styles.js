@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FcCheckmark, FcFullTrash } from "react-icons/fc"
 
 export const Container = styled.div`
     background: linear-gradient(90deg, #383838 0%, #000000 81.25%);
@@ -22,7 +23,7 @@ export const ToDoList = styled.div`
 `
 
 export const Input = styled.input`
-    width: 65%;
+    width: 70%;
     height: 42px;
     padding: 15px 24px 11px 20px;
     border-radius: 5px;
@@ -34,7 +35,7 @@ export const Input = styled.input`
 export const Button = styled.button`
     width: 130px;
     height: 40px;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px;
     border-radius: 5px;
     border: none;
     background: #8052EC;
@@ -43,6 +44,15 @@ export const Button = styled.button`
     line-height: 2.5px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
+
+    &:hover{
+        background: #6531de;
+    }
+
+    &:active{
+        background: #895eec;
+    }
 `
 
 export const ListItemBox = styled.div`
@@ -63,3 +73,16 @@ export const ListItemBox = styled.div`
         list-style: none; // Remove o circulo preto que fica ao lado da li
     }
 `
+
+export const Check = styled(FcCheckmark)`
+    cursor: pointer;
+`
+
+export const Trash = styled(FcFullTrash)`
+    cursor: pointer;
+`
+
+export const H3 = styled.h3`
+    margin-left: 168px;
+`
+
