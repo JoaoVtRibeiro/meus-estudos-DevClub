@@ -1,0 +1,60 @@
+Eslint
+
+    Uma extensão que auxilia na padronização do código, 
+    após instalar você pode configurar qual tipo de padrão você deseja
+
+    Para instalar:
+
+    1. Vá na aba de extensões e adicione o ESlint
+    2. No terminal: yarn add eslint -D
+    
+    Para configurar:
+    1. yarn eslint --init
+    2. Opções de escolha recomendadas:
+        - To check syntax, find problems, and enforce code style
+        - JavaScript modules (import/export)
+        - Escolher o framework
+        - Projeto usa TypeScript?
+        - Barra de espaço pra deselecionar, Node (A aplicação irá rodar no brower por ser front-end/interface)
+        - Standard, Não usa ponto e virgula no final e usa aspas simples, Airnbn é o oposto
+        - Yarn / Yes
+
+    3. Ctrl + Shift + P, Preferences Open Settings (JSON)
+        - Copie e cole esse código para Eslint formatar a cada Ctrl + S:
+            "[javascript]": { "editor.codeActionsOnSave": { "source.fixAll.eslint": true }, }, 
+
+            "[javascriptreact]": { "editor.codeActionsOnSave": { "source.fixAll.eslint": true }, },
+
+Prettier
+
+    Uma outra ferramenta de padronização que complementa o Eslint,
+    ele contém mais algumas regras adicionais que se preocupam com o visual do código, essas regras podem ser alteras ou não
+
+    Para instalar:
+
+        yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+        (além do prettier, eslint config e plugin "facilitam a conversa" entre prettier e eslint, porque ambos tem algumas regras diferentes)
+
+        yarn add eslint-plugin-react-hooks -D 
+        (ajuda a lidar com configurações especificas do react, com algumas sintaxes que só existem nele)
+
+        yarn add eslint-plugin-import-helpers -D
+        (Ajuda a organizar a ordem da importações nos arquivos)
+
+    Para configurar:
+
+    1. No arquivo de configuração do Eslint (.eslintrc.js), 
+        - no extends: [..., 'prettier']
+        - codifique: ,plugins:['prettier],
+        - em rules: adicione regras ou desligue regras da padronização, ex:
+
+            "prettier/prettier": "error",    // Faz o erros encontrados pelo prettier serem considerados erros do próprio Eslint
+
+            camelcase: off,          // desliga a necessidade de variaveis em camelcase
+            endOfLine: "auto",      // define a quebra de linha como automatica
+            semi: false,            //  desliga o ponto e virgula no final de cada linha de código
+            singleQuote: true,       // torna aspas simples o padrão
+    
+    2. Caso necessário, também é possivel alterar regras do prettier criando o arquivo .prettierrc
+
+        Obs: Para algumas alterações acontecerem pode ser necessário reiniciar o vscode
