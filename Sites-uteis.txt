@@ -39,4 +39,4 @@ Biblioteca de componentes
 API de servidores / Bancos de dados
 
 - Open Weather (Clima de cidades em tempo real)
-- TheMovieDB (Filmes e seriados)
+- TheMovieDB (Filmes e seriados) https://developer.themoviedb.org/reference/discover-movie
