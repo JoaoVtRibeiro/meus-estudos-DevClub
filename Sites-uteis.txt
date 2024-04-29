@@ -11,11 +11,12 @@ Utilizar imagens sem direitos autorais (Gratuitas)
 - Pexels
 - Unsplash (Link que trás uma imagem diferente sempre que é chamado): https://source.unsplash.com/1600x900/?landscape
 
-Cores
+Cores e Estilizações
 
 - color.adobe.com
 - coolors
 - colorZilla (extensão)
+- Box Shadow Generator https://www.cssmatic.com/box-shadow
 
 Fonts para Texto
 
