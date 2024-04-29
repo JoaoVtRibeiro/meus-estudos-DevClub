@@ -36,6 +36,7 @@ Biblioteca de componentes
 - React Select (somente selects)
 - React Icons (Icones de várias biblioteca diferentes): https://react-icons.github.io/react-icons/
 
-API de servidores
+API de servidores / Bancos de dados
 
 - Open Weather (Clima de cidades em tempo real)
+- TheMovieDB (Filmes e seriados)
