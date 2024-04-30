@@ -35,7 +35,8 @@ Biblioteca de componentes
 - Ant Design
 - Prime React (Vue / Angular)
 - React Select (somente selects)
-- React Icons (Icones de várias biblioteca diferentes): https://react-icons.github.io/react-icons/
+- React Icons (Icones de várias biblioteca diferentes) https://react-icons.github.io/react-icons/
+- Swiper React Components https://swiperjs.com/react
 
 API de servidores / Bancos de dados
 
