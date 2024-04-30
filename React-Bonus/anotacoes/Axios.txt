@@ -1,0 +1,34 @@
+Axios
+
+    Biblioteca para o consumo de api (pode ser uma pública ou de um proprio servidor node por exemplo)
+
+    Instalação:
+        yarn add axios / npm i axios (Não é dependencia de desenvolvimento)
+
+
+    Ex Estrutura do api.js:
+
+        import axios from 'axios'
+
+            const api = axios.create({
+                baseURL: '',
+                params: {
+                    api_key: '',
+                    language: 'pt-BR',
+                    page: 1
+                }
+            })
+
+            export default api
+
+    Ex Estrutura de uma função:
+
+        useEffect(() => {   
+            async function nomeFunção() {
+                const data = await api.get('/endereço/url')
+            }
+        
+            nomeFunção()
+        }, [])
+
+        O useEffect permite que a chamada a api seja apenas uma vez, sem ele seria várias vezes, possivelmente travando a aplicação/pc
