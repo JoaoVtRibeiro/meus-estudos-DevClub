@@ -1,17 +1,17 @@
 import { ButtonRed, ButtonWhite } from './styles'
 
-function Button({ children, red, white }) { // {} -> importando um valor com o nome exato
+function Button({ children, red, white, ...rest }) { // {} -> importando um valor com o nome exato
     return (
         <>
             { // {} -> indica que será javascript
                 red && (
-                    <ButtonRed>{children}</ButtonRed>
+                    <ButtonRed {...rest}>{children}</ButtonRed>
                 )
             }
             
             {
                 white && (
-                    <ButtonWhite>{children}</ButtonWhite>
+                    <ButtonWhite {...rest}>{children}</ButtonWhite>
                 )
             }</>
 

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 
 import Button from '../../components/Button'
-import Slider from '../../components/Slider/index.jsx'
+import Slider from '../../components/Slider'
+import Modal from '../../components/Modal'
 import api from '../../services/api'
 import { getImages } from '../../utils/getImages.js'
 import { Background, Container, Info, Poster, DivButtons } from './styles.js'
 
 function Home() {
+    const [showModal, setShowModal] = useState(false)
     const [movie, setMovie] = useState()
     const [topMovies, setTopMovies] = useState()
     const [topSeries, setTopSeries] = useState()
@@ -65,13 +67,16 @@ function Home() {
         <>
             {movie && ( // Se move existir (evitar erro de não encontrado no console, já que o state inicia vazio)
                 <Background img={getImages(movie.backdrop_path)}>
+                    {showModal && (
+                        <Modal movieId={movie.id} setShowModal={setShowModal} />
+                    )}
                     <Container>
                         <Info>
                             <h1>{movie.title}</h1>
                             <p>{movie.overview}</p>
                             <DivButtons>
                                 <Button red>Assista Agora</Button> {/* Apenas colocar o nome da prop, será considerado "true" */}
-                                <Button white>Assista o Trailer</Button>
+                                <Button white onClick={() => setShowModal(true)}>Assista o Trailer</Button>
                             </DivButtons>
                         </Info>
                         <Poster>

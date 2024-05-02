@@ -1,15 +1,37 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom' // useLocation permite saber a página atual
 
 import Logo from './../../assets/logo.png'
 import { Container, Menu, Li } from './styles'
 
 function Header() {
-    const { pathname } = useLocation() 
+    const [changeBackgroud, setChangeBackground] = useState(false)
+
+    const { pathname } = useLocation()
     // Desestruração -> pegando apenas o pathname de useLocation
     // pathname terá como valor a rota atual, ex: /filmes, /series
 
+    window.onscroll = () => {
+        console.log(window.scrollY)
+
+        if (window.scrollY > 150) {
+            setChangeBackground(true)
+        }
+
+        if (window.scrollY < 150) {
+            setChangeBackground(false)
+        }
+
+
+        // window são informações da tela
+        // onscroll função dentro de window que será ativa ao "scrollar" a tela
+        // scrollY localização atual da página no eixo Y
+    }
+
+
+
     return (
-        <Container>
+        <Container changeBackgroud={changeBackgroud}>
             <img src={Logo} alt='logo-devfilmes' />
             <Menu>
                 <Li isActive={pathname === '/'}> {/* Quando for somente a barra, utilizar ===, já que includes irá encontrar várias barras então daria erro*/}

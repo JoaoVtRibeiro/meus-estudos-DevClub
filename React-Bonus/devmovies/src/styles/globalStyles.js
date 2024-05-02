@@ -13,10 +13,11 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background: #000000;
-        overflow: overlay;
+        overflow-x: hidden;// remove a barra de rolagem inferior da página
+        // overflow: overlay; // efeito do scrollbar
     }
 
-    ::-webkit-scrollbar { // Lembrando que esse efeito e estilização na scrollbar não funciona no firefox e internet explorer
+    /* ::-webkit-scrollbar { // Lembrando que esse efeito e estilização na scrollbar não funciona no firefox e internet explorer
         background: transparent;
     }
 
@@ -27,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar-corner{
         border-radius: 10px;
-    }
+    } */
 `
 
 export default GlobalStyle
