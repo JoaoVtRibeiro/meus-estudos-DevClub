@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import Button from '../../components/Button'
 import Slider from '../../components/Slider'
 import Modal from '../../components/Modal'
 import api from '../../services/api'
+import { getMovies, getPopularSeries, getTopMovies, getTopPeople, getTopSeries } from '../../services/getData.js'
 import { getImages } from '../../utils/getImages.js'
 import { Background, Container, Info, Poster, DivButtons } from './styles.js'
+
 
 function Home() {
     const [showModal, setShowModal] = useState(false)
@@ -15,52 +18,28 @@ function Home() {
     const [popularSeries, setPopularSeries] = useState()
     const [topPeople, setTopPeople] = useState()
 
+    const navigate = useNavigate()
+
     useEffect(() => { // Obs: O useEffect permite que a chamada a api seja apenas uma vez, sem ele seria várias vezes, possivelmente travando a aplicação/pc
-        async function getMovies() {
-            const {
-                data: { results } // desestruturação, irá diretamente na array de results dentro de data
-            } = await api.get('movie/popular')
+        //console.time('time') // Conferir a velocidade de execução do trecho de código entre .time e .timeEnd
 
-            setMovie(results[0])
-        }
+        Promise.all([ // Irá buscar todos os dados de uma vez, diferente se fosse async await que seria um de cada vez
+            getMovies(),
+            getTopMovies(),
+            getTopSeries(),
+            getPopularSeries(),
+            getTopPeople()
+        ])
+            .then(([movie, topMovies, TopSeries, PopularSeries, TopPeople]) => {// promiseAll irá retornar a array das arrays com os dados, então é possivel nomear a cada posição também com uma array
+                setMovie(movie)
+                setTopMovies(topMovies)
+                setTopSeries(TopSeries)
+                setPopularSeries(PopularSeries)
+                setTopPeople(TopPeople)
+            })
+            .catch(error => console.error(error)) // caso houver algum erro será mostrado no console
 
-        async function getTopMovies() {
-            const {
-                data: { results }
-            } = await api.get('movie/top_rated')
-
-            setTopMovies(results)
-        }
-
-        async function getTopSeries() {
-            const {
-                data: { results }
-            } = await api.get('tv/top_rated')
-
-            setTopSeries(results)
-        }
-
-        async function getPopularSeries() {
-            const {
-                data: { results }
-            } = await api.get('tv/popular')
-
-            setPopularSeries(results)
-        }
-
-        async function getTopPeople() {
-            const {
-                data: { results }
-            } = await api.get('person/popular')
-
-            setTopPeople(results)
-        }
-
-        getMovies()
-        getTopMovies()
-        getTopSeries()
-        getPopularSeries()
-        getTopPeople()
+        //console.timeEnd('time')
     }, []) // Executa quando vazio uma variavel/state for alterada, quando vazio executa quando a página é iniciada
 
     return (
@@ -75,7 +54,7 @@ function Home() {
                             <h1>{movie.title}</h1>
                             <p>{movie.overview}</p>
                             <DivButtons>
-                                <Button red>Assista Agora</Button> {/* Apenas colocar o nome da prop, será considerado "true" */}
+                                <Button red onClick={() => navigate(`/detalhe/${movie.id}`)}>Assista Agora</Button> {/* Apenas colocar o nome da prop, será considerado "true" */}
                                 <Button white onClick={() => setShowModal(true)}>Assista o Trailer</Button>
                             </DivButtons>
                         </Info>

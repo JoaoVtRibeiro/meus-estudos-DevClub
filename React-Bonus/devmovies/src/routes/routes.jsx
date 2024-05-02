@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 
+import DefaultLayout from '../layout/DefaultLayout'
 import Home from '../containers/Home'
 import Movies from '../containers/Movies'
 import Series from '../containers/Series'
-import DefaultLayout from '../layout/DefaultLayout'
+import Detail from '../containers/Details'
 
 function Router() {
     return (
@@ -12,6 +13,7 @@ function Router() {
                 <Route path='/' element={<Home />} />
                 <Route path='/filmes' element={<Movies />} />
                 <Route path='/series' element={<Series />} />
+                <Route path='/detalhe/:id' element={<Detail />} /> {/* Colocando os dois pontos, idica que esse valor será dinamico */}
             </Route>
         </Routes>
     )

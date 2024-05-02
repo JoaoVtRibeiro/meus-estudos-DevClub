@@ -2,20 +2,17 @@ import { useState, useEffect } from 'react'
 
 import api from '../../services/api'
 import { Container, Background } from './styles'
+import { getTrailer } from '../../services/getData'
 
 function Card({ movieId, setShowModal}) {
     const [trailer, setTrailer] = useState()
 
     useEffect(() => {
-        async function getTrailer() {
-            const {
-                data: { results }
-            } = await api.get(`movie/${movieId}/videos`)
-
-            setTrailer(results[0])
+        async function getTrailers() {
+            setTrailer(await getTrailer(movieId))
         }
 
-        getTrailer()
+        getTrailers()
     }, [])
 
     return (
