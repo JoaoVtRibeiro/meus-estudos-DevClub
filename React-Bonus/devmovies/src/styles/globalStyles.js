@@ -13,6 +13,20 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background: #000000;
+        overflow: overlay;
+    }
+
+    ::-webkit-scrollbar { // Lembrando que esse efeito e estilização na scrollbar não funciona no firefox e internet explorer
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: lightgray;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-corner{
+        border-radius: 10px;
     }
 `
 
