@@ -40,10 +40,42 @@ export async function getTopPeople() {
     return results
 }
 
-export async function getTrailer(movieId) {
+export async function getMovieTrailer(movieId) {
     const {
         data: { results }
     } = await api.get(`movie/${movieId}/videos`)
 
     return results[0]
+}
+
+export async function getMovieTrailers(movieId) {
+    const {
+        data: { results }
+    } = await api.get(`movie/${movieId}/videos`)
+
+    return results
+}
+
+export async function getMovieDetails(movieId) {
+    const {
+        data
+    } = await api.get(`movie/${movieId}`)
+
+    return data
+}
+
+export async function getMovieCredits(movieId) {
+    const {
+        data
+    } = await api.get(`movie/${movieId}/credits`)
+
+    return data
+}
+
+export async function getMovieSimilar(movieId) {
+    const {
+        data: { results }
+    } = await api.get(`movie/${movieId}/similar`)
+
+    return results
 }
