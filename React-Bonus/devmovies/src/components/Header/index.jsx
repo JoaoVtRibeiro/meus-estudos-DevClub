@@ -12,8 +12,6 @@ function Header() {
     // pathname terá como valor a rota atual, ex: /filmes, /series
 
     window.onscroll = () => {
-        console.log(window.scrollY)
-
         if (window.scrollY > 150) {
             setChangeBackground(true)
         }

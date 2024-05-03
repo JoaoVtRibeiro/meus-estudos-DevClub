@@ -5,8 +5,6 @@ import { Container } from './styles'
 
 
 function Slider({ title, info }) { // info é o array de movies, então um dos melhores jeitos de lidar é iterando ex: map
-    console.log(title, info)
-
     return (
         <Container>
             <h2>{title}</h2>

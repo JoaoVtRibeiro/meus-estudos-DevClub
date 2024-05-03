@@ -1,4 +1,12 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+const scale = keyframes`
+    from {
+        transform: scale(0)
+    } to {
+        transform: scale(1)
+    }
+`
 
 export const Background = styled.div`
     background-image: url(${props => props.img});
@@ -17,6 +25,16 @@ export const Background = styled.div`
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &::after {
+        content: '';
+        position: absolute; // relativo a esse mesmo background
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 120px;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0))
     }
 `
 
@@ -51,8 +69,9 @@ export const Poster = styled.figure`
     z-index: 2;
 
     img{
-        height: 50vh; 
+        height: 60vh; 
         border-radius: 30px;
+        animation: ${scale} 0.3s linear
     }
 `
 
