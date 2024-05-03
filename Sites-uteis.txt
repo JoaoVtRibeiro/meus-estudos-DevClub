@@ -17,6 +17,7 @@ Cores e Estilizações
 - coolors
 - colorZilla (extensão)
 - Box Shadow Generator https://www.cssmatic.com/box-shadow
+- Linear Gradient Generator https://cssgradient.io
 
 Fonts para Texto
 
