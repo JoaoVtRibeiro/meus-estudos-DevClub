@@ -18,6 +18,7 @@ Cores e Estilizações
 - colorZilla (extensão)
 - Box Shadow Generator https://www.cssmatic.com/box-shadow
 - Linear Gradient Generator https://cssgradient.io
+- Favicon Generator https://favicon.io/favicon-converter/
 
 Fonts para Texto
 
