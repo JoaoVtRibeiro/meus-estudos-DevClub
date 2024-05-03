@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 
-import api from '../../services/api'
 import { Container, Background } from './styles'
 import { getMovieTrailer } from '../../services/getData'
 
