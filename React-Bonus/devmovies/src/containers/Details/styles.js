@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 
-const scale = keyframes` // keyframes permite
+const scale = keyframes` // keyframes permite criar parametros para animações
     from {
         transform: scale(0)
     } to {
