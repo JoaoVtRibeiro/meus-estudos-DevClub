@@ -50,3 +50,11 @@ Deploy (nomes de dominios são pagos)
 - Registro.br (dominio)
 - GoDaddy (dominio)
 - Railway (hospedagem api)
+
+Freelancer
+
+- 99 frelas
+- fiverr
+- getninjas
+- workana
+- upwork
