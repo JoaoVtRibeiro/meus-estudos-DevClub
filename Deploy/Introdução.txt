@@ -8,3 +8,6 @@ Deploy
     Railway - Armazenar a api
     Netlify - Armazenar a interface
     Github - Ter o controle do código (Toda vez que a branch master for atualizada o servidor também será)
+    
+    Bibliotecas:
+      - sequelize-cli
