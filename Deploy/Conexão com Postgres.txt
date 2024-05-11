@@ -1,0 +1,25 @@
+Criar conexão com o Postgres
+
+    1. Criar a imagem e url de conexão
+        - New Project
+        - Provision (nome do banco, no caso PostgreSQL)
+        - Aba Connect
+        - DATABASE_URL e copiar o link que contém nele
+
+        Esse link que será responsavel em fazer a conexão entre o banco de dados e a imagem que está rodando na nuvem
+
+    2. Com isso feito, pode remover:
+
+        - host, username, password e database
+
+        Do arquivo config/database.js e adicionar a propriedade "url" + o link, ficará assim:
+
+        dialect: '...',
+        url: 'link'
+
+    3. No terminal:
+
+        npx sequelize-cli db:migrate
+
+        Dessa forma todas as migrations que o projeto contém serão passadas
+        para o servidor (railway), para montar as tabelas, elas vão estar na aba Data
