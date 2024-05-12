@@ -23,3 +23,7 @@ Criar conexão com o Postgres
 
         Dessa forma todas as migrations que o projeto contém serão passadas
         para o servidor (railway), para montar as tabelas, elas vão estar na aba Data
+
+    Obs: 
+        Para fazer rollback (reverter/remover as migrations):
+            npx sequelize-cli db:migrate:undo:all
