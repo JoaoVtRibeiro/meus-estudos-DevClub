@@ -1,0 +1,23 @@
+Correções
+
+    1. Erro de conexão
+        Alterar o this.connection = new Sequelize() de "configDataBase" para a url de conexão gerada no railway
+
+    2. Nomes das tabelas com letras maiusculas 
+        - Fazer o rollback com:
+            npx sequelize-cli db:migrate:undo:all
+
+            Para desfazer a migrations
+        
+        2.1 Caso não seja encontrado uma das colunas, ex: queryInterface.createColumn da migration de delete
+
+            - Remover o objeto {category: {
+                    type: Sequelize.STRING,
+                    allowNull: false,
+                }}
+
+            - E adicionar no lugar: 'category', Sequelize.STRING
+
+            - Alterar o método createColumn para addColumn
+
+            - Rodar o rollback novamente
