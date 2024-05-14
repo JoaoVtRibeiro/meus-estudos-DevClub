@@ -1,9 +1,9 @@
-Correções
+Correções e adaptações ao Railway
 
     1. Erro de conexão
         Alterar o this.connection = new Sequelize() de "configDataBase" para a url de conexão gerada no railway
 
-    2. Nomes das tabelas com letras maiusculas 
+    2. Nomes das tabelas devem ser com letras maiusculas 
         - Fazer o rollback com:
             npx sequelize-cli db:migrate:undo:all
 
@@ -21,3 +21,6 @@ Correções
             - Alterar o método createColumn para addColumn
 
             - Rodar o rollback novamente
+
+        - Após isso alterar os nomes das tabelas nas migrations para letra maiuscula
+            Obs: Das tabelas, as colunas deixa da mesma forma
