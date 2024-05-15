@@ -24,3 +24,8 @@ Correções e adaptações ao Railway
 
         - Após isso alterar os nomes das tabelas nas migrations para letra maiuscula
             Obs: Das tabelas, as colunas deixa da mesma forma
+
+    3. Nome das colunas não pode ser em snake case 
+
+       - Alterar nomes como: created_at para createdAt
+         
