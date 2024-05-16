@@ -28,4 +28,6 @@ Correções e adaptações ao Railway
     3. Nome das colunas não pode ser em snake case 
 
        - Alterar nomes como: created_at para createdAt
+
+    Lembrar de fazer o mapeamento no insomnia das rotas, conferir se estão todas funcionando
          

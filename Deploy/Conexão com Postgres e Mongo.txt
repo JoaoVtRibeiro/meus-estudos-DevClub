@@ -1,4 +1,4 @@
-Criar conexão com o Postgres
+Criar conexão com o Postgres e Mongo
 
     1. Criar a imagem e url de conexão
         - New Project
@@ -8,7 +8,7 @@ Criar conexão com o Postgres
 
         Esse link que será responsavel em fazer a conexão entre o banco de dados e a imagem que está rodando na nuvem
 
-    2. Com isso feito, pode remover:
+    2.(Postgres) Com isso feito, pode remover:
 
         - host, username, password e database
 
@@ -16,6 +16,11 @@ Criar conexão com o Postgres
 
         dialect: '...',
         url: 'link'
+
+    2. (Mongo) Alterar a url em api/database/index.js
+
+        Em mongoose.connect, no método mongo()
+
 
     3. No terminal:
 
@@ -27,3 +32,6 @@ Criar conexão com o Postgres
     Obs: 
         Para fazer rollback (reverter/remover as migrations):
             npx sequelize-cli db:migrate:undo:all
+
+
+    Lembrar de fazer o mapeamento no insomnia das rotas, conferir se estão todas funcionando
