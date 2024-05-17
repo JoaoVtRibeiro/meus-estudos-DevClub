@@ -1,0 +1,13 @@
+Subir o projeto
+
+    1.Estando com o projeto atualizado no github, Iniciar o build:
+        - +New
+        - Github Repo
+        
+        Caso não esteja aparecendo os projetos/o projeto:
+            - Configure Github
+            - Repository access, escolher as opções de permissões
+
+        - Selecionar o projeto no railway 
+
+    
