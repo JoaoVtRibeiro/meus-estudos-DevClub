@@ -8,6 +8,13 @@ Subir o projeto
             - Configure Github
             - Repository access, escolher as opções de permissões
 
-        - Selecionar o projeto no railway 
+        - Selecionar o projeto no railway
+
+    2. Gerar um Dominio
+
+        - Bloco com o projeto do github
+        - Settings
+        - Em Environment, ir em Domains
+        - Generate Domain
 
     
