@@ -16,5 +16,14 @@ Subir o projeto
         - Settings
         - Em Environment, ir em Domains
         - Generate Domain
+    
+    3. Alterar o start command
+
+
+        - Bloco com o projeto do github
+        - Settings
+        - Em Deploy, Start command
+        - Inserir o comando o start command que é utilizado no projeto (ex: yarn run dev)
+    
 
     
