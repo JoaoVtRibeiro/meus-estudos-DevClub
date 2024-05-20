@@ -24,6 +24,33 @@ Subir o projeto
         - Settings
         - Em Deploy, Start command
         - Inserir o comando o start command que é utilizado no projeto (ex: yarn run dev)
+        - Aguardar o reployment
+
+    4. Fim do reployment
+
+        - Nodemon irá aparecer em deploy logs
+        - Com isso é possivel acessar o link da api (nomedoprojeto.railway.app)
+        - Ao abrir o erro "application failed to respond" irá aparecer já que não terá uma rota raiz
+
+        4.1 Corrigir erro "application failed"
+
+                - Em server.js alterar de:
+                    import app from './app'
+
+                    app.listen(3001)
+
+                Para:
+                    import app from './app'
+
+                    const port = process.env.PORT || 3001
+
+                    app.listen(port, '0.0.0.0')
+
+                - Subir essa alteração para o github (brantmaster do projeto)
+                - O railway conectado ao github irá fazer o deploy novamente atualizando o projeto com a alteração
+
+            Qualquer duvida olhar na documentação: "docs.railway.app/troubleshoot/fixing-common-erros"
+    
     
 
     
