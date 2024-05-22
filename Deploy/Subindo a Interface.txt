@@ -1,0 +1,6 @@
+Subir a interface
+
+    1. Utilizando a vercel
+
+        - Criar uma conta e conectar o Github
+        - Verificar as permissões de acesso aos repositórios
