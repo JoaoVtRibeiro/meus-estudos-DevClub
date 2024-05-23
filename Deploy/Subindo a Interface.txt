@@ -4,3 +4,18 @@ Subir a interface
 
         - Criar uma conta e conectar o Github
         - Verificar as permissões de acesso aos repositórios
+
+    2. Em services/api.js
+
+        Alterar a baseURL de localhost para o link da api do railway
+
+        De: const apiCodeBurger = axios.create({
+            baseURL: 'http://localhost:3001'
+        })
+
+        Para: const apiCodeBurger = axios.create({
+            baseURL: 'https://api-code-burger-production.up.railway.app/'
+        })
+
+        Após isso comitar para branch master do projeto no github
+        
