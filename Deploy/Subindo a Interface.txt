@@ -18,4 +18,12 @@ Subir a interface
         })
 
         Após isso comitar para branch master do projeto no github
+
+    3. No canto superior direito no vercel
+
+        - Add New...
+        - Project
+        - Escolher o projeto a ser importado
+        - Deploy para subir o projeto
+
         
