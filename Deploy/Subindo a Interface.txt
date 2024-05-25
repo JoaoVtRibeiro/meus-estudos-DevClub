@@ -26,4 +26,15 @@ Subir a interface
         - Escolher o projeto a ser importado
         - Deploy para subir o projeto
 
+    4. Corrigir erro ":0388010C:digital envelope routines:unsupported" ao fazer o deploy
+
+        - Em package.json da interface
+        - alterar start e build do script para:
+            "scripts": {
+                "start": "react-scripts --openssl-legacy-provider start",
+                "build": "react-scripts --openssl-legacy-provider build",
+            }
+
+    
+
         
