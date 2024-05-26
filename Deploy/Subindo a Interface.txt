@@ -35,6 +35,12 @@ Subir a interface
                 "build": "react-scripts --openssl-legacy-provider build",
             }
 
+    5. Ao finalizar o build do commit do erro, o deploy será finalizado, assim gerando o link da interface
+    
+        Ex: code-burger-interface.vercel.app
+
+
+
     
 
         
