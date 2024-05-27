@@ -1,0 +1,11 @@
+Configuração do Cors
+
+    Após a api e interface estarem no ar
+
+    1. Em api/src/app.js, criar um objeto com o parâmetros, ex:
+
+        const corsOptions = {
+            origin: 'https://code-burger-interface.vercel.app',
+            credentials: true,
+        }
+
