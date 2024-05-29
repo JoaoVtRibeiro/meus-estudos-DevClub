@@ -9,3 +9,7 @@ Configuração do Cors
             credentials: true,
         }
 
+        Após isso passar o corsOptions ao cors que está sendo utilizado:
+
+            this.app.use(cors(corsOptions))
+
