@@ -2,7 +2,7 @@ Configuração do Cors
 
     Após a api e interface estarem no ar
 
-    1. Em api/src/app.js, criar um objeto com o parâmetros, ex:
+    - Em api/src/app.js, criar um objeto com o parâmetros, ex:
 
         const corsOptions = {
             origin: 'https://code-burger-interface.vercel.app', // Responsavel pelo apontamento (link principal, home onde o usuario logado é redirecionado)
@@ -12,4 +12,8 @@ Configuração do Cors
         Após isso passar o corsOptions ao cors que está sendo utilizado:
 
             this.app.use(cors(corsOptions))
+
+    - Com isso pronto, fazer o commit e esperar o building ser finalizado no railway, no deploy logs será mostrado quando finalizado
+
+        Dessa forma não haverá duas sessões simuntaneas de usuarios diferentes no mesmo browser
 
