@@ -17,3 +17,7 @@ const sum = list.reduce((accumulator, currentValue) => {
     return accumulator + currentValue
 }, 0) // 0 é qual valor inicial do acumulador 
 
+/* 
+    - O valor atual / currentValue é o valor do item atual de cada iteração
+    - o acumulador é o valor que pode guardar a soma de valores de cada looping
+*/
