@@ -16,14 +16,12 @@ const companies = [
     { name: 'Apple', marketValue: 845, CEO: 'Tim Cook', foundedOn: 1976 },
 ]
 
-const finalValue = 
+const finalValue = companies
 
 // Adicionar 10% de valor de mercado a todas as companias
-companies.map(company => {
+.map(company => {
     return { 
-        name: company.name, 
         marketValue: (company.marketValue + (company.marketValue / 10)), 
-        CEO: company.CEO, 
         foundedOn: company.foundedOn }
 })
 
@@ -34,3 +32,24 @@ companies.map(company => {
 .reduce((acc, company) =>  acc + company.marketValue, 0)
 
 console.log(finalValue)
+
+
+// ------------ Segunda Forma de resolução, fazer a logica por fora ------------
+
+const add10Percent = (company => {
+    company.marketValue = company.marketValue + (company.marketValue / 10)
+    
+    return company
+})
+
+const oldCompanies = (company => company.foundedOn < 1990)
+
+const sumMarketValue = ((acc, company) =>  acc + company.marketValue)
+
+const finalSecondValue = companies
+.map(add10Percent)
+.filter(oldCompanies)
+.reduce(sumMarketValue, 0) // Valor do acc será sempre no reduce
+
+
+console.log(finalSecondValue)
