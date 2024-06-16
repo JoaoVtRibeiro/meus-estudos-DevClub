@@ -7,7 +7,7 @@
         delete    -> Deleta o item de uma posição do Array (logo a posição terá "vazio" como valor)
         every     -> Esse método testa se todos os elementos do array passam em uma condição.
         some      -> O .some() faz algo parecido com o .every(). A diferença é que o .every() retorna true se todos passarem, some precisa que apenas um passe
-        fill      -> Preenche posições do array com desejarmos
+        fill      -> Preenche posições do array como desejarmos, de acordo com os 3 parâmetros
         find      -> Usamos esse método quando queremos encontrar algum elemento dentro no Array
         findIndex   -> Faz o mesmo que o .find(), mas retorna o índice do elemento encontrado ao
         concat()    ->
@@ -50,3 +50,19 @@ console.log(users.every(user => user.credit > 100))
 // some, ao contrario do every, some resulta true se qualquer um dos itens for de acordo a validação
 
 console.log(users.some(user => user.credit > 800))
+
+/*  
+    fill, preenche a posição ou as posições do array com um novo valor a partir de três parâmetros
+
+    1) O valor que será colocado (se apenas ele todas as posições serão preenchidas com eles)
+        Ex: console.log(numbers.fill(5)), [5,5,5,5,5]
+    
+    2) A posição inicial que irá receber a alteração (se apenas ele e o primeiro todas as posições a partir da informada serão preenchidas com o primeiro parâmetro)
+        Ex: console.log(numbers.fill(5, 2)), [1,2,5,5,5]
+
+    3) A posição final, ou seja, entre a inicial e a final as posições serão preenchidas com valor do primeiro
+        Ex:
+*/
+
+console.log(numbers.fill(5,2,4))
+
