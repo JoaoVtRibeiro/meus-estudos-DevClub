@@ -9,7 +9,7 @@
         some      -> O .some() faz algo parecido com o .every(). A diferença é que o .every() retorna true se todos passarem, some precisa que apenas um passe
         fill      -> Preenche posições do array como desejarmos, de acordo com os 3 parâmetros
         find      -> Usamos esse método quando queremos encontrar algum elemento dentro no Array
-        findIndex   -> Faz o mesmo que o .find(), mas retorna o índice do elemento encontrado ao
+        findIndex   -> Faz o mesmo que o .find(), mas retorna o índice (posição) do elemento encontrado
         concat()    ->
         
         includes  -> O método includes() determina se um array co
@@ -66,3 +66,12 @@ console.log(users.some(user => user.credit > 800))
 
 console.log(numbers.fill(5,2,4))
 
+// find, encontra algum elemento dentro do array que se encaixa na condição
+
+const findAUser = users.find(user => user.name === 'Maria')
+console.log(`find: ${findAUser}`)
+
+// findIndex, faz o mesmo que o find porém retorna a posição do elemento
+
+const findIndexForAUser = users.findIndex(user => user.name === 'Maria')
+console.log(`findIndex: ${findIndexForAUser}`)
