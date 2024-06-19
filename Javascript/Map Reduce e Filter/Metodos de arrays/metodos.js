@@ -84,3 +84,18 @@ const array2 = ['d', 'e', 'f']
 
 const array3 = array1.concat(array2)
 console.log(array3)
+
+// include, verifica se a um item que inclue um determinado valor
+
+console.log(array1.includes('a'));
+
+// join, junta os elementos de um array e os transforma em um só (deixa de ser um array)
+
+const elements = ['Fire', 'Water', 'Air']
+
+const oneElement = elements.join(' ') // se colocar um espaço eles ficam separados com um espaço, se for um traço separados por um traço e assim vai
+
+console.log(oneElement)
+
+// 
+
