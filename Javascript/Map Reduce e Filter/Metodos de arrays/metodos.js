@@ -12,13 +12,13 @@
         findIndex   -> Faz o mesmo que o .find(), mas retorna o índice (posição) do elemento encontrado
         concat()    -> Usado para juntar dois arrays. Ele não altera os arrays originais, mas cria um novo com a soma dos dois
         
-        includes  -> O método includes() determina se um array co
-        join      -> O método join() junta todos os elementos de um
+        includes  -> O método includes() verifica se um array contém um item com um determinado valor
+        join      -> O método join() junta todos os elementos de um array em um unico valor
 
         slice(fatiar) ->
         splice    ->
-        pop       ->
-        shift     ->
+        pop       -> Elimina o ultimo elemento de um array
+        shift     -> Elimina o primeiro elemento de um array
 */
 
 const numbers = [1, 2, 3]
@@ -97,5 +97,14 @@ const oneElement = elements.join(' ') // se colocar um espaço eles ficam separa
 
 console.log(oneElement)
 
-// 
+// pop, elimina o ultimo elemento de um array
 
+elements.pop()
+
+console.log(elements)
+
+// shift, elimina o primeiro elemento de um array
+
+elements.shift()
+
+console.log(elements)
