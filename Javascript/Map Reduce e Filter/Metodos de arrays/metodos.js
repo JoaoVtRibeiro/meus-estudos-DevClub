@@ -15,7 +15,7 @@
         includes  -> O método includes() verifica se um array contém um item com um determinado valor
         join      -> O método join() junta todos os elementos de um array em um unico valor
 
-        slice(fatiar) ->
+        slice(fatiar) -> Monta um novo array entre as posições postas Obs: ele não pega o item da posição que é para parar
         splice    ->
         pop       -> Elimina o ultimo elemento de um array
         shift     -> Elimina o primeiro elemento de um array
@@ -108,3 +108,11 @@ console.log(elements)
 elements.shift()
 
 console.log(elements)
+
+// slice, monta um novo array entre as posições postas Obs: ele não pega o item da posição que é para parar
+
+const names = ['joão', 'maria', 'pedro', 'michele', 'fernando']
+
+const newArray = names.slice(1, 3) // não irá pegar o item da posição 3
+
+console.log(newArray)
