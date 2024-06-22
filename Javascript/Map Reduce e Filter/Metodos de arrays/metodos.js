@@ -16,7 +16,7 @@
         join      -> O método join() junta todos os elementos de um array em um unico valor
 
         slice(fatiar) -> Monta um novo array entre as posições postas Obs: ele não pega o item da posição que é para parar
-        splice    ->
+        splice    -> Remove ou adiciona elementos em um array em uma posição específica, de acordo com os parâmetro
         pop       -> Elimina o ultimo elemento de um array
         shift     -> Elimina o primeiro elemento de um array
 */
@@ -40,10 +40,10 @@ console.log(fruits)
 
 // every, verifica se TODOS os itens passam por um validação posta, resultando em true ou false
 const users = [
-    { name: 'Nico', credit: 600},
-    { name: 'Maria', credit: 900},
-    { name: 'Joana', credit: 300},
-    { name: 'Vanessa', credit: 200}
+    { name: 'Nico', credit: 600 },
+    { name: 'Maria', credit: 900 },
+    { name: 'Joana', credit: 300 },
+    { name: 'Vanessa', credit: 200 }
 ]
 
 console.log(users.every(user => user.credit > 100))
@@ -65,7 +65,7 @@ console.log(users.some(user => user.credit > 800))
         Ex:
 */
 
-console.log(numbers.fill(5,2,4))
+console.log(numbers.fill(5, 2, 4))
 
 // find, encontra algum elemento dentro do array que se encaixa na condição
 
@@ -116,3 +116,19 @@ const names = ['joão', 'maria', 'pedro', 'michele', 'fernando']
 const newArray = names.slice(1, 3) // não irá pegar o item da posição 3
 
 console.log(newArray)
+
+/* 
+    splice, remove ou adiciona elementos em um array em uma posição específica, de acordo com os parâmetros
+
+     1) Posição do array da qual vamos começar a tirar as informações 
+     2) Quantos elementos eu quero retirar a partir da posição inicial 
+     3) Item que você quer adicionar
+*/
+
+names.splice(1, 1, 'patricia');
+
+console.log(names)
+
+names.splice(2, 2, 'rodolfo');
+
+console.log(names)
