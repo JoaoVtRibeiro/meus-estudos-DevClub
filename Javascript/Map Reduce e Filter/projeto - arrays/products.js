@@ -8,3 +8,4 @@ const menuOptions = [
 ]
 
 
+export { menuOptions }
