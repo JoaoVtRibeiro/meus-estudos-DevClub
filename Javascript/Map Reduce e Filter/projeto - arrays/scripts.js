@@ -43,6 +43,7 @@ discountButton.addEventListener('click', () => {
     showAll(menuWithDiscount)
 })
 
+// Mensagem que mostra soma de todos os preços
 someAllButton.addEventListener('click', () => {
     const finalValue = menuOptions.reduce((acc, product) => acc + product.price, 0)
 
@@ -51,5 +52,12 @@ someAllButton.addEventListener('click', () => {
             <p>A soma de todos os itens do menu é: ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(finalValue)}</p>
         </li>
     `
+})
+
+// Array que mostra apenas os veganos
+veganButton.addEventListener('click', () => {
+    const veganFilter = menuOptions.filter(product => product.vegan)
+
+    showAll(veganFilter)
 })
 
