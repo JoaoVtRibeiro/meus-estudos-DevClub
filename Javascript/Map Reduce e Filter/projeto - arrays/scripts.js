@@ -25,12 +25,12 @@ function showAll(productArray) {
     })
 }
 
-// Array dos produtos sem nenhuma modificação
+// Array dos produtos sem nenhuma modificação - For Each
 showAllButton.addEventListener('click', () => {
     showAll(menuOptions)
 })
 
-// Array com 10% de desconto
+// Array com 10% de desconto - Map
 discountButton.addEventListener('click', () => {
     ul.innerHTML = ''
     let li = ''
@@ -43,7 +43,7 @@ discountButton.addEventListener('click', () => {
     showAll(menuWithDiscount)
 })
 
-// Mensagem que mostra soma de todos os preços
+// Mensagem que mostra soma de todos os preços - Reduce
 someAllButton.addEventListener('click', () => {
     const finalValue = menuOptions.reduce((acc, product) => acc + product.price, 0)
 
@@ -54,7 +54,7 @@ someAllButton.addEventListener('click', () => {
     `
 })
 
-// Array que mostra apenas os veganos
+// Array que mostra apenas os veganos - Filter
 veganButton.addEventListener('click', () => {
     const veganFilter = menuOptions.filter(product => product.vegan)
 
